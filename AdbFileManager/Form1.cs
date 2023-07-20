@@ -25,7 +25,20 @@ namespace AdbFileManager {
       dataGridView1.Columns[2].Width = 115;
     }
 
-
+    public static string adb(string command) {
+      Process process = new Process();
+      process.StartInfo.CreateNoWindow = true;
+      process.StartInfo.FileName = "cmd.exe";
+      process.StartInfo.Arguments = "/c " + command;
+      process.StartInfo.RedirectStandardOutput = true;
+      process.StartInfo.UseShellExecute = false;
+      Cursor.Current = Cursors.WaitCursor;
+      process.Start();
+      string output = process.StandardOutput.ReadToEnd();
+      process.WaitForExit();
+      Cursor.Current = Cursors.Default;
+      return output;
+    }
     private void verticalLabel1_Click(object sender, EventArgs e) {
       dataGridView1.DataSource = Functions.getDir(directoryPath);
     }
@@ -46,6 +59,7 @@ namespace AdbFileManager {
         }
         else {
           directoryPath = directoryPath + name + "/";
+          cur_path.Text = directoryPath;
           //MessageBox.Show(directoryPath);
           dataGridView1.DataSource = Functions.getDir(directoryPath);
         }
@@ -65,17 +79,7 @@ namespace AdbFileManager {
         progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[0].Value));
         string sourcePath = directoryPath + sourceFileName;
         string command = $"adb pull \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
-        Process process = new Process();
-        process.StartInfo.CreateNoWindow = true;
-        process.StartInfo.FileName = "cmd.exe";
-        process.StartInfo.Arguments = "/c " + command;
-        process.StartInfo.RedirectStandardOutput = true;
-        process.StartInfo.UseShellExecute = false;
-        Cursor.Current = Cursors.WaitCursor;
-        process.Start();
-        string output = process.StandardOutput.ReadToEnd();
-        process.WaitForExit();
-        Cursor.Current = Cursors.Default;
+        adb(command);
         //MessageBox.Show(output);
         copied++;
       }
@@ -101,38 +105,44 @@ namespace AdbFileManager {
 
         directoryPath = directoryPath.Substring(0, lastIndex + 1);
       }
-
+      cur_path.Text = directoryPath;
       dataGridView1.DataSource = Functions.getDir(directoryPath);
     }
 
     private void timer1_Tick(object sender, EventArgs e) {
 
       dataGridView1.DataSource = Functions.getDir(directoryPath);
+      cur_path.Text = directoryPath;
       timer1.Stop();
       timer1.Enabled = false;
+    }
+
+    private void pc2android_Click(object sender, EventArgs e) {
+      var items = explorerBrowser1.SelectedItems.ToArray();
+
+      foreach(ShellObject item in items) {
+        string sourcefile = item.ParsingName;
+        string command = $"adb push \"{sourcefile}\" \"{directoryPath.Replace('\\', '/')}\"";
+        adb(command);
+      }
+    }
+
+    private void cur_path_TextChanged(object sender, EventArgs e) {
+      directoryPath = cur_path.Text;
+      dataGridView1.DataSource = Functions.getDir(directoryPath);
     }
   }
   public static class Functions {
     public static DataTable getDir(string directoryPath) {
       // Retrieve a list of files in the specified directory
-
-      Process process = new Process();
-
-      process.StartInfo.CreateNoWindow = true;
-      process.StartInfo.FileName = "cmd.exe";
-      process.StartInfo.Arguments = "/c " + "adb shell ls -l " + directoryPath;
-      process.StartInfo.RedirectStandardOutput = true;
-      process.StartInfo.UseShellExecute = false;
-      Cursor.Current = Cursors.WaitCursor;
-      process.Start();
-      string output = process.StandardOutput.ReadToEnd();
+      string command = "adb shell ls -lL " + directoryPath;
+      string output = Form1.adb(command);
       string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
       string[] filteredLines = lines.SkipWhile(line => line == "* daemon not running; starting now at tcp:5037" ||
                                                        line == "* daemon started successfully" ||
                                                        line.StartsWith("total ")).ToArray();
       string filteredOutput = string.Join(Environment.NewLine, filteredLines);
-      //Console.WriteLine(filteredOutput);
-      process.WaitForExit();
+      Console.WriteLine(filteredOutput);
       Cursor.Current = Cursors.Default;
 
       List<string[]> fileList = new List<string[]>();
@@ -151,29 +161,34 @@ namespace AdbFileManager {
         dgv.Columns.Add("Size");
         dgv.Columns.Add("Date");
         dgv.Columns.Add("Name");*/
-        dgv.Columns.Add("Name");
+        dgv.Columns.Add("Name (double click here to go up)");
         dgv.Columns.Add("Size (KiB)", typeof(decimal));
         dgv.Columns.Add("Date", typeof(DateTime));
 
         foreach(string file in files.Skip(1)) {
-          if(!string.IsNullOrWhiteSpace(file)) {
-            /* line examples
-            "drwx------ 9 u0_a201  u0_a201     8192 2023-06-17 13:26 Music"
-             "-rw------- 1 u0_a201  u0_a201  1331648 2021-11-22 00:42 SpaceCadetPinball.cia"
-             "-rw------- 1 u0_a201  u0_a201  1365560 2021-01-19 04:14 Not\ Funny,\ Didn't\ HahahÃ¦.webm"*/
-            string[] attributes = CustomSplit(file, ' ');
-            Form1._Form1.textBox3.Text = attributes.ToString();
-            string permissions = attributes[0];
-            int links = int.Parse(attributes[1]);
-            string owner = attributes[2];
-            string group = attributes[3];
-            decimal size = decimal.Round(decimal.Parse(attributes[4]) / 1024, 3);
+          try {
+            if(!string.IsNullOrWhiteSpace(file)) {
+              /* line examples
+              "drwx------ 9 u0_a201  u0_a201     8192 2023-06-17 13:26 Music"
+               "-rw------- 1 u0_a201  u0_a201  1331648 2021-11-22 00:42 SpaceCadetPinball.cia"
+               "-rw------- 1 u0_a201  u0_a201  1365560 2021-01-19 04:14 Not\ Funny,\ Didn't\ HahahÃ¦.webm"*/
+              string[] attributes = CustomSplit(file, ' ');
+              Form1._Form1.textBox3.Text = attributes.ToString();
+              string permissions = attributes[0];
+              int links = int.Parse(attributes[1]);
+              string owner = attributes[2];
+              string group = attributes[3];
+              decimal size = decimal.Round(decimal.Parse(attributes[4]) / 1024, 3);
 
-            DateTime date = DateTime.Parse(attributes[5] + " " + attributes[6]);
-            string name = string.Join(' ', attributes.Skip(7));
+              DateTime date = DateTime.Parse(attributes[5] + " " + attributes[6]);
+              string name = string.Join(' ', attributes.Skip(7));
 
-            //dgv.Rows.Add(permissions, links, owner, group, size, date, name);
-            dgv.Rows.Add(name, size, date);
+              //dgv.Rows.Add(permissions, links, owner, group, size, date, name);
+              dgv.Rows.Add(name, size, date);
+            }
+          }
+          catch(Exception ex) {
+            Console.WriteLine(ex.ToString());
           }
         }
         if(dgv.Rows.Count == 0) {
@@ -187,7 +202,7 @@ namespace AdbFileManager {
       }
       catch(Exception ex) {
         var dgv = new DataTable();
-        dgv.Columns.Add("Name");
+        dgv.Columns.Add("Name (double click here to go up)");
         dgv.Columns.Add("Size");
         dgv.Columns.Add("Date");
         dgv.Rows.Add("No device found", 0, DateTime.UnixEpoch);

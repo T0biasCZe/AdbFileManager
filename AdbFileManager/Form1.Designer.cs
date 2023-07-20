@@ -35,6 +35,7 @@
       verticalLabel1 = new randz.CustomControls.VerticalLabel();
       verticalLabel2 = new randz.CustomControls.VerticalLabel();
       timer1 = new System.Windows.Forms.Timer(components);
+      cur_path = new TextBox();
       ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
       SuspendLayout();
       // 
@@ -50,11 +51,11 @@
       dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
       dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       dataGridView1.GridColor = Color.White;
-      dataGridView1.Location = new Point(24, 16);
+      dataGridView1.Location = new Point(24, 40);
       dataGridView1.Name = "dataGridView1";
       dataGridView1.RowTemplate.Height = 25;
       dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-      dataGridView1.Size = new Size(528, 488);
+      dataGridView1.Size = new Size(528, 464);
       dataGridView1.TabIndex = 2;
       dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
       dataGridView1.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
@@ -106,6 +107,7 @@
       pc2android.TabIndex = 9;
       pc2android.Text = "<";
       pc2android.UseVisualStyleBackColor = true;
+      pc2android.Click += pc2android_Click;
       // 
       // verticalLabel1
       // 
@@ -147,11 +149,20 @@
       timer1.Interval = 500;
       timer1.Tick += timer1_Tick;
       // 
+      // cur_path
+      // 
+      cur_path.Location = new Point(24, 16);
+      cur_path.Name = "cur_path";
+      cur_path.Size = new Size(528, 23);
+      cur_path.TabIndex = 12;
+      cur_path.TextChanged += cur_path_TextChanged;
+      // 
       // Form1
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(1174, 528);
+      Controls.Add(cur_path);
       Controls.Add(verticalLabel1);
       Controls.Add(pc2android);
       Controls.Add(android2pc);
@@ -180,5 +191,6 @@
     private randz.CustomControls.VerticalLabel verticalLabel1;
     private randz.CustomControls.VerticalLabel verticalLabel2;
     private System.Windows.Forms.Timer timer1;
+    private TextBox cur_path;
   }
 }
