@@ -44,9 +44,16 @@ namespace AdbFileManager {
     }
 
     private void explorerBrowser1_Load(object sender, EventArgs e) {
-      string path = Environment.ExpandEnvironmentVariables("%UserProfile%\\pictures\\");
-      ShellObject tvojemama = ShellObject.FromParsingName(path);
-      explorerBrowser1.Navigate(tvojemama);
+      try {
+        string path = Environment.ExpandEnvironmentVariables("%UserProfile%\\pictures\\");
+        ShellObject Shell = ShellObject.FromParsingName(path);
+        explorerBrowser1.Navigate(Shell);
+      }
+      catch {
+        string path = Environment.ExpandEnvironmentVariables("C:\\");
+        ShellObject Shell = ShellObject.FromParsingName(path);
+        explorerBrowser1.Navigate(Shell);
+      }
     }
 
     private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
@@ -188,7 +195,11 @@ namespace AdbFileManager {
             }
           }
           catch(Exception ex) {
+            ConsoleColor old = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Exception occured while parsing file list: ");
             Console.WriteLine(ex.ToString());
+            Console.ForegroundColor = old;
           }
         }
         if(dgv.Rows.Count == 0) {
