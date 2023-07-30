@@ -72,7 +72,7 @@ namespace AdbFileManager {
         }
       }
     }
-
+    bool copying = false;
     private void android2pc_Click(object sender, EventArgs e) {
       string destinationFolder = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
       //MessageBox.Show(destinationFolder);
@@ -80,17 +80,20 @@ namespace AdbFileManager {
       int copied = 0;
       Form2 progressbar = new Form2();
       progressbar.Show();
+      copying = true;
+      string date = filedate_check.Checked ? " -a " : "";
       foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
         //MessageBox.Show(Text = Convert.ToString(row.Cells[0].Value));
         string sourceFileName = Convert.ToString(row.Cells[0].Value);
         progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[0].Value));
         string sourcePath = directoryPath + sourceFileName;
-        string command = $"adb pull \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
+        string command = $"adb pull {date} \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
         adb(command);
         //MessageBox.Show(output);
         copied++;
       }
       progressbar.Close();
+      copying = false;
 
       //string sourceFileName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
 
@@ -137,6 +140,10 @@ namespace AdbFileManager {
     private void cur_path_TextChanged(object sender, EventArgs e) {
       directoryPath = cur_path.Text;
       dataGridView1.DataSource = Functions.getDir(directoryPath);
+    }
+
+    private void Form1_Load(object sender, EventArgs e) {
+
     }
   }
   public static class Functions {
