@@ -204,7 +204,7 @@ namespace AdbFileManager {
           catch(Exception ex) {
             ConsoleColor old = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Exception occured while parsing file list: ");
+            Console.WriteLine("Exception occurred while parsing file list: ");
             Console.WriteLine(ex.ToString());
             Console.ForegroundColor = old;
           }
