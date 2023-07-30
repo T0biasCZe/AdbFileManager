@@ -85,7 +85,7 @@ namespace AdbFileManager {
         string sourceFileName = Convert.ToString(row.Cells[0].Value);
         progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[0].Value));
         string sourcePath = directoryPath + sourceFileName;
-        string command = $"adb pull \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
+        string command = $"adb pull -a \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
         adb(command);
         //MessageBox.Show(output);
         copied++;
