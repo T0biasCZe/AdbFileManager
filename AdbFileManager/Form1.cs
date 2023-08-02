@@ -88,6 +88,7 @@ namespace AdbFileManager {
         progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[0].Value));
         string sourcePath = directoryPath + sourceFileName;
         string command = $"adb pull {date} \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
+        Console.WriteLine(command);
         adb(command);
         //MessageBox.Show(output);
         copied++;
@@ -129,10 +130,10 @@ namespace AdbFileManager {
 
     private void pc2android_Click(object sender, EventArgs e) {
       var items = explorerBrowser1.SelectedItems.ToArray();
-
+      string date = filedate_check.Checked ? " -a " : "";
       foreach(ShellObject item in items) {
         string sourcefile = item.ParsingName;
-        string command = $"adb push \"{sourcefile}\" \"{directoryPath.Replace('\\', '/')}\"";
+        string command = $"adb push {date} \"{sourcefile}\" \"{directoryPath.Replace('\\', '/')}\"";
         adb(command);
       }
     }
@@ -152,10 +153,10 @@ namespace AdbFileManager {
       string command = "adb shell ls -lL " + directoryPath;
       string output = Form1.adb(command);
       string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-      string[] filteredLines = lines.SkipWhile(line => line == "* daemon not running; starting now at tcp:5037" ||
+      /*string[] filteredLines = lines.SkipWhile(line => line == "* daemon not running; starting now at tcp:5037" ||
                                                        line == "* daemon started successfully" ||
-                                                       line.StartsWith("total ")).ToArray();
-      string filteredOutput = string.Join(Environment.NewLine, filteredLines);
+                                                       line.StartsWith("total ")).ToArray();*/
+      string filteredOutput = string.Join(Environment.NewLine, lines);
       Console.WriteLine(filteredOutput);
       Cursor.Current = Cursors.Default;
 
