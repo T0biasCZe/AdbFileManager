@@ -64,10 +64,11 @@
       dataGridView1.TabIndex = 2;
       dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
       dataGridView1.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
-      // 
-      // textBox2
-      // 
-      textBox2.Location = new Point(1168, 648);
+	  dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
+			// 
+			// textBox2
+			// 
+			textBox2.Location = new Point(1168, 648);
       textBox2.Name = "textBox2";
       textBox2.Size = new Size(456, 23);
       textBox2.TabIndex = 3;
