@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data;
 using Microsoft.WindowsAPICodePack.Shell;
 using System.Diagnostics;
+using System.IO;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -57,11 +58,13 @@ namespace AdbFileManager {
 				string path = Environment.ExpandEnvironmentVariables("%UserProfile%\\pictures\\");
 				ShellObject Shell = ShellObject.FromParsingName(path);
 				explorerBrowser1.Navigate(Shell);
+				explorer_path.Text = path;
 			}
 			catch {
 				string path = Environment.ExpandEnvironmentVariables("C:\\");
 				ShellObject Shell = ShellObject.FromParsingName(path);
 				explorerBrowser1.Navigate(Shell);
+				explorer_path.Text = path;
 			}
 		}
 
@@ -89,6 +92,11 @@ namespace AdbFileManager {
 			int copied = 0;
 			Form2 progressbar = new Form2();
 			progressbar.Show();
+			//try to make the progressbar get shown
+			progressbar.BringToFront();
+			progressbar.Activate();
+			progressbar.Focus();
+			
 			copying = true;
 			string date = filedate_check.Checked ? " -a " : "";
 			foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
@@ -171,11 +179,24 @@ namespace AdbFileManager {
 		private void pc2android_Click(object sender, EventArgs e) {
 			var items = explorerBrowser1.SelectedItems.ToArray();
 			string date = filedate_check.Checked ? " -a " : "";
+			int filecount = items.Count();
+			int copied = 0;
+			Form2 progressbar = new Form2();
+			progressbar.Show();
+			//try to make the progressbar get shown
+			progressbar.BringToFront();
+			progressbar.Activate();
+			progressbar.Focus();
+			copying = true;
 			foreach(ShellObject item in items) {
 				string sourcefile = item.ParsingName;
 				string command = $"adb push {date} \"{sourcefile}\" \"{directoryPath.Replace('\\', '/')}\"";
+				progressbar.update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
 				Console.WriteLine(adb(command));
+				copied++;
 			}
+			progressbar.Close();
+			copying = false;
 		}
 
 		private void cur_path_TextChanged(object sender, EventArgs e) {
@@ -185,6 +206,31 @@ namespace AdbFileManager {
 
 		private void Form1_Load(object sender, EventArgs e) {
 
+		}
+
+		private void explorerBrowser1_NavigationComplete(object sender, Microsoft.WindowsAPICodePack.Controls.NavigationCompleteEventArgs e) {
+
+			//set textbox "explorer_path" to current explorerBrowser1 path
+			string currentPath = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
+			explorer_path.Text = currentPath;
+		}
+
+		private void explorer_path_TextChanged(object sender, EventArgs e) {
+		}
+
+		private void explorer_path_KeyPress(object sender, KeyPressEventArgs e) {
+			//check if enter key was pressed
+			if(e.KeyChar == (char)13) {
+				string oldPath = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
+				try {
+					ShellObject Shell = ShellObject.FromParsingName(explorer_path.Text);
+					explorerBrowser1.Navigate(Shell);
+				}
+				catch {
+					MessageBox.Show("Invalid path", "Error okurek 🥒", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					explorer_path.Text = oldPath;
+				}
+			}
 		}
 	}
 	public static class Functions {
