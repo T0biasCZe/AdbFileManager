@@ -53,12 +53,11 @@
 			// dataGridView1
 			// 
 			dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 			dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridView1.GridColor = Color.White;
 			dataGridView1.Location = new Point(24, 40);
 			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RowHeadersVisible = false;
 			dataGridView1.RowTemplate.Height = 25;
 			dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView1.Size = new Size(528, 472);

@@ -21,15 +21,16 @@ namespace AdbFileManager {
 			verticalLabel1.SendToBack();
 			dataGridView1.RowHeadersWidth = 4;
 			dataGridView1.DataSource = Functions.getDir(directoryPath);
-			dataGridView1.Columns[0].Width = 307;
-			dataGridView1.Columns[1].Width = 100;
-			dataGridView1.Columns[2].Width = 115;
+
+			DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView1.Columns[0];
+			img.ImageLayout = DataGridViewImageCellLayout.Zoom;
+			dataGridView1.Columns[0].Width = 25;
+			dataGridView1.Columns[1].Width = 307;
+			dataGridView1.Columns[2].Width = 80;
+			dataGridView1.Columns[3].Width = 115;
 
 			//set Console app codepage to UTF-8.
 			Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-
-
 		}
 
 		public static string adb(string command) {
@@ -70,9 +71,9 @@ namespace AdbFileManager {
 
 		private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
 			if(e.RowIndex >= 0) {
-				string name = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-				string size = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-				string date = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+				string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+				string size = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+				string date = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
 				if(name.Contains(".")) {
 					MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
 				}
@@ -96,13 +97,13 @@ namespace AdbFileManager {
 			progressbar.BringToFront();
 			progressbar.Activate();
 			progressbar.Focus();
-			
+
 			copying = true;
 			string date = filedate_check.Checked ? " -a " : "";
 			foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
 				//MessageBox.Show(Text = Convert.ToString(row.Cells[0].Value));
-				string sourceFileName = Convert.ToString(row.Cells[0].Value);
-				progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[0].Value));
+				string sourceFileName = Convert.ToString(row.Cells[1].Value);
+				progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[1].Value));
 				string sourcePath = directoryPath + sourceFileName;
 				string command = $"adb pull {date} \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
 				Console.WriteLine(command);
@@ -134,9 +135,9 @@ namespace AdbFileManager {
 		void clickedFolder() {
 			int rowIndex = dataGridView1.CurrentCell.RowIndex;
 			if(rowIndex >= 0) {
-				string name = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-				string size = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-				string date = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+				string name = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+				string size = dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+				string date = dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
 				if(name.Contains(".")) {
 					MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
 				}
@@ -233,7 +234,32 @@ namespace AdbFileManager {
 			}
 		}
 	}
+
 	public static class Functions {
+		private static string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp", ".webp", ".heif", ".mpo" };
+		private static string[] videoExtensions = { ".mp4", ".mkv", ".webm", ".avi", ".mov", ".wmv", ".flv", ".3gp", ".m4v", ".mpg", ".mpeg", ".m2v", ".m4v", ".m2ts", ".mts", ".ts", ".vob", ".divx", ".xvid" };
+		private static string[] romExtensions = { ".nes", ".snes", ".gba", ".gbc", ".gb", ".nds", ".n64", ".psx", ".iso", ".cia", ".3ds", ".3dsx", ".wbfs", ".rvz" };
+		private static string[] audioExtensions = { ".mp3", ".wav", ".ogg", ".flac", ".m4a", ".aac", ".wma", ".mod", ".mid", ".s3m", ".midi" };
+		private static string[] documentExtensions = { ".docx", ".pdf", ".txt", ".pptx", ".xlsx", ".odt", ".rtf" };
+		private static string[] archiveExtensions = { ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz" };
+		private static string[] executableExtensions = { ".exe", ".dll", ".bat", ".msi", ".jar", ".py", ".sh", ".apk" };
+
+		public static bool isFolder(string path) {
+			/*//i said do not look :(
+			//folders have these filesize values
+			if(path.Contains("3452")) return true;
+			if(path.Contains("4096")) return true;
+			else if(path.Contains("512000")) return true;
+			else if(path.Contains("24576")) return true;
+			else if(path.Contains("8192")) return true;
+			else if(path.Contains("53248")) return true;
+			else if(path.Contains("122880")) return true;
+			else if(path.Contains("20480")) return true;
+			else return false;*/
+			if(path[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
+			else return false;
+		}
+
 		public static DataTable getDir(string directoryPath) {
 			// Retrieve a list of files in the specified directory
 			string command = "adb shell ls -lL " + directoryPath;
@@ -247,26 +273,17 @@ namespace AdbFileManager {
 			Cursor.Current = Cursors.Default;
 
 			List<string[]> fileList = new List<string[]>();
-			//AdbClient Client = new AdbClient();
 			try {
-				//var device = Client.GetDevices().First();
-				//var receiver = new ConsoleOutputReceiver();
-
-				//Client.ExecuteRemoteCommand("ls -l " + directoryPath, device, receiver);
 				string[] files = filteredOutput.ToString().Split('\n');
 				var dgv = new DataTable();
-				/*dgv.Columns.Add("Permissions");
-				dgv.Columns.Add("Links");
-				dgv.Columns.Add("Owner");
-				dgv.Columns.Add("Group");
-				dgv.Columns.Add("Size");
-				dgv.Columns.Add("Date");
-				dgv.Columns.Add("Name");*/
+
+				dgv.Columns.Add("ico", typeof(Icon));
 				dgv.Columns.Add("Name (double click here to go up)");
 				dgv.Columns.Add("Size (KiB)", typeof(decimal));
 				dgv.Columns.Add("Date", typeof(DateTime));
 
-				foreach(string file in files.Skip(1)) {
+				foreach(string filee in files.Skip(1)) {
+					string file = filee.Trim();
 					try {
 						if(!string.IsNullOrWhiteSpace(file)) {
 							/* line examples
@@ -284,8 +301,30 @@ namespace AdbFileManager {
 							DateTime date = DateTime.Parse(attributes[5] + " " + attributes[6]);
 							string name = string.Join(' ', attributes.Skip(7));
 
+							Icon icon;
+							if(isFolder(permissions)) {
+								if(file.EndsWith(@"dcim", StringComparison.OrdinalIgnoreCase) || directoryPath.Contains("dcim", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_image.ico");
+								else if(file.EndsWith(@"download", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_downloads.ico");
+								else if(file.EndsWith(@"music", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
+								else if(file.EndsWith(@"movies", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_video.ico");
+								else if(file.EndsWith(@"documents", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_document.ico");
+								else if(file.EndsWith(@"ringtones", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
+								else if(file.EndsWith(@"alarms", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
+								else if(file.EndsWith(@"notifications", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
+								else if(file.EndsWith(@"podcasts", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
+								else icon = new Icon(@"icons\folder2.ico");
+							}
+							else if(imageExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\image2.ico");
+							else if(videoExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\video2.ico");
+							else if(romExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\rom.ico");
+							else if(audioExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\music2.ico");
+							else if(documentExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\doc2.ico");
+							else if(archiveExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\archive.ico");
+							else if(executableExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\exe.ico");
+							else icon = new Icon(@"icons\file.ico");
+
 							//dgv.Rows.Add(permissions, links, owner, group, size, date, name);
-							dgv.Rows.Add(name, size, date);
+							dgv.Rows.Add(icon, name, size, date);
 						}
 					}
 					catch(Exception ex) {
@@ -297,21 +336,22 @@ namespace AdbFileManager {
 					}
 				}
 				if(dgv.Rows.Count == 0) {
-					dgv.Rows.Add("No files found", 0, DateTime.UnixEpoch);
+					dgv.Rows.Add(new Icon(@"icons\file.ico"), "No files found", 0, DateTime.UnixEpoch);
 				}
 				else if(dgv.Rows.Count > 18) {
-					Form1._Form1.dataGridView1.Columns[0].Width = 290;
+					Form1._Form1.dataGridView1.Columns[1].Width = 290;
 				}
-				else Form1._Form1.dataGridView1.Columns[0].Width = 307;
+				else Form1._Form1.dataGridView1.Columns[1].Width = 307;
 				return dgv;
 			}
 			catch(Exception ex) {
 				var dgv = new DataTable();
+				dgv.Columns.Add("ico", typeof(Icon));
 				dgv.Columns.Add("Name (double click here to go up)");
 				dgv.Columns.Add("Size");
 				dgv.Columns.Add("Date");
-				dgv.Rows.Add("No device found", 0, DateTime.UnixEpoch);
-				dgv.Rows.Add(ex, 0, DateTime.UnixEpoch);
+				dgv.Rows.Add(new Icon(@"icons\file.ico"), "No device found", 0, DateTime.UnixEpoch);
+				dgv.Rows.Add(new Icon(@"icons\file.ico"), ex, 0, DateTime.UnixEpoch);
 				return dgv;
 
 			}
