@@ -20,6 +20,8 @@ namespace AdbFileManager {
 			InitializeComponent();
 			verticalLabel1.SendToBack();
 			dataGridView1.RowHeadersWidth = 4;
+			Console.WriteLine("datagrid virtual mode: " + dataGridView1.VirtualMode);
+			dataGridView1.VirtualMode = false;
 			dataGridView1.DataSource = Functions.getDir(directoryPath);
 
 			DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView1.Columns[0];
@@ -300,29 +302,40 @@ namespace AdbFileManager {
 
 							DateTime date = DateTime.Parse(attributes[5] + " " + attributes[6]);
 							string name = string.Join(' ', attributes.Skip(7));
-
 							Icon icon;
-							if(isFolder(permissions)) {
-								if(file.EndsWith(@"dcim", StringComparison.OrdinalIgnoreCase) || directoryPath.Contains("dcim", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_image.ico");
-								else if(file.EndsWith(@"download", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_downloads.ico");
-								else if(file.EndsWith(@"music", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
-								else if(file.EndsWith(@"movies", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_video.ico");
-								else if(file.EndsWith(@"documents", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_document.ico");
-								else if(file.EndsWith(@"ringtones", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
-								else if(file.EndsWith(@"alarms", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
-								else if(file.EndsWith(@"notifications", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
-								else if(file.EndsWith(@"podcasts", StringComparison.OrdinalIgnoreCase)) icon = new Icon(@"icons\folder_music.ico");
-								else icon = new Icon(@"icons\folder2.ico");
-							}
-							else if(imageExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\image2.ico");
-							else if(videoExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\video2.ico");
-							else if(romExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\rom.ico");
-							else if(audioExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\music2.ico");
-							else if(documentExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\doc2.ico");
-							else if(archiveExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\archive.ico");
-							else if(executableExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = new Icon(@"icons\exe.ico");
-							else icon = new Icon(@"icons\file.ico");
+							try {
+								if(isFolder(permissions)) {
+									if(file.Contains("dcim", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_image;
+									else if(file.EndsWith(@"download", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_downloads;
+									else if(file.EndsWith(@"music", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
+									else if(file.EndsWith(@"movies", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_video;
+									else if(file.EndsWith(@"documents", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_document;
+									else if(file.EndsWith(@"ringtones", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
+									else if(file.EndsWith(@"alarms", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
+									else if(file.EndsWith(@"notifications", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
+									else if(file.EndsWith(@"podcasts", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
+									else icon = Icons.folder_image;
+								}
 
+								else if(imageExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.image2;
+								else if(videoExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.video2;
+								else if(romExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.rom;
+								else if(audioExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.music2;
+								else if(documentExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.doc2;
+								else if(archiveExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.archive;
+								else if(executableExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.archive;
+								else icon = Icons.file;
+							}
+							catch(Exception ex) {
+								ConsoleColor old = Console.ForegroundColor;
+								Console.ForegroundColor = ConsoleColor.Magenta;
+								Console.WriteLine("Catched exception while parsing file icon: ");
+								Console.WriteLine(ex.ToString());
+								Console.ForegroundColor = old;
+								//use generic system icon
+								icon = null;
+
+							}
 							//dgv.Rows.Add(permissions, links, owner, group, size, date, name);
 							dgv.Rows.Add(icon, name, size, date);
 						}
@@ -369,6 +382,21 @@ namespace AdbFileManager {
 			}
 			return result;
 		}
+	}
+	public static class Icons { 
+		public static Icon folder_image = new Icon(@"icons\folder_image.ico");
+		public static Icon folder_downloads = new Icon(@"icons\folder_downloads.ico");
+		public static Icon folder_music = new Icon(@"icons\folder_music.ico");
+		public static Icon folder_video = new Icon(@"icons\folder_video.ico");
+		public static Icon folder_document = new Icon(@"icons\folder_document.ico");
+		public static Icon image2 = new Icon(@"icons\image2.ico");
+		public static Icon video2 = new Icon(@"icons\video2.ico");
+		public static Icon rom = new Icon(@"icons\rom.ico");
+		public static Icon music2 = new Icon(@"icons\music2.ico");
+		public static Icon doc2 = new Icon(@"icons\doc2.ico");
+		public static Icon archive = new Icon(@"icons\archive.ico");
+		public static Icon exe = new Icon(@"icons\exe.ico");
+		public static Icon file = new Icon(@"icons\file.ico");
 	}
 
 }
