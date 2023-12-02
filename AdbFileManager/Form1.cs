@@ -10,6 +10,8 @@ using System.Data;
 using Microsoft.WindowsAPICodePack.Shell;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Reflection.Metadata;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -32,7 +34,9 @@ namespace AdbFileManager {
 			dataGridView1.Columns[3].Width = 115;
 
 			//set Console app codepage to UTF-8.
-			Console.OutputEncoding = System.Text.Encoding.UTF8;
+			Console.OutputEncoding = System.Text.Encoding.UTF8; 
+			var handle = GetConsoleWindow();
+			ShowWindow(handle, SW_HIDE);
 		}
 
 		public static string adb(string command) {
@@ -235,6 +239,29 @@ namespace AdbFileManager {
 				}
 			}
 		}
+
+		private void version_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+			Process.Start("explorer.exe", "https://github.com/T0biasCZe/AdbFileManager");
+		}
+		[DllImport("kernel32.dll")]
+		static extern IntPtr GetConsoleWindow();
+
+		[DllImport("user32.dll")]
+		static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+		const int SW_HIDE = 0;
+		const int SW_SHOW = 5;
+		bool console_shown = false;
+		private void button1_Click(object sender, EventArgs e) {
+			console_shown = !console_shown;
+			var handle = GetConsoleWindow();
+			if(console_shown) {
+				ShowWindow(handle, SW_SHOW);
+			}
+			else {
+				ShowWindow(handle, SW_HIDE);
+			}
+		}
 	}
 
 	public static class Functions {
@@ -383,7 +410,7 @@ namespace AdbFileManager {
 			return result;
 		}
 	}
-	public static class Icons { 
+	public static class Icons {
 		public static Icon folder_image = new Icon(@"icons\folder_image.ico");
 		public static Icon folder_downloads = new Icon(@"icons\folder_downloads.ico");
 		public static Icon folder_music = new Icon(@"icons\folder_music.ico");

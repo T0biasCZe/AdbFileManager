@@ -37,6 +37,8 @@
 			timer1 = new System.Windows.Forms.Timer(components);
 			cur_path = new TextBox();
 			panel1 = new Panel();
+			button1 = new Button();
+			version = new LinkLabel();
 			explorer_path = new TextBox();
 			filedate_check = new CheckBox();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -52,6 +54,9 @@
 			// 
 			// dataGridView1
 			// 
+			dataGridView1.AllowUserToAddRows = false;
+			dataGridView1.AllowUserToDeleteRows = false;
+			dataGridView1.AllowUserToResizeRows = false;
 			dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
 			dataGridView1.GridColor = Color.White;
@@ -98,7 +103,7 @@
 			android2pc.FlatAppearance.BorderSize = 3;
 			android2pc.FlatStyle = FlatStyle.Popup;
 			android2pc.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			android2pc.Location = new Point(572, 168);
+			android2pc.Location = new Point(572, 169);
 			android2pc.Name = "android2pc";
 			android2pc.Size = new Size(32, 40);
 			android2pc.TabIndex = 8;
@@ -112,7 +117,7 @@
 			pc2android.FlatAppearance.BorderSize = 3;
 			pc2android.FlatStyle = FlatStyle.Popup;
 			pc2android.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			pc2android.Location = new Point(572, 216);
+			pc2android.Location = new Point(572, 217);
 			pc2android.Name = "pc2android";
 			pc2android.Size = new Size(32, 40);
 			pc2android.TabIndex = 9;
@@ -125,7 +130,7 @@
 			verticalLabel1.Anchor = AnchorStyles.None;
 			verticalLabel1.BackColor = SystemColors.ControlLight;
 			verticalLabel1.ForeColor = SystemColors.ControlText;
-			verticalLabel1.Location = new Point(580, 272);
+			verticalLabel1.Location = new Point(580, 273);
 			verticalLabel1.Name = "verticalLabel1";
 			verticalLabel1.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
 			verticalLabel1.Size = new Size(16, 72);
@@ -143,7 +148,7 @@
 			verticalLabel2.Anchor = AnchorStyles.None;
 			verticalLabel2.BackColor = Color.Gray;
 			verticalLabel2.ForeColor = SystemColors.ControlText;
-			verticalLabel2.Location = new Point(580, 272);
+			verticalLabel2.Location = new Point(580, 273);
 			verticalLabel2.Name = "verticalLabel2";
 			verticalLabel2.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
 			verticalLabel2.Size = new Size(18, 74);
@@ -174,6 +179,8 @@
 			// panel1
 			// 
 			panel1.AutoSize = true;
+			panel1.Controls.Add(button1);
+			panel1.Controls.Add(version);
 			panel1.Controls.Add(explorer_path);
 			panel1.Controls.Add(filedate_check);
 			panel1.Controls.Add(verticalLabel1);
@@ -182,15 +189,36 @@
 			panel1.Controls.Add(verticalLabel2);
 			panel1.Location = new Point(0, 8);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(1176, 528);
+			panel1.Size = new Size(1226, 531);
 			panel1.TabIndex = 13;
+			// 
+			// button1
+			// 
+			button1.Location = new Point(1056, 512);
+			button1.Name = "button1";
+			button1.Size = new Size(27, 16);
+			button1.TabIndex = 16;
+			button1.Text = "button1";
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
+			// 
+			// version
+			// 
+			version.AutoSize = true;
+			version.Location = new Point(1080, 512);
+			version.Name = "version";
+			version.Size = new Size(95, 15);
+			version.TabIndex = 15;
+			version.TabStop = true;
+			version.Text = "ebc2329 02.12.22";
+			version.LinkClicked += version_LinkClicked;
 			// 
 			// explorer_path
 			// 
 			explorer_path.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			explorer_path.Location = new Point(616, 8);
 			explorer_path.Name = "explorer_path";
-			explorer_path.Size = new Size(552, 23);
+			explorer_path.Size = new Size(553, 23);
 			explorer_path.TabIndex = 14;
 			explorer_path.KeyPress += explorer_path_KeyPress;
 			// 
@@ -244,5 +272,7 @@
 		private Panel panel1;
 		private CheckBox filedate_check;
 		private TextBox explorer_path;
+		private LinkLabel version;
+		private Button button1;
 	}
 }
