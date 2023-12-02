@@ -11,7 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CurrentCommit.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="w7 transfer.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CurrentCommit.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,9 +47,13 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="git rev-parse --short HEAD &gt; &quot;$(ProjectDir)CurrentCommit.txt&quot;" />
+  </Target>
 
 </Project>

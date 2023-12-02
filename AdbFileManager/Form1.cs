@@ -34,9 +34,12 @@ namespace AdbFileManager {
 			dataGridView1.Columns[3].Width = 115;
 
 			//set Console app codepage to UTF-8.
-			Console.OutputEncoding = System.Text.Encoding.UTF8; 
+			Console.OutputEncoding = System.Text.Encoding.UTF8;
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
+			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 02.12.23";
+			version.Text = versionn;
+			Console.WriteLine(versionn);
 		}
 
 		public static string adb(string command) {
