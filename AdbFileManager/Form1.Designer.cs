@@ -207,10 +207,10 @@
 			version.AutoSize = true;
 			version.Location = new Point(1080, 512);
 			version.Name = "version";
-			version.Size = new Size(95, 15);
+			version.Size = new Size(71, 15);
 			version.TabIndex = 15;
 			version.TabStop = true;
-			version.Text = "ebc2329 02.12.22";
+			version.Text = "version here";
 			version.LinkClicked += version_LinkClicked;
 			// 
 			// explorer_path
