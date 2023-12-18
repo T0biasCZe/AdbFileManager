@@ -61,7 +61,7 @@ namespace AdbFileManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a251209
+        ///   Looks up a localized string similar to 3e1805b
         ///.
         /// </summary>
         public static string CurrentCommit {

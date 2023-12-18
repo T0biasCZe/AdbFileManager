@@ -12,19 +12,26 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Reflection.Metadata;
+using System.Text;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
 		public static Form1 _Form1;
 		public string directoryPath = "/sdcard/";
+		public string tempPath = Path.GetTempPath() + "adbfilemanager\\";
+		public bool temp_folder_created = false;
 		public Form1() {
 			_Form1 = this;
 			InitializeComponent();
+
+			this.Controls.Add(panel2);
+			panel1.Controls.Remove(panel2);
+			panel2.BringToFront();
 			verticalLabel1.SendToBack();
 			dataGridView1.RowHeadersWidth = 4;
 			Console.WriteLine("datagrid virtual mode: " + dataGridView1.VirtualMode);
 			dataGridView1.VirtualMode = false;
-			dataGridView1.DataSource = Functions.getDir(directoryPath);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 
 			DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView1.Columns[0];
 			img.ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -35,9 +42,10 @@ namespace AdbFileManager {
 
 			//set Console app codepage to UTF-8.
 			Console.OutputEncoding = System.Text.Encoding.UTF8;
+			Console.WindowHeight = 20;
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
-			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 02.12.23";
+			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 18.12.23";
 			version.Text = versionn;
 			Console.WriteLine(versionn);
 		}
@@ -60,7 +68,7 @@ namespace AdbFileManager {
 			return output;
 		}
 		private void verticalLabel1_Click(object sender, EventArgs e) {
-			dataGridView1.DataSource = Functions.getDir(directoryPath);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 		}
 
 		private void explorerBrowser1_Load(object sender, EventArgs e) {
@@ -83,16 +91,62 @@ namespace AdbFileManager {
 				string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
 				string size = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 				string date = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-				if(name.Contains(".")) {
-					MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
+				string permissions = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+				if(!Functions.isFolder(permissions)) {
+					if(checkBox_preview.Checked) {
+						if(Functions.videoExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) {
+							//copy file to temp folder
+							string sourcePath = directoryPath + name;
+							string destinationPath = tempPath + name;
+
+							if(!temp_folder_created) {
+								Directory.CreateDirectory(tempPath);
+								temp_folder_created = true	;
+							}
+							string command = $"adb pull \"{sourcePath}\" \"{destinationPath}\"";
+							Process process = new Process();
+							process.StartInfo.FileName = "cmd.exe";
+							process.StartInfo.Arguments = "/c " + command;
+							process.Start();
+
+							var handle = GetConsoleWindow();
+							ShowWindow(handle, SW_SHOW);
+							process.WaitForExit();
+
+							Process file_opener = new Process();
+							file_opener.StartInfo.FileName = "explorer.exe";
+							file_opener.StartInfo.Arguments = "\"" + destinationPath + "\"";
+							file_opener.Start();
+
+							ShowWindow(handle, console_shown ? 5 : 0);
+						}
+
+					}
+					else MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
+					
 				}
 				else {
 					directoryPath = directoryPath + name + "/";
 					cur_path.Text = directoryPath;
 					//MessageBox.Show(directoryPath);
-					dataGridView1.DataSource = Functions.getDir(directoryPath);
+					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 				}
 			}
+		}
+		private int ParseProgress(string line) {
+			// Assuming the progress is represented as a percentage in the output line
+			// and it's always at the start of the line in the format of "[x%]"
+			int startIndex = line.IndexOf('[');
+			int endIndex = line.IndexOf(']');
+			if(startIndex != -1 && endIndex != -1 && endIndex > startIndex) {
+				string progressString = line.Substring(startIndex + 1, endIndex - startIndex - 1).TrimEnd('%');
+				if(int.TryParse(progressString, out int progress)) {
+					return progress;
+				}
+			}
+
+			// Return -1 if the progress could not be parsed
+			return -1;
 		}
 		bool copying = false;
 		private void android2pc_Click(object sender, EventArgs e) {
@@ -154,7 +208,7 @@ namespace AdbFileManager {
 					directoryPath = directoryPath + name + "/";
 					cur_path.Text = directoryPath;
 					//MessageBox.Show(directoryPath);
-					dataGridView1.DataSource = Functions.getDir(directoryPath);
+					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 				}
 			}
 		}
@@ -176,11 +230,11 @@ namespace AdbFileManager {
 				directoryPath = directoryPath.Substring(0, lastIndex + 1);
 			}
 			cur_path.Text = directoryPath;
-			dataGridView1.DataSource = Functions.getDir(directoryPath);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 		}
 		private void timer1_Tick(object sender, EventArgs e) {
 
-			dataGridView1.DataSource = Functions.getDir(directoryPath);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 			cur_path.Text = directoryPath;
 			timer1.Stop();
 			timer1.Enabled = false;
@@ -201,6 +255,7 @@ namespace AdbFileManager {
 			foreach(ShellObject item in items) {
 				string sourcefile = item.ParsingName;
 				string command = $"adb push {date} \"{sourcefile}\" \"{directoryPath.Replace('\\', '/')}\"";
+				Console.WriteLine(command);
 				progressbar.update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
 				Console.WriteLine(adb(command));
 				copied++;
@@ -211,7 +266,7 @@ namespace AdbFileManager {
 
 		private void cur_path_TextChanged(object sender, EventArgs e) {
 			directoryPath = cur_path.Text;
-			dataGridView1.DataSource = Functions.getDir(directoryPath);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
@@ -265,16 +320,32 @@ namespace AdbFileManager {
 				ShowWindow(handle, SW_HIDE);
 			}
 		}
+
+		private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
+			//kill the process adb.exe if it's running
+			Process[] adb = Process.GetProcessesByName("adb.exe");
+			foreach(Process process in adb) {
+				process.Kill();
+			}
+			adb = Process.GetProcessesByName("adb");
+			foreach(Process process in adb) {
+				process.Kill();
+			}
+
+			if(Directory.Exists(tempPath)) {
+				Directory.Delete(tempPath, true);
+			}
+		}
 	}
 
 	public static class Functions {
-		private static string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp", ".webp", ".heif", ".mpo" };
-		private static string[] videoExtensions = { ".mp4", ".mkv", ".webm", ".avi", ".mov", ".wmv", ".flv", ".3gp", ".m4v", ".mpg", ".mpeg", ".m2v", ".m4v", ".m2ts", ".mts", ".ts", ".vob", ".divx", ".xvid" };
-		private static string[] romExtensions = { ".nes", ".snes", ".gba", ".gbc", ".gb", ".nds", ".n64", ".psx", ".iso", ".cia", ".3ds", ".3dsx", ".wbfs", ".rvz" };
-		private static string[] audioExtensions = { ".mp3", ".wav", ".ogg", ".flac", ".m4a", ".aac", ".wma", ".mod", ".mid", ".s3m", ".midi" };
-		private static string[] documentExtensions = { ".docx", ".pdf", ".txt", ".pptx", ".xlsx", ".odt", ".rtf" };
-		private static string[] archiveExtensions = { ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz" };
-		private static string[] executableExtensions = { ".exe", ".dll", ".bat", ".msi", ".jar", ".py", ".sh", ".apk" };
+		public static string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".bmp", ".webp", ".heif", ".mpo" };
+		public static string[] videoExtensions = { ".mp4", ".mkv", ".webm", ".avi", ".mov", ".wmv", ".flv", ".3gp", ".m4v", ".mpg", ".mpeg", ".m2v", ".m4v", ".m2ts", ".mts", ".ts", ".vob", ".divx", ".xvid" };
+		public static string[] romExtensions = { ".nes", ".snes", ".gba", ".gbc", ".gb", ".nds", ".n64", ".psx", ".iso", ".cia", ".3ds", ".3dsx", ".wbfs", ".rvz" };
+		public static string[] audioExtensions = { ".mp3", ".wav", ".ogg", ".flac", ".m4a", ".aac", ".wma", ".mod", ".mid", ".s3m", ".midi" };
+		public static string[] documentExtensions = { ".docx", ".pdf", ".txt", ".pptx", ".xlsx", ".odt", ".rtf" };
+		public static string[] archiveExtensions = { ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz" };
+		public static string[] executableExtensions = { ".exe", ".dll", ".bat", ".msi", ".jar", ".py", ".sh", ".apk" };
 
 		public static bool isFolder(string path) {
 			/*//i said do not look :(
@@ -292,9 +363,10 @@ namespace AdbFileManager {
 			else return false;
 		}
 
-		public static DataTable getDir(string directoryPath) {
+		public static DataTable getDir(string directoryPath, bool old_android) {
 			// Retrieve a list of files in the specified directory
-			string command = "adb shell ls -lL " + directoryPath;
+			string command = old_android ? $"adb shell ls -lL {directoryPath}" : $"adb shell ls -l {directoryPath}";
+			Console.WriteLine(command);
 			string output = Form1.adb(command);
 			string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 			/*string[] filteredLines = lines.SkipWhile(line => line == "* daemon not running; starting now at tcp:5037" ||
@@ -313,6 +385,7 @@ namespace AdbFileManager {
 				dgv.Columns.Add("Name (double click here to go up)");
 				dgv.Columns.Add("Size (KiB)", typeof(decimal));
 				dgv.Columns.Add("Date", typeof(DateTime));
+				dgv.Columns.Add("Attr");
 
 				foreach(string filee in files.Skip(1)) {
 					string file = filee.Trim();
@@ -367,7 +440,7 @@ namespace AdbFileManager {
 
 							}
 							//dgv.Rows.Add(permissions, links, owner, group, size, date, name);
-							dgv.Rows.Add(icon, name, size, date);
+							dgv.Rows.Add(icon, name, size, date, permissions);
 						}
 					}
 					catch(Exception ex) {
@@ -395,6 +468,7 @@ namespace AdbFileManager {
 				dgv.Columns.Add("Date");
 				dgv.Rows.Add(new Icon(@"icons\file.ico"), "No device found", 0, DateTime.UnixEpoch);
 				dgv.Rows.Add(new Icon(@"icons\file.ico"), ex, 0, DateTime.UnixEpoch);
+
 				return dgv;
 
 			}

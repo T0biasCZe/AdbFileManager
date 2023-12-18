@@ -37,12 +37,17 @@
 			timer1 = new System.Windows.Forms.Timer(components);
 			cur_path = new TextBox();
 			panel1 = new Panel();
-			button1 = new Button();
-			version = new LinkLabel();
 			explorer_path = new TextBox();
+			panel2 = new Panel();
+			checkBox_preview = new CheckBox();
+			button1 = new Button();
+			checkBox_android6fix = new CheckBox();
+			version = new LinkLabel();
 			filedate_check = new CheckBox();
+			toolTip1 = new ToolTip(components);
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			panel1.SuspendLayout();
+			panel2.SuspendLayout();
 			SuspendLayout();
 			// 
 			// textBox1
@@ -92,7 +97,7 @@
 			explorerBrowser1.Location = new Point(616, 40);
 			explorerBrowser1.Name = "explorerBrowser1";
 			explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
-			explorerBrowser1.Size = new Size(552, 464);
+			explorerBrowser1.Size = new Size(552, 472);
 			explorerBrowser1.TabIndex = 7;
 			explorerBrowser1.NavigationComplete += explorerBrowser1_NavigationComplete;
 			explorerBrowser1.Load += explorerBrowser1_Load;
@@ -103,7 +108,7 @@
 			android2pc.FlatAppearance.BorderSize = 3;
 			android2pc.FlatStyle = FlatStyle.Popup;
 			android2pc.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			android2pc.Location = new Point(572, 169);
+			android2pc.Location = new Point(573, 171);
 			android2pc.Name = "android2pc";
 			android2pc.Size = new Size(32, 40);
 			android2pc.TabIndex = 8;
@@ -117,7 +122,7 @@
 			pc2android.FlatAppearance.BorderSize = 3;
 			pc2android.FlatStyle = FlatStyle.Popup;
 			pc2android.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			pc2android.Location = new Point(572, 217);
+			pc2android.Location = new Point(573, 219);
 			pc2android.Name = "pc2android";
 			pc2android.Size = new Size(32, 40);
 			pc2android.TabIndex = 9;
@@ -130,7 +135,7 @@
 			verticalLabel1.Anchor = AnchorStyles.None;
 			verticalLabel1.BackColor = SystemColors.ControlLight;
 			verticalLabel1.ForeColor = SystemColors.ControlText;
-			verticalLabel1.Location = new Point(580, 273);
+			verticalLabel1.Location = new Point(581, 275);
 			verticalLabel1.Name = "verticalLabel1";
 			verticalLabel1.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
 			verticalLabel1.Size = new Size(16, 72);
@@ -148,7 +153,7 @@
 			verticalLabel2.Anchor = AnchorStyles.None;
 			verticalLabel2.BackColor = Color.Gray;
 			verticalLabel2.ForeColor = SystemColors.ControlText;
-			verticalLabel2.Location = new Point(580, 273);
+			verticalLabel2.Location = new Point(581, 275);
 			verticalLabel2.Name = "verticalLabel2";
 			verticalLabel2.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
 			verticalLabel2.Size = new Size(18, 74);
@@ -179,22 +184,54 @@
 			// panel1
 			// 
 			panel1.AutoSize = true;
-			panel1.Controls.Add(button1);
-			panel1.Controls.Add(version);
 			panel1.Controls.Add(explorer_path);
-			panel1.Controls.Add(filedate_check);
 			panel1.Controls.Add(verticalLabel1);
 			panel1.Controls.Add(android2pc);
 			panel1.Controls.Add(pc2android);
 			panel1.Controls.Add(verticalLabel2);
+			panel1.Controls.Add(panel2);
 			panel1.Location = new Point(0, 8);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(1226, 531);
+			panel1.Size = new Size(1229, 534);
 			panel1.TabIndex = 13;
+			// 
+			// explorer_path
+			// 
+			explorer_path.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+			explorer_path.Location = new Point(616, 8);
+			explorer_path.Name = "explorer_path";
+			explorer_path.Size = new Size(556, 23);
+			explorer_path.TabIndex = 14;
+			explorer_path.KeyPress += explorer_path_KeyPress;
+			// 
+			// panel2
+			// 
+			panel2.Anchor = AnchorStyles.Bottom;
+			panel2.BackColor = Color.FromArgb(192, 255, 255);
+			panel2.Controls.Add(checkBox_preview);
+			panel2.Controls.Add(button1);
+			panel2.Controls.Add(checkBox_android6fix);
+			panel2.Controls.Add(version);
+			panel2.Controls.Add(filedate_check);
+			panel2.Location = new Point(0, 513);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(1226, 25);
+			panel2.TabIndex = 17;
+			// 
+			// checkBox_preview
+			// 
+			checkBox_preview.AutoSize = true;
+			checkBox_preview.Location = new Point(286, 3);
+			checkBox_preview.Name = "checkBox_preview";
+			checkBox_preview.Size = new Size(175, 19);
+			checkBox_preview.TabIndex = 17;
+			checkBox_preview.Text = "Preview files on double click";
+			toolTip1.SetToolTip(checkBox_preview, "When file is double clicked, it will copy it to temp folder and display it. On program close the files will be deleted");
+			checkBox_preview.UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
-			button1.Location = new Point(1072, 520);
+			button1.Location = new Point(1066, 14);
 			button1.Name = "button1";
 			button1.Size = new Size(11, 8);
 			button1.TabIndex = 16;
@@ -202,10 +239,21 @@
 			button1.UseVisualStyleBackColor = true;
 			button1.Click += button1_Click;
 			// 
+			// checkBox_android6fix
+			// 
+			checkBox_android6fix.AutoSize = true;
+			checkBox_android6fix.Location = new Point(166, 3);
+			checkBox_android6fix.Name = "checkBox_android6fix";
+			checkBox_android6fix.Size = new Size(114, 19);
+			checkBox_android6fix.TabIndex = 14;
+			checkBox_android6fix.Text = "Compatibility fix";
+			toolTip1.SetToolTip(checkBox_android6fix, "Enabling this fixes some compatibility issues with Android 6 and older devices");
+			checkBox_android6fix.UseVisualStyleBackColor = true;
+			// 
 			// version
 			// 
 			version.AutoSize = true;
-			version.Location = new Point(1080, 512);
+			version.Location = new Point(1079, 7);
 			version.Name = "version";
 			version.Size = new Size(71, 15);
 			version.TabIndex = 15;
@@ -213,19 +261,10 @@
 			version.Text = "version here";
 			version.LinkClicked += version_LinkClicked;
 			// 
-			// explorer_path
-			// 
-			explorer_path.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			explorer_path.Location = new Point(616, 8);
-			explorer_path.Name = "explorer_path";
-			explorer_path.Size = new Size(553, 23);
-			explorer_path.TabIndex = 14;
-			explorer_path.KeyPress += explorer_path_KeyPress;
-			// 
 			// filedate_check
 			// 
 			filedate_check.AutoSize = true;
-			filedate_check.Location = new Point(24, 504);
+			filedate_check.Location = new Point(12, 3);
 			filedate_check.Name = "filedate_check";
 			filedate_check.Size = new Size(148, 19);
 			filedate_check.TabIndex = 14;
@@ -249,10 +288,13 @@
 			MinimumSize = new Size(1190, 0);
 			Name = "Form1";
 			Text = " ";
+			FormClosing += Form1_FormClosing;
 			Load += Form1_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();
+			panel2.ResumeLayout(false);
+			panel2.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -274,5 +316,9 @@
 		private TextBox explorer_path;
 		private LinkLabel version;
 		private Button button1;
+		private Panel panel2;
+		private ToolTip toolTip1;
+		public CheckBox checkBox_android6fix;
+		private CheckBox checkBox_preview;
 	}
 }
