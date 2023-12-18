@@ -94,7 +94,7 @@ namespace AdbFileManager {
 				string permissions = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
 				if(!Functions.isFolder(permissions)) {
 					if(checkBox_preview.Checked) {
-						if(Functions.videoExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) {
+						if(Functions.videoExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase)) || Functions.imageExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase)) || Functions.audioExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) {
 							//copy file to temp folder
 							string sourcePath = directoryPath + name;
 							string destinationPath = tempPath + name;
