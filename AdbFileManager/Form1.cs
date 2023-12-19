@@ -45,7 +45,7 @@ namespace AdbFileManager {
 			Console.WindowHeight = 20;
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
-			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 18.12.23";
+			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()}  18.12.23";
 			version.Text = versionn;
 			Console.WriteLine(versionn);
 		}
