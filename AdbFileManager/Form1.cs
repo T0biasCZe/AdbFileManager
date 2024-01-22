@@ -14,6 +14,13 @@ using System.Runtime.InteropServices;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Globalization;
+using Microsoft.WindowsAPICodePack.ApplicationServices;
+using System.Reflection;
+using System.Resources;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using TaskDialogButton = System.Windows.Forms.TaskDialogButton;
+using TaskDialog = System.Windows.Forms.TaskDialog;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -23,9 +30,12 @@ namespace AdbFileManager {
 		public bool temp_folder_created = false;
 		public Form1() {
 			_Form1 = this;
-			Functions.set_language();
-			InitializeComponent();		
+			load_lang();
 
+			InitializeComponent();
+
+			load_lang_combobox();
+			load_settings();
 
 			this.Controls.Add(panel2);
 			panel1.Controls.Remove(panel2);
@@ -155,16 +165,7 @@ namespace AdbFileManager {
 		private void android2pc_Click(object sender, EventArgs e) {
 			string destinationFolder = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
 			//MessageBox.Show(destinationFolder);
-			int filecount = dataGridView1.SelectedRows.Count;
-			int copied = 0;
-			Form2 progressbar = new Form2();
-			progressbar.Show();
-			//try to make the progressbar get shown
-			progressbar.BringToFront();
-			progressbar.Activate();
-			progressbar.Focus();
 
-			copying = true;
 			string date = checkBox_filedate.Checked ? " -a " : "";
 			List<File> files = new List<File>();
 			foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
@@ -177,7 +178,65 @@ namespace AdbFileManager {
 				files.Add(new File(name, size, datee, permissions, isDirectory));
 			}
 
-			progressbar.Close();
+			if(checkBox_unwrapfolders.Checked) {
+				ProgressBarMarquee pgm = new ProgressBarMarquee();
+				ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
+				pgm.set(rm.GetString("unwrap_wait"), rm.GetString("unwrap_wait_title"));
+				pgm.Show(); pgm.BringToFront(); pgm.Activate(); pgm.Focus();
+
+				//go through the list, and if there is folder, remove it and add it's contents to the list.
+			restart:;
+				for(int i = 0; i < files.Count; i++) {
+					File file = files[i];
+					if(Functions.isFolder(file)) {
+						Console.WriteLine("unwraping folder: " + file.name);
+						DataTable newfiles_table = Functions.getDir(directoryPath + file.name, checkBox_android6fix.Checked);
+						Console.WriteLine("removed folder status: " + files.Remove(file));
+						List<File> newfiles = new List<File>();
+						foreach(DataRow row in newfiles_table.Rows) {
+							//put each selected file into a list
+							string name = row.ItemArray[1].ToString();
+							string size = row.ItemArray[2].ToString();
+							string datee = row.ItemArray[3].ToString();
+							string permissions = row.ItemArray[4].ToString();
+							bool isDirectory = Functions.isFolder(permissions);
+							newfiles.Add(new File(file.name + "/" + name, size, datee, permissions, isDirectory));
+							Console.WriteLine("added file: " + name);
+						}
+						files.AddRange(newfiles);
+						if(pgm.cancel) {
+							pgm.delete();
+							copying = false;
+						}
+						goto restart;
+					}
+				}
+			}
+
+			int filecount = files.Count();
+			int copied = 0;
+			Form2 progressbar = new Form2();
+			progressbar.Show();
+			//try to make the progressbar get shown
+			progressbar.BringToFront();
+			progressbar.Activate();
+			progressbar.Focus();
+			copying = true;
+
+			foreach(File file in files) {
+				string sourcefile = directoryPath + file.name;
+				string destinationFile = $"\"{destinationFolder.Replace('\\', '/')}/{file.name}\"";
+				Console.WriteLine(destinationFile);
+				string command = $"adb pull {date} \"{sourcefile}\" {destinationFile}";
+				System.IO.Directory.CreateDirectory(Path.GetDirectoryName(destinationFile));
+				Console.WriteLine(command);
+				progressbar.update(copied, filecount, directoryPath, destinationFolder, file.name);
+				Console.WriteLine(adb(command));
+				copied++;
+			}
+
+
+			progressbar.delete();
 			copying = false;
 
 			//string sourceFileName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
@@ -337,7 +396,77 @@ namespace AdbFileManager {
 			if(Directory.Exists(tempPath)) {
 				Directory.Delete(tempPath, true);
 			}
+
+			save_settings();
 		}
+
+		enum Languages {
+			English,
+			Cestina,
+			Polski,
+			Deutsch,
+			Japanese,
+			Espanol
+		}
+		private void save_settings() {
+			Properties.Settings.Default.preview_on_doubleclick = checkBox_preview.Checked;
+			Properties.Settings.Default.smooth_progressbar = checkBox_unwrapfolders.Checked;
+			Properties.Settings.Default.keep_modification_date = checkBox_filedate.Checked;
+			Properties.Settings.Default.compatibility = checkBox_android6fix.Checked;
+
+			Properties.Settings.Default.lang = (ushort)comboBox_lang.SelectedIndex;
+			Properties.Settings.Default.Save();
+		}
+		private void load_settings() {
+			checkBox_preview.Checked = Properties.Settings.Default.preview_on_doubleclick;
+			checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
+			checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
+			checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
+			comboBox_lang.SelectedIndex = Properties.Settings.Default.lang;
+		}
+		private void load_lang_combobox() {
+			comboBox_lang.Items.Clear();
+
+			comboBox_lang.Items.Add("English");
+			comboBox_lang.Items.Add("Čeština");
+			comboBox_lang.Items.Add("Polski");
+			comboBox_lang.Items.Add("Deutsch");
+			comboBox_lang.Items.Add("Japanese");
+			comboBox_lang.Items.Add("Espanol");
+
+			if(Properties.Settings.Default.lang != null) { 
+				comboBox_lang.SelectedItem = Properties.Settings.Default.lang; 
+			}
+			else {
+				comboBox_lang.SelectedItem = "English";
+			}
+
+		}
+		private void load_lang() {
+			ushort? loaded_lang = Properties.Settings.Default.lang;
+            if(loaded_lang == null) loaded_lang = (ushort)Languages.English;
+			switch((Languages)loaded_lang) {
+				case Languages.English:
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+					break;
+				case Languages.Cestina:
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
+					break;
+				case Languages.Polski:
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl");
+					break;
+				case Languages.Deutsch:
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
+					break;
+				case Languages.Japanese:
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("jp");
+					break;
+				case Languages.Espanol:
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
+					break;
+			}
+
+        }
 	}
 
 	public static class Functions {
@@ -350,24 +479,18 @@ namespace AdbFileManager {
 		public static string[] executableExtensions = { ".exe", ".dll", ".bat", ".msi", ".jar", ".py", ".sh", ".apk" };
 
 		public static bool isFolder(string path) {
-			/*//i said do not look :(
-			//folders have these filesize values
-			if(path.Contains("3452")) return true;
-			if(path.Contains("4096")) return true;
-			else if(path.Contains("512000")) return true;
-			else if(path.Contains("24576")) return true;
-			else if(path.Contains("8192")) return true;
-			else if(path.Contains("53248")) return true;
-			else if(path.Contains("122880")) return true;
-			else if(path.Contains("20480")) return true;
-			else return false;*/
-			if(path[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
+			if(path == null) return false;
+			if(path.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
+			else return false;
+		}
+		public static bool isFolder(File file) {
+			if(file.permissions.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
 			else return false;
 		}
 
 		public static DataTable getDir(string directoryPath, bool old_android) {
 			// Retrieve a list of files in the specified directory
-			string command = old_android ? $"adb shell ls -lL {directoryPath}" : $"adb shell ls -l {directoryPath}";
+			string command = old_android ? $"adb shell ls -lL \"'{directoryPath}'\"" : $"adb shell ls -l \"'{directoryPath}'\"";
 			Console.WriteLine(command);
 			string output = Form1.adb(command);
 			string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
@@ -489,8 +612,16 @@ namespace AdbFileManager {
 			return result;
 		}
 
-		public static void set_language() {
-			Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs-CZ");
+		public static void set_language(string jazyk) {
+			if(jazyk == "Polski") {
+				Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl");
+			}
+			else if(jazyk == "Čeština") {
+				Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
+			}
+			else {
+				Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+			}
 		}
 	}
 	public static class Icons {

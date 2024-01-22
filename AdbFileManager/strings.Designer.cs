@@ -68,5 +68,23 @@ namespace AdbFileManager {
                 return ResourceManager.GetString("fromto", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unwrapping folders.\nOne moment please....
+        /// </summary>
+        public static string unwrap_wait {
+            get {
+                return ResourceManager.GetString("unwrap_wait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder unwrap.
+        /// </summary>
+        public static string unwrap_wait_title {
+            get {
+                return ResourceManager.GetString("unwrap_wait_title", resourceCulture);
+            }
+        }
     }
 }

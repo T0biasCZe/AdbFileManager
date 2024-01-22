@@ -118,59 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="android2pc.ToolTip" xml:space="preserve">
-    <value>Překopíruje vybrané soubory a složky z telefonu do počítače</value>
+    <value>Skopiuje wybrane pliki i foldery z telefonu do komputera</value>
   </data>
   <data name="pc2android.ToolTip" xml:space="preserve">
-    <value>Překopíruje vybrané soubory a složky z počítače do telefonu</value>
+    <value>Skopiuje wybrane pliki i foldery z komputera do telefonu</value>
   </data>
   <data name="verticalLabel1.Text" xml:space="preserve">
-    <value>    Obnovit</value>
+    <value>    Odśwież</value>
   </data>
   <data name="verticalLabel1.ToolTip" xml:space="preserve">
-    <value>Znovu načte seznam souborů v aktuálním adresáři</value>
+    <value>Ponownie wczytuje listę plików w bieżącym katalogu</value>
   </data>
   <data name="cur_path.ToolTip" xml:space="preserve">
-    <value>Aktuálni otevřený adresář na telefonu</value>
+    <value>Aktualny otwarty katalog na telefonie</value>
   </data>
   <data name="explorer_path.ToolTip" xml:space="preserve">
-    <value>Aktuálni otevřený adresář na počítači</value>
+    <value>Aktualny otwarty katalog na komputerze</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBox_unwrapfolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 19</value>
+    <value>141, 19</value>
   </data>
   <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
-    <value>Plynulý progressbar</value>
+    <value>Płynny pasek postępu</value>
   </data>
   <data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
-    <value>Progress bar při kopírování se aktualizuje pouze když se dokopíruje celý soubor anebo složka, což způsobuje že progress bar může zamrznout při kopírování velkých složek. 
-Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny aby se soubory kopírovali pojednom, takže progress bar bude plynulejší.</value>
+    <value>Pasek postępu podczas kopiowania aktualizuje się tylko po skopiowaniu całego pliku lub folderu, co może powodować zamrożenie paska postępu podczas kopiowania dużych folderów. 
+	Gdy ta opcja jest włączona, kopiowane foldery zostaną załadowane i dostosowane, aby pliki były kopiowane pojedynczo, co sprawi, że pasek postępu będzie działał płynniej.</value>
   </data>
   <data name="checkBox_preview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 19</value>
+    <value>216, 19</value>
   </data>
   <data name="checkBox_preview.Text" xml:space="preserve">
-    <value>Zobrazit soubor při dvojkliku</value>
+    <value>Pokaż plik po podwójnym kliknięciu</value>
   </data>
   <data name="checkBox_preview.ToolTip" xml:space="preserve">
-    <value>Když je soubor dvojkliknut, překopíruje se do dočásné složky na vašem počítači a zobrazí se. 
-Při zavření programu se dočasné soubory smažou
-</value>
+    <value>Gdy plik jest podwójnie kliknięty, skopiowany zostanie do tymczasowego folderu na komputerze i zostanie wyświetlony. 
+	Po zamknięciu programu tymczasowe pliki zostaną usunięte</value>
   </data>
   <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
     <value>185, 3</value>
   </data>
   <data name="checkBox_android6fix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 19</value>
+    <value>112, 19</value>
   </data>
   <data name="checkBox_android6fix.Text" xml:space="preserve">
-    <value>Kompatibilita</value>
+    <value>Kompatybilność</value>
   </data>
   <data name="checkBox_filedate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 19</value>
+    <value>168, 19</value>
   </data>
   <data name="checkBox_filedate.Text" xml:space="preserve">
-    <value>Ponechat datum modifikace</value>
+    <value>Zachowaj datę modyfikacji</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -197,5 +196,9 @@ Při zavření programu se dočasné soubory smažou
         AAAAAAAAHgAAAP/AAAAeAAAA/8AAAP4AAAD/wAAB/gAAAP/AAAH+AAAA/8AAAf4AAAD/wAAH/gAAAP/A
         AA/+AAAA/8AAH/4AAAA=
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

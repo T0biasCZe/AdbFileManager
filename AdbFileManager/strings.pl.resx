@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="fromto" xml:space="preserve">
-    <value>From {source} to {dest}</value>
+    <value>Z {source} do {dest}</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
-    <value>Unwrapping folders.\nOne moment please...</value>
+    <value>Rozpakowywanie folderów w trakcie.\nProszę czekać chwilę...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
-    <value>Folder unwrap</value>
+    <value>Rozpakowywanie folderów.</value>
   </data>
 </root>

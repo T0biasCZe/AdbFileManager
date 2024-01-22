@@ -39,6 +39,7 @@
 			panel1 = new Panel();
 			explorer_path = new TextBox();
 			panel2 = new Panel();
+			comboBox_lang = new ComboBox();
 			checkBox_unwrapfolders = new CheckBox();
 			checkBox_preview = new CheckBox();
 			button1 = new Button();
@@ -179,6 +180,7 @@
 			// 
 			resources.ApplyResources(panel2, "panel2");
 			panel2.BackColor = Color.FromArgb(192, 255, 255);
+			panel2.Controls.Add(comboBox_lang);
 			panel2.Controls.Add(checkBox_unwrapfolders);
 			panel2.Controls.Add(checkBox_preview);
 			panel2.Controls.Add(button1);
@@ -187,6 +189,13 @@
 			panel2.Controls.Add(checkBox_filedate);
 			panel2.Name = "panel2";
 			toolTip1.SetToolTip(panel2, resources.GetString("panel2.ToolTip"));
+			// 
+			// comboBox_lang
+			// 
+			resources.ApplyResources(comboBox_lang, "comboBox_lang");
+			comboBox_lang.FormattingEnabled = true;
+			comboBox_lang.Name = "comboBox_lang";
+			toolTip1.SetToolTip(comboBox_lang, resources.GetString("comboBox_lang.ToolTip"));
 			// 
 			// checkBox_unwrapfolders
 			// 
@@ -278,5 +287,6 @@
 		public CheckBox checkBox_android6fix;
 		private CheckBox checkBox_preview;
 		private CheckBox checkBox_unwrapfolders;
+		public ComboBox comboBox_lang;
 	}
 }

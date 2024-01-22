@@ -120,4 +120,10 @@
   <data name="fromto" xml:space="preserve">
     <value>Z {source} do {dest}</value>
   </data>
+  <data name="unwrap_wait" xml:space="preserve">
+    <value>Probíhá rozbalování složek.\nProsím vydržte chvilku...</value>
+  </data>
+  <data name="unwrap_wait_title" xml:space="preserve">
+    <value>Rozbalování složek.</value>
+  </data>
 </root>

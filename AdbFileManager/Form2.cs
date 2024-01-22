@@ -15,8 +15,7 @@ using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace AdbFileManager {
 	public partial class Form2 : Form {
-		public Form2() {
-			set_language();
+		public Form2() { 
 			InitializeComponent();
 			TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
 		}
