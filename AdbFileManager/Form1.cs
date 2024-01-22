@@ -13,6 +13,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Reflection.Metadata;
 using System.Text;
+using System.Globalization;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -22,7 +23,9 @@ namespace AdbFileManager {
 		public bool temp_folder_created = false;
 		public Form1() {
 			_Form1 = this;
-			InitializeComponent();
+			Functions.set_language();
+			InitializeComponent();		
+
 
 			this.Controls.Add(panel2);
 			panel1.Controls.Remove(panel2);
@@ -162,19 +165,18 @@ namespace AdbFileManager {
 			progressbar.Focus();
 
 			copying = true;
-			string date = filedate_check.Checked ? " -a " : "";
+			string date = checkBox_filedate.Checked ? " -a " : "";
+			List<File> files = new List<File>();
 			foreach(DataGridViewRow row in dataGridView1.SelectedRows) {
-				//MessageBox.Show(Text = Convert.ToString(row.Cells[0].Value));
-				string sourceFileName = Convert.ToString(row.Cells[1].Value);
-				progressbar.update(copied, filecount, directoryPath, destinationFolder, Convert.ToString(row.Cells[1].Value));
-				string sourcePath = directoryPath + sourceFileName;
-				string command = $"adb pull {date} \"{sourcePath}\" \"{destinationFolder.Replace('\\', '/')}\"";
-				Console.WriteLine(command);
-				Console.WriteLine(adb(command));
-
-				//MessageBox.Show(output);
-				copied++;
+				//put each selected file into a list
+				string name = row.Cells[1].Value.ToString();
+				string size = row.Cells[2].Value.ToString();
+				string datee = row.Cells[3].Value.ToString();
+				string permissions = row.Cells[4].Value.ToString();
+				bool isDirectory = Functions.isFolder(permissions);
+				files.Add(new File(name, size, datee, permissions, isDirectory));
 			}
+
 			progressbar.Close();
 			copying = false;
 
@@ -242,7 +244,7 @@ namespace AdbFileManager {
 
 		private void pc2android_Click(object sender, EventArgs e) {
 			var items = explorerBrowser1.SelectedItems.ToArray();
-			string date = filedate_check.Checked ? " -a " : "";
+			string date = checkBox_filedate.Checked ? " -a " : "";
 			int filecount = items.Count();
 			int copied = 0;
 			Form2 progressbar = new Form2();
@@ -486,6 +488,10 @@ namespace AdbFileManager {
 			}
 			return result;
 		}
+
+		public static void set_language() {
+			Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs-CZ");
+		}
 	}
 	public static class Icons {
 		public static Icon folder_image = new Icon(@"icons\folder_image.ico");
@@ -501,6 +507,20 @@ namespace AdbFileManager {
 		public static Icon archive = new Icon(@"icons\archive.ico");
 		public static Icon exe = new Icon(@"icons\exe.ico");
 		public static Icon file = new Icon(@"icons\file.ico");
+	}
+	public class File {
+		public string name;
+		public string size;
+		public string date;
+		public string permissions;
+		public bool isDirectory;
+		public File(string name, string size, string date, string permissions, bool isDirectory) {
+			this.name = name;
+			this.size = size;
+			this.date = date;
+			this.permissions = permissions;
+			this.isDirectory = isDirectory;
+		}
 	}
 
 }

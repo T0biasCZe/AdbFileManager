@@ -39,11 +39,12 @@
 			panel1 = new Panel();
 			explorer_path = new TextBox();
 			panel2 = new Panel();
+			checkBox_unwrapfolders = new CheckBox();
 			checkBox_preview = new CheckBox();
 			button1 = new Button();
 			checkBox_android6fix = new CheckBox();
 			version = new LinkLabel();
-			filedate_check = new CheckBox();
+			checkBox_filedate = new CheckBox();
 			toolTip1 = new ToolTip(components);
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			panel1.SuspendLayout();
@@ -52,96 +53,75 @@
 			// 
 			// textBox1
 			// 
-			textBox1.Location = new Point(1168, 608);
+			resources.ApplyResources(textBox1, "textBox1");
 			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(456, 23);
-			textBox1.TabIndex = 1;
+			toolTip1.SetToolTip(textBox1, resources.GetString("textBox1.ToolTip"));
 			// 
 			// dataGridView1
 			// 
+			resources.ApplyResources(dataGridView1, "dataGridView1");
 			dataGridView1.AllowUserToAddRows = false;
 			dataGridView1.AllowUserToDeleteRows = false;
 			dataGridView1.AllowUserToResizeRows = false;
-			dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 			dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
 			dataGridView1.GridColor = Color.White;
-			dataGridView1.Location = new Point(24, 40);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowHeadersVisible = false;
 			dataGridView1.RowTemplate.Height = 25;
 			dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView1.Size = new Size(528, 472);
-			dataGridView1.TabIndex = 2;
+			toolTip1.SetToolTip(dataGridView1, resources.GetString("dataGridView1.ToolTip"));
 			dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
 			dataGridView1.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
 			dataGridView1.KeyDown += dataGridView1_KeyDown;
 			// 
 			// textBox2
 			// 
-			textBox2.Location = new Point(1168, 648);
+			resources.ApplyResources(textBox2, "textBox2");
 			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(456, 23);
-			textBox2.TabIndex = 3;
+			toolTip1.SetToolTip(textBox2, resources.GetString("textBox2.ToolTip"));
 			// 
 			// textBox3
 			// 
-			textBox3.Location = new Point(1168, 688);
+			resources.ApplyResources(textBox3, "textBox3");
 			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(448, 23);
-			textBox3.TabIndex = 6;
+			toolTip1.SetToolTip(textBox3, resources.GetString("textBox3.ToolTip"));
 			// 
 			// explorerBrowser1
 			// 
-			explorerBrowser1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-			explorerBrowser1.AutoSize = true;
-			explorerBrowser1.Location = new Point(616, 40);
+			resources.ApplyResources(explorerBrowser1, "explorerBrowser1");
 			explorerBrowser1.Name = "explorerBrowser1";
 			explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
-			explorerBrowser1.Size = new Size(552, 472);
-			explorerBrowser1.TabIndex = 7;
+			toolTip1.SetToolTip(explorerBrowser1, resources.GetString("explorerBrowser1.ToolTip"));
 			explorerBrowser1.NavigationComplete += explorerBrowser1_NavigationComplete;
 			explorerBrowser1.Load += explorerBrowser1_Load;
 			// 
 			// android2pc
 			// 
-			android2pc.Anchor = AnchorStyles.None;
+			resources.ApplyResources(android2pc, "android2pc");
 			android2pc.FlatAppearance.BorderSize = 3;
-			android2pc.FlatStyle = FlatStyle.Popup;
-			android2pc.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			android2pc.Location = new Point(573, 171);
 			android2pc.Name = "android2pc";
-			android2pc.Size = new Size(32, 40);
-			android2pc.TabIndex = 8;
-			android2pc.Text = ">";
+			toolTip1.SetToolTip(android2pc, resources.GetString("android2pc.ToolTip"));
 			android2pc.UseVisualStyleBackColor = true;
 			android2pc.Click += android2pc_Click;
 			// 
 			// pc2android
 			// 
-			pc2android.Anchor = AnchorStyles.None;
+			resources.ApplyResources(pc2android, "pc2android");
 			pc2android.FlatAppearance.BorderSize = 3;
-			pc2android.FlatStyle = FlatStyle.Popup;
-			pc2android.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			pc2android.Location = new Point(573, 219);
 			pc2android.Name = "pc2android";
-			pc2android.Size = new Size(32, 40);
-			pc2android.TabIndex = 9;
-			pc2android.Text = "<";
+			toolTip1.SetToolTip(pc2android, resources.GetString("pc2android.ToolTip"));
 			pc2android.UseVisualStyleBackColor = true;
 			pc2android.Click += pc2android_Click;
 			// 
 			// verticalLabel1
 			// 
-			verticalLabel1.Anchor = AnchorStyles.None;
+			resources.ApplyResources(verticalLabel1, "verticalLabel1");
 			verticalLabel1.BackColor = SystemColors.ControlLight;
 			verticalLabel1.ForeColor = SystemColors.ControlText;
-			verticalLabel1.Location = new Point(581, 275);
 			verticalLabel1.Name = "verticalLabel1";
 			verticalLabel1.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
-			verticalLabel1.Size = new Size(16, 72);
-			verticalLabel1.TabIndex = 10;
-			verticalLabel1.Text = "     Refresh";
 			verticalLabel1.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
+			toolTip1.SetToolTip(verticalLabel1, resources.GetString("verticalLabel1.ToolTip"));
 			verticalLabel1.TransparentBackground = false;
 			verticalLabel1.Click += verticalLabel1_Click;
 			verticalLabel1.DoubleClick += verticalLabel1_Click;
@@ -150,16 +130,13 @@
 			// 
 			// verticalLabel2
 			// 
-			verticalLabel2.Anchor = AnchorStyles.None;
+			resources.ApplyResources(verticalLabel2, "verticalLabel2");
 			verticalLabel2.BackColor = Color.Gray;
 			verticalLabel2.ForeColor = SystemColors.ControlText;
-			verticalLabel2.Location = new Point(581, 275);
 			verticalLabel2.Name = "verticalLabel2";
 			verticalLabel2.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
-			verticalLabel2.Size = new Size(18, 74);
-			verticalLabel2.TabIndex = 11;
-			verticalLabel2.Text = null;
 			verticalLabel2.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
+			toolTip1.SetToolTip(verticalLabel2, resources.GetString("verticalLabel2.ToolTip"));
 			verticalLabel2.TransparentBackground = false;
 			verticalLabel2.Click += verticalLabel1_Click;
 			verticalLabel2.DoubleClick += verticalLabel1_Click;
@@ -174,108 +151,91 @@
 			// 
 			// cur_path
 			// 
-			cur_path.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			cur_path.Location = new Point(24, 16);
+			resources.ApplyResources(cur_path, "cur_path");
 			cur_path.Name = "cur_path";
-			cur_path.Size = new Size(528, 23);
-			cur_path.TabIndex = 12;
+			toolTip1.SetToolTip(cur_path, resources.GetString("cur_path.ToolTip"));
 			cur_path.TextChanged += cur_path_TextChanged;
 			// 
 			// panel1
 			// 
-			panel1.AutoSize = true;
+			resources.ApplyResources(panel1, "panel1");
 			panel1.Controls.Add(explorer_path);
-			panel1.Controls.Add(verticalLabel1);
 			panel1.Controls.Add(android2pc);
 			panel1.Controls.Add(pc2android);
-			panel1.Controls.Add(verticalLabel2);
 			panel1.Controls.Add(panel2);
-			panel1.Location = new Point(0, 8);
+			panel1.Controls.Add(verticalLabel1);
+			panel1.Controls.Add(verticalLabel2);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(1229, 534);
-			panel1.TabIndex = 13;
+			toolTip1.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
 			// 
 			// explorer_path
 			// 
-			explorer_path.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			explorer_path.Location = new Point(616, 8);
+			resources.ApplyResources(explorer_path, "explorer_path");
 			explorer_path.Name = "explorer_path";
-			explorer_path.Size = new Size(556, 23);
-			explorer_path.TabIndex = 14;
+			toolTip1.SetToolTip(explorer_path, resources.GetString("explorer_path.ToolTip"));
 			explorer_path.KeyPress += explorer_path_KeyPress;
 			// 
 			// panel2
 			// 
-			panel2.Anchor = AnchorStyles.Bottom;
+			resources.ApplyResources(panel2, "panel2");
 			panel2.BackColor = Color.FromArgb(192, 255, 255);
+			panel2.Controls.Add(checkBox_unwrapfolders);
 			panel2.Controls.Add(checkBox_preview);
 			panel2.Controls.Add(button1);
 			panel2.Controls.Add(checkBox_android6fix);
 			panel2.Controls.Add(version);
-			panel2.Controls.Add(filedate_check);
-			panel2.Location = new Point(0, 513);
+			panel2.Controls.Add(checkBox_filedate);
 			panel2.Name = "panel2";
-			panel2.Size = new Size(1226, 25);
-			panel2.TabIndex = 17;
+			toolTip1.SetToolTip(panel2, resources.GetString("panel2.ToolTip"));
+			// 
+			// checkBox_unwrapfolders
+			// 
+			resources.ApplyResources(checkBox_unwrapfolders, "checkBox_unwrapfolders");
+			checkBox_unwrapfolders.Name = "checkBox_unwrapfolders";
+			toolTip1.SetToolTip(checkBox_unwrapfolders, resources.GetString("checkBox_unwrapfolders.ToolTip"));
+			checkBox_unwrapfolders.UseVisualStyleBackColor = true;
 			// 
 			// checkBox_preview
 			// 
-			checkBox_preview.AutoSize = true;
-			checkBox_preview.Location = new Point(286, 3);
+			resources.ApplyResources(checkBox_preview, "checkBox_preview");
 			checkBox_preview.Name = "checkBox_preview";
-			checkBox_preview.Size = new Size(175, 19);
-			checkBox_preview.TabIndex = 17;
-			checkBox_preview.Text = "Preview files on double click";
-			toolTip1.SetToolTip(checkBox_preview, "When file is double clicked, it will copy it to temp folder and display it. On program close the files will be deleted");
+			toolTip1.SetToolTip(checkBox_preview, resources.GetString("checkBox_preview.ToolTip"));
 			checkBox_preview.UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
-			button1.Location = new Point(1066, 14);
+			resources.ApplyResources(button1, "button1");
 			button1.Name = "button1";
-			button1.Size = new Size(11, 8);
-			button1.TabIndex = 16;
-			button1.Text = "button1";
+			toolTip1.SetToolTip(button1, resources.GetString("button1.ToolTip"));
 			button1.UseVisualStyleBackColor = true;
 			button1.Click += button1_Click;
 			// 
 			// checkBox_android6fix
 			// 
-			checkBox_android6fix.AutoSize = true;
-			checkBox_android6fix.Location = new Point(166, 3);
+			resources.ApplyResources(checkBox_android6fix, "checkBox_android6fix");
 			checkBox_android6fix.Name = "checkBox_android6fix";
-			checkBox_android6fix.Size = new Size(114, 19);
-			checkBox_android6fix.TabIndex = 14;
-			checkBox_android6fix.Text = "Compatibility fix";
-			toolTip1.SetToolTip(checkBox_android6fix, "Enabling this fixes some compatibility issues with Android 6 and older devices");
+			toolTip1.SetToolTip(checkBox_android6fix, resources.GetString("checkBox_android6fix.ToolTip"));
 			checkBox_android6fix.UseVisualStyleBackColor = true;
 			// 
 			// version
 			// 
-			version.AutoSize = true;
-			version.Location = new Point(1079, 7);
+			resources.ApplyResources(version, "version");
 			version.Name = "version";
-			version.Size = new Size(71, 15);
-			version.TabIndex = 15;
 			version.TabStop = true;
-			version.Text = "version here";
+			toolTip1.SetToolTip(version, resources.GetString("version.ToolTip"));
 			version.LinkClicked += version_LinkClicked;
 			// 
-			// filedate_check
+			// checkBox_filedate
 			// 
-			filedate_check.AutoSize = true;
-			filedate_check.Location = new Point(12, 3);
-			filedate_check.Name = "filedate_check";
-			filedate_check.Size = new Size(148, 19);
-			filedate_check.TabIndex = 14;
-			filedate_check.Text = "Keep file modified date";
-			filedate_check.UseVisualStyleBackColor = true;
+			resources.ApplyResources(checkBox_filedate, "checkBox_filedate");
+			checkBox_filedate.Name = "checkBox_filedate";
+			toolTip1.SetToolTip(checkBox_filedate, resources.GetString("checkBox_filedate.ToolTip"));
+			checkBox_filedate.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
+			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1174, 536);
 			Controls.Add(cur_path);
 			Controls.Add(explorerBrowser1);
 			Controls.Add(textBox3);
@@ -283,11 +243,8 @@
 			Controls.Add(dataGridView1);
 			Controls.Add(textBox1);
 			Controls.Add(panel1);
-			Icon = (Icon)resources.GetObject("$this.Icon");
-			MaximumSize = new Size(1190, 2000);
-			MinimumSize = new Size(1190, 0);
 			Name = "Form1";
-			Text = " ";
+			toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
 			FormClosing += Form1_FormClosing;
 			Load += Form1_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -312,7 +269,7 @@
 		private System.Windows.Forms.Timer timer1;
 		private TextBox cur_path;
 		private Panel panel1;
-		private CheckBox filedate_check;
+		private CheckBox checkBox_filedate;
 		private TextBox explorer_path;
 		private LinkLabel version;
 		private Button button1;
@@ -320,5 +277,6 @@
 		private ToolTip toolTip1;
 		public CheckBox checkBox_android6fix;
 		private CheckBox checkBox_preview;
+		private CheckBox checkBox_unwrapfolders;
 	}
 }

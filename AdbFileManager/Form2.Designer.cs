@@ -31,77 +31,69 @@
 			fromto = new RichTextBox();
 			progress = new RichTextBox();
 			timer1 = new System.Windows.Forms.Timer(components);
+			label1 = new Label();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// progressBar1
 			// 
-			progressBar1.Location = new Point(16, 100);
+			resources.ApplyResources(progressBar1, "progressBar1");
 			progressBar1.Name = "progressBar1";
-			progressBar1.Size = new Size(360, 16);
-			progressBar1.TabIndex = 2;
 			// 
 			// pictureBox1
 			// 
+			resources.ApplyResources(pictureBox1, "pictureBox1");
 			pictureBox1.BackColor = SystemColors.Control;
-			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-			pictureBox1.Location = new Point(16, -8);
 			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(352, 64);
-			pictureBox1.TabIndex = 4;
 			pictureBox1.TabStop = false;
 			// 
 			// filename
 			// 
+			resources.ApplyResources(filename, "filename");
 			filename.BackColor = SystemColors.Control;
 			filename.BorderStyle = BorderStyle.None;
-			filename.Location = new Point(16, 56);
 			filename.Name = "filename";
-			filename.Size = new Size(360, 16);
-			filename.TabIndex = 5;
-			filename.Text = "";
 			// 
 			// fromto
 			// 
+			resources.ApplyResources(fromto, "fromto");
 			fromto.BackColor = SystemColors.Control;
 			fromto.BorderStyle = BorderStyle.None;
-			fromto.Location = new Point(16, 76);
 			fromto.Name = "fromto";
-			fromto.Size = new Size(360, 16);
-			fromto.TabIndex = 6;
-			fromto.Text = "";
 			// 
 			// progress
 			// 
+			resources.ApplyResources(progress, "progress");
 			progress.BackColor = SystemColors.Control;
 			progress.BorderStyle = BorderStyle.None;
-			progress.Location = new Point(16, 120);
 			progress.Name = "progress";
-			progress.Size = new Size(360, 16);
-			progress.TabIndex = 7;
-			progress.Text = "";
 			// 
 			// timer1
 			// 
 			timer1.Enabled = true;
 			timer1.Tick += timer1_Tick;
 			// 
+			// label1
+			// 
+			resources.ApplyResources(label1, "label1");
+			label1.ForeColor = SystemColors.ControlDarkDark;
+			label1.Name = "label1";
+			// 
 			// Form2
 			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
+			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(394, 139);
 			Controls.Add(progress);
 			Controls.Add(fromto);
 			Controls.Add(filename);
 			Controls.Add(pictureBox1);
 			Controls.Add(progressBar1);
+			Controls.Add(label1);
 			Name = "Form2";
-			StartPosition = FormStartPosition.CenterScreen;
-			Text = "Copying...";
 			FormClosed += Form2_FormClosed;
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -112,5 +104,6 @@
     private RichTextBox fromto;
     private RichTextBox progress;
     private System.Windows.Forms.Timer timer1;
-  }
+		private Label label1;
+	}
 }
