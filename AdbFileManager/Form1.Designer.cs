@@ -37,6 +37,7 @@
 			timer1 = new System.Windows.Forms.Timer(components);
 			cur_path = new TextBox();
 			panel1 = new Panel();
+			panel3 = new Panel();
 			explorer_path = new TextBox();
 			panel2 = new Panel();
 			comboBox_lang = new ComboBox();
@@ -49,6 +50,7 @@
 			toolTip1 = new ToolTip(components);
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			panel1.SuspendLayout();
+			panel3.SuspendLayout();
 			panel2.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -161,13 +163,21 @@
 			// 
 			resources.ApplyResources(panel1, "panel1");
 			panel1.Controls.Add(explorer_path);
-			panel1.Controls.Add(android2pc);
-			panel1.Controls.Add(pc2android);
+			panel1.Controls.Add(explorerBrowser1);
+			panel1.Controls.Add(panel3);
 			panel1.Controls.Add(panel2);
-			panel1.Controls.Add(verticalLabel1);
-			panel1.Controls.Add(verticalLabel2);
 			panel1.Name = "panel1";
 			toolTip1.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
+			// 
+			// panel3
+			// 
+			resources.ApplyResources(panel3, "panel3");
+			panel3.Controls.Add(android2pc);
+			panel3.Controls.Add(verticalLabel1);
+			panel3.Controls.Add(pc2android);
+			panel3.Controls.Add(verticalLabel2);
+			panel3.Name = "panel3";
+			toolTip1.SetToolTip(panel3, resources.GetString("panel3.ToolTip"));
 			// 
 			// explorer_path
 			// 
@@ -246,10 +256,9 @@
 			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(cur_path);
-			Controls.Add(explorerBrowser1);
+			Controls.Add(dataGridView1);
 			Controls.Add(textBox3);
 			Controls.Add(textBox2);
-			Controls.Add(dataGridView1);
 			Controls.Add(textBox1);
 			Controls.Add(panel1);
 			Name = "Form1";
@@ -259,6 +268,7 @@
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();
+			panel3.ResumeLayout(false);
 			panel2.ResumeLayout(false);
 			panel2.PerformLayout();
 			ResumeLayout(false);
@@ -288,5 +298,6 @@
 		private CheckBox checkBox_preview;
 		private CheckBox checkBox_unwrapfolders;
 		public ComboBox comboBox_lang;
+		private Panel panel3;
 	}
 }

@@ -118,29 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copy_freeze_warn" xml:space="preserve">
-    <value>Ikdyž se to nezdá, soubory se stále kopírují.
-Prosím nezavírejte program pokud okno zamrzne</value>
+    <value>Incluso si en ocasiones no lo parezca, los archivos aún se están copiando.
+Por favor, no cierre el programa si la ventana se congela.</value>
   </data>
   <data name="datagridview_attr" xml:space="preserve">
-    <value>Attributy</value>
+    <value>Atributo</value>
   </data>
   <data name="datagridview_date" xml:space="preserve">
-    <value>Datum modifikace</value>
+    <value>Fecha</value>
   </data>
   <data name="datagridview_name" xml:space="preserve">
-    <value>Název souboru</value>
+    <value>Nombre</value>
   </data>
   <data name="datagridview_size" xml:space="preserve">
-    <value>Velikost (KiB)</value>
+    <value>Tamaño (KiB)</value>
   </data>
   <data name="fromto" xml:space="preserve">
-    <value>Z {source} do {dest}</value>
+    <value>De {source} a {dest}</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
-    <value>Probíhá rozbalování složek.
-Prosím vydržte chvilku...</value>
+    <value>Desenvolviendo carpetas.
+Un momento, por favor...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
-    <value>Rozbalování složek.</value>
+    <value>Desenvolver carpeta</value>
   </data>
 </root>

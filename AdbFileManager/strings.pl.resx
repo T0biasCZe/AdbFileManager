@@ -117,11 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="copy_freeze_warn" xml:space="preserve">
+    <value>Chociaż może się tak nie wydawać, pliki wciąż są kopiowane.
+Proszę nie zamykać programu, jeśli okno zamrozi.</value>
+  </data>
+  <data name="datagridview_attr" xml:space="preserve">
+    <value>Atrybuty</value>
+  </data>
+  <data name="datagridview_date" xml:space="preserve">
+    <value>Data modyfikacji</value>
+  </data>
+  <data name="datagridview_name" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
+  <data name="datagridview_size" xml:space="preserve">
+    <value>Rozmiar (KiB)</value>
+  </data>
   <data name="fromto" xml:space="preserve">
     <value>Z {source} do {dest}</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
-    <value>Rozpakowywanie folderów w trakcie.\nProszę czekać chwilę...</value>
+    <value>Rozpakowywanie folderów w trakcie.
+Proszę czekać chwilę...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
     <value>Rozpakowywanie folderów.</value>

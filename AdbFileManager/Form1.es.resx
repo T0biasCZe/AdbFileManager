@@ -111,45 +111,45 @@
   <resheader name="version">
     <value>2.0</value>
   </resheader>
-  <data name="android2pc.ToolTip" xml:space="preserve">
-    <value>Překopíruje vybrané soubory a složky z telefonu do počítače</value>
-  </data>
-  <data name="pc2android.ToolTip" xml:space="preserve">
-    <value>Překopíruje vybrané soubory a složky z počítače do telefonu</value>
-  </data>
-  <data name="verticalLabel1.Text" xml:space="preserve">
-    <value>    Obnovit</value>
-  </data>
-  <data name="verticalLabel1.ToolTip" xml:space="preserve">
-    <value>Znovu načte seznam souborů v aktuálním adresáři</value>
-  </data>
-  <data name="cur_path.ToolTip" xml:space="preserve">
-    <value>Aktuálni otevřený adresář na telefonu</value>
-  </data>
-  <data name="explorer_path.ToolTip" xml:space="preserve">
-    <value>Aktuálni otevřený adresář na počítači</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
-    <value>Plynulý progressbar</value>
-  </data>
-  <data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
-    <value>Progress bar při kopírování se aktualizuje pouze když se dokopíruje celý soubor anebo složka, což způsobuje že progress bar může zamrznout při kopírování velkých složek. 
-Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny aby se soubory kopírovali pojednom, takže progress bar bude plynulejší.</value>
-  </data>
-  <data name="checkBox_preview.Text" xml:space="preserve">
-    <value>Zobrazit soubor při dvojkliku</value>
-  </data>
-  <data name="checkBox_preview.ToolTip" xml:space="preserve">
-    <value>Když je soubor dvojkliknut, překopíruje se do dočásné složky na vašem počítači a zobrazí se. 
-Při zavření programu se dočasné soubory smažou
-</value>
-  </data>
-  <data name="checkBox_android6fix.Text" xml:space="preserve">
-    <value>Kompatibilita</value>
-  </data>
-  <data name="checkBox_filedate.Text" xml:space="preserve">
-    <value>Ponechat datum modifikace</value>
-  </data>
+	<data name="android2pc.ToolTip" xml:space="preserve">
+		<value>Copia los archivos y carpetas seleccionados del teléfono a la computadora</value>
+	</data>
+	<data name="pc2android.ToolTip" xml:space="preserve">
+		<value>Copia los archivos y carpetas seleccionados de la computadora al teléfono</value>
+	</data>
+	<data name="verticalLabel1.Text" xml:space="preserve">
+		<value>Actualizar</value>
+	</data>
+	<data name="verticalLabel1.ToolTip" xml:space="preserve">
+		<value>Vuelve a cargar la lista de archivos en el directorio actual</value>
+	</data>
+	<data name="cur_path.ToolTip" xml:space="preserve">
+		<value>Directorio actual abierto en el teléfono</value>
+	</data>
+	<data name="explorer_path.ToolTip" xml:space="preserve">
+		<value>Directorio actual abierto en la computadora</value>
+	</data>
+	<data name="checkBox_unwrapfolders.Text" xml:space="preserve">
+		<value>Barra de progreso continua</value>
+	</data>
+	<data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
+		<value>La barra de progreso se actualiza solo cuando se ha copiado completamente un archivo o carpeta, lo que puede hacer que la barra de progreso se congele al copiar carpetas grandes.
+	Cuando esta opción está activada, las carpetas copiadas se cargarán y ajustarán para que los archivos se copien uno por uno, lo que hará que la barra de progreso sea más fluida.</value>
+	</data>
+	<data name="checkBox_preview.Text" xml:space="preserve">
+		<value>Mostrar archivo al hacer doble clic</value>
+	</data>
+	<data name="checkBox_preview.ToolTip" xml:space="preserve">
+		<value>Cuando se hace doble clic en un archivo, se copia a una carpeta temporal en su computadora y se muestra. Los archivos temporales se eliminarán al cerrar el programa.</value>
+	</data>
+	<data name="checkBox_android6fix.Text" xml:space="preserve">
+		<value>Compatibilidad</value>
+	</data>
+	<data name="checkBox_filedate.Text" xml:space="preserve">
+		<value>Mantener fecha de modificación</value>
+	</data>
+
+
   
   <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

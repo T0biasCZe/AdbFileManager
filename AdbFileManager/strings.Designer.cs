@@ -61,6 +61,52 @@ namespace AdbFileManager {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Even if it may not seem so at times, the files are still copying.
+        ///Please do not close the program if the window freezes..
+        /// </summary>
+        public static string copy_freeze_warn {
+            get {
+                return ResourceManager.GetString("copy_freeze_warn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attr.
+        /// </summary>
+        public static string datagridview_attr {
+            get {
+                return ResourceManager.GetString("datagridview_attr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string datagridview_date {
+            get {
+                return ResourceManager.GetString("datagridview_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string datagridview_name {
+            get {
+                return ResourceManager.GetString("datagridview_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size (KiB).
+        /// </summary>
+        public static string datagridview_size {
+            get {
+                return ResourceManager.GetString("datagridview_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From {source} to {dest}.
         /// </summary>
         public static string fromto {
@@ -70,7 +116,8 @@ namespace AdbFileManager {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unwrapping folders.\nOne moment please....
+        ///   Looks up a localized string similar to Unwrapping folders.
+        ///One moment please....
         /// </summary>
         public static string unwrap_wait {
             get {

@@ -21,6 +21,7 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 using TaskDialogButton = System.Windows.Forms.TaskDialogButton;
 using TaskDialog = System.Windows.Forms.TaskDialog;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Timer = System.Windows.Forms.Timer;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -28,6 +29,8 @@ namespace AdbFileManager {
 		public string directoryPath = "/sdcard/";
 		public string tempPath = Path.GetTempPath() + "adbfilemanager\\";
 		public bool temp_folder_created = false;
+
+		public static ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 		public Form1() {
 			_Form1 = this;
 			load_lang();
@@ -72,11 +75,18 @@ namespace AdbFileManager {
 			process.StartInfo.UseShellExecute = false;
 			Cursor.Current = Cursors.WaitCursor;
 			process.Start();
+			process.WaitForExit();
 
 			process.StartInfo.Arguments = "/c " + command;
 			process.Start();
 			string output = process.StandardOutput.ReadToEnd();
-			process.WaitForExit();
+
+			Task handle = process.WaitForExitAsync();
+
+			while(!handle.IsCompleted) {
+				Application.DoEvents();
+			}
+
 			Cursor.Current = Cursors.Default;
 			return output;
 		}
@@ -114,7 +124,7 @@ namespace AdbFileManager {
 
 							if(!temp_folder_created) {
 								Directory.CreateDirectory(tempPath);
-								temp_folder_created = true	;
+								temp_folder_created = true;
 							}
 							string command = $"adb pull \"{sourcePath}\" \"{destinationPath}\"";
 							Process process = new Process();
@@ -136,7 +146,7 @@ namespace AdbFileManager {
 
 					}
 					else MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
-					
+
 				}
 				else {
 					directoryPath = directoryPath + name + "/";
@@ -184,9 +194,10 @@ namespace AdbFileManager {
 				pgm.set(rm.GetString("unwrap_wait"), rm.GetString("unwrap_wait_title"));
 				pgm.Show(); pgm.BringToFront(); pgm.Activate(); pgm.Focus();
 
-				//go through the list, and if there is folder, remove it and add it's contents to the list.
+			//go through the list, and if there is folder, remove it and add it's contents to the list.
 			restart:;
 				for(int i = 0; i < files.Count; i++) {
+					pgm.redraw();
 					File file = files[i];
 					if(Functions.isFolder(file)) {
 						Console.WriteLine("unwraping folder: " + file.name);
@@ -202,6 +213,7 @@ namespace AdbFileManager {
 							bool isDirectory = Functions.isFolder(permissions);
 							newfiles.Add(new File(file.name + "/" + name, size, datee, permissions, isDirectory));
 							Console.WriteLine("added file: " + name);
+							pgm.redraw();
 						}
 						files.AddRange(newfiles);
 						if(pgm.cancel) {
@@ -211,8 +223,8 @@ namespace AdbFileManager {
 						goto restart;
 					}
 				}
+				pgm.delete();
 			}
-
 			int filecount = files.Count();
 			int copied = 0;
 			Form2 progressbar = new Form2();
@@ -228,7 +240,11 @@ namespace AdbFileManager {
 				string destinationFile = $"\"{destinationFolder.Replace('\\', '/')}/{file.name}\"";
 				Console.WriteLine(destinationFile);
 				string command = $"adb pull {date} \"{sourcefile}\" {destinationFile}";
-				System.IO.Directory.CreateDirectory(Path.GetDirectoryName(destinationFile));
+				string final_directory = Path.GetDirectoryName(destinationFile).Replace("\"", "");
+				if(!Directory.Exists(final_directory)) {
+					Console.WriteLine("Creating directory: " + final_directory);
+					Directory.CreateDirectory(final_directory);
+				}
 				Console.WriteLine(command);
 				progressbar.update(copied, filecount, directoryPath, destinationFolder, file.name);
 				Console.WriteLine(adb(command));
@@ -434,8 +450,8 @@ namespace AdbFileManager {
 			comboBox_lang.Items.Add("Japanese");
 			comboBox_lang.Items.Add("Espanol");
 
-			if(Properties.Settings.Default.lang != null) { 
-				comboBox_lang.SelectedItem = Properties.Settings.Default.lang; 
+			if(Properties.Settings.Default.lang != null) {
+				comboBox_lang.SelectedItem = Properties.Settings.Default.lang;
 			}
 			else {
 				comboBox_lang.SelectedItem = "English";
@@ -444,7 +460,7 @@ namespace AdbFileManager {
 		}
 		private void load_lang() {
 			ushort? loaded_lang = Properties.Settings.Default.lang;
-            if(loaded_lang == null) loaded_lang = (ushort)Languages.English;
+			if(loaded_lang == null) loaded_lang = (ushort)Languages.English;
 			switch((Languages)loaded_lang) {
 				case Languages.English:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
@@ -459,14 +475,15 @@ namespace AdbFileManager {
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
 					break;
 				case Languages.Japanese:
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("jp");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
+					MessageBox.Show("rozsypany caj");
 					break;
 				case Languages.Espanol:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
 					break;
 			}
 
-        }
+		}
 	}
 
 	public static class Functions {
@@ -507,10 +524,14 @@ namespace AdbFileManager {
 				var dgv = new DataTable();
 
 				dgv.Columns.Add("ico", typeof(Icon));
-				dgv.Columns.Add("Name (double click here to go up)");
+				/*dgv.Columns.Add("Name");
 				dgv.Columns.Add("Size (KiB)", typeof(decimal));
 				dgv.Columns.Add("Date", typeof(DateTime));
-				dgv.Columns.Add("Attr");
+				dgv.Columns.Add("Attr");*/
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_name"));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_size"), typeof(decimal));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_date"), typeof(DateTime));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_attr"));
 
 				foreach(string filee in files.Skip(1)) {
 					string file = filee.Trim();

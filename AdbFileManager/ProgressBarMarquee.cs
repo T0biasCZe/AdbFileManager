@@ -28,5 +28,13 @@ namespace AdbFileManager {
 			TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress);
 			this.Close();
 		}
+		public void redraw() {
+			progressBar1.Invalidate();
+			progressBar1.Update();
+			progressBar1.Refresh();
+			this.Invalidate();
+			this.Update();
+			this.Refresh();
+		}
 	}
 }

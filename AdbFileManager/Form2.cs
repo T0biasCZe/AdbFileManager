@@ -15,11 +15,14 @@ using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace AdbFileManager {
 	public partial class Form2 : Form {
-		public Form2() { 
+		public Form2() {
 			InitializeComponent();
 			TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
+
+			ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
+			label_freezewarn.Text = rm.GetString("copy_freeze_warn");
 		}
-		public void update(int current, int max, string source, string dest, string filenamee) { 
+		public void update(int current, int max, string source, string dest, string filenamee) {
 			//set fromto.Text to variable "fromto" in resource strings.resx
 			ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 			fromto.Text = rm.GetString("fromto").Replace("{source}", source).Replace("{dest}", dest);

@@ -118,29 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copy_freeze_warn" xml:space="preserve">
-    <value>Ikdyž se to nezdá, soubory se stále kopírují.
-Prosím nezavírejte program pokud okno zamrzne</value>
+    <value>時折そう思えなくても、ファイルはまだコピーされています。
+ウィンドウがフリーズしてもプログラムを閉じないでください。</value>
   </data>
   <data name="datagridview_attr" xml:space="preserve">
-    <value>Attributy</value>
+    <value>属性</value>
   </data>
   <data name="datagridview_date" xml:space="preserve">
-    <value>Datum modifikace</value>
+    <value>日付</value>
   </data>
   <data name="datagridview_name" xml:space="preserve">
-    <value>Název souboru</value>
+    <value>名前</value>
   </data>
   <data name="datagridview_size" xml:space="preserve">
-    <value>Velikost (KiB)</value>
+    <value>サイズ（KiB）</value>
   </data>
   <data name="fromto" xml:space="preserve">
-    <value>Z {source} do {dest}</value>
+    <value>{source} から {dest} へ</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
-    <value>Probíhá rozbalování složek.
-Prosím vydržte chvilku...</value>
+    <value>フォルダを展開しています。
+しばらくお待ちください...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
-    <value>Rozbalování složek.</value>
+    <value>フォルダの展開</value>
   </data>
 </root>

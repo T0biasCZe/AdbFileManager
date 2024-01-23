@@ -48,11 +48,10 @@
 			// 
 			// label1
 			// 
-			label1.AutoSize = true;
 			label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-			label1.Location = new Point(123, 9);
+			label1.Location = new Point(0, 9);
 			label1.Name = "label1";
-			label1.Size = new Size(50, 20);
+			label1.Size = new Size(304, 39);
 			label1.TabIndex = 2;
 			label1.Text = "label1";
 			label1.TextAlign = ContentAlignment.TopCenter;
@@ -62,19 +61,18 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(306, 112);
-			Controls.Add(label1);
 			Controls.Add(button1);
 			Controls.Add(progressBar1);
+			Controls.Add(label1);
 			Name = "ProgressBarMarquee";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "ProgressBarMarquee";
 			ResumeLayout(false);
-			PerformLayout();
 		}
 
 		#endregion
-
-		private ProgressBar progressBar1;
 		private Button button1;
 		private Label label1;
+		public ProgressBar progressBar1;
 	}
 }
