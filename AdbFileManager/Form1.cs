@@ -22,6 +22,7 @@ using TaskDialogButton = System.Windows.Forms.TaskDialogButton;
 using TaskDialog = System.Windows.Forms.TaskDialog;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Timer = System.Windows.Forms.Timer;
+using Microsoft.WindowsAPICodePack.Controls;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -264,9 +265,18 @@ namespace AdbFileManager {
 		}
 
 		private void dataGridView1_KeyDown(object sender, KeyEventArgs e) {
-			Console.WriteLine("Key pressed: " + e.KeyValue);
+			Console.WriteLine("Key pressed in datagrid: " + e.KeyValue);
 			if(e.KeyCode == Keys.Enter) {
 				clickedFolder();
+			}
+			else if(e.KeyCode == Keys.Back) {
+				goUpDirectory();
+			}
+		}
+		private void explorerBrowser1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e) {
+			Console.WriteLine("Key pressed in explorer: " + e.KeyValue);
+			if(e.KeyCode == Keys.Enter) {
+				explorerBrowser1.Navigate(explorerBrowser1.NavigationLog.CurrentLocation);
 			}
 			else if(e.KeyCode == Keys.Back) {
 				goUpDirectory();
@@ -476,7 +486,6 @@ namespace AdbFileManager {
 					break;
 				case Languages.Japanese:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
-					MessageBox.Show("rozsypany caj");
 					break;
 				case Languages.Espanol:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
@@ -484,6 +493,44 @@ namespace AdbFileManager {
 			}
 
 		}
+		private void buttonback_MouseLeave(object sender, EventArgs e) {
+			this.button_back.Image = Properties.Resources.travel_back_enabled;
+		}
+
+		private void buttonback_MouseEnter(object sender, EventArgs e) {
+			this.button_back.Image = Properties.Resources.travel_hot_back;
+		}
+
+		private void buttonback_MouseDown(object sender, MouseEventArgs e) {
+			this.button_back.Image = Properties.Resources.travel_pressed_back;
+		}
+		private void buttonback_MouseUp(object sender, MouseEventArgs e) {
+			this.button_back.Image = Properties.Resources.travel_hot_back;
+		}
+
+		private void buttonforward_MouseLeave(object sender, EventArgs e) {
+			this.button_forward.Image = Properties.Resources.travel_forward_enabled;
+		}
+
+		private void buttonforward_MouseEnter(object sender, EventArgs e) {
+			this.button_forward.Image = Properties.Resources.travel_hot_forward;
+		}
+
+		private void buttonforward_MouseDown(object sender, MouseEventArgs e) {
+			this.button_forward.Image = Properties.Resources.travel_hot_forward;
+		}
+		private void buttonforward_MouseUp(object sender, MouseEventArgs e) {
+			this.button_forward.Image = Properties.Resources.travel_hot_forward;
+		}
+
+		private void button_back_Click(object sender, EventArgs e) {
+			explorerBrowser1.NavigateLogLocation(NavigationLogDirection.Backward);
+		}
+
+		private void button_forward_Click(object sender, EventArgs e) {
+			explorerBrowser1.NavigateLogLocation(NavigationLogDirection.Forward);
+		}
+
 	}
 
 	public static class Functions {

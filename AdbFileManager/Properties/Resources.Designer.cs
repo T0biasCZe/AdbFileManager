@@ -61,12 +61,72 @@ namespace AdbFileManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3e1805b
+        ///   Looks up a localized string similar to 06a4800
         ///.
         /// </summary>
         public static string CurrentCommit {
             get {
                 return ResourceManager.GetString("CurrentCommit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_back_enabled {
+            get {
+                object obj = ResourceManager.GetObject("travel_back_enabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_forward_enabled {
+            get {
+                object obj = ResourceManager.GetObject("travel_forward_enabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_hot_back {
+            get {
+                object obj = ResourceManager.GetObject("travel_hot_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_hot_forward {
+            get {
+                object obj = ResourceManager.GetObject("travel_hot_forward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_pressed_back {
+            get {
+                object obj = ResourceManager.GetObject("travel_pressed_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_pressed_forward {
+            get {
+                object obj = ResourceManager.GetObject("travel_pressed_forward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

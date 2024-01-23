@@ -121,4 +121,22 @@
   <data name="CurrentCommit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CurrentCommit.txt;System.String, mscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1250</value>
   </data>
+  <data name="travel_back_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel_back_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel_forward_enabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel_forward_enabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel_hot_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel_hot_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel_hot_forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel_hot_forward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel_pressed_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel_pressed_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel_pressed_forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel_pressed_forward.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

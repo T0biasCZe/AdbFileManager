@@ -37,8 +37,10 @@
 			timer1 = new System.Windows.Forms.Timer(components);
 			cur_path = new TextBox();
 			panel1 = new Panel();
-			panel3 = new Panel();
+			button_back = new Button();
+			button_forward = new Button();
 			explorer_path = new TextBox();
+			panel3 = new Panel();
 			panel2 = new Panel();
 			comboBox_lang = new ComboBox();
 			checkBox_unwrapfolders = new CheckBox();
@@ -97,6 +99,7 @@
 			toolTip1.SetToolTip(explorerBrowser1, resources.GetString("explorerBrowser1.ToolTip"));
 			explorerBrowser1.NavigationComplete += explorerBrowser1_NavigationComplete;
 			explorerBrowser1.Load += explorerBrowser1_Load;
+			explorerBrowser1.PreviewKeyDown += explorerBrowser1_PreviewKeyDown;
 			// 
 			// android2pc
 			// 
@@ -162,12 +165,49 @@
 			// panel1
 			// 
 			resources.ApplyResources(panel1, "panel1");
+			panel1.Controls.Add(button_back);
+			panel1.Controls.Add(button_forward);
 			panel1.Controls.Add(explorer_path);
 			panel1.Controls.Add(explorerBrowser1);
 			panel1.Controls.Add(panel3);
 			panel1.Controls.Add(panel2);
 			panel1.Name = "panel1";
 			toolTip1.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
+			// 
+			// button_back
+			// 
+			resources.ApplyResources(button_back, "button_back");
+			button_back.FlatAppearance.BorderSize = 0;
+			button_back.Image = Properties.Resources.travel_back_enabled;
+			button_back.Name = "button_back";
+			toolTip1.SetToolTip(button_back, resources.GetString("button_back.ToolTip"));
+			button_back.UseVisualStyleBackColor = true;
+			button_back.Click += button_back_Click;
+			button_back.MouseDown += buttonback_MouseDown;
+			button_back.MouseEnter += buttonback_MouseEnter;
+			button_back.MouseLeave += buttonback_MouseLeave;
+			button_back.MouseUp += buttonback_MouseUp;
+			// 
+			// button_forward
+			// 
+			resources.ApplyResources(button_forward, "button_forward");
+			button_forward.FlatAppearance.BorderSize = 0;
+			button_forward.Image = Properties.Resources.travel_forward_enabled;
+			button_forward.Name = "button_forward";
+			toolTip1.SetToolTip(button_forward, resources.GetString("button_forward.ToolTip"));
+			button_forward.UseVisualStyleBackColor = true;
+			button_forward.Click += button_forward_Click;
+			button_forward.MouseDown += buttonforward_MouseDown;
+			button_forward.MouseEnter += buttonforward_MouseEnter;
+			button_forward.MouseLeave += buttonforward_MouseLeave;
+			button_forward.MouseUp += buttonforward_MouseUp;
+			// 
+			// explorer_path
+			// 
+			resources.ApplyResources(explorer_path, "explorer_path");
+			explorer_path.Name = "explorer_path";
+			toolTip1.SetToolTip(explorer_path, resources.GetString("explorer_path.ToolTip"));
+			explorer_path.KeyPress += explorer_path_KeyPress;
 			// 
 			// panel3
 			// 
@@ -178,13 +218,6 @@
 			panel3.Controls.Add(verticalLabel2);
 			panel3.Name = "panel3";
 			toolTip1.SetToolTip(panel3, resources.GetString("panel3.ToolTip"));
-			// 
-			// explorer_path
-			// 
-			resources.ApplyResources(explorer_path, "explorer_path");
-			explorer_path.Name = "explorer_path";
-			toolTip1.SetToolTip(explorer_path, resources.GetString("explorer_path.ToolTip"));
-			explorer_path.KeyPress += explorer_path_KeyPress;
 			// 
 			// panel2
 			// 
@@ -279,7 +312,6 @@
 		private TextBox textBox1;
 		private TextBox textBox2;
 		public TextBox textBox3;
-		private Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
 		private Button android2pc;
 		private Button pc2android;
 		public DataGridView dataGridView1;
@@ -299,5 +331,8 @@
 		private CheckBox checkBox_unwrapfolders;
 		public ComboBox comboBox_lang;
 		private Panel panel3;
+		private Button button_back;
+		private Button button_forward;
+		public Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
 	}
 }
