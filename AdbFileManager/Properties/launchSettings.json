@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "AdbFileManager": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DpiAwareness": "false",
+        "EnableWindowsFormsHighDpiAutoResizing": "false",
+        "DataGridView.DisableHighDpiImprovements": "false"
+      },
+      "hotReloadEnabled": false,
+      "remoteDebugEnabled": false
+    }
+  }
+}
