@@ -41,6 +41,9 @@ namespace AdbFileManager {
 			load_lang_combobox();
 			load_settings();
 
+
+			checkBox_android6fix.Enabled = true;
+
 			this.Controls.Add(panel2);
 			panel1.Controls.Remove(panel2);
 			panel2.BringToFront();
@@ -62,7 +65,7 @@ namespace AdbFileManager {
 			Console.WindowHeight = 20;
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
-			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()}  23.01.24";
+			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} B 09.02.24";
 			version.Text = versionn;
 			Console.WriteLine(versionn);
 		}

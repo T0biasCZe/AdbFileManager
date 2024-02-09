@@ -265,6 +265,8 @@
 			// checkBox_android6fix
 			// 
 			resources.ApplyResources(checkBox_android6fix, "checkBox_android6fix");
+			checkBox_android6fix.Checked = true;
+			checkBox_android6fix.CheckState = CheckState.Checked;
 			checkBox_android6fix.Name = "checkBox_android6fix";
 			toolTip1.SetToolTip(checkBox_android6fix, resources.GetString("checkBox_android6fix.ToolTip"));
 			checkBox_android6fix.UseVisualStyleBackColor = true;
