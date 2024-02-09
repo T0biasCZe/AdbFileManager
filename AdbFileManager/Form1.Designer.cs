@@ -125,7 +125,7 @@
 			verticalLabel1.BackColor = SystemColors.ControlLight;
 			verticalLabel1.ForeColor = SystemColors.ControlText;
 			verticalLabel1.Name = "verticalLabel1";
-			verticalLabel1.RenderingMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
+			verticalLabel1.RenderingMode = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 			verticalLabel1.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
 			toolTip1.SetToolTip(verticalLabel1, resources.GetString("verticalLabel1.ToolTip"));
 			verticalLabel1.TransparentBackground = false;
