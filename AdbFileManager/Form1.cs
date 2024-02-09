@@ -62,7 +62,7 @@ namespace AdbFileManager {
 			Console.WindowHeight = 20;
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
-			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()}  18.12.23";
+			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()}  23.01.24";
 			version.Text = versionn;
 			Console.WriteLine(versionn);
 		}
@@ -553,14 +553,15 @@ namespace AdbFileManager {
 		}
 
 		public static DataTable getDir(string directoryPath, bool old_android) {
+			if(old_android) return legacyAndroid.getDir(directoryPath);
+
 			// Retrieve a list of files in the specified directory
-			string command = old_android ? $"adb shell ls -lL \"'{directoryPath}'\"" : $"adb shell ls -l \"'{directoryPath}'\"";
+
+			string command = $"adb shell ls -lL \"{directoryPath}\"";
 			Console.WriteLine(command);
 			string output = Form1.adb(command);
 			string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-			/*string[] filteredLines = lines.SkipWhile(line => line == "* daemon not running; starting now at tcp:5037" ||
-															 line == "* daemon started successfully" ||
-															 line.StartsWith("total ")).ToArray();*/
+
 			string filteredOutput = string.Join(Environment.NewLine, lines);
 			Console.WriteLine(filteredOutput);
 			Cursor.Current = Cursors.Default;

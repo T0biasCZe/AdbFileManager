@@ -11,15 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="CurrentCommit.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="w7 transfer.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="CurrentCommit.txt" />
   </ItemGroup>
 
   <ItemGroup>
