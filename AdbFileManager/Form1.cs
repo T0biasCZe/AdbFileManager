@@ -51,7 +51,16 @@ namespace AdbFileManager {
 			dataGridView1.RowHeadersWidth = 4;
 			Console.WriteLine("datagrid virtual mode: " + dataGridView1.VirtualMode);
 			dataGridView1.VirtualMode = false;
-			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+			//dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+			DataTable blank = new DataTable();
+			//add header to blank
+			blank.Columns.Add("ico", typeof(Icon));
+			blank.Columns.Add("Name");
+			blank.Columns.Add("Size");
+			blank.Columns.Add("Date");
+			blank.Columns.Add("Attr");
+			blank.Rows.Add(new Icon(@"icons\file.ico"), "Loading plz wait", 0, DateTime.UnixEpoch);
+			dataGridView1.DataSource = blank;
 
 			DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView1.Columns[0];
 			img.ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -90,6 +99,7 @@ namespace AdbFileManager {
 			while(!handle.IsCompleted) {
 				Application.DoEvents();
 			}
+			Application.DoEvents();
 
 			Cursor.Current = Cursors.Default;
 			return output;
@@ -114,12 +124,13 @@ namespace AdbFileManager {
 		}
 
 		private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
+			Console.WriteLine("CellMouseDoubleClick()");
 			if(e.RowIndex >= 0) {
 				string name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
 				string size = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 				string date = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
 				string permissions = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-				if(!Functions.isFolder(permissions)) {
+				if(!Functions.isFolder(permissions, checkBox_android6fix.Checked)) {
 					if(checkBox_preview.Checked) {
 						if(Functions.videoExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase)) || Functions.imageExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase)) || Functions.audioExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) {
 							//copy file to temp folder
@@ -154,26 +165,13 @@ namespace AdbFileManager {
 				}
 				else {
 					directoryPath = directoryPath + name + "/";
+					cur_path_modifyInternal = true;
 					cur_path.Text = directoryPath;
+					cur_path_modifyInternal = false;
 					//MessageBox.Show(directoryPath);
 					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 				}
 			}
-		}
-		private int ParseProgress(string line) {
-			// Assuming the progress is represented as a percentage in the output line
-			// and it's always at the start of the line in the format of "[x%]"
-			int startIndex = line.IndexOf('[');
-			int endIndex = line.IndexOf(']');
-			if(startIndex != -1 && endIndex != -1 && endIndex > startIndex) {
-				string progressString = line.Substring(startIndex + 1, endIndex - startIndex - 1).TrimEnd('%');
-				if(int.TryParse(progressString, out int progress)) {
-					return progress;
-				}
-			}
-
-			// Return -1 if the progress could not be parsed
-			return -1;
 		}
 		bool copying = false;
 		private void android2pc_Click(object sender, EventArgs e) {
@@ -188,7 +186,7 @@ namespace AdbFileManager {
 				string size = row.Cells[2].Value.ToString();
 				string datee = row.Cells[3].Value.ToString();
 				string permissions = row.Cells[4].Value.ToString();
-				bool isDirectory = Functions.isFolder(permissions);
+				bool isDirectory = Functions.isFolder(permissions, checkBox_android6fix.Checked);
 				files.Add(new File(name, size, datee, permissions, isDirectory));
 			}
 
@@ -203,7 +201,7 @@ namespace AdbFileManager {
 				for(int i = 0; i < files.Count; i++) {
 					pgm.redraw();
 					File file = files[i];
-					if(Functions.isFolder(file)) {
+					if(Functions.isFolder(file, checkBox_android6fix.Checked)) {
 						Console.WriteLine("unwraping folder: " + file.name);
 						DataTable newfiles_table = Functions.getDir(directoryPath + file.name, checkBox_android6fix.Checked);
 						Console.WriteLine("removed folder status: " + files.Remove(file));
@@ -214,7 +212,7 @@ namespace AdbFileManager {
 							string size = row.ItemArray[2].ToString();
 							string datee = row.ItemArray[3].ToString();
 							string permissions = row.ItemArray[4].ToString();
-							bool isDirectory = Functions.isFolder(permissions);
+							bool isDirectory = Functions.isFolder(permissions, checkBox_android6fix.Checked);
 							newfiles.Add(new File(file.name + "/" + name, size, datee, permissions, isDirectory));
 							Console.WriteLine("added file: " + name);
 							pgm.redraw();
@@ -286,6 +284,7 @@ namespace AdbFileManager {
 			}
 		}
 		void clickedFolder() {
+			Console.WriteLine("clickedFolder();");
 			int rowIndex = dataGridView1.CurrentCell.RowIndex;
 			if(rowIndex >= 0) {
 				string name = dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
@@ -304,6 +303,7 @@ namespace AdbFileManager {
 		}
 
 		void goUpDirectory() {
+			Console.WriteLine("goUpDirectory();");
 			if(directoryPath.EndsWith("/")) {
 				int length = directoryPath.Length - 1;
 				int lastIndex = directoryPath.Substring(0, length - 1).LastIndexOf("/");
@@ -319,15 +319,22 @@ namespace AdbFileManager {
 
 				directoryPath = directoryPath.Substring(0, lastIndex + 1);
 			}
+			cur_path_modifyInternal = true;
 			cur_path.Text = directoryPath;
+			cur_path_modifyInternal = false;
 			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 		}
 		private void timer1_Tick(object sender, EventArgs e) {
+			Console.WriteLine("timer ticked");
 
-			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
-			cur_path.Text = directoryPath;
 			timer1.Stop();
 			timer1.Enabled = false;
+
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+
+			cur_path_modifyInternal = true;
+			cur_path.Text = directoryPath;
+			cur_path_modifyInternal = false;
 		}
 
 		private void pc2android_Click(object sender, EventArgs e) {
@@ -354,7 +361,13 @@ namespace AdbFileManager {
 			copying = false;
 		}
 
+		bool cur_path_modifyInternal = false;
 		private void cur_path_TextChanged(object sender, EventArgs e) {
+			Console.WriteLine("cur_path_TextChanged();");
+			if(cur_path_modifyInternal) {
+				Console.WriteLine("cur_path_TextChanged false");
+				return;
+			}
 			directoryPath = cur_path.Text;
 			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
 		}
@@ -545,12 +558,14 @@ namespace AdbFileManager {
 		public static string[] archiveExtensions = { ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz" };
 		public static string[] executableExtensions = { ".exe", ".dll", ".bat", ".msi", ".jar", ".py", ".sh", ".apk" };
 
-		public static bool isFolder(string path) {
+		public static bool isFolder(string path, bool old_android) {
+			if(old_android) return legacyAndroid.isFolder(path);
 			if(path == null) return false;
 			if(path.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
 			else return false;
 		}
-		public static bool isFolder(File file) {
+		public static bool isFolder(File file, bool old_android) {
+			if(old_android) return legacyAndroid.isFolder(file);
 			if(file.permissions.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
 			else return false;
 		}
@@ -604,7 +619,7 @@ namespace AdbFileManager {
 							string name = string.Join(' ', attributes.Skip(7));
 							Icon icon;
 							try {
-								if(isFolder(permissions)) {
+								if(isFolder(permissions, old_android)) {
 									if(file.Contains("dcim", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_image;
 									else if(file.EndsWith(@"download", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_downloads;
 									else if(file.EndsWith(@"music", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;

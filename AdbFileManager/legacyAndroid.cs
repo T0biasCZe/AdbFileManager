@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.XPath;
 
 namespace AdbFileManager {
@@ -35,13 +36,14 @@ namespace AdbFileManager {
 					try {
 						if(!string.IsNullOrWhiteSpace(name)) {
 							// Attempt to change the directory to determine if it's a folder
-							bool isFolder = false;
+							/*bool isFolder = false;
 							string wholePath = directoryPath + "/" + name;
 							string cdCommand = $"adb shell ls \"{wholePath}\"";
 							string cdOutput = Form1.adb(cdCommand);
 							if(!cdOutput.Trim().Equals(wholePath.Trim())) {
 								isFolder = true;
-							}
+							}*/
+							bool isFolder = legacyAndroid.isFolder(directoryPath + "/" + name);
 
 
 
@@ -120,6 +122,21 @@ namespace AdbFileManager {
 
 				return dgv;
 			}
+		}
+		public static bool isFolder(string path) {
+			bool isFolder = false;
+			//string wholePath = directoryPath + "/" + name;
+			Console.Write($"checking if \"{path}\" is a folder: ");
+			string cdCommand = $"adb shell ls \"{path}\"";
+			string cdOutput = Form1.adb(cdCommand);
+			if(!cdOutput.Trim().Equals(path.Trim())) {
+				isFolder = true;
+			}
+			Console.WriteLine(isFolder);
+			return isFolder;
+		}
+		public static bool isFolder(File file) {
+			return legacyAndroid.isFolder(file.name);
 		}
 	}
 }
