@@ -10,6 +10,9 @@ assignees: T0biasCZe
 **Describe the bug**
 A clear and concise description of what the bug is.
 
+**Unhandled exception log**
+*if appliable, please copy the detailed exception from the "details" section in the unhandled exception dialog*
+
 **To Reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
