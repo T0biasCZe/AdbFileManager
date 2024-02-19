@@ -82,5 +82,17 @@ namespace AdbFileManager.Properties {
                 this["compatibility"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool compatibility_fast {
+            get {
+                return ((bool)(this["compatibility_fast"]));
+            }
+            set {
+                this["compatibility_fast"] = value;
+            }
+        }
     }
 }

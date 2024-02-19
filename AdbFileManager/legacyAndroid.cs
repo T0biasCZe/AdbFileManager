@@ -9,6 +9,7 @@ using System.Xml.XPath;
 
 namespace AdbFileManager {
 	public static class legacyAndroid {
+		public static bool fastcompatibility = false;
 		public static DataTable getDir(string directoryPath) {
 			// Retrieve a list of files in the specified directory without additional details
 			string command = $"adb shell ls \"{directoryPath}\"";
@@ -43,7 +44,7 @@ namespace AdbFileManager {
 							if(!cdOutput.Trim().Equals(wholePath.Trim())) {
 								isFolder = true;
 							}*/
-							bool isFolder = legacyAndroid.isFolder(directoryPath + "/" + name);
+							bool isFolder = legacyAndroid.isFolder(directoryPath + "/" + name, fastcompatibility);
 
 
 
@@ -123,7 +124,8 @@ namespace AdbFileManager {
 				return dgv;
 			}
 		}
-		public static bool isFolder(string path) {
+		public static bool isFolder(string path, bool fastmode) {
+			if(fastmode) return isFolder_fastmode(path);
 			bool isFolder = false;
 			//string wholePath = directoryPath + "/" + name;
 			Console.Write($"checking if \"{path}\" is a folder: ");
@@ -135,8 +137,17 @@ namespace AdbFileManager {
 			Console.WriteLine(isFolder);
 			return isFolder;
 		}
-		public static bool isFolder(File file) {
-			return legacyAndroid.isFolder(file.name);
+		public static bool isFolder_fastmode(string path) {
+			bool isFolder = false;
+			//check if file has extension, if not, it's a folder
+			Console.Write($"fastchecking if \"{path}\" is a folder: ");
+			if(!path.Contains(".")) isFolder = true;
+			Console.WriteLine(isFolder);
+			return isFolder;
 		}
+		public static bool isFolder(File file, bool fastmode) {
+			return legacyAndroid.isFolder(file.name, fastmode);
+		}
+
 	}
 }

@@ -42,6 +42,7 @@
 			explorer_path = new TextBox();
 			panel3 = new Panel();
 			panel2 = new Panel();
+			checkBox_android6fix_fastmode = new CheckBox();
 			comboBox_lang = new ComboBox();
 			checkBox_unwrapfolders = new CheckBox();
 			checkBox_preview = new CheckBox();
@@ -223,6 +224,7 @@
 			// 
 			resources.ApplyResources(panel2, "panel2");
 			panel2.BackColor = Color.FromArgb(192, 255, 255);
+			panel2.Controls.Add(checkBox_android6fix_fastmode);
 			panel2.Controls.Add(comboBox_lang);
 			panel2.Controls.Add(checkBox_unwrapfolders);
 			panel2.Controls.Add(checkBox_preview);
@@ -232,6 +234,13 @@
 			panel2.Controls.Add(checkBox_filedate);
 			panel2.Name = "panel2";
 			toolTip1.SetToolTip(panel2, resources.GetString("panel2.ToolTip"));
+			// 
+			// checkBox_android6fix_fastmode
+			// 
+			resources.ApplyResources(checkBox_android6fix_fastmode, "checkBox_android6fix_fastmode");
+			checkBox_android6fix_fastmode.Name = "checkBox_android6fix_fastmode";
+			toolTip1.SetToolTip(checkBox_android6fix_fastmode, resources.GetString("checkBox_android6fix_fastmode.ToolTip"));
+			checkBox_android6fix_fastmode.UseVisualStyleBackColor = true;
 			// 
 			// comboBox_lang
 			// 
@@ -268,6 +277,7 @@
 			checkBox_android6fix.Name = "checkBox_android6fix";
 			toolTip1.SetToolTip(checkBox_android6fix, resources.GetString("checkBox_android6fix.ToolTip"));
 			checkBox_android6fix.UseVisualStyleBackColor = true;
+			checkBox_android6fix.CheckedChanged += checkBox_android6fix_CheckedChanged;
 			// 
 			// version
 			// 
@@ -334,5 +344,6 @@
 		private Button button_back;
 		private Button button_forward;
 		public Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
+		private CheckBox checkBox_android6fix_fastmode;
 	}
 }

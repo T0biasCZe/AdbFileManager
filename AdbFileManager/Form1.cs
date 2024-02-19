@@ -74,7 +74,7 @@ namespace AdbFileManager {
 			Console.WindowHeight = 20;
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
-			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} B 09.02.24";
+			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 19.02.24";
 			version.Text = versionn;
 			Console.WriteLine(versionn);
 		}
@@ -105,7 +105,7 @@ namespace AdbFileManager {
 			return output;
 		}
 		private void verticalLabel1_Click(object sender, EventArgs e) {
-			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
 
 		private void explorerBrowser1_Load(object sender, EventArgs e) {
@@ -169,7 +169,7 @@ namespace AdbFileManager {
 					cur_path.Text = directoryPath;
 					cur_path_modifyInternal = false;
 					//MessageBox.Show(directoryPath);
-					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 				}
 			}
 		}
@@ -203,7 +203,7 @@ namespace AdbFileManager {
 					File file = files[i];
 					if(Functions.isFolder(file, checkBox_android6fix.Checked)) {
 						Console.WriteLine("unwraping folder: " + file.name);
-						DataTable newfiles_table = Functions.getDir(directoryPath + file.name, checkBox_android6fix.Checked);
+						DataTable newfiles_table = Functions.getDir(directoryPath + file.name, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 						Console.WriteLine("removed folder status: " + files.Remove(file));
 						List<File> newfiles = new List<File>();
 						foreach(DataRow row in newfiles_table.Rows) {
@@ -297,7 +297,7 @@ namespace AdbFileManager {
 					directoryPath = directoryPath + name + "/";
 					cur_path.Text = directoryPath;
 					//MessageBox.Show(directoryPath);
-					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+					dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 				}
 			}
 		}
@@ -322,7 +322,7 @@ namespace AdbFileManager {
 			cur_path_modifyInternal = true;
 			cur_path.Text = directoryPath;
 			cur_path_modifyInternal = false;
-			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
 		private void timer1_Tick(object sender, EventArgs e) {
 			Console.WriteLine("timer ticked");
@@ -330,7 +330,7 @@ namespace AdbFileManager {
 			timer1.Stop();
 			timer1.Enabled = false;
 
-			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked,  checkBox_android6fix_fastmode.Checked);
 
 			cur_path_modifyInternal = true;
 			cur_path.Text = directoryPath;
@@ -369,7 +369,7 @@ namespace AdbFileManager {
 				return;
 			}
 			directoryPath = cur_path.Text;
-			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+			dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
@@ -455,6 +455,7 @@ namespace AdbFileManager {
 			Properties.Settings.Default.smooth_progressbar = checkBox_unwrapfolders.Checked;
 			Properties.Settings.Default.keep_modification_date = checkBox_filedate.Checked;
 			Properties.Settings.Default.compatibility = checkBox_android6fix.Checked;
+			Properties.Settings.Default.compatibility_fast = checkBox_android6fix_fastmode.Checked;
 
 			Properties.Settings.Default.lang = (ushort)comboBox_lang.SelectedIndex;
 			Properties.Settings.Default.Save();
@@ -464,6 +465,7 @@ namespace AdbFileManager {
 			checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
 			checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
 			checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
+			checkBox_android6fix_fastmode.Checked = Properties.Settings.Default.compatibility_fast;
 			comboBox_lang.SelectedIndex = Properties.Settings.Default.lang;
 		}
 		private void load_lang_combobox() {
@@ -547,6 +549,10 @@ namespace AdbFileManager {
 			explorerBrowser1.NavigateLogLocation(NavigationLogDirection.Forward);
 		}
 
+		private void checkBox_android6fix_CheckedChanged(object sender, EventArgs e) {
+			if(checkBox_android6fix.Checked) checkBox_android6fix_fastmode.Visible = true;
+			else checkBox_android6fix_fastmode.Visible = false;
+		}
 	}
 
 	public static class Functions {
@@ -557,21 +563,25 @@ namespace AdbFileManager {
 		public static string[] documentExtensions = { ".docx", ".pdf", ".txt", ".pptx", ".xlsx", ".odt", ".rtf" };
 		public static string[] archiveExtensions = { ".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz" };
 		public static string[] executableExtensions = { ".exe", ".dll", ".bat", ".msi", ".jar", ".py", ".sh", ".apk" };
-
+		static bool fastcompatibility = false;
 		public static bool isFolder(string path, bool old_android) {
-			if(old_android) return legacyAndroid.isFolder(path);
+			if(old_android) return legacyAndroid.isFolder(path, fastcompatibility);
 			if(path == null) return false;
 			if(path.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
 			else return false;
 		}
 		public static bool isFolder(File file, bool old_android) {
-			if(old_android) return legacyAndroid.isFolder(file);
+			if(old_android) return legacyAndroid.isFolder(file, fastcompatibility);
 			if(file.permissions.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
 			else return false;
 		}
 
-		public static DataTable getDir(string directoryPath, bool old_android) {
-			if(old_android) return legacyAndroid.getDir(directoryPath);
+		public static DataTable getDir(string directoryPath, bool old_android, bool old_android_fast) {
+			if(old_android) {
+				fastcompatibility = old_android_fast;
+				legacyAndroid.fastcompatibility = old_android_fast;
+				return legacyAndroid.getDir(directoryPath);
+			}
 
 			// Retrieve a list of files in the specified directory
 

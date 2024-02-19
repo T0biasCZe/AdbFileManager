@@ -150,15 +150,6 @@
   <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 533</value>
-  </data>
   <data name="button_back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -201,17 +192,47 @@
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 205</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 509</value>
+  <data name="checkBox_android6fix_fastmode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 25</value>
+  <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 19</value>
+  </data>
+  <data name="checkBox_android6fix_fastmode.Text" xml:space="preserve">
+    <value>Fast compatiblity mode</value>
+  </data>
+  <data name="checkBox_android6fix_fastmode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="comboBox_lang.Location" type="System.Drawing.Point, System.Drawing">
     <value>958, 4</value>
   </data>
   <data name="comboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 23</value>
+  </data>
+  <data name="checkBox_unwrapfolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>343, 3</value>
+  </data>
+  <data name="checkBox_preview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 3</value>
+  </data>
+  <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 4</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 509</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 25</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 533</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1184, 533</value>
