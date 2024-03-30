@@ -2,12 +2,29 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>w7 transfer.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64</Platforms>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,17 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WindowsAPICodePack-Core" Version="1.1.2" />
-    <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="GongShell">
-      <HintPath>..\GongShell.dll</HintPath>
-    </Reference>
-    <Reference Include="VistaUIFramework">
-      <HintPath>..\..\..\frameworks\VistaUIFramework\VistaUIFramework.dll</HintPath>
-    </Reference>
+    <PackageReference Include="WindowsAPICodePack" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,13 +87,13 @@
 
   <ItemGroup>
     <None Update="adb.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="AdbWinApi.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="AdbWinUsbApi.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="icons\archive.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

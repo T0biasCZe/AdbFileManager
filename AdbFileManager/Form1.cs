@@ -33,50 +33,65 @@ namespace AdbFileManager {
 
 		public static ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 		public Form1() {
-			_Form1 = this;
-			load_lang();
+			try { 
+				_Form1 = this;
+				load_lang();
 
-			InitializeComponent();
+				InitializeComponent();
 
-			load_lang_combobox();
-			load_settings();
+				load_lang_combobox();
+				load_settings();
 
 
-			checkBox_android6fix.Enabled = true;
+				checkBox_android6fix.Enabled = true;
 
-			this.Controls.Add(panel2);
-			panel1.Controls.Remove(panel2);
-			panel2.BringToFront();
-			verticalLabel1.SendToBack();
-			dataGridView1.RowHeadersWidth = 4;
-			Console.WriteLine("datagrid virtual mode: " + dataGridView1.VirtualMode);
-			dataGridView1.VirtualMode = false;
-			//dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
-			DataTable blank = new DataTable();
-			//add header to blank
-			blank.Columns.Add("ico", typeof(Icon));
-			blank.Columns.Add("Name");
-			blank.Columns.Add("Size");
-			blank.Columns.Add("Date");
-			blank.Columns.Add("Attr");
-			blank.Rows.Add(new Icon(@"icons\file.ico"), "Loading plz wait", 0, DateTime.UnixEpoch);
-			dataGridView1.DataSource = blank;
+				this.Controls.Add(panel2);
+				panel1.Controls.Remove(panel2);
+				panel2.BringToFront();
+				verticalLabel1.SendToBack();
+				dataGridView1.RowHeadersWidth = 4;
+				Console.WriteLine("datagrid virtual mode: " + dataGridView1.VirtualMode);
+				dataGridView1.VirtualMode = false;
+				//dataGridView1.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked);
+				DataTable blank = new DataTable();
+				//add header to blank
+				blank.Columns.Add("ico", typeof(Icon));
+				blank.Columns.Add("Name");
+				blank.Columns.Add("Size");
+				blank.Columns.Add("Date");
+				blank.Columns.Add("Attr");
+				blank.Rows.Add(new Icon(@"icons\file.ico"), "Loading plz wait", 0, DateTime.UnixEpoch);
+				dataGridView1.DataSource = blank;
 
-			DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView1.Columns[0];
-			img.ImageLayout = DataGridViewImageCellLayout.Zoom;
-			dataGridView1.Columns[0].Width = 25;
-			dataGridView1.Columns[1].Width = 307;
-			dataGridView1.Columns[2].Width = 80;
-			dataGridView1.Columns[3].Width = 115;
+				DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView1.Columns[0];
+				img.ImageLayout = DataGridViewImageCellLayout.Zoom;
+				dataGridView1.Columns[0].Width = 25;
+				dataGridView1.Columns[1].Width = 307;
+				dataGridView1.Columns[2].Width = 80;
+				dataGridView1.Columns[3].Width = 115;
 
-			//set Console app codepage to UTF-8.
-			Console.OutputEncoding = System.Text.Encoding.UTF8;
-			Console.WindowHeight = 20;
-			var handle = GetConsoleWindow();
-			ShowWindow(handle, SW_HIDE);
-			string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 19.02.24";
-			version.Text = versionn;
-			Console.WriteLine(versionn);
+				//set Console app codepage to UTF-8.
+				Console.OutputEncoding = System.Text.Encoding.UTF8;
+				Console.WindowHeight = 20;
+				var handle = GetConsoleWindow();
+				ShowWindow(handle, SW_HIDE);
+				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} DEV 30.03.24";
+				version.Text = versionn;
+				Console.WriteLine(versionn);
+			}
+			catch (Exception ex) {
+				TaskDialog.ShowDialog(new TaskDialogPage() {
+					Caption = "Error",
+					Text = ex.ToString(),
+					Icon = TaskDialogIcon.Error,
+					Buttons = { TaskDialogButton.Close },
+					Footnote = "Please report this error to the developer. Detailed report may be in console",
+					SizeToContent = true
+				});
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine(ex);
+				Console.ResetColor();
+			}
 		}
 
 		public static string adb(string command) {
@@ -461,12 +476,19 @@ namespace AdbFileManager {
 			Properties.Settings.Default.Save();
 		}
 		private void load_settings() {
-			checkBox_preview.Checked = Properties.Settings.Default.preview_on_doubleclick;
-			checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
-			checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
-			checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
-			checkBox_android6fix_fastmode.Checked = Properties.Settings.Default.compatibility_fast;
-			comboBox_lang.SelectedIndex = Properties.Settings.Default.lang;
+			try {
+				checkBox_preview.Checked = Properties.Settings.Default.preview_on_doubleclick;
+				checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
+				checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
+				checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
+				checkBox_android6fix_fastmode.Checked = Properties.Settings.Default.compatibility_fast;
+				comboBox_lang.SelectedIndex = Properties.Settings.Default.lang;
+			}
+			catch {
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("Error loading settings");
+				Console.ResetColor();
+			}
 		}
 		private void load_lang_combobox() {
 			comboBox_lang.Items.Clear();
