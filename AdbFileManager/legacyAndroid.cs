@@ -104,10 +104,10 @@ namespace AdbFileManager {
 					dgv.Rows.Add(new Icon(@"icons\file.ico"), "No files found", 0, DateTime.UnixEpoch);
 				}
 				else if(dgv.Rows.Count > 18) {
-					Form1._Form1.dataGridView1.Columns[1].Width = 290;
+					Form1._Form1.dataGridView_soubory.Columns[1].Width = 290;
 				}
 				else {
-					Form1._Form1.dataGridView1.Columns[1].Width = 307;
+					Form1._Form1.dataGridView_soubory.Columns[1].Width = 307;
 				}
 
 				return dgv;

@@ -117,83 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 469</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="dataGridView_soubory.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="explorerBrowser1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 40</value>
-  </data>
-  <data name="explorerBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 469</value>
-  </data>
-  <data name="android2pc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 6</value>
-  </data>
-  <data name="pc2android.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 54</value>
-  </data>
-  <data name="verticalLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
-  </data>
-  <data name="verticalLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridView_soubory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 810</value>
   </data>
   <data name="cur_path.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 23</value>
   </data>
+  <data name="panel_dolniTlacitka.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="button_back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button_back.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 14</value>
-  </data>
-  <data name="button_back.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="button_forward.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button_forward.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button_forward.Location" type="System.Drawing.Point, System.Drawing">
-    <value>634, 14</value>
-  </data>
-  <data name="button_forward.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="explorer_path.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 16</value>
-  </data>
-  <data name="explorer_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 23</value>
-  </data>
-  <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>554, 160</value>
-  </data>
-  <data name="panel3.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
-  </data>
-  <data name="panel3.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
-  </data>
   <data name="checkBox_android6fix_fastmode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkBox_android6fix_fastmode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 19</value>
@@ -219,23 +162,146 @@
   <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
     <value>501, 4</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 509</value>
+  <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 850</value>
   </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel_dolniTlacitka.Size" type="System.Drawing.Size, System.Drawing">
     <value>1184, 25</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="panel_tlacitkaUprostred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="button_android2pc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="button_android2pc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_android2pc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt</value>
+  </data>
+  <data name="button_android2pc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_android2pc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 40</value>
+  </data>
+  <data name="button_android2pc.Text" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="verticalLabel_refresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="verticalLabel_refresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="verticalLabel_refresh.Text" xml:space="preserve">
+    <value>     Refresh</value>
+  </data>
+  <data name="button_pc2android.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="button_pc2android.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_pc2android.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt</value>
+  </data>
+  <data name="button_pc2android.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_pc2android.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 40</value>
+  </data>
+  <data name="button_pc2android.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="deco_panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 110</value>
+  </data>
+  <data name="deco_panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 74</value>
+  </data>
+  <data name="deco_panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="deco_panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="deco_panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="deco_panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 42</value>
+  </data>
+  <data name="deco_panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="deco_panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>12, 6</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 533</value>
+    <value>34, 42</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 205</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 205</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 205</value>
+  </data>
+  <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="explorerBrowser1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 40</value>
+  </data>
+  <data name="explorerBrowser1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 810</value>
+  </data>
+  <data name="explorer_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 16</value>
+  </data>
+  <data name="explorer_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 23</value>
+  </data>
+  <data name="button_forward.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_forward.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_forward.Location" type="System.Drawing.Point, System.Drawing">
+    <value>634, 14</value>
+  </data>
+  <data name="button_forward.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="button_back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_back.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_back.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 14</value>
+  </data>
+  <data name="button_back.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="panel_main.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1519, 874</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 533</value>
+    <value>1184, 874</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -263,11 +329,14 @@
         AA/+AAAA/8AAH/4AAAA=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
+  </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1200, 2000</value>
+    <value>3840, 2160</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 0</value>
+    <value>800, 600</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

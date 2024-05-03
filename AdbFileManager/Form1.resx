@@ -117,482 +117,458 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="android2pc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 40</value>
-  </data>
-  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="checkBox_filedate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;android2pc.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 513</value>
-  </data>
-  <data name="cur_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 23</value>
-  </data>
-  <data name="pc2android.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="cur_path.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;checkBox_preview.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1190, 0</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;version.Name" xml:space="preserve">
-    <value>version</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;checkBox_filedate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="version.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBox_android6fix.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;cur_path.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="checkBox_preview.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>556, 168</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>english</value>
-  </data>
-  <data name="checkBox_filedate.Text" xml:space="preserve">
-    <value>Keep file modified date</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1168, 608</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="checkBox_preview.Text" xml:space="preserve">
-    <value>Preview files on double click</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 19</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 15</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="explorer_path.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBox_preview.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;checkBox_preview.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="explorerBrowser1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;pc2android.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="checkBox_preview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1066, 14</value>
-  </data>
-  <data name="checkBox_android6fix.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="button_back.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="verticalLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 275</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="checkBox_filedate.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
-  <data name="&gt;&gt;button_back.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pc2android.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="android2pc.TabIndex" type="System.Int32, mscorlib">
+  <data name="button_android2pc.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="checkBox_android6fix_fastmode.ToolTip" xml:space="preserve">
-    <value>Will speed up dir load times in compatibility mode, at the cost of smaller accuracy of folder icons</value>
+  <data name="&gt;&gt;pc2android.Name" xml:space="preserve">
+    <value>pc2android</value>
   </data>
-  <data name="checkBox_android6fix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
+  <data name="&gt;&gt;verticalLabel1.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
-  <data name="textBox3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 8</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 472</value>
-  </data>
-  <data name="&gt;&gt;comboBox_lang.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="version.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1079, 7</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;comboBox_lang.Name" xml:space="preserve">
-    <value>comboBox_lang</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;version.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>467, 3</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
-    <value>Unwrap folders on copy</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel1.Name" xml:space="preserve">
-    <value>verticalLabel1</value>
-  </data>
-  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="verticalLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>581, 275</value>
-  </data>
-  <data name="&gt;&gt;button_forward.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="android2pc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="verticalLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="comboBox_lang.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="comboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="&gt;&gt;cur_path.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="checkBox_filedate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
-  </data>
-  <data name="&gt;&gt;button_forward.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="version.Text" xml:space="preserve">
-    <value>version here</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="pc2android.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 20.25pt</value>
-  </data>
-  <data name="explorerBrowser1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 40</value>
-  </data>
-  <data name="verticalLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="android2pc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
-  </data>
-  <data name="pc2android.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 23</value>
-  </data>
-  <data name="explorer_path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1168, 688</value>
-  </data>
-  <data name="button_forward.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;checkBox_filedate.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 8</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBox_lang.Name" xml:space="preserve">
-    <value>toolStripComboBox_lang</value>
-  </data>
-  <data name="dataGridView1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
-    <value>timer1</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel1.Type" xml:space="preserve">
-    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="checkBox_android6fix.Text" xml:space="preserve">
     <value>Compatibility fix</value>
   </data>
-  <data name="&gt;&gt;explorerBrowser1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox_filedate.Name" xml:space="preserve">
-    <value>checkBox_filedate</value>
+  <data name="explorer_path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;cur_path.Name" xml:space="preserve">
-    <value>cur_path</value>
+  <data name="&gt;&gt;button_pc2android.Name" xml:space="preserve">
+    <value>button_pc2android</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="explorerBrowser1.ToolTip" xml:space="preserve">
+  <data name="toolStrip1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cur_path.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>561, 76</value>
-  </data>
-  <data name="button_back.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 16</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="version.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1079, 7</value>
   </data>
   <data name="checkBox_unwrapfolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 8</value>
   </data>
-  <data name="&gt;&gt;explorerBrowser1.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="button_android2pc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 6</value>
   </data>
-  <data name="verticalLabel1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="checkBox_preview.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="panel1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;panel_dolniTlacitka.Parent" xml:space="preserve">
+    <value>panel_main</value>
   </data>
-  <data name="verticalLabel1.Text" xml:space="preserve">
-    <value>     Refresh</value>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 3</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1168, 648</value>
-  </data>
-  <data name="verticalLabel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="version.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pc2android.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;button_back.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="button_forward.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;explorerBrowser1.Name" xml:space="preserve">
-    <value>explorerBrowser1</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
-  </data>
-  <data name="&gt;&gt;explorer_path.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;button_forward.Name" xml:space="preserve">
-    <value>button_forward</value>
-  </data>
-  <data name="cur_path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="explorer_path.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 8</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="version.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="panel3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;explorer_path.Name" xml:space="preserve">
-    <value>explorer_path</value>
-  </data>
-  <data name="comboBox_lang.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="checkBox_preview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 19</value>
-  </data>
-  <data name="button_back.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="checkBox_filedate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 19</value>
-  </data>
-  <data name="&gt;&gt;button_back.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="verticalLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 72</value>
+  <data name="&gt;&gt;pc2android.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
   <data name="checkBox_preview.Location" type="System.Drawing.Point, System.Drawing">
     <value>286, 3</value>
   </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="verticalLabel1.Text" xml:space="preserve">
+    <value>     Refresh</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1229, 534</value>
+  </data>
+  <data name="checkBox_android6fix.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;checkBox_unwrapfolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="deco_panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_unwrapfolders.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_unwrapfolders.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="explorer_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 8</value>
+  </data>
+  <data name="comboBox_lang.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="checkBox_filedate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;cur_path.Name" xml:space="preserve">
+    <value>cur_path</value>
+  </data>
+  <data name="&gt;&gt;comboBox_lang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;button_forward.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_unwrapfolders.Name" xml:space="preserve">
+    <value>checkBox_unwrapfolders</value>
+  </data>
+  <data name="&gt;&gt;deco_panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="verticalLabel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>english</value>
+  </data>
+  <data name="&gt;&gt;checkBox_filedate.Name" xml:space="preserve">
+    <value>checkBox_filedate</value>
+  </data>
+  <data name="android2pc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 40</value>
+  </data>
+  <data name="&gt;&gt;deco_panel2.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="&gt;&gt;panel_main.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="version.Text" xml:space="preserve">
+    <value>version here</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;button_back.Name" xml:space="preserve">
+    <value>button_back</value>
+  </data>
+  <data name="&gt;&gt;cur_path.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkBox_preview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_android2pc.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="explorer_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;toolStripComboBox_lang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button_back.Parent" xml:space="preserve">
+    <value>panel_main</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="explorerBrowser1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 472</value>
+  </data>
+  <data name="comboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="&gt;&gt;button_forward.Parent" xml:space="preserve">
+    <value>panel_main</value>
+  </data>
+  <data name="&gt;&gt;explorer_path.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_forward.Location" type="System.Drawing.Point, System.Drawing">
+    <value>639, 16</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1168, 608</value>
+  </data>
+  <data name="panel_dolniTlacitka.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="android2pc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_soubory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_forward.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="version.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 40</value>
+  </data>
+  <data name="verticalLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="&gt;&gt;button_pc2android.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="verticalLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>581, 275</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="button_back.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="dataGridView_soubory.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;button_android2pc.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel1.Name" xml:space="preserve">
+    <value>verticalLabel1</value>
+  </data>
+  <data name="checkBox_android6fix_fastmode.ToolTip" xml:space="preserve">
+    <value>Will speed up dir load times in compatibility mode, at the cost of smaller accuracy of folder icons</value>
+  </data>
+  <data name="cur_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>528, 23</value>
+  </data>
+  <data name="&gt;&gt;comboBox_lang.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;version.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
+    <value>textBox2</value>
+  </data>
+  <data name="cur_path.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_soubory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel_dolniTlacitka.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBox_unwrapfolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 19</value>
+  </data>
+  <data name="&gt;&gt;panel_main.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_back.Location" type="System.Drawing.Point, System.Drawing">
+    <value>608, 16</value>
+  </data>
+  <data name="cur_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;verticalLabel_refresh.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_soubory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBox_preview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 19</value>
+  </data>
+  <data name="&gt;&gt;checkBox_preview.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;deco_panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel1.Type" xml:space="preserve">
+    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 15</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix.Name" xml:space="preserve">
+    <value>checkBox_android6fix</value>
+  </data>
+  <data name="verticalLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>581, 275</value>
+  </data>
+  <data name="checkBox_android6fix.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="checkBox_android6fix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 19</value>
+  </data>
+  <data name="button_forward.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix_fastmode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;explorerBrowser1.Parent" xml:space="preserve">
+    <value>panel_main</value>
+  </data>
+  <data name="verticalLabel_refresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 110</value>
+  </data>
+  <data name="&gt;&gt;checkBox_preview.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="&gt;&gt;checkBox_unwrapfolders.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="panel_main.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix_fastmode.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1174, 536</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel_refreshBack.Name" xml:space="preserve">
+    <value>verticalLabel_refreshBack</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="&gt;&gt;checkBox_filedate.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="pc2android.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;checkBox_preview.Name" xml:space="preserve">
+    <value>checkBox_preview</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;explorerBrowser1.Name" xml:space="preserve">
+    <value>explorerBrowser1</value>
+  </data>
+  <data name="&gt;&gt;button_android2pc.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="comboBox_lang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>939, 0</value>
+  </data>
+  <data name="button1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="verticalLabel_refresh.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix_fastmode.Name" xml:space="preserve">
+    <value>checkBox_android6fix_fastmode</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.Parent" xml:space="preserve">
+    <value>panel_main</value>
+  </data>
+  <data name="panel3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="explorerBrowser1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 40</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBox_android6fix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="comboBox_lang.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="cur_path.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 16</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;deco_panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;android2pc.Name" xml:space="preserve">
+    <value>android2pc</value>
+  </data>
+  <data name="&gt;&gt;pc2android.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="button_pc2android.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="checkBox_android6fix_fastmode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>616, 4</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
   </data>
   <data name="checkBox_filedate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -600,260 +576,450 @@
   <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 23</value>
   </data>
-  <data name="&gt;&gt;pc2android.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;explorer_path.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="pc2android.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="&gt;&gt;android2pc.Name" xml:space="preserve">
-    <value>android2pc</value>
-  </data>
-  <data name="pc2android.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 40</value>
-  </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="explorerBrowser1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBox_filedate.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;toolStripComboBox_lang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1190, 2000</value>
-  </data>
-  <data name="checkBox_android6fix.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="pc2android.Location" type="System.Drawing.Point, System.Drawing">
-    <value>573, 219</value>
-  </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 40</value>
-  </data>
-  <data name="checkBox_android6fix.ToolTip" xml:space="preserve">
-    <value>Enabling this fixes some compatibility issues with Android 6 and older devices</value>
-  </data>
-  <data name="android2pc.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 20.25pt</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="android2pc.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="textBox2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel2.Type" xml:space="preserve">
-    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="android2pc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel1.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.Name" xml:space="preserve">
-    <value>checkBox_android6fix</value>
-  </data>
-  <data name="pc2android.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="checkBox_preview.ToolTip" xml:space="preserve">
-    <value>When file is double clicked, it will copy it to temp folder and display it. On program close the files will be deleted</value>
+  <data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
+    <value>The progress bar during copying is updated only when a whole file or a directory gets copied, so when copying large directory the progress bar is unresponsive and may freeze. 
+This will "unwrap" the directories into individual files so the copy appears smoother</value>
   </data>
   <data name="verticalLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 74</value>
   </data>
-  <data name="button_forward.Location" type="System.Drawing.Point, System.Drawing">
-    <value>639, 16</value>
+  <data name="verticalLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.Name" xml:space="preserve">
-    <value>checkBox_android6fix_fastmode</value>
+  <data name="explorerBrowser1.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;cur_path.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;android2pc.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="cur_path.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;android2pc.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="android2pc.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>528, 472</value>
+  </data>
+  <data name="panel_main.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="pc2android.Text" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;button_forward.Name" xml:space="preserve">
+    <value>button_forward</value>
+  </data>
+  <data name="deco_panel2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.Name" xml:space="preserve">
-    <value>checkBox_unwrapfolders</value>
+  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1168, 688</value>
   </data>
-  <data name="&gt;&gt;comboBox_lang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pc2android.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="&gt;&gt;explorerBrowser1.Type" xml:space="preserve">
-    <value>Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser, Microsoft.WindowsAPICodePack.Shell, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pc2android.Name" xml:space="preserve">
-    <value>pc2android</value>
-  </data>
-  <data name="textBox1.ToolTip" xml:space="preserve">
+  <data name="panel1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;version.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1190, 0</value>
   </data>
-  <data name="&gt;&gt;verticalLabel2.Name" xml:space="preserve">
-    <value>verticalLabel2</value>
+  <data name="&gt;&gt;verticalLabel_refreshBack.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
   </data>
-  <data name="panel2.ToolTip" xml:space="preserve">
+  <data name="deco_panel2.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="explorer_path.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="checkBox_filedate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 19</value>
+  </data>
+  <data name="&gt;&gt;explorerBrowser1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="deco_panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 110</value>
+  </data>
+  <data name="&gt;&gt;button_back.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pc2android.Location" type="System.Drawing.Point, System.Drawing">
+    <value>573, 219</value>
+  </data>
+  <data name="checkBox_preview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="android2pc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix_fastmode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;version.Name" xml:space="preserve">
+    <value>version</value>
   </data>
   <data name="android2pc.Location" type="System.Drawing.Point, System.Drawing">
     <value>573, 171</value>
   </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>panel2</value>
+  <data name="button_back.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;comboBox_lang.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
   </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="&gt;&gt;verticalLabel2.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="checkBox_android6fix_fastmode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 4</value>
+  <data name="&gt;&gt;explorer_path.Parent" xml:space="preserve">
+    <value>panel_main</value>
   </data>
-  <data name="comboBox_lang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>939, 0</value>
+  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>895, 0</value>
+  <data name="&gt;&gt;comboBox_lang.Name" xml:space="preserve">
+    <value>comboBox_lang</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pc2android.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pc2android.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1066, 14</value>
+  </data>
+  <data name="&gt;&gt;checkBox_filedate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="version.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 509</value>
+  </data>
+  <data name="explorerBrowser1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pc2android.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;deco_panel2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="verticalLabel2.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="cur_path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="checkBox_unwrapfolders.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="android2pc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="checkBox_unwrapfolders.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1229, 534</value>
-  </data>
-  <data name="&gt;&gt;checkBox_preview.Name" xml:space="preserve">
-    <value>checkBox_preview</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
-    <value>dataGridView1</value>
-  </data>
-  <data name="&gt;&gt;explorer_path.Type" xml:space="preserve">
+  <data name="&gt;&gt;cur_path.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="verticalLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="textBox1.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;version.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>448, 23</value>
+  <data name="button_pc2android.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="verticalLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="pc2android.Text" xml:space="preserve">
-    <value>&lt;</value>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripComboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 25</value>
+  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1168, 648</value>
   </data>
-  <data name="&gt;&gt;verticalLabel2.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="version.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;android2pc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_forward.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;android2pc.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="checkBox_filedate.Text" xml:space="preserve">
+    <value>Keep file modified date</value>
   </data>
   <data name="verticalLabel2.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.Name" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="checkBox_android6fix.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="verticalLabel_refreshBack.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel2.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="checkBox_android6fix_fastmode.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>556, 168</value>
+  </data>
+  <data name="&gt;&gt;version.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1190, 2000</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="pc2android.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 20.25pt</value>
+  </data>
+  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 23</value>
+  </data>
+  <data name="&gt;&gt;panel_main.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="verticalLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="button_pc2android.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="verticalLabel_refresh.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="explorer_path.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="checkBox_filedate.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel_refresh.Type" xml:space="preserve">
+    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_dolniTlacitka.Name" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="panel_main.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="dataGridView1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_filedate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 3</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;button_android2pc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="verticalLabel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;explorer_path.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkBox_filedate.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_dolniTlacitka.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;android2pc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBox_android6fix.ToolTip" xml:space="preserve">
+    <value>Enabling this fixes some compatibility issues with Android 6 and older devices</value>
+  </data>
+  <data name="&gt;&gt;panel_dolniTlacitka.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel2.Name" xml:space="preserve">
+    <value>verticalLabel2</value>
+  </data>
+  <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;button_pc2android.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>895, 0</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;comboBox_lang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
+    <value>textBox3</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.Location" type="System.Drawing.Point, System.Drawing">
+    <value>554, 160</value>
+  </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>1226, 25</value>
+  </data>
+  <data name="version.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="deco_panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 54</value>
+  </data>
+  <data name="&gt;&gt;button_forward.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 513</value>
+  </data>
+  <data name="explorer_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 23</value>
+  </data>
+  <data name="android2pc.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripComboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 25</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBox_lang.Name" xml:space="preserve">
+    <value>toolStripComboBox_lang</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 8</value>
+  </data>
+  <data name="&gt;&gt;button_android2pc.Name" xml:space="preserve">
+    <value>button_android2pc</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;explorer_path.Name" xml:space="preserve">
+    <value>explorer_path</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel_refreshBack.Type" xml:space="preserve">
+    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="deco_panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;button_back.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBox2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="android2pc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;checkBox_unwrapfolders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 3</value>
+  </data>
+  <data name="&gt;&gt;checkBox_android6fix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="dataGridView_soubory.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel_refresh.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBox_preview.Text" xml:space="preserve">
+    <value>Preview files on double click</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_preview.ToolTip" xml:space="preserve">
+    <value>When file is double clicked, it will copy it to temp folder and display it. On program close the files will be deleted</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_soubory.Name" xml:space="preserve">
+    <value>dataGridView_soubory</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="checkBox_filedate.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -881,66 +1047,110 @@
         AA/+AAAA/8AAH/4AAAA=
 </value>
   </data>
-  <data name="explorerBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 472</value>
+  <data name="&gt;&gt;deco_panel2.Name" xml:space="preserve">
+    <value>deco_panel2</value>
   </data>
-  <data name="version.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 15</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1174, 536</value>
+  <data name="textBox3.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="checkBox_android6fix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="checkBox_unwrapfolders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>467, 3</value>
+  </data>
+  <data name="version.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="verticalLabel_refreshBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 110</value>
+  </data>
+  <data name="dataGridView_soubory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 40</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;explorerBrowser1.Type" xml:space="preserve">
+    <value>Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser, Microsoft.WindowsAPICodePack.Shell, Culture=neutral, PublicKeyToken=8afb38e9204fc0a9</value>
+  </data>
+  <data name="pc2android.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 40</value>
+  </data>
+  <data name="&gt;&gt;panel_main.Name" xml:space="preserve">
+    <value>panel_main</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
+    <value>textBox1</value>
+  </data>
+  <data name="checkBox_preview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;checkBox_filedate.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
+    <value>Unwrap folders on copy</value>
   </data>
-  <data name="&gt;&gt;checkBox_preview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button_pc2android.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="verticalLabel_refreshBack.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="android2pc.Text" xml:space="preserve">
     <value>&gt;</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
+  <data name="explorerBrowser1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="&gt;&gt;button_back.Name" xml:space="preserve">
-    <value>button_back</value>
+  <data name="&gt;&gt;verticalLabel2.Type" xml:space="preserve">
+    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;version.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 23</value>
   </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;checkBox_android6fix.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;deco_panel1.Name" xml:space="preserve">
+    <value>deco_panel1</value>
   </data>
-  <data name="explorer_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 23</value>
+  <data name="&gt;&gt;verticalLabel_refreshBack.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
-    <value>The progress bar during copying is updated only when a whole file or a directory gets copied, so when copying large directory the progress bar is unresponsive and may freeze. 
-This will "unwrap" the directories into individual files so the copy appears smoother</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>561, 76</value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>36</value>
+  <data name="&gt;&gt;deco_panel1.Parent" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="pc2android.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;verticalLabel_refresh.Name" xml:space="preserve">
+    <value>verticalLabel_refresh</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>en</value>
   </metadata>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 17</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>38</value>
   </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>en</value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
