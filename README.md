@@ -19,3 +19,7 @@ Note2: Its made in C# and Windows Forms. To put it on Linux/Mac I would complete
  press up/down cursor keys to change selected file/directory in list    
  press enter to go to currently selected directory    
  press backspace to go up a directory
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=T0biasCZe/AdbFileManager&type=Date)](https://star-history.com/#T0biasCZe/AdbFileManager&Date)
