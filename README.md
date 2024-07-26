@@ -24,7 +24,7 @@ Note2: Its made in C# and Windows Forms. To put it on Linux/Mac I would complete
 
 [![Star History Chart](https://api.star-history.com/svg?repos=T0biasCZe/AdbFileManager&type=Date)](https://star-history.com/#T0biasCZe/AdbFileManager&Date)
 
-FAQ:
-Q: What does Unwrap folder do?
-A: Instead of copying whole folder as 1 item, it loads the contents of that folder and copies each file in it separately, allowing for smoother progress bar. Disadvantage is that its little slower
+# FAQ:    
+Q: What does Unwrap folder do?     
+A: Instead of copying whole folder as 1 item, it loads the contents of that folder and copies each file in it separately, allowing for smoother progress bar. Disadvantage is that its little slower     
 ![UnwrapOnvsOff](https://github.com/user-attachments/assets/84847882-8283-4219-848b-e504edacc7df)
