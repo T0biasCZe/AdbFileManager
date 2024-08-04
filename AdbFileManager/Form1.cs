@@ -46,8 +46,8 @@ namespace AdbFileManager {
 
 				checkBox_android6fix.Enabled = true;
 
-				this.Controls.Add(panel_dolniTlacitka);
-				panel_main.Controls.Remove(panel_dolniTlacitka);
+				//this.Controls.Add(panel_dolniTlacitka);
+				//panel_main.Controls.Remove(panel_dolniTlacitka);
 				panel_dolniTlacitka.BringToFront();
 				verticalLabel_refresh.BringToFront();
 				dataGridView_soubory.RowHeadersWidth = 4;
@@ -75,8 +75,8 @@ namespace AdbFileManager {
 				Console.OutputEncoding = System.Text.Encoding.UTF8;
 				Console.WindowHeight = 20;
 
-				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} DEV 30.03.24";
-				version.Text = versionn;
+				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 15.05.24";
+				label_version.Text = versionn;
 				Console.WriteLine(versionn);
 			}
 			catch(Exception ex) {
@@ -91,7 +91,9 @@ namespace AdbFileManager {
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine(ex);
 				Console.ResetColor();
+				this.Show();
 			}
+			hideConsole();
 		}
 
 		public static string adb(string command) {
@@ -609,7 +611,7 @@ namespace AdbFileManager {
 		}
 
 		//responsivity go brrr
-		private void Form1_Resize(object sender, EventArgs e){
+		private void Form1_Resize(object sender, EventArgs e) {
 			const int margin = 24;
 			const int middleSpace = 52;
 
@@ -617,10 +619,10 @@ namespace AdbFileManager {
 			int realHeight = this.Height - 39;
 			int x = realWidth - 100;
 
-			panel_main.Width = realWidth;
-			panel_main.Height = realHeight;
-			panel_main.Left = 0;
-			panel_main.Top = 0;
+			//panel_main.Width = realWidth;
+			//panel_main.Height = realHeight;
+			//panel_main.Left = 0;
+			//panel_main.Top = 0;
 
 			int listAndroidWidth = x / 2;
 			int listPCWidth = x - listAndroidWidth;
@@ -632,7 +634,7 @@ namespace AdbFileManager {
 
 			explorerBrowser1.Width = listPCWidth;
 			explorerBrowser1.Left = margin + listAndroidWidth + middleSpace;
-			explorerBrowser1.Height = this.Height - 104;	
+			explorerBrowser1.Height = this.Height - 104;
 
 			button_back.Left = margin + listAndroidWidth + middleSpace;
 			button_forward.Left = margin + listAndroidWidth + middleSpace + 26;
@@ -643,9 +645,14 @@ namespace AdbFileManager {
 
 			panel_dolniTlacitka.Width = this.Width;
 			panel_dolniTlacitka.Left = 0;
-			version.Left = this.Width - 121;
+			label_version.Left = this.Width - 121;
 			button1.Left = this.Width - 134;
 			comboBox_lang.Left = this.Width - 242;
+		}
+
+		private void button_unlock_Click(object sender, EventArgs e) {
+			UnlockForm unlock = new UnlockForm();
+			unlock.Show();
 		}
 	}
 

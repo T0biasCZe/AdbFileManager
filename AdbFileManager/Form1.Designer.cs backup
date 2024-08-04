@@ -30,7 +30,6 @@
 			cur_path = new TextBox();
 			toolTip1 = new ToolTip(components);
 			panel_dolniTlacitka = new Panel();
-			button_unlock = new Button();
 			checkBox_android6fix_fastmode = new CheckBox();
 			comboBox_lang = new ComboBox();
 			checkBox_unwrapfolders = new CheckBox();
@@ -50,9 +49,11 @@
 			explorer_path = new TextBox();
 			button_forward = new Button();
 			button_back = new Button();
+			panel_main = new Panel();
 			((System.ComponentModel.ISupportInitialize)dataGridView_soubory).BeginInit();
 			panel_dolniTlacitka.SuspendLayout();
 			panel_tlacitkaUprostred.SuspendLayout();
+			panel_main.SuspendLayout();
 			SuspendLayout();
 			// 
 			// dataGridView_soubory
@@ -87,7 +88,6 @@
 			// 
 			resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
 			panel_dolniTlacitka.BackColor = Color.FromArgb(192, 255, 255);
-			panel_dolniTlacitka.Controls.Add(button_unlock);
 			panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
 			panel_dolniTlacitka.Controls.Add(comboBox_lang);
 			panel_dolniTlacitka.Controls.Add(checkBox_unwrapfolders);
@@ -98,15 +98,6 @@
 			panel_dolniTlacitka.Controls.Add(checkBox_filedate);
 			panel_dolniTlacitka.Name = "panel_dolniTlacitka";
 			toolTip1.SetToolTip(panel_dolniTlacitka, resources.GetString("panel_dolniTlacitka.ToolTip"));
-			// 
-			// button_unlock
-			// 
-			resources.ApplyResources(button_unlock, "button_unlock");
-			button_unlock.Image = Properties.Resources.unlock16;
-			button_unlock.Name = "button_unlock";
-			toolTip1.SetToolTip(button_unlock, resources.GetString("button_unlock.ToolTip"));
-			button_unlock.UseVisualStyleBackColor = true;
-			button_unlock.Click += button_unlock_Click;
 			// 
 			// checkBox_android6fix_fastmode
 			// 
@@ -285,18 +276,25 @@
 			button_back.MouseLeave += buttonback_MouseLeave;
 			button_back.MouseUp += buttonback_MouseUp;
 			// 
+			// panel_main
+			// 
+			resources.ApplyResources(panel_main, "panel_main");
+			panel_main.Controls.Add(button_back);
+			panel_main.Controls.Add(button_forward);
+			panel_main.Controls.Add(explorer_path);
+			panel_main.Controls.Add(explorerBrowser1);
+			panel_main.Controls.Add(panel_tlacitkaUprostred);
+			panel_main.Controls.Add(panel_dolniTlacitka);
+			panel_main.Name = "panel_main";
+			toolTip1.SetToolTip(panel_main, resources.GetString("panel_main.ToolTip"));
+			// 
 			// Form1
 			// 
 			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
-			Controls.Add(button_back);
-			Controls.Add(button_forward);
-			Controls.Add(explorer_path);
-			Controls.Add(explorerBrowser1);
-			Controls.Add(panel_dolniTlacitka);
 			Controls.Add(cur_path);
 			Controls.Add(dataGridView_soubory);
-			Controls.Add(panel_tlacitkaUprostred);
+			Controls.Add(panel_main);
 			Name = "Form1";
 			toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
 			FormClosing += Form1_FormClosing;
@@ -307,6 +305,8 @@
 			panel_dolniTlacitka.ResumeLayout(false);
 			panel_dolniTlacitka.PerformLayout();
 			panel_tlacitkaUprostred.ResumeLayout(false);
+			panel_main.ResumeLayout(false);
+			panel_main.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -333,9 +333,9 @@
 		private TextBox explorer_path;
 		private Button button_forward;
 		private Button button_back;
+		private Panel panel_main;
 		private Panel deco_panel1;
 		private Panel deco_panel2;
 		private Panel panel1;
-		private Button button_unlock;
 	}
 }

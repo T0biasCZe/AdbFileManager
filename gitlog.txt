@@ -1,0 +1,262 @@
+commit 9cfa2c2c5199e80fd2ea1eee7363bb61178c5271
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sun May 5 04:21:50 2024 +0200
+
+    removed leftover panel_main from form as its not needed anymoer
+
+commit bbdd3d1448c1de0827d5d170adfa2391d374a704
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Fri May 3 10:46:08 2024 +0200
+
+    made the gui size responsive
+
+commit 888e2f9485ffea14152891ec5399928d773c8f5b
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sat Mar 30 02:03:14 2024 +0100
+
+    Updated to .NET 8.0 and added the whole form1 initialization to try catch block
+
+commit b181a8d1bf7e7f4df43b3cc02300e7a3401bd2b0
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Wed Mar 6 09:35:32 2024 +0100
+
+    Update README.md
+    
+    Added image to readme
+
+commit 6ff5aeb9ba364ab6a5a163d36cd7fdbb50ffc89d
+Merge: 1c775ce 1c490f8
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Feb 19 09:27:04 2024 +0100
+
+    Merge branch 'master' of https://github.com/T0biasCZe/AdbFileManager
+
+commit 1c490f8a890c5304b883291cc979b7647928add0
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Mon Feb 19 09:12:19 2024 +0100
+
+    Update bug_report.md
+
+commit 1c775ce71dd60a0608e1733e4b7c261f697b458f
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Feb 19 09:08:54 2024 +0100
+
+    Added fastmode for the compatibility mode
+
+commit 2d6ea945f545bb65d28f9e98db9961e2b35b9aab
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Feb 19 08:47:13 2024 +0100
+
+    Fixed bug that directory was loaded multiple times when changing directory. reduces load times greatly in compatibility mode
+
+commit c8f096723f9b5ac8c7c3005fd34efff63e310491
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Fri Feb 9 12:27:41 2024 +0100
+
+    beta version of the legacy android fix. currently very slow
+
+commit b2262aad0b93fcc731299acf6f0cc17cefdd75d1
+Merge: 445813a 6647a26
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Fri Feb 9 12:19:36 2024 +0100
+
+    Merge branch 'master' of https://github.com/T0biasCZe/AdbFileManager
+
+commit 445813a6c13eadf46f64c32f5a0bbb02e497ecf0
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Fri Feb 9 12:19:14 2024 +0100
+
+    aaaaaaa
+
+commit 6647a26b9780c5b41fd3de1fe1b212872e375676
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Wed Jan 24 20:26:22 2024 +0100
+
+    Fixed corrupted layout when DPI wasnt 100% (Fixes #20)
+
+commit 8bfad3e95ac03d7dc1ec203e039e52f033cac7b1
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Tue Jan 23 15:41:12 2024 +0100
+
+    finished translation stuff, added buttons for controlling the embedded file explorer
+
+commit 06a480057c467130ae8371e121dc899570aa52a6
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Tue Jan 23 10:40:19 2024 +0100
+
+    translation stuff
+
+commit c659b71d4ae6aaa4a2ebfdd9fb0b8064314258a2
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Jan 22 15:53:45 2024 +0100
+
+    Added folder unrolling #19
+    Added partial multilang support
+
+commit 881a48f79a35a79a48831bc46843b5e2da7e6bac
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Jan 22 10:18:50 2024 +0100
+
+    Added Czech language support
+
+commit 7216362fd7244f5e7853b06bfc44e4f5e1892087
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Tue Dec 19 20:37:46 2023 +0100
+
+    Fixed that progress bar on taskbar icon wouldnt disappear after copying was finished
+
+commit 4ffbf76e062502d55f10e79acd6cee0e30793267
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Dec 18 23:32:59 2023 +0100
+
+    forgot to make the preview function work for images and audio
+
+commit 9861d1fd83f1cd78df80fc721bc21388b2084df9
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Mon Dec 18 23:02:47 2023 +0100
+
+    Added option for previewing files on double click
+    Added compatibility mode for older devices
+
+commit 73936afc8bb6aefc466601bc28ac0f0e57f7097a
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sat Dec 2 12:30:23 2023 +0100
+
+    small fix for compiling
+
+commit 3e1805b6d7eb3987aa06fc91d21dd8ebf5ff1946
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sat Dec 2 03:12:26 2023 +0100
+
+    e
+
+commit a251209518f5a96e31f15f962804f71c3bed1ecf
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sat Dec 2 02:30:19 2023 +0100
+
+    disabled deletion of datagrid rows, making it seem that files can be deleted
+
+commit fd694363068aca40fda9658cdbde0e78d9333914
+Author: Tobiáš Pekárek <pekarek.tobias@gmail.com>
+Date:   Wed Nov 8 10:08:35 2023 +0100
+
+    Fixed memory leak because of constantly creating new icon objects (should fix issue #15)
+
+commit b0a6985a2f0a4fc609cc1a7089ac80bb42264ff7
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Mon Nov 6 12:45:55 2023 +0100
+
+    Update README.md
+
+commit 367f10723e394ad11880be294b378df6eba253d6
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Mon Nov 6 12:45:20 2023 +0100
+
+    Update README.md
+
+commit b30fc01e5f7ba75a4ded346e604a40797a41e415
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sat Oct 28 14:14:00 2023 +0200
+
+    Added file format icons next to the file name
+
+commit 5a4a1e2a0de5905f49b0e50f5a636a397e84b0a6
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Wed Oct 25 18:48:30 2023 +0200
+
+    Added path textbox for the Windows explorer on left
+    Added copy progress dialog for Pc2Android
+    Copy dialog should now properly appear on screen
+
+commit 08d335630d501d09a6f3f974e90a8f0e45b12ca0
+Author: Tobiáš Pekárek <pekarek.tobias@gmail.com>
+Date:   Wed Sep 27 08:58:30 2023 +0200
+
+    Added ability to use Enter and Backspace to go to directory/go up a directory
+    Fixed issue with files using Unicode characters. Those will now work correctly
+
+commit 94b54238cb46edf251c1e13d38d0adaf8bf9d5b6
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Sat Sep 2 21:55:44 2023 +0200
+
+    Update README.md
+
+commit ea18e3d93be779d671355990880f0e4cab5be89a
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Wed Aug 2 18:56:36 2023 +0200
+
+    Added time stamp copy to PC -> phone
+    Fixed the issue that sometimes files are not shown.
+
+commit 4fb467f9f06c57e806ecbb195c1818386c88efe0
+Merge: fba3f3b 1f451ea
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Sun Jul 30 19:47:28 2023 +0200
+
+    Merge pull request #9 from eltociear/patch-1
+    
+    Fix typo in Form1.cs
+
+commit 1f451eac13f3d2728fb5bd04c0c765070a5ad160
+Author: Ikko Eltociear Ashimine <eltociear@gmail.com>
+Date:   Mon Jul 31 02:18:32 2023 +0900
+
+    Fix typo in Form1.cs
+    
+    occured -> occurred
+
+commit fba3f3ba96ffc28665eb41298d7cb03eeb5fa77c
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Sun Jul 30 14:05:12 2023 +0200
+
+    Made the window resizable vertically, added option to keep time stamp
+
+commit fb7ea3e55105b192b46811391993259d0472abfe
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Wed Jul 26 18:31:04 2023 +0200
+
+    Added handling for case %UserProfiles%/pictures doesnt exist
+
+commit c86580e29b73f052b24082f763c49c5a3a594630
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Wed Jul 26 12:03:43 2023 +0200
+
+    Update issue templates
+
+commit fc45f87a04247a5c074f17c76c2ab428f406e62f
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Tue Jul 25 16:41:19 2023 +0200
+
+    Update README.md
+
+commit 4dc9ba9778791fc553dd6a29f4126aa1d1f5efb2
+Author: T0biasCZe <44525446+T0biasCZe@users.noreply.github.com>
+Date:   Tue Jul 25 16:40:30 2023 +0200
+
+    Update README.md
+
+commit 47bb0f7fbfc78c6414838233a9f51d2448d0ea85
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Thu Jul 20 20:55:48 2023 +0200
+
+    Added ability to go above /sdcard/,
+    added text to double click header to go up
+    added pc2android copying
+
+commit f784c05553808fe62aefc549f2046712ef4385ae
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Thu Jul 20 13:05:10 2023 +0200
+
+    removed the accidental dlls
+
+commit 81dc65d1734d8ad755a4ba5348785a15381cca0d
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Wed Jul 19 21:56:05 2023 +0200
+
+    Add project files.
+
+commit 5729b1b09302ec92d4cf3cbfb22564dfc25543df
+Author: T0biasCZe <pekarek.tobias@gmail.com>
+Date:   Wed Jul 19 21:56:03 2023 +0200
+
+    Add .gitattributes, .gitignore, and README.md.

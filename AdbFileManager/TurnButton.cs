@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 public class VerticalButton : Button {
-    public string VirticalText { get; set; }
+    public string VerticalText { get; set; }
     protected override void OnPaint(PaintEventArgs pe) {
         base.OnPaint(pe);
 
@@ -16,7 +16,6 @@ public class VerticalButton : Button {
         stringFormat.Alignment = StringAlignment.Center;
         stringFormat.LineAlignment = StringAlignment.Center;
 
-        pe.Graphics.DrawString(VirticalText, this.Font, solidBrush,
-            new Rectangle(0, 0, Width, Height), stringFormat);
+        pe.Graphics.DrawString(VerticalText, this.Font, solidBrush, new Rectangle(0, 0, Width, Height), stringFormat);
     }
 }

@@ -131,7 +131,25 @@
   <data name="panel_dolniTlacitka.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
   </data>
+  <data name="button_unlock.Location" type="System.Drawing.Point, System.Drawing">
+    <value>968, 1</value>
+  </data>
+  <data name="button_unlock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_unlock.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="button_unlock.Text" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="button_unlock.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="button_unlock.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_android6fix_fastmode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -148,7 +166,7 @@
     <value>False</value>
   </data>
   <data name="comboBox_lang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>958, 4</value>
+    <value>958, 24</value>
   </data>
   <data name="comboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 23</value>
@@ -162,6 +180,18 @@
   <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
     <value>501, 4</value>
   </data>
+  <data name="label_version.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_version.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 15</value>
+  </data>
+  <data name="label_version.Text" xml:space="preserve">
+    <value>version here</value>
+  </data>
   <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 850</value>
   </data>
@@ -170,6 +200,24 @@
   </data>
   <data name="panel_tlacitkaUprostred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 205</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 205</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 205</value>
+  </data>
+  <data name="verticalLabel_refresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="verticalLabel_refresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 72</value>
+  </data>
+  <data name="verticalLabel_refresh.Text" xml:space="preserve">
+    <value>     Refresh</value>
   </data>
   <data name="button_android2pc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -189,15 +237,6 @@
   <data name="button_android2pc.Text" xml:space="preserve">
     <value>&gt;</value>
   </data>
-  <data name="verticalLabel_refresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="verticalLabel_refresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 72</value>
-  </data>
-  <data name="verticalLabel_refresh.Text" xml:space="preserve">
-    <value>     Refresh</value>
-  </data>
   <data name="button_pc2android.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -216,29 +255,11 @@
   <data name="button_pc2android.Text" xml:space="preserve">
     <value>&lt;</value>
   </data>
-  <data name="deco_panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
-  </data>
   <data name="deco_panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 74</value>
   </data>
-  <data name="deco_panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="deco_panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="deco_panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 54</value>
-  </data>
   <data name="deco_panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 42</value>
-  </data>
-  <data name="deco_panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="deco_panel2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -248,15 +269,6 @@
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 42</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
   </data>
   <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -297,9 +309,6 @@
   <data name="button_back.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 25</value>
   </data>
-  <data name="panel_main.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1519, 874</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1184, 874</value>
   </data>
@@ -328,9 +337,6 @@
         AAAAAAAAHgAAAP/AAAAeAAAA/8AAAP4AAAD/wAAB/gAAAP/AAAH+AAAA/8AAAf4AAAD/wAAH/gAAAP/A
         AA/+AAAA/8AAH/4AAAA=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>3840, 2160</value>

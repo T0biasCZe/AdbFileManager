@@ -61,12 +61,22 @@ namespace AdbFileManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 06a4800
+        ///   Looks up a localized string similar to 9cfa2c2
         ///.
         /// </summary>
         public static string CurrentCommit {
             get {
                 return ResourceManager.GetString("CurrentCommit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap lockedShadow {
+            get {
+                object obj = ResourceManager.GetObject("lockedShadow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -126,6 +136,86 @@ namespace AdbFileManager.Properties {
         public static System.Drawing.Bitmap travel_pressed_forward {
             get {
                 object obj = ResourceManager.GetObject("travel_pressed_forward", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlock {
+            get {
+                object obj = ResourceManager.GetObject("unlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlock1 {
+            get {
+                object obj = ResourceManager.GetObject("unlock1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlock16 {
+            get {
+                object obj = ResourceManager.GetObject("unlock16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlock2 {
+            get {
+                object obj = ResourceManager.GetObject("unlock2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlock24 {
+            get {
+                object obj = ResourceManager.GetObject("unlock24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlockedShadow {
+            get {
+                object obj = ResourceManager.GetObject("unlockedShadow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlockk {
+            get {
+                object obj = ResourceManager.GetObject("unlockk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unlockkk {
+            get {
+                object obj = ResourceManager.GetObject("unlockkk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

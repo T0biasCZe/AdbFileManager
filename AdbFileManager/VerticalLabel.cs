@@ -47,6 +47,7 @@ namespace randz.CustomControls {
         /// OnPaint override. This is where the text is rendered vertically.
         /// </summary>
         /// <param name="e">PaintEventArgs</param>
+        private bool hovering = false;
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) {
             float vlblControlWidth;
             float vlblControlHeight;
@@ -54,6 +55,9 @@ namespace randz.CustomControls {
             float vlblTransformY;
 
             Color controlBackColor = BackColor;
+            if(hovering) {
+                controlBackColor = Color.FromArgb((int)(controlBackColor.R * 0.9), (int)(controlBackColor.G * 0.9), (int)(controlBackColor.B * 0.9));
+			}
             Pen labelBorderPen;
             SolidBrush labelBackColorBrush;
 
@@ -91,10 +95,20 @@ namespace randz.CustomControls {
                 e.Graphics.DrawString(labelText, Font, labelForeColorBrush, 0, 0, StringFormat.GenericTypographic);
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        protected override CreateParams CreateParams//v1.10 
+		protected override void OnMouseEnter(EventArgs e) {
+			base.OnMouseEnter(e);
+            hovering = true;
+            Refresh();
+		}
+        protected override void OnMouseLeave(EventArgs e) {
+			base.OnMouseLeave(e);
+			hovering = false;
+            Refresh();
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		protected override CreateParams CreateParams//v1.10 
         {
             get {
                 CreateParams cp = base.CreateParams;
