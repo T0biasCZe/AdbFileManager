@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>After restart, the phone is locked and adb cant access files. However it may not be possible to unlock when the screen is broken.
+This tool can try to unlock the phone, so you can backup your photos.
+May not work on all phones</value>
+  </data>
 </root>

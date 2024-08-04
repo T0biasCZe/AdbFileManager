@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnlockForm));
 			pictureBox1 = new PictureBox();
 			textBox1 = new TextBox();
 			richTextBox1 = new RichTextBox();
@@ -53,15 +54,16 @@
 			// 
 			richTextBox1.BackColor = SystemColors.Control;
 			richTextBox1.BorderStyle = BorderStyle.None;
-			richTextBox1.Location = new Point(216, 0);
+			richTextBox1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 238);
+			richTextBox1.Location = new Point(216, 8);
 			richTextBox1.Name = "richTextBox1";
-			richTextBox1.Size = new Size(128, 144);
+			richTextBox1.Size = new Size(176, 128);
 			richTextBox1.TabIndex = 14;
-			richTextBox1.Text = "Sometimes when phone is locked, you cant copy files, which is problem when the display is broken.\nThis tool can try to unlock the phone, so you can backup your photos.";
+			richTextBox1.Text = resources.GetString("richTextBox1.Text");
 			// 
 			// keypad1
 			// 
-			keypad1.Location = new Point(128, 32);
+			keypad1.Location = new Point(127, 32);
 			keypad1.Name = "keypad1";
 			keypad1.Size = new Size(74, 97);
 			keypad1.TabIndex = 15;
@@ -74,7 +76,7 @@
 			richTextBox2.BorderStyle = BorderStyle.None;
 			richTextBox2.Location = new Point(8, 136);
 			richTextBox2.Name = "richTextBox2";
-			richTextBox2.Size = new Size(336, 40);
+			richTextBox2.Size = new Size(384, 40);
 			richTextBox2.TabIndex = 16;
 			richTextBox2.Text = "";
 			// 
@@ -82,7 +84,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(354, 178);
+			ClientSize = new Size(393, 178);
 			Controls.Add(richTextBox2);
 			Controls.Add(keypad1);
 			Controls.Add(richTextBox1);

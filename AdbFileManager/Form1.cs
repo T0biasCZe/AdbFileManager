@@ -688,7 +688,7 @@ namespace AdbFileManager {
 
 			// Retrieve a list of files in the specified directory
 
-			string command = $"adb shell ls -lL \"{directoryPath}\"";
+			string command = $"adb shell ls -lL \"'{directoryPath}'\"";
 			Console.WriteLine(command);
 			string output = Form1.adb(command);
 			string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);

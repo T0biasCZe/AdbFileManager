@@ -61,7 +61,7 @@ namespace AdbFileManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 9cfa2c2
+        ///   Looks up a localized string similar to f651e26
         ///.
         /// </summary>
         public static string CurrentCommit {
@@ -143,26 +143,6 @@ namespace AdbFileManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap unlock {
-            get {
-                object obj = ResourceManager.GetObject("unlock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap unlock1 {
-            get {
-                object obj = ResourceManager.GetObject("unlock1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap unlock16 {
             get {
                 object obj = ResourceManager.GetObject("unlock16", resourceCulture);
@@ -173,49 +153,9 @@ namespace AdbFileManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap unlock2 {
-            get {
-                object obj = ResourceManager.GetObject("unlock2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap unlock24 {
-            get {
-                object obj = ResourceManager.GetObject("unlock24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap unlockedShadow {
             get {
                 object obj = ResourceManager.GetObject("unlockedShadow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap unlockk {
-            get {
-                object obj = ResourceManager.GetObject("unlockk", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap unlockkk {
-            get {
-                object obj = ResourceManager.GetObject("unlockkk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -12,7 +12,7 @@ namespace AdbFileManager {
 		public static bool fastcompatibility = false;
 		public static DataTable getDir(string directoryPath) {
 			// Retrieve a list of files in the specified directory without additional details
-			string command = $"adb shell ls \"{directoryPath}\"";
+			string command = $"adb shell ls \"'{directoryPath}'\"";
 			Console.WriteLine(command);
 			string output = Form1.adb(command);
 			string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
@@ -129,7 +129,7 @@ namespace AdbFileManager {
 			bool isFolder = false;
 			//string wholePath = directoryPath + "/" + name;
 			Console.Write($"checking if \"{path}\" is a folder: ");
-			string cdCommand = $"adb shell ls \"{path}\"";
+			string cdCommand = $"adb shell ls \"'{path}'\"";
 			string cdOutput = Form1.adb(cdCommand);
 			if(!cdOutput.Trim().Equals(path.Trim())) {
 				isFolder = true;
