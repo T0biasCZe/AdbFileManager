@@ -8,8 +8,10 @@ Note: to go up a directory, double click the file header!
 
 Note2: Its made in C# and Windows Forms. To put it on Linux/Mac I would completely have to rewrite it, so no Linux/Mac version
 
-# If the app doesn't work install .NET 7 runtime!
- https://dotnet.microsoft.com/en-us/download/dotnet/7.0/runtime
+# This app requires .NET 8 Runtime to function   
+64 bit: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x64-installer    
+32 bit: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x86-installer    
+ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-arm64-installer    
 
 # controls:    
  double click folder to go in it    
@@ -28,5 +30,5 @@ Note2: Its made in C# and Windows Forms. To put it on Linux/Mac I would complete
 **Q**: I open the program but it instantly closes    
 ***A***: Make sure you are opening AdbFileManager.exe, and not adb.exe      
 **Q**: What does Unwrap folder do?     
-***A***: Instead of copying whole folder as 1 item, it loads the contents of that folder and copies each file in it separately, allowing for smoother progress bar. Disadvantage is that its little slower     
+***A***: Instead of copying whole folder as 1 item, it loads the contents of that folder and copies each file in it separately, allowing for smoother progress bar. Disadvantage is that its almost 2x slower (still lot faster than MTP though)     
 ![UnwrapOnvsOff](https://github.com/user-attachments/assets/84847882-8283-4219-848b-e504edacc7df)
