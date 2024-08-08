@@ -31,6 +31,7 @@
 			toolTip1 = new ToolTip(components);
 			panel_dolniTlacitka = new Panel();
 			button_unlock = new Button();
+			deco_panel4 = new Panel();
 			checkBox_android6fix_fastmode = new CheckBox();
 			comboBox_lang = new ComboBox();
 			checkBox_unwrapfolders = new CheckBox();
@@ -45,7 +46,7 @@
 			button_pc2android = new Button();
 			deco_panel1 = new Panel();
 			deco_panel2 = new Panel();
-			panel1 = new Panel();
+			deco_panel3 = new Panel();
 			explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
 			explorer_path = new TextBox();
 			button_forward = new Button();
@@ -88,6 +89,7 @@
 			resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
 			panel_dolniTlacitka.BackColor = Color.FromArgb(192, 255, 255);
 			panel_dolniTlacitka.Controls.Add(button_unlock);
+			panel_dolniTlacitka.Controls.Add(deco_panel4);
 			panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
 			panel_dolniTlacitka.Controls.Add(comboBox_lang);
 			panel_dolniTlacitka.Controls.Add(checkBox_unwrapfolders);
@@ -102,11 +104,20 @@
 			// button_unlock
 			// 
 			resources.ApplyResources(button_unlock, "button_unlock");
+			button_unlock.BackColor = SystemColors.ControlLight;
+			button_unlock.FlatAppearance.BorderSize = 0;
 			button_unlock.Image = Properties.Resources.unlock16;
 			button_unlock.Name = "button_unlock";
 			toolTip1.SetToolTip(button_unlock, resources.GetString("button_unlock.ToolTip"));
-			button_unlock.UseVisualStyleBackColor = true;
+			button_unlock.UseVisualStyleBackColor = false;
 			button_unlock.Click += button_unlock_Click;
+			// 
+			// deco_panel4
+			// 
+			resources.ApplyResources(deco_panel4, "deco_panel4");
+			deco_panel4.BackColor = Color.Gray;
+			deco_panel4.Name = "deco_panel4";
+			toolTip1.SetToolTip(deco_panel4, resources.GetString("deco_panel4.ToolTip"));
 			// 
 			// checkBox_android6fix_fastmode
 			// 
@@ -175,7 +186,7 @@
 			panel_tlacitkaUprostred.Controls.Add(button_pc2android);
 			panel_tlacitkaUprostred.Controls.Add(deco_panel1);
 			panel_tlacitkaUprostred.Controls.Add(deco_panel2);
-			panel_tlacitkaUprostred.Controls.Add(panel1);
+			panel_tlacitkaUprostred.Controls.Add(deco_panel3);
 			panel_tlacitkaUprostred.Name = "panel_tlacitkaUprostred";
 			toolTip1.SetToolTip(panel_tlacitkaUprostred, resources.GetString("panel_tlacitkaUprostred.ToolTip"));
 			// 
@@ -229,12 +240,12 @@
 			deco_panel2.Name = "deco_panel2";
 			toolTip1.SetToolTip(deco_panel2, resources.GetString("deco_panel2.ToolTip"));
 			// 
-			// panel1
+			// deco_panel3
 			// 
-			resources.ApplyResources(panel1, "panel1");
-			panel1.BackColor = Color.Gray;
-			panel1.Name = "panel1";
-			toolTip1.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
+			resources.ApplyResources(deco_panel3, "deco_panel3");
+			deco_panel3.BackColor = Color.Gray;
+			deco_panel3.Name = "deco_panel3";
+			toolTip1.SetToolTip(deco_panel3, resources.GetString("deco_panel3.ToolTip"));
 			// 
 			// explorerBrowser1
 			// 
@@ -335,7 +346,8 @@
 		private Button button_back;
 		private Panel deco_panel1;
 		private Panel deco_panel2;
-		private Panel panel1;
+		private Panel deco_panel3;
 		private Button button_unlock;
+		private Panel deco_panel4;
 	}
 }

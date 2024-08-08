@@ -23,6 +23,7 @@ using TaskDialog = System.Windows.Forms.TaskDialog;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Timer = System.Windows.Forms.Timer;
 using Microsoft.WindowsAPICodePack.Controls;
+using Microsoft.Win32;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -75,9 +76,40 @@ namespace AdbFileManager {
 				Console.OutputEncoding = System.Text.Encoding.UTF8;
 				Console.WindowHeight = 20;
 
-				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 15.05.24";
+				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 05.08.2024";
 				label_version.Text = versionn;
 				Console.WriteLine(versionn);
+
+				//check if Windows app mode is set to dark or light in  windows registry
+
+				try {
+					if(!System.IO.File.Exists("darkmode.txt")) {
+						int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
+						if(res == 0) {
+							System.Media.SystemSounds.Question.Play();
+							var result = MessageBox.Show("Dark mode is enabled in Windows settings. Do you want to enable dark mode in AdbFileManager?\nThis is currently WIP", "Dark mode", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+							System.Media.SystemSounds.Question.Play();
+							var result2 = MessageBox.Show("Do you want to remember this setting", "Dark mode", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+							if(result2 == DialogResult.Yes) {
+								//write file darkmode.txt next to the exe
+								TextWriter tw = new StreamWriter("darkmode.txt");
+								tw.WriteLine(result == DialogResult.Yes);
+								tw.Flush();
+								tw.Close();
+							}
+						}
+					}
+					TextReader tr = new StreamReader("./darkmode.txt");
+					bool DarkMode = bool.Parse(tr.ReadLine());
+					tr.Close();
+					if(DarkMode) {
+						LoadDarkMode();
+					}
+				}
+				catch {
+					//Exception Handling     
+				}
+
 			}
 			catch(Exception ex) {
 				TaskDialog.ShowDialog(new TaskDialogPage() {
@@ -258,7 +290,7 @@ namespace AdbFileManager {
 				string sourcefile = directoryPath + file.name;
 				string destinationFile = $"\"{destinationFolder.Replace('\\', '/')}/{file.name}\"";
 				Console.WriteLine(destinationFile);
-				string command = $"adb pull {date} \"{sourcefile}\" {destinationFile}";
+				string command = $"adb pull {date} \"{sourcefile}\" {Functions.FixWindowsPath(destinationFile)}";
 				string final_directory = Path.GetDirectoryName(destinationFile).Replace("\"", "");
 				if(!Directory.Exists(final_directory)) {
 					Console.WriteLine("Creating directory: " + final_directory);
@@ -373,7 +405,7 @@ namespace AdbFileManager {
 			copying = true;
 			foreach(ShellObject item in items) {
 				string sourcefile = item.ParsingName;
-				string command = $"adb push {date} \"{sourcefile}\" \"{directoryPath.Replace('\\', '/')}\"";
+				string command = $"adb push {date} \"{sourcefile}\" \"{Functions.FixWindowsPath(directoryPath)}\"";
 				Console.WriteLine(command);
 				progressbar.update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
 				Console.WriteLine(adb(command));
@@ -542,6 +574,72 @@ namespace AdbFileManager {
 			}
 
 		}
+		private void LoadDarkMode() {
+			Color backColor = ColorTranslator.FromHtml("#202020");
+			Color darkerBackColor = ColorTranslator.FromHtml("#151515");
+			Color brighterBackColor = ColorTranslator.FromHtml("#404040");
+			Color foreColor = ColorTranslator.FromHtml("#FFFFFF");
+			Color selectedColor = ColorTranslator.FromHtml("#0000FF");
+
+
+			DarkModeHelper.ApplyDark(true, this.Handle);
+
+			this.BackColor = darkerBackColor;
+
+			dataGridView_soubory.BackgroundColor = backColor;
+			dataGridView_soubory.DefaultCellStyle.BackColor = backColor;
+			dataGridView_soubory.DefaultCellStyle.ForeColor = foreColor;
+			dataGridView_soubory.DefaultCellStyle.SelectionBackColor = selectedColor;
+			dataGridView_soubory.DefaultCellStyle.SelectionForeColor = foreColor;
+			dataGridView_soubory.ColumnHeadersDefaultCellStyle.BackColor = backColor;
+			dataGridView_soubory.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
+			dataGridView_soubory.RowHeadersDefaultCellStyle.BackColor = backColor;
+			dataGridView_soubory.RowHeadersDefaultCellStyle.ForeColor = foreColor;
+			dataGridView_soubory.RowHeadersDefaultCellStyle.SelectionBackColor = selectedColor;
+			dataGridView_soubory.RowHeadersDefaultCellStyle.SelectionForeColor = foreColor;
+			dataGridView_soubory.ColumnHeadersDefaultCellStyle.BackColor = brighterBackColor;
+			dataGridView_soubory.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
+			dataGridView_soubory.ColumnHeadersDefaultCellStyle.SelectionBackColor = selectedColor;
+			dataGridView_soubory.EnableHeadersVisualStyles = false;
+			try {
+				Util.Find<HScrollBar>(dataGridView_soubory).BackColor = Color.Red;
+			}
+			catch { }
+			try {
+				Util.Find<VScrollBar>(dataGridView_soubory).BackColor = Color.Red;
+			}
+			catch { }
+
+			cur_path.BackColor = backColor;
+			cur_path.ForeColor = foreColor;
+			explorer_path.BackColor = backColor;
+			explorer_path.ForeColor = foreColor;
+
+			button_android2pc.BackColor = brighterBackColor;
+			button_android2pc.ForeColor = foreColor;
+			button_pc2android.BackColor = brighterBackColor;
+			button_pc2android.ForeColor = foreColor;
+			verticalLabel_refresh.BackColor = brighterBackColor;
+			verticalLabel_refresh.ForeColor = foreColor;
+
+			button_unlock.BackColor = brighterBackColor;
+			button_unlock.ForeColor = foreColor;
+
+
+			deco_panel1.BackColor = Color.Black;
+			deco_panel2.BackColor = Color.Black;
+			deco_panel3.BackColor = Color.Black;
+			deco_panel4.BackColor = Color.Black;
+
+			panel_dolniTlacitka.BackColor = selectedColor;
+			label_version.LinkColor = Color.SkyBlue;
+			foreach(Control control in panel_dolniTlacitka.Controls) {
+				if(control is CheckBox) {
+					control.ForeColor = Color.White;
+				}
+			}
+		}
+
 		private void load_lang() {
 			ushort? loaded_lang = Properties.Settings.Default.lang;
 			if(loaded_lang == null) loaded_lang = (ushort)Languages.English;
@@ -826,6 +924,13 @@ namespace AdbFileManager {
 				Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
 			}
 		}
+		public static string FixWindowsPath(string path) {
+			path.Replace('\\', '/');
+			path.Replace("C:/Usuarios", "C:/Users");
+			path.Replace("C:/Usuários", "C:/Users");
+		    
+			return path;
+		}
 	}
 	public static class Icons {
 		public static Icon folder_image = new Icon(@"icons\folder_image.ico");
@@ -856,5 +961,12 @@ namespace AdbFileManager {
 			this.isDirectory = isDirectory;
 		}
 	}
-
+	public static class Util {
+		static public T Find<T>(Control container) where T : Control {
+			foreach(Control child in container.Controls)
+				return (child is T ? (T)child : Find<T>(child));
+			// Not found.
+			return null;
+		}
+	}
 }
