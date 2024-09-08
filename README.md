@@ -1,6 +1,9 @@
 # AdbFileManager
-Alternative for the MTP which is slow AF. It uses adb protocol to copy files which is lot faster
-![image](https://github.com/T0biasCZe/AdbFileManager/assets/44525446/2a8f39f7-c377-4c90-b094-fb9e4d3808b1)
+Alternative for the MTP which is very. It uses adb protocol to copy files which is lot faster         
+In my testing, the program copies files at speed of approximately 41.6MiB/s (332Mib/s) over USB 2.0, compared to MTP that copies at around 10Mb/s
+![image](https://github.com/user-attachments/assets/c2571d20-c27c-4aa7-b450-5809223589ef)
+
+Buy me a coffee: https://ko-fi.com/T0biasCZe 
 
 To use this app, you must have enabled USB Debugging in android developer settings.     
 After enabling it, just go to the directory from where you want to copy from/where to copy, select the file(s) and hit the arrow to the correct copy direction       
