@@ -25,6 +25,9 @@ ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-deskto
  press enter to go to currently selected directory    
  press backspace to go up a directory
 
+# Known bugs:
+* On non english windows, when copying to the Pictures library folder, it creates new folder with the localized pictures name
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=T0biasCZe/AdbFileManager&type=Date)](https://star-history.com/#T0biasCZe/AdbFileManager&Date)
