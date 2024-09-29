@@ -231,7 +231,14 @@
   <data name="button_android2pc.Text" xml:space="preserve">
     <value>&gt;</value>
   </data>
-  <data name="button_pc2android.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="button_
+        
+
+
+
+
+        
+        .Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="button_pc2android.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">

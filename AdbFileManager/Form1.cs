@@ -224,7 +224,8 @@ namespace AdbFileManager {
 		}
 		bool copying = false;
 		private void android2pc_Click(object sender, EventArgs e) {
-			string destinationFolder = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
+			//string destinationFolder = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
+			string destinationFolder = explorerBrowser1.NavigationLog.CurrentLocation.ParsingName;
 			//MessageBox.Show(destinationFolder);
 
 			string date = checkBox_filedate.Checked ? " -a " : "";
@@ -433,8 +434,6 @@ namespace AdbFileManager {
 		}
 
 		private void explorerBrowser1_NavigationComplete(object sender, Microsoft.WindowsAPICodePack.Controls.NavigationCompleteEventArgs e) {
-
-			//set textbox "explorer_path" to current explorerBrowser1 path
 			string currentPath = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
 			explorer_path.Text = currentPath;
 		}
@@ -746,6 +745,9 @@ namespace AdbFileManager {
 			label_version.Left = this.Width - 121;
 			button1.Left = this.Width - 134;
 			comboBox_lang.Left = this.Width - 242;
+
+			button_unlock.Left = this.Width - 220;
+			deco_panel4.Left = this.Width - 220;
 		}
 
 		private void button_unlock_Click(object sender, EventArgs e) {
