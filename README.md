@@ -26,7 +26,7 @@ ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-deskto
  press backspace to go up a directory
 
 # Known bugs:
-* On non english windows, when copying to the Pictures library folder, it creates new folder with the localized pictures name
+* On non english windows, when copying to the Pictures library folder, it creates new folder with the localized pictures name (fixed in 1.9.1 prerelease)
 
 ## Star History
 
