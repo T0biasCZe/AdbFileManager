@@ -877,6 +877,25 @@ namespace AdbFileManager {
 				}
 				if(dgv.Rows.Count == 0) {
 					dgv.Rows.Add(new Icon(@"icons\file.ico"), "No files found", 0, DateTime.UnixEpoch);
+					if(directoryPath == "/sdcard/") {
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "Make sure USB debugging is enabled, and your device", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "is properly connected.", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "To enable USB debugging:", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "1. Go to android settings", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "2. System", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "3. Information about phone", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "4. Find build number and click it repeatedly, ", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "    Until \"developer mode is now enabled\" notification", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "5. go back, and find \"developer settings\"", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "6. find \"USB Debugging\" and enable it", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "7. Enable \"Disable adb authorization time limit\"", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "8. connect your phone to PC, and click authorize PC", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "9. Files should now show here properly", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "", 0, DateTime.UnixEpoch);
+						dgv.Rows.Add(new Icon(@"icons\file.ico"), "Please note that these steps may vary by phone", 0, DateTime.UnixEpoch);
+
+					}
 				}
 				else if(dgv.Rows.Count > 18) {
 					Form1._Form1.dataGridView_soubory.Columns[1].Width = 290;
