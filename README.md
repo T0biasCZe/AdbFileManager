@@ -1,5 +1,5 @@
-*# AdbFileManager
-Alternative for the MTP which is very. It uses adb protocol to copy files which is lot faster         
+*# AdbFileManager    
+Alternative for the MTP which is very slow. It uses adb protocol to copy files which is lot faster         
 In my testing, the program copies files at speed of approximately 41.6MiB/s (332Mib/s) over USB 2.0, compared to MTP that copies at around 10Mb/s
 ![image](https://github.com/user-attachments/assets/c2571d20-c27c-4aa7-b450-5809223589ef)
 
