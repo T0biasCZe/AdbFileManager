@@ -24,6 +24,9 @@ ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-deskto
  press enter to go to currently selected directory    
  press backspace to go up a directory
 
+# Video tutorial:
+[![Tutorial](https://i3.ytimg.com/vi/3_mgQWvYvE4/hqdefault.jpg)](https://youtu.be/3_mgQWvYvE4)
+
 # Known bugs:
 * On non english windows, when copying to the Pictures library folder, it creates new folder with the localized pictures name (fixed in 1.9.1 prerelease)
 
