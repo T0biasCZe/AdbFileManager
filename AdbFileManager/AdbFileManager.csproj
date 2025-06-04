@@ -62,6 +62,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>strings.resx</DependentUpon>
     </Compile>
+    <Compile Update="VerticalLabelOld.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

@@ -24,6 +24,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Timer = System.Windows.Forms.Timer;
 using Microsoft.WindowsAPICodePack.Controls;
 using Microsoft.Win32;
+using TextBox = System.Windows.Forms.TextBox;
+using Button = System.Windows.Forms.Button;
 
 namespace AdbFileManager {
 	public partial class Form1 : Form {
@@ -44,8 +46,16 @@ namespace AdbFileManager {
 				load_lang_combobox();
 				load_settings();
 
+				if(true){ //later if modern theme is enabled
+					UIStyle.ApplyModernTheme(this);
+				}
+				else{
+					button_forward.Image = Icons.travel_enabled_forward;
+					button_back.Image = Icons.travel_enabled_back;
+				}
 
-				checkBox_android6fix.Enabled = true;
+
+					checkBox_android6fix.Enabled = true;
 
 				//this.Controls.Add(panel_dolniTlacitka);
 				//panel_main.Controls.Remove(panel_dolniTlacitka);
@@ -390,6 +400,13 @@ namespace AdbFileManager {
 			cur_path_modifyInternal = false;
 
 			hideConsole();
+
+			button_pc2android.Invalidate();
+			button_android2pc.Invalidate();
+			verticalLabel_refresh.Invalidate();
+			button_unlock.Invalidate();
+			verticalLabel_makedir.Invalidate();
+
 		}
 
 		private void pc2android_Click(object sender, EventArgs e) {
@@ -665,33 +682,41 @@ namespace AdbFileManager {
 
 		}
 		private void buttonback_MouseLeave(object sender, EventArgs e) {
-			this.button_back.Image = Properties.Resources.travel_back_enabled;
+			//this.button_back.Image = Properties.Resources.travel_back_enabled;
+			this.button_back.Image = Icons.travel_enabled_back;
 		}
 
 		private void buttonback_MouseEnter(object sender, EventArgs e) {
-			this.button_back.Image = Properties.Resources.travel_hot_back;
+			//this.button_back.Image = Properties.Resources.travel_hot_back;
+			this.button_back.Image = Icons.travel_hot_back;
 		}
 
 		private void buttonback_MouseDown(object sender, MouseEventArgs e) {
-			this.button_back.Image = Properties.Resources.travel_pressed_back;
+			//this.button_back.Image = Properties.Resources.travel_pressed_back;
+			this.button_back.Image = Icons.travel_pressed_back;
 		}
 		private void buttonback_MouseUp(object sender, MouseEventArgs e) {
-			this.button_back.Image = Properties.Resources.travel_hot_back;
+			//this.button_back.Image = Properties.Resources.travel_hot_back;
+			this.button_back.Image = Icons.travel_hot_back;
 		}
 
 		private void buttonforward_MouseLeave(object sender, EventArgs e) {
-			this.button_forward.Image = Properties.Resources.travel_forward_enabled;
+			//this.button_forward.Image = Properties.Resources.travel_forward_enabled;
+			this.button_forward.Image = Icons.travel_enabled_forward;
 		}
 
 		private void buttonforward_MouseEnter(object sender, EventArgs e) {
-			this.button_forward.Image = Properties.Resources.travel_hot_forward;
+			//this.button_forward.Image = Properties.Resources.travel_hot_forward;
+			this.button_forward.Image = Icons.travel_hot_forward;
 		}
 
 		private void buttonforward_MouseDown(object sender, MouseEventArgs e) {
-			this.button_forward.Image = Properties.Resources.travel_hot_forward;
+			//this.button_forward.Image = Properties.Resources.travel_hot_forward;
+			this.button_forward.Image = Icons.travel_pressed_forward;
 		}
 		private void buttonforward_MouseUp(object sender, MouseEventArgs e) {
-			this.button_forward.Image = Properties.Resources.travel_hot_forward;
+			//this.button_forward.Image = Properties.Resources.travel_hot_forward;
+			this.button_forward.Image = Icons.travel_hot_forward;
 		}
 
 		private void button_back_Click(object sender, EventArgs e) {
@@ -753,6 +778,41 @@ namespace AdbFileManager {
 		private void button_unlock_Click(object sender, EventArgs e) {
 			UnlockForm unlock = new UnlockForm();
 			unlock.Show();
+		}
+
+		private void button_makedir_Click(object sender, EventArgs e) {
+			//show form dialog with textbox input for directory name
+			Form directoryNameForm = new Form();
+			directoryNameForm.Text = "Enter directory name";
+			directoryNameForm.Size = new Size(300, 100);
+			directoryNameForm.StartPosition = FormStartPosition.CenterParent;
+			TextBox dirName = new TextBox();
+			dirName.Size = new Size(260, 20);
+			dirName.Location = new Point(10, 10);
+			Button okButton = new Button();
+			okButton.Text = "OK";
+			okButton.Size = new Size(75, 23);
+			directoryNameForm.Controls.Add(dirName);
+			directoryNameForm.Controls.Add(okButton);
+
+			//set ok button to close the form and return the value from textbox
+			okButton.Click += (sender, e) => {
+				directoryNameForm.DialogResult = DialogResult.OK;
+				directoryNameForm.Close();
+			};
+			DialogResult result = directoryNameForm.ShowDialog();
+			if(result == DialogResult.OK) {
+				string directoryName = dirName.Text;
+				string command = $"adb shell mkdir \"{directoryPath}/{directoryName}\"";
+				Console.WriteLine(command);
+				string output = adb(command);
+				Console.WriteLine(output);
+				dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+			}
+		}
+
+		private void panel_tlacitkaUprostred_Paint(object sender, PaintEventArgs e) {
+
 		}
 	}
 
@@ -831,27 +891,7 @@ namespace AdbFileManager {
 							string name = string.Join(' ', attributes.Skip(7));
 							Icon icon;
 							try {
-								if(isFolder(permissions, old_android)) {
-									if(file.Contains("dcim", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_image;
-									else if(file.EndsWith(@"download", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_downloads;
-									else if(file.EndsWith(@"music", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
-									else if(file.EndsWith(@"movies", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_video;
-									else if(file.EndsWith(@"documents", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_document;
-									else if(file.EndsWith(@"ringtones", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
-									else if(file.EndsWith(@"alarms", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
-									else if(file.EndsWith(@"notifications", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
-									else if(file.EndsWith(@"podcasts", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
-									else icon = Icons.folder_image;
-								}
-
-								else if(imageExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.image2;
-								else if(videoExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.video2;
-								else if(romExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.rom;
-								else if(audioExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.music2;
-								else if(documentExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.doc2;
-								else if(archiveExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.archive;
-								else if(executableExtensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.archive;
-								else icon = Icons.file;
+								icon = UIStyle.GetIcon(file, isFolder(permissions, old_android));
 							}
 							catch(Exception ex) {
 								ConsoleColor old = Console.ForegroundColor;
@@ -952,21 +992,6 @@ namespace AdbFileManager {
 		    
 			return path;
 		}
-	}
-	public static class Icons {
-		public static Icon folder_image = new Icon(@"icons\folder_image.ico");
-		public static Icon folder_downloads = new Icon(@"icons\folder_downloads.ico");
-		public static Icon folder_music = new Icon(@"icons\folder_music.ico");
-		public static Icon folder_video = new Icon(@"icons\folder_video.ico");
-		public static Icon folder_document = new Icon(@"icons\folder_document.ico");
-		public static Icon image2 = new Icon(@"icons\image2.ico");
-		public static Icon video2 = new Icon(@"icons\video2.ico");
-		public static Icon rom = new Icon(@"icons\rom.ico");
-		public static Icon music2 = new Icon(@"icons\music2.ico");
-		public static Icon doc2 = new Icon(@"icons\doc2.ico");
-		public static Icon archive = new Icon(@"icons\archive.ico");
-		public static Icon exe = new Icon(@"icons\exe.ico");
-		public static Icon file = new Icon(@"icons\file.ico");
 	}
 	public class File {
 		public string name;

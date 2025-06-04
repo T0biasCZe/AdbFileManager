@@ -1,171 +1,215 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace randz.CustomControls {
-    /// <summary>
-    /// A custom windows control to display text vertically
-    /// </summary>
-    [ToolboxBitmap(typeof(VerticalLabel), "VerticalLabel.ico")]
-    public class VerticalLabel : System.Windows.Forms.Control {
-        private string labelText;
-        private DrawMode _dm = DrawMode.BottomUp;
-        private bool _transparentBG = false;
-        System.Drawing.Text.TextRenderingHint _renderMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
+	[ToolboxBitmap(typeof(VerticalLabel), "VerticalLabel.ico")]
+	public class VerticalLabel : Control {
+		private string labelText;
+		private DrawMode _dm = DrawMode.BottomUp;
+		private bool _transparentBG = false;
+		private bool useFluent = false;
+		private bool hovering = false;
+		
 
-        private System.ComponentModel.Container components = new System.ComponentModel.Container();
+		private System.Drawing.Text.TextRenderingHint _renderMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
 
-        /// <summary>
-        /// VerticalLabel constructor
-        /// </summary>
-        public VerticalLabel() {
-            base.CreateControl();
-            InitializeComponent();
-            SetStyle(System.Windows.Forms.ControlStyles.Opaque, true);
-        }
+		private Color baseColor = Color.FromArgb(200, 200, 200);
+		private Color hoverColor = Color.FromArgb(230, 230, 230);
+		private Color pressOverlayColor = Color.FromArgb(100, 100, 100);
+		private float gradientLightAmount = 0.5f;
+		private float gradientDarkAmount = 0;
 
-        /// <summary>
-        /// Dispose override method
-        /// </summary>
-        /// <param name="disposing">boolean parameter</param>
-        protected override void Dispose(bool disposing) {
-            if(disposing) {
-                if(!((components == null))) {
-                    components.Dispose();
-                }
-            }
-            base.Dispose(disposing);
-        }
-
-        [System.Diagnostics.DebuggerStepThrough()]
-        private void InitializeComponent() {
-            this.Size = new System.Drawing.Size(24, 100);
-        }
-
-        /// <summary>
-        /// OnPaint override. This is where the text is rendered vertically.
-        /// </summary>
-        /// <param name="e">PaintEventArgs</param>
-        private bool hovering = false;
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e) {
-            float vlblControlWidth;
-            float vlblControlHeight;
-            float vlblTransformX;
-            float vlblTransformY;
-
-            Color controlBackColor = BackColor;
-            if(hovering) {
-                controlBackColor = Color.FromArgb((int)(controlBackColor.R * 0.9), (int)(controlBackColor.G * 0.9), (int)(controlBackColor.B * 0.9));
+		[Category("Appearance")]
+		[Description("Enable or disable Fluent-style rendering.")]
+		public bool UseFluent {
+			get => useFluent;
+			set {
+				useFluent = value;
+				if(useFluent) {
+					InvalidateRegion();
+				}
+				else {
+					Region = null;
+					Invalidate();
+				}
 			}
-            Pen labelBorderPen;
-            SolidBrush labelBackColorBrush;
+		}
+		[Category("Appearance"), Description("Round corner radius.")]
+		public int CornerRadius = 7;
 
-            if(_transparentBG) {
-                labelBorderPen = new Pen(Color.Empty, 0);
-                labelBackColorBrush = new SolidBrush(Color.Empty);
-            }
-            else {
-                labelBorderPen = new Pen(controlBackColor, 0);
-                labelBackColorBrush = new SolidBrush(controlBackColor);
-            }
+		[Category("Properties"), Description("Rendering mode.")]
+		public System.Drawing.Text.TextRenderingHint RenderingMode {
+			get => _renderMode;
+			set {
+				_renderMode = value;
+				Invalidate();
+			}
+		}
 
-            SolidBrush labelForeColorBrush = new SolidBrush(base.ForeColor);
-            base.OnPaint(e);
+		[Category("Properties"), Description("Whether the background is transparent.")]
+		public bool TransparentBackground {
+			get => _transparentBG;
+			set {
+				_transparentBG = value;
+				Invalidate();
+			}
+		}
 
-            vlblControlWidth = this.Size.Width;
-            vlblControlHeight = this.Size.Height;
-            e.Graphics.DrawRectangle(labelBorderPen, 0, 0, vlblControlWidth, vlblControlHeight);
-            e.Graphics.FillRectangle(labelBackColorBrush, 0, 0, vlblControlWidth, vlblControlHeight);
-            e.Graphics.TextRenderingHint = this._renderMode;
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+		public VerticalLabel() {
+			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint |
+					 ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer, true);
+			InitializeComponent();
+		}
 
-            if(this.TextDrawMode == DrawMode.BottomUp) {
-                vlblTransformX = 0;
-                vlblTransformY = vlblControlHeight;
-                e.Graphics.TranslateTransform(vlblTransformX, vlblTransformY);
-                e.Graphics.RotateTransform(270);
-                e.Graphics.DrawString(labelText, Font, labelForeColorBrush, 0, 0);
-            }
-            else {
-                vlblTransformX = vlblControlWidth;
-                vlblTransformY = vlblControlHeight;
-                e.Graphics.TranslateTransform(vlblControlWidth, 0);
-                e.Graphics.RotateTransform(90);
-                e.Graphics.DrawString(labelText, Font, labelForeColorBrush, 0, 0, StringFormat.GenericTypographic);
-            }
-        }
+		private void InitializeComponent() {
+			this.Size = new Size(24, 100);
+		}
+
+		private void InvalidateRegion() {
+			using(GraphicsPath path = RoundedRect(ClientRectangle, CornerRadius)) {
+				Region = new Region(path);
+			}
+			Invalidate();
+		}
+
+		protected override void OnResize(EventArgs e) {
+			base.OnResize(e);
+			if(UseFluent) {
+				InvalidateRegion();
+			}
+			else {
+				Region = null;
+			}
+		}
+
+		protected override void OnHandleCreated(EventArgs e) {
+			base.OnHandleCreated(e);
+			if(UseFluent) {
+				InvalidateRegion();
+			}
+		}
+
+		protected override void OnPaintBackground(PaintEventArgs e) {
+			if(UseFluent) {
+				e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+				Color currentColor = hovering ? hoverColor : baseColor;
+
+				Color topColor = BlendColors(currentColor, Color.White, gradientLightAmount);
+				Color bottomColor = BlendColors(currentColor, Color.Black, gradientDarkAmount);
+
+				using(GraphicsPath path = RoundedRect(ClientRectangle, CornerRadius))
+				using(LinearGradientBrush brush = new LinearGradientBrush(ClientRectangle, topColor, bottomColor, LinearGradientMode.Vertical)) {
+					e.Graphics.FillPath(brush, path);
+				}
+			}
+			else if(!_transparentBG) {
+				using(SolidBrush brush = new SolidBrush(BackColor)) {
+					e.Graphics.FillRectangle(brush, ClientRectangle);
+				}
+			}
+			else {
+				base.OnPaintBackground(e);
+			}
+		}
+
+		protected override void OnPaint(PaintEventArgs e) {
+			base.OnPaint(e);
+
+			e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+			e.Graphics.TextRenderingHint = _renderMode;
+
+			Color textColor = ForeColor;
+			if(hovering) {
+				textColor = Color.FromArgb(
+					(int)(textColor.R * 0.9),
+					(int)(textColor.G * 0.9),
+					(int)(textColor.B * 0.9));
+			}
+
+			using(SolidBrush textBrush = new SolidBrush(textColor)) {
+				DrawVerticalText(e.Graphics, textBrush);
+			}
+		}
+
+		private void DrawVerticalText(Graphics g, Brush brush) {
+			float width = Width;
+			float height = Height;
+
+			if(_dm == DrawMode.BottomUp) {
+				g.TranslateTransform(0, height);
+				g.RotateTransform(270);
+				g.DrawString(labelText, Font, brush, 0, 0);
+				g.ResetTransform();
+			}
+			else {
+				g.TranslateTransform(width, 0);
+				g.RotateTransform(90);
+				g.DrawString(labelText, Font, brush, 0, 0, StringFormat.GenericTypographic);
+				g.ResetTransform();
+			}
+		}
+
 		protected override void OnMouseEnter(EventArgs e) {
 			base.OnMouseEnter(e);
-            hovering = true;
-            Refresh();
+			hovering = true;
+			if(UseFluent) Invalidate();
 		}
-        protected override void OnMouseLeave(EventArgs e) {
+
+		protected override void OnMouseLeave(EventArgs e) {
 			base.OnMouseLeave(e);
 			hovering = false;
-            Refresh();
+			if(UseFluent) Invalidate();
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		protected override CreateParams CreateParams//v1.10 
-        {
-            get {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x20;  // Turn on WS_EX_TRANSPARENT
-                return cp;
-            }
-        }
 
-        private void VerticalTextBox_Resize(object sender, System.EventArgs e) {
-            Invalidate();
-        }
-        /// <summary>
-        /// Graphics rendering mode. Supprot for antialiasing.
-        /// </summary>
-        [Category("Properties"), Description("Rendering mode.")]
-        public System.Drawing.Text.TextRenderingHint RenderingMode {
-            get { return _renderMode; }
-            set { _renderMode = value; }
-        }
-        /// <summary>
-        /// The text to be displayed in the control
-        /// </summary>
-        [Category("VerticalLabel"), Description("Text is displayed vertically in container.")]
-        public override string Text {
-            get {
-                return labelText;
-            }
-            set {
-                labelText = value;
-                Invalidate();
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        [Category("Properties"), Description("Whether the text will be drawn from Bottom or from Top.")]
-        public DrawMode TextDrawMode {
-            get { return _dm; }
-            set { _dm = value; }
-        }
-        [Category("Properties"), Description("Whether the text will be drawn with transparent background or not.")]
-        public bool TransparentBackground {
-            get { return _transparentBG; }
-            set { _transparentBG = value; }
-        }
-    }
-    /// <summary>
-    /// Text Drawing Mode
-    /// </summary>
-    public enum DrawMode {
-        /// <summary>
-        /// Text is drawn from bottom - up
-        /// </summary>
-        BottomUp = 1,
-        /// <summary>
-        /// Text is drawn from top to bottom
-        /// </summary>
-        TopBottom
-    }
+		public override string Text {
+			get => labelText;
+			set {
+				labelText = value;
+				Invalidate();
+			}
+		}
+
+		public DrawMode TextDrawMode {
+			get => _dm;
+			set {
+				_dm = value;
+				Invalidate();
+			}
+		}
+
+		private GraphicsPath RoundedRect(Rectangle bounds, int radius) {
+			int diameter = radius * 2;
+			GraphicsPath path = new GraphicsPath();
+			path.StartFigure();
+			path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+			path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
+			path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
+			path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
+			path.CloseFigure();
+			return path;
+		}
+
+		private Color BlendColors(Color color1, Color color2, float amount) {
+			byte r = (byte)((color1.R * (1 - amount)) + color2.R * amount);
+			byte g = (byte)((color1.G * (1 - amount)) + color2.G * amount);
+			byte b = (byte)((color1.B * (1 - amount)) + color2.B * amount);
+			return Color.FromArgb(r, g, b);
+		}
+
+		protected override CreateParams CreateParams {
+			get {
+				CreateParams cp = base.CreateParams;
+				cp.ExStyle |= 0x20; // WS_EX_TRANSPARENT for transparency support
+				return cp;
+			}
+		}
+	}
+
+	public enum DrawMode {
+		BottomUp = 1,
+		TopBottom
+	}
 }

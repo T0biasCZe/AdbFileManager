@@ -32,7 +32,7 @@ namespace AdbFileManager {
 				dgv.Columns.Add(Form1.rm.GetString("datagridview_date"), typeof(DateTime));
 				dgv.Columns.Add(Form1.rm.GetString("datagridview_attr"));
 
-				foreach(string fileName in files.Skip(1)) {
+				foreach(string fileName in files.Skip(0)) {
 					string name = fileName.Trim();
 					try {
 						if(!string.IsNullOrWhiteSpace(name)) {
@@ -55,7 +55,8 @@ namespace AdbFileManager {
 
 							Icon icon;
 							try {
-								if(isFolder) {
+								icon = UIStyle.GetIcon(name, isFolder);
+								/*if(isFolder) {
 									if(name.Contains("dcim", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_image;
 									else if(name.EndsWith(@"download", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_downloads;
 									else if(name.EndsWith(@"music", StringComparison.OrdinalIgnoreCase)) icon = Icons.folder_music;
@@ -75,7 +76,7 @@ namespace AdbFileManager {
 								else if(Functions.documentExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.doc2;
 								else if(Functions.archiveExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.archive;
 								else if(Functions.executableExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) icon = Icons.archive;
-								else icon = Icons.file;
+								else icon = Icons.file;*/
 							}
 							catch(Exception ex) {
 								ConsoleColor old = Console.ForegroundColor;
