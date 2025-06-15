@@ -31,7 +31,7 @@ ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-deskto
 [![Tutorial](https://i3.ytimg.com/vi/3_mgQWvYvE4/hqdefault.jpg)](https://youtu.be/3_mgQWvYvE4)
 
 # Known bugs:
-* On non english windows, when copying to the Pictures library folder, it creates new folder with the localized pictures name (fixed in 1.9.1 prerelease)
+* Sometimes a folder is not shown
 
 # Settings:  
 ***Keep file modified date***     
