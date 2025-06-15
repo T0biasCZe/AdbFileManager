@@ -15,14 +15,17 @@ Note2: Its made in C# and Windows Forms. To put it on Linux/Mac I would complete
 32 bit: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-x86-installer    
 ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.7-windows-arm64-installer    
 
-# controls:    
- double click folder to go in it    
- double click header to go back a directory    
- click the arrow buttons between the two file explorers to copy file in that direction    
- 
- press up/down cursor keys to change selected file/directory in list    
- press enter to go to currently selected directory    
- press backspace to go up a directory
+# basic controls:    
+ * To enter a folder:
+   * double click the folder with a left mouse button
+   * or press enter on the gameboard
+ * to go up a directory:
+   * press backspace on the keyboard
+   * or double click the header of the file list   
+ ![This is the header](https://github.com/user-attachments/assets/ed947c01-e4a0-4374-8359-16f603f63601)
+ * to copy files:
+   * select the file(s) in you want to copy on the android side or the windows size, and then click the arrow button with the wanted direction
+
 
 # Video tutorial:
 [![Tutorial](https://i3.ytimg.com/vi/3_mgQWvYvE4/hqdefault.jpg)](https://youtu.be/3_mgQWvYvE4)
