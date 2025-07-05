@@ -135,7 +135,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="button_unlock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>984, 1</value>
+    <value>903, 2</value>
   </data>
   <data name="button_unlock.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 21</value>
@@ -145,6 +145,9 @@
   </data>
   <data name="button_unlock.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
+  </data>
+  <data name="button_unlock.ToolTip" xml:space="preserve">
+    <value>Allows you to unlock the phone with PIN when you have broken screen but the phone still works</value>
   </data>
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -203,10 +206,65 @@
   <data name="deco_panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 22</value>
   </data>
+  <data name="button_openSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_openSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="button_openSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_openSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="button_openSettings.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="button_openSettings.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="button_openSettings.ToolTip" xml:space="preserve">
+    <value>Work in progress settings
+</value>
+  </data>
   <data name="panel_dolniTlacitka.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
   </data>
+  <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 850</value>
+  </data>
+  <data name="panel_dolniTlacitka.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 25</value>
+  </data>
+  <data name="comboBox_device.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="button_console.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_console.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1064, 6</value>
+  </data>
+  <data name="button_console.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="deco_panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 22</value>
+  </data>
+  <data name="panel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 8</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 22</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
   <data name="checkBox_android6fix_fastmode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -249,14 +307,17 @@
   <data name="label_version.Text" xml:space="preserve">
     <value>version here</value>
   </data>
-  <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 850</value>
-  </data>
-  <data name="panel_dolniTlacitka.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 25</value>
-  </data>
   <data name="panel_tlacitkaUprostred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 280</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 280</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 280</value>
   </data>
   <data name="verticalLabel_makedir.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -290,15 +351,6 @@
   </data>
   <data name="deco_panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 42</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 280</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 280</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 280</value>
   </data>
   <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -343,9 +395,6 @@
         AAAAAAAAHgAAAP/AAAAeAAAA/8AAAP4AAAD/wAAB/gAAAP/AAAH+AAAA/8AAAf4AAAD/wAAH/gAAAP/A
         AA/+AAAA/8AAH/4AAAA=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>3840, 2160</value>

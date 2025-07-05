@@ -36,7 +36,12 @@
 			button_forward = new Button();
 			button_back = new Button();
 			deco_panel4 = new Panel();
+			button_openSettings = new FluentButton();
 			panel_dolniTlacitka = new Panel();
+			comboBox_device = new ComboBox();
+			button_console = new Button();
+			deco_panel6 = new Panel();
+			panel2 = new Panel();
 			checkBox_android6fix_fastmode = new CheckBox();
 			comboBox_lang = new ComboBox();
 			checkBox_unwrapfolders = new CheckBox();
@@ -54,7 +59,9 @@
 			explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
 			explorer_path = new TextBox();
 			((System.ComponentModel.ISupportInitialize)dataGridView_soubory).BeginInit();
+			deco_panel4.SuspendLayout();
 			panel_dolniTlacitka.SuspendLayout();
+			deco_panel6.SuspendLayout();
 			panel_tlacitkaUprostred.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -166,14 +173,30 @@
 			// 
 			resources.ApplyResources(deco_panel4, "deco_panel4");
 			deco_panel4.BackColor = Color.Gray;
+			deco_panel4.Controls.Add(button_openSettings);
 			deco_panel4.Name = "deco_panel4";
 			toolTip1.SetToolTip(deco_panel4, resources.GetString("deco_panel4.ToolTip"));
+			// 
+			// button_openSettings
+			// 
+			resources.ApplyResources(button_openSettings, "button_openSettings");
+			button_openSettings.BackColor = SystemColors.ControlLight;
+			button_openSettings.FlatAppearance.BorderSize = 0;
+			button_openSettings.ForeColor = Color.Black;
+			button_openSettings.Name = "button_openSettings";
+			toolTip1.SetToolTip(button_openSettings, resources.GetString("button_openSettings.ToolTip"));
+			button_openSettings.UseFluent = false;
+			button_openSettings.UseVisualStyleBackColor = false;
+			button_openSettings.Click += button_openSettings_Click;
 			// 
 			// panel_dolniTlacitka
 			// 
 			resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
 			panel_dolniTlacitka.BackColor = Color.FromArgb(192, 255, 255);
+			panel_dolniTlacitka.Controls.Add(comboBox_device);
+			panel_dolniTlacitka.Controls.Add(button_console);
 			panel_dolniTlacitka.Controls.Add(button_unlock);
+			panel_dolniTlacitka.Controls.Add(deco_panel6);
 			panel_dolniTlacitka.Controls.Add(deco_panel4);
 			panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
 			panel_dolniTlacitka.Controls.Add(comboBox_lang);
@@ -184,6 +207,41 @@
 			panel_dolniTlacitka.Controls.Add(checkBox_filedate);
 			panel_dolniTlacitka.Name = "panel_dolniTlacitka";
 			toolTip1.SetToolTip(panel_dolniTlacitka, resources.GetString("panel_dolniTlacitka.ToolTip"));
+			panel_dolniTlacitka.Paint += panel_dolniTlacitka_Paint;
+			// 
+			// comboBox_device
+			// 
+			resources.ApplyResources(comboBox_device, "comboBox_device");
+			comboBox_device.FormattingEnabled = true;
+			comboBox_device.Items.AddRange(new object[] { resources.GetString("comboBox_device.Items"), resources.GetString("comboBox_device.Items1") });
+			comboBox_device.Name = "comboBox_device";
+			toolTip1.SetToolTip(comboBox_device, resources.GetString("comboBox_device.ToolTip"));
+			comboBox_device.SelectedIndexChanged += comboBox_device_SelectedIndexChanged;
+			// 
+			// button_console
+			// 
+			resources.ApplyResources(button_console, "button_console");
+			button_console.BackColor = Color.Transparent;
+			button_console.FlatAppearance.BorderSize = 0;
+			button_console.Name = "button_console";
+			toolTip1.SetToolTip(button_console, resources.GetString("button_console.ToolTip"));
+			button_console.UseVisualStyleBackColor = false;
+			button_console.Click += button1_Click;
+			// 
+			// deco_panel6
+			// 
+			resources.ApplyResources(deco_panel6, "deco_panel6");
+			deco_panel6.BackColor = Color.Gray;
+			deco_panel6.Controls.Add(panel2);
+			deco_panel6.Name = "deco_panel6";
+			toolTip1.SetToolTip(deco_panel6, resources.GetString("deco_panel6.ToolTip"));
+			// 
+			// panel2
+			// 
+			resources.ApplyResources(panel2, "panel2");
+			panel2.BackColor = Color.Gray;
+			panel2.Name = "panel2";
+			toolTip1.SetToolTip(panel2, resources.GetString("panel2.ToolTip"));
 			// 
 			// checkBox_android6fix_fastmode
 			// 
@@ -276,9 +334,6 @@
 			verticalLabel_refresh.TransparentBackground = false;
 			verticalLabel_refresh.UseFluent = false;
 			verticalLabel_refresh.Click += verticalLabel1_Click;
-			verticalLabel_refresh.DoubleClick += verticalLabel1_Click;
-			verticalLabel_refresh.MouseClick += verticalLabel1_Click;
-			verticalLabel_refresh.MouseDoubleClick += verticalLabel1_Click;
 			// 
 			// deco_panel1
 			// 
@@ -332,12 +387,12 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			Controls.Add(explorer_path);
 			Controls.Add(explorerBrowser1);
-			Controls.Add(panel_dolniTlacitka);
 			Controls.Add(cur_path);
 			Controls.Add(dataGridView_soubory);
 			Controls.Add(panel_tlacitkaUprostred);
 			Controls.Add(button_back);
 			Controls.Add(button_forward);
+			Controls.Add(panel_dolniTlacitka);
 			Name = "Form1";
 			toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
 			FormClosing += Form1_FormClosing;
@@ -345,8 +400,10 @@
 			Load += Form1_Load;
 			Resize += Form1_Resize;
 			((System.ComponentModel.ISupportInitialize)dataGridView_soubory).EndInit();
+			deco_panel4.ResumeLayout(false);
 			panel_dolniTlacitka.ResumeLayout(false);
 			panel_dolniTlacitka.PerformLayout();
+			deco_panel6.ResumeLayout(false);
 			panel_tlacitkaUprostred.ResumeLayout(false);
 			ResumeLayout(false);
 			PerformLayout();
@@ -355,20 +412,16 @@
 		#endregion
 		public DataGridView dataGridView_soubory;
 		private System.Windows.Forms.Timer timer1;
-		private TextBox cur_path;
 		private ToolTip toolTip1;
-		private Panel panel_dolniTlacitka;
 		private CheckBox checkBox_android6fix_fastmode;
 		public ComboBox comboBox_lang;
 		private CheckBox checkBox_unwrapfolders;
 		private CheckBox checkBox_preview;
 		private FluentButton button1;
 		public CheckBox checkBox_android6fix;
-		private LinkLabel label_version;
 		private CheckBox checkBox_filedate;
 		private Panel panel_tlacitkaUprostred;
 		public Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
-		private TextBox explorer_path;
 		public Panel deco_panel1;
 		public Panel deco_panel2;
 		public Panel deco_panel3;
@@ -381,5 +434,14 @@
 		public randz.CustomControls.VerticalLabel verticalLabel_refresh;
 		public FluentButton button_unlock;
 		public FluentButton button_pc2android;
+		public FluentButton button_openSettings;
+		public Panel deco_panel6;
+		public Panel panel2;
+		public Button button_console;
+		public LinkLabel label_version;
+		public Panel panel_dolniTlacitka;
+		public TextBox cur_path;
+		public TextBox explorer_path;
+		public ComboBox comboBox_device;
 	}
 }

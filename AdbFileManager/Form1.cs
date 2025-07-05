@@ -37,25 +37,23 @@ namespace AdbFileManager {
 		public static ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 		public Form1() {
 			try {
+				SettingsManager.LoadSettings();
+
 				showConsole();
 				_Form1 = this;
-				load_lang();
+				//applyLang();
 
 				InitializeComponent();
 
-				load_lang_combobox();
 				load_settings();
 
-				if(true){ //later if modern theme is enabled
-					UIStyle.ApplyModernTheme(this);
-				}
-				else{
-					button_forward.Image = Icons.travel_enabled_forward;
-					button_back.Image = Icons.travel_enabled_back;
+				UIStyle.ApplyModernTheme(this);
+				if(SettingsManager.settings.DarkMode) {
+					UIStyle.LoadDarkMode(this);
 				}
 
 
-					checkBox_android6fix.Enabled = true;
+				checkBox_android6fix.Enabled = true;
 
 				//this.Controls.Add(panel_dolniTlacitka);
 				//panel_main.Controls.Remove(panel_dolniTlacitka);
@@ -78,47 +76,26 @@ namespace AdbFileManager {
 				DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView_soubory.Columns[0];
 				img.ImageLayout = DataGridViewImageCellLayout.Zoom;
 				dataGridView_soubory.Columns[0].Width = 25;
+				dataGridView_soubory.Columns[0].MinimumWidth = 25;
 				dataGridView_soubory.Columns[1].Width = 307;
+				dataGridView_soubory.Columns[1].MinimumWidth = 307;
 				dataGridView_soubory.Columns[2].Width = 80;
+				dataGridView_soubory.Columns[2].MinimumWidth = 80;
 				dataGridView_soubory.Columns[3].Width = 115;
+				dataGridView_soubory.Columns[3].MinimumWidth = 115;
+
+				//autosize column 1 to fill the dataGridView width
+				dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 				//set Console app codepage to UTF-8.
 				Console.OutputEncoding = System.Text.Encoding.UTF8;
 				Console.WindowHeight = 20;
 
-				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 05.08.2024";
+				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 06.07.2025";
 				label_version.Text = versionn;
 				Console.WriteLine(versionn);
 
-				//check if Windows app mode is set to dark or light in  windows registry
-
-				try {
-					if(!System.IO.File.Exists("darkmode.txt")) {
-						int res = (int)Registry.GetValue("HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", "AppsUseLightTheme", -1);
-						if(res == 0) {
-							System.Media.SystemSounds.Question.Play();
-							var result = MessageBox.Show("Dark mode is enabled in Windows settings. Do you want to enable dark mode in AdbFileManager?\nThis is currently WIP", "Dark mode", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-							System.Media.SystemSounds.Question.Play();
-							var result2 = MessageBox.Show("Do you want to remember this setting", "Dark mode", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-							if(result2 == DialogResult.Yes) {
-								//write file darkmode.txt next to the exe
-								TextWriter tw = new StreamWriter("darkmode.txt");
-								tw.WriteLine(result == DialogResult.Yes);
-								tw.Flush();
-								tw.Close();
-							}
-						}
-					}
-					TextReader tr = new StreamReader("./darkmode.txt");
-					bool DarkMode = bool.Parse(tr.ReadLine());
-					tr.Close();
-					if(DarkMode) {
-						LoadDarkMode();
-					}
-				}
-				catch {
-					//Exception Handling     
-				}
+				comboBox_device.SelectedIndex = 0;
 
 			}
 			catch(Exception ex) {
@@ -135,10 +112,26 @@ namespace AdbFileManager {
 				Console.ResetColor();
 				this.Show();
 			}
-			hideConsole();
 		}
 
 		public static string adb(string command) {
+			Process[] adb = Process.GetProcessesByName("adb");
+			if(adb.Length == 0) {
+				Console.WriteLine("adb.exe is not running, this may take a while");
+				var dt = Form1._Form1.dataGridView_soubory.DataSource as DataTable;
+				dt.Rows.Add(new Icon(@"icons\file.ico"), "Starting adb service. This will take a few seconds.", 0, DateTime.UnixEpoch);
+				dt.Rows.Add(new Icon(@"icons\file.ico"), "Please be patient", 0, DateTime.UnixEpoch);
+				Application.DoEvents();
+			}
+
+			if(selectedDevice != null){
+				Console.WriteLine("Selected device is not null, using it in adb command: " + selectedDevice.adbId);
+				//makes adb use the selected device
+				command = command.Replace("adb ", $"adb -s {selectedDevice.adbId} ");
+				Console.WriteLine("adb command after replacing:\n" + command);
+			}
+
+
 			Process process = new Process();
 			process.StartInfo.CreateNoWindow = true;
 			process.StartInfo.FileName = "cmd.exe";
@@ -164,6 +157,11 @@ namespace AdbFileManager {
 			return output;
 		}
 		private void verticalLabel1_Click(object sender, EventArgs e) {
+			Console.WriteLine("verticalLabel1_Click()");
+			Console.WriteLine("verticalLabel1_Click()");
+			Console.WriteLine("verticalLabel1_Click()");
+			refreshDevicesList();
+			if(multipleDevicesDetection()) return;
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
 
@@ -384,11 +382,41 @@ namespace AdbFileManager {
 			cur_path_modifyInternal = false;
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
+		public bool multipleDevicesDetection(){
+			if(foundDevices.Count > 1 && selectedDevice == null) {
+				Console.WriteLine("Multiple devices detected, showing message in datagridview");
+				Console.WriteLine("Found devices count: " + foundDevices.Count);
+				DataTable dt2 = dataGridView_soubory.DataSource as DataTable;
+				dt2.Rows.Clear();
+				dt2.Rows.Add(new Icon(@"icons\file.ico"), "Multiple devices connected.", 0, DateTime.UnixEpoch);
+				int datagridviewWidth = dataGridView_soubory.Columns[1].Width;
+				string text = "Please disconnect other devices, or select a wanted device in dropdown thats down right.";
+
+				dataGridView_soubory.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+				// Add the wrapped text as a new row
+				dt2.Rows.Add(new Icon(@"icons\file.ico"), text, 0, DateTime.UnixEpoch);
+
+				dataGridView_soubory.Rows[1].Height = 50;
+
+				return true;
+			}
+			else return false;
+		}
 		private void timer1_Tick(object sender, EventArgs e) {
+
 			Console.WriteLine("timer ticked");
 
 			timer1.Stop();
 			timer1.Enabled = false;
+
+			refreshDevicesList();
+
+			hideConsole();
+
+			if(multipleDevicesDetection()) return;
+
+
 			DataTable dt = dataGridView_soubory.DataSource as DataTable;
 			dt.Rows.Add(new Icon(@"icons\file.ico"), "Loading files in root directory", 0, DateTime.UnixEpoch);
 
@@ -398,8 +426,6 @@ namespace AdbFileManager {
 			cur_path_modifyInternal = true;
 			cur_path.Text = directoryPath;
 			cur_path_modifyInternal = false;
-
-			hideConsole();
 
 			button_pc2android.Invalidate();
 			button_android2pc.Invalidate();
@@ -528,8 +554,11 @@ namespace AdbFileManager {
 				Console.WriteLine("deleting temp directory...");
 				Directory.Delete(tempPath, true);
 			}
-			Console.WriteLine("Saving settings...");
+			Console.WriteLine("Saving old settings...");
 			save_settings();
+			Console.WriteLine("Saving new settings...");
+			SettingsManager.SaveSettings();
+
 			Console.WriteLine("Settings saved!");
 		}
 
@@ -554,7 +583,6 @@ namespace AdbFileManager {
 			Properties.Settings.Default.compatibility = checkBox_android6fix.Checked;
 			Properties.Settings.Default.compatibility_fast = checkBox_android6fix_fastmode.Checked;
 
-			Properties.Settings.Default.lang = (ushort)comboBox_lang.SelectedIndex;
 			Properties.Settings.Default.Save();
 		}
 		private void load_settings() {
@@ -564,7 +592,6 @@ namespace AdbFileManager {
 				checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
 				checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
 				checkBox_android6fix_fastmode.Checked = Properties.Settings.Default.compatibility_fast;
-				comboBox_lang.SelectedIndex = Properties.Settings.Default.lang;
 			}
 			catch {
 				Console.ForegroundColor = ConsoleColor.Red;
@@ -572,99 +599,17 @@ namespace AdbFileManager {
 				Console.ResetColor();
 			}
 		}
-		private void load_lang_combobox() {
-			comboBox_lang.Items.Clear();
 
-			comboBox_lang.Items.Add("English");
-			comboBox_lang.Items.Add("Čeština");
-			comboBox_lang.Items.Add("Polski");
-			comboBox_lang.Items.Add("Deutsch");
-			comboBox_lang.Items.Add("Japanese");
-			comboBox_lang.Items.Add("Espanol");
-
-			if(Properties.Settings.Default.lang != null) {
-				comboBox_lang.SelectedItem = Properties.Settings.Default.lang;
-			}
-			else {
-				comboBox_lang.SelectedItem = "English";
-			}
-
-		}
-		private void LoadDarkMode() {
-			Color backColor = ColorTranslator.FromHtml("#202020");
-			Color darkerBackColor = ColorTranslator.FromHtml("#151515");
-			Color brighterBackColor = ColorTranslator.FromHtml("#404040");
-			Color foreColor = ColorTranslator.FromHtml("#FFFFFF");
-			Color selectedColor = ColorTranslator.FromHtml("#0000FF");
-
-
-			DarkModeHelper.ApplyDark(true, this.Handle);
-
-			this.BackColor = darkerBackColor;
-
-			dataGridView_soubory.BackgroundColor = backColor;
-			dataGridView_soubory.DefaultCellStyle.BackColor = backColor;
-			dataGridView_soubory.DefaultCellStyle.ForeColor = foreColor;
-			dataGridView_soubory.DefaultCellStyle.SelectionBackColor = selectedColor;
-			dataGridView_soubory.DefaultCellStyle.SelectionForeColor = foreColor;
-			dataGridView_soubory.ColumnHeadersDefaultCellStyle.BackColor = backColor;
-			dataGridView_soubory.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
-			dataGridView_soubory.RowHeadersDefaultCellStyle.BackColor = backColor;
-			dataGridView_soubory.RowHeadersDefaultCellStyle.ForeColor = foreColor;
-			dataGridView_soubory.RowHeadersDefaultCellStyle.SelectionBackColor = selectedColor;
-			dataGridView_soubory.RowHeadersDefaultCellStyle.SelectionForeColor = foreColor;
-			dataGridView_soubory.ColumnHeadersDefaultCellStyle.BackColor = brighterBackColor;
-			dataGridView_soubory.ColumnHeadersDefaultCellStyle.ForeColor = foreColor;
-			dataGridView_soubory.ColumnHeadersDefaultCellStyle.SelectionBackColor = selectedColor;
-			dataGridView_soubory.EnableHeadersVisualStyles = false;
-			try {
-				Util.Find<HScrollBar>(dataGridView_soubory).BackColor = Color.Red;
-			}
-			catch { }
-			try {
-				Util.Find<VScrollBar>(dataGridView_soubory).BackColor = Color.Red;
-			}
-			catch { }
-
-			cur_path.BackColor = backColor;
-			cur_path.ForeColor = foreColor;
-			explorer_path.BackColor = backColor;
-			explorer_path.ForeColor = foreColor;
-
-			button_android2pc.BackColor = brighterBackColor;
-			button_android2pc.ForeColor = foreColor;
-			button_pc2android.BackColor = brighterBackColor;
-			button_pc2android.ForeColor = foreColor;
-			verticalLabel_refresh.BackColor = brighterBackColor;
-			verticalLabel_refresh.ForeColor = foreColor;
-
-			button_unlock.BackColor = brighterBackColor;
-			button_unlock.ForeColor = foreColor;
-
-
-			deco_panel1.BackColor = Color.Black;
-			deco_panel2.BackColor = Color.Black;
-			deco_panel3.BackColor = Color.Black;
-			deco_panel4.BackColor = Color.Black;
-
-			panel_dolniTlacitka.BackColor = selectedColor;
-			label_version.LinkColor = Color.SkyBlue;
-			foreach(Control control in panel_dolniTlacitka.Controls) {
-				if(control is CheckBox) {
-					control.ForeColor = Color.White;
-				}
-			}
-		}
-
-		private void load_lang() {
-			ushort? loaded_lang = Properties.Settings.Default.lang;
+		private void applyLang() {
+			//ushort? loaded_lang = Properties.Settings.Default.lang;
+			ushort? loaded_lang = SettingsManager.settings.lang; //load from settings manager
 			if(loaded_lang == null) loaded_lang = (ushort)Languages.English;
 			switch((Languages)loaded_lang) {
 				case Languages.English:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
 					break;
 				case Languages.Cestina:
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
+					//Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
 					break;
 				case Languages.Polski:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl");
@@ -673,7 +618,7 @@ namespace AdbFileManager {
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
 					break;
 				case Languages.Japanese:
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja"); 
 					break;
 				case Languages.Espanol:
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
@@ -771,8 +716,12 @@ namespace AdbFileManager {
 			button1.Left = this.Width - 134;
 			comboBox_lang.Left = this.Width - 242;
 
-			button_unlock.Left = this.Width - 220;
-			deco_panel4.Left = this.Width - 220;
+			button_unlock.Left = this.Width - 297;
+			deco_panel6.Left = this.Width - 297;
+
+			button_console.Left = this.Width - 136;
+
+			deco_panel4.Left = this.Width - 216;
 		}
 
 		private void button_unlock_Click(object sender, EventArgs e) {
@@ -813,6 +762,109 @@ namespace AdbFileManager {
 
 		private void panel_tlacitkaUprostred_Paint(object sender, PaintEventArgs e) {
 
+		}
+
+		private void panel_dolniTlacitka_Paint(object sender, PaintEventArgs e) {
+
+		}
+
+		private void button_openSettings_Click(object sender, EventArgs e) {
+			SettingsForm settingsForm = new SettingsForm();
+			settingsForm.ShowDialog(this);
+		}
+
+		private void comboBox_device_SelectedIndexChanged(object sender, EventArgs e) {
+			if(modifyingComboBox) return; //prevent infinite loop when refreshing devices list
+			if(comboBox_device.SelectedIndex == 1){ //Wireless option
+				//open dialog WirelessPair
+				WirelessPair wirelessPair = new WirelessPair();
+				DialogResult result = wirelessPair.ShowDialog(this);
+				comboBox_device.SelectedIndex = 0; //reset to default device
+				refreshDevicesList(); //refresh the list of devices
+			}
+			if(comboBox_device.SelectedIndex >= 2){
+				int deviceIndex = comboBox_device.SelectedIndex - 2; //first two is default and wireless so we can just - 2
+				if(deviceIndex < foundDevices.Count) {
+					selectedDevice = foundDevices[deviceIndex];
+					Console.WriteLine($"Selected device: {selectedDevice.model} ({selectedDevice.adbId})");
+					//set the selected device in adb
+					//string command = $"adb -s {selectedDevice.adbId} shell";
+					//Console.WriteLine(command);
+					//adb(command);
+				}
+				else {
+					Console.WriteLine("Selected device index out of range");
+				}
+			}
+			else{
+				selectedDevice = null; //reset to default device
+			}
+		}
+		public static Device? selectedDevice = null; //null = default
+		public List<Device> foundDevices = new List<Device>();
+		public class Device {
+			public string adbId { get; set; }
+			public string state { get; set; }
+			public string product { get; set; }
+			public string model { get; set; }
+			public string device { get; set; }
+			public string transportId { get; set; }
+		}
+		bool modifyingComboBox = false; //to prevent infinite loop when refreshing devices list
+		public void refreshDevicesList(){
+			Console.WriteLine("Refreshing devices list...");
+			string command = "adb devices -l";
+			Console.WriteLine(command);
+			string output = adb(command);
+			Console.WriteLine(output);
+			string[] lines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+			lines = lines.Skip(1).Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
+
+			modifyingComboBox = true;
+			comboBox_device.Items.Clear();
+			comboBox_device.Items.Add("Default device");
+			comboBox_device.Items.Add("Add wireless");
+			foundDevices.Clear();
+			var ipPattern = new Regex(@"^\s*(\d{1,3}\.){3}\d{1,3}:\d{1,5}");
+
+			foreach(var line in lines) {
+				// adb-REDACTED._adb-tls-connect._tcp device product:EU_AI2302 model:ASUS_AI2302 device:ASUS_AI2302 transport_id:1
+				var device = new Device();
+
+				var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+				if(parts.Length < 2) continue;
+
+				device.adbId = parts[0];
+				device.state = parts[1];
+
+				for(int i = 2; i < parts.Length; i++) {
+					var kv = parts[i].Split(':', 2);
+					if(kv.Length == 2) {
+						switch(kv[0]) {
+							case "product":
+								device.product = kv[1];
+								break;
+							case "model":
+								device.model = kv[1];
+								break;
+							case "device":
+								device.device = kv[1];
+								break;
+							case "transport_id":
+								device.transportId = kv[1];
+								break;
+						}
+					}
+				}
+				string neautorizovano = device.state == "unauthorized" ? " (UNAUTHORIZED)" : "";
+				string offline = device.state == "offline" ? " (OFFLINE)" : "";
+				string bezdrat = device.adbId.Contains("tcp") || ipPattern.IsMatch(device.adbId) ? " (Wireless)" : "";
+				comboBox_device.Items.Add($"{device.model ?? device.adbId}" + neautorizovano + bezdrat + offline);
+				foundDevices.Add(device);
+			}
+			comboBox_device.DropDownWidth = Math.Max(200, comboBox_device.Items.Cast<string>().Max(item => TextRenderer.MeasureText(item, comboBox_device.Font).Width) + 20);
+			Application.DoEvents();
+			modifyingComboBox = false;
 		}
 	}
 

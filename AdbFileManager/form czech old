@@ -112,41 +112,43 @@
 		<value>2.0</value>
 	</resheader>
 	<data name="android2pc.ToolTip" xml:space="preserve">
-    <value>Kopiert ausgewählte Dateien und Ordner vom Telefon auf den Computer</value>
+    <value>Překopíruje vybrané soubory a složky z telefonu do počítače</value>
   </data>
 	<data name="pc2android.ToolTip" xml:space="preserve">
-    <value>Kopiert ausgewählte Dateien und Ordner vom Computer auf das Telefon</value>
+    <value>Překopíruje vybrané soubory a složky z počítače do telefonu</value>
   </data>
 	<data name="verticalLabel1.Text" xml:space="preserve">
-    <value>Aktualisieren</value>
+    <value>    Obnovit</value>
   </data>
 	<data name="verticalLabel1.ToolTip" xml:space="preserve">
-    <value>Lädt die Liste der Dateien im aktuellen Verzeichnis erneut</value>
+    <value>Znovu načte seznam souborů v aktuálním adresáři</value>
   </data>
 	<data name="cur_path.ToolTip" xml:space="preserve">
-    <value>Aktuelles geöffnetes Verzeichnis auf dem Telefon</value>
+    <value>Aktuálni otevřený adresář na telefonu</value>
   </data>
 	<data name="explorer_path.ToolTip" xml:space="preserve">
-    <value>Aktuelles geöffnetes Verzeichnis auf dem Computer</value>
+    <value>Aktuálni otevřený adresář na počítači</value>
   </data>
 	<data name="checkBox_unwrapfolders.Text" xml:space="preserve">
-    <value>Fortlaufender Fortschrittsbalken</value>
+    <value>Plynulý progressbar</value>
   </data>
 	<data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
-    <value>Der Fortschrittsbalken wird nur aktualisiert, wenn die gesamte Datei oder der gesamte Ordner kopiert wurde. Dies kann dazu führen, dass der Fortschrittsbalken beim Kopieren großer Ordner einfriert.
-Wenn diese Option aktiviert ist, werden die zu kopierenden Ordner geladen und angepasst, damit die Dateien einzeln kopiert werden, was zu einem reibungsloseren Fortschrittsbalken führt.</value>
+    <value>Progress bar při kopírování se aktualizuje pouze když se dokopíruje celý soubor anebo složka, což způsobuje že progress bar může zamrznout při kopírování velkých složek. 
+Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny aby se soubory kopírovali pojednom, takže progress bar bude plynulejší.</value>
   </data>
 	<data name="checkBox_preview.Text" xml:space="preserve">
-    <value>Datei bei Doppelklick anzeigen</value>
+    <value>Zobrazit soubor při dvojkliku</value>
   </data>
 	<data name="checkBox_preview.ToolTip" xml:space="preserve">
-    <value>Wenn eine Datei doppelt geklickt wird, wird sie in einen temporären Ordner auf Ihrem Computer kopiert und angezeigt. Temporäre Dateien werden beim Schließen des Programms gelöscht.</value>
+    <value>Když je soubor dvojkliknut, překopíruje se do dočásné složky na vašem počítači a zobrazí se. 
+Při zavření programu se dočasné soubory smažou
+</value>
   </data>
 	<data name="checkBox_android6fix.Text" xml:space="preserve">
-    <value>Kompatibilität</value>
+    <value>Kompatibilita</value>
   </data>
 	<data name="checkBox_filedate.Text" xml:space="preserve">
-    <value>Änderungsdatum beibehalten</value>
+    <value>Ponechat datum modifikace</value>
   </data>
 	<resheader name="reader">
 		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

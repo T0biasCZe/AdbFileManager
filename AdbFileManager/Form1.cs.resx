@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Microsoft ResX Schema 
+    Microsoft ResX Schema
 
     Version 2.0
 
@@ -18,7 +18,7 @@
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
     <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
@@ -48,7 +48,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
@@ -111,46 +111,6 @@
   <resheader name="version">
     <value>2.0</value>
   </resheader>
-  <data name="android2pc.ToolTip" xml:space="preserve">
-    <value>Překopíruje vybrané soubory a složky z telefonu do počítače</value>
-  </data>
-  <data name="pc2android.ToolTip" xml:space="preserve">
-    <value>Překopíruje vybrané soubory a složky z počítače do telefonu</value>
-  </data>
-  <data name="verticalLabel1.Text" xml:space="preserve">
-    <value>    Obnovit</value>
-  </data>
-  <data name="verticalLabel1.ToolTip" xml:space="preserve">
-    <value>Znovu načte seznam souborů v aktuálním adresáři</value>
-  </data>
-  <data name="cur_path.ToolTip" xml:space="preserve">
-    <value>Aktuálni otevřený adresář na telefonu</value>
-  </data>
-  <data name="explorer_path.ToolTip" xml:space="preserve">
-    <value>Aktuálni otevřený adresář na počítači</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
-    <value>Plynulý progressbar</value>
-  </data>
-  <data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
-    <value>Progress bar při kopírování se aktualizuje pouze když se dokopíruje celý soubor anebo složka, což způsobuje že progress bar může zamrznout při kopírování velkých složek. 
-Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny aby se soubory kopírovali pojednom, takže progress bar bude plynulejší.</value>
-  </data>
-  <data name="checkBox_preview.Text" xml:space="preserve">
-    <value>Zobrazit soubor při dvojkliku</value>
-  </data>
-  <data name="checkBox_preview.ToolTip" xml:space="preserve">
-    <value>Když je soubor dvojkliknut, překopíruje se do dočásné složky na vašem počítači a zobrazí se. 
-Při zavření programu se dočasné soubory smažou
-</value>
-  </data>
-  <data name="checkBox_android6fix.Text" xml:space="preserve">
-    <value>Kompatibilita</value>
-  </data>
-  <data name="checkBox_filedate.Text" xml:space="preserve">
-    <value>Ponechat datum modifikace</value>
-  </data>
-  
   <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
@@ -158,97 +118,93 @@ Při zavření programu se dočasné soubory smažou
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 469</value>
+  <data name="dataGridView_soubory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 150</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="explorerBrowser1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 40</value>
-  </data>
-  <data name="explorerBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 469</value>
-  </data>
-  <data name="android2pc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 6</value>
-  </data>
-  <data name="pc2android.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 54</value>
-  </data>
-  <data name="verticalLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
-  </data>
-  <data name="verticalLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 110</value>
-  </data>
-  <data name="cur_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 23</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="button_back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="button_unlock.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button_back.Location" type="System.Drawing.Point, System.Drawing">
-    <value>608, 14</value>
+  <data name="button_unlock.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="button_android2pc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_android2pc.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="button_pc2android.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_pc2android.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
   </data>
   <data name="button_back.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
+    <value>75, 23</value>
   </data>
-  <data name="button_forward.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="deco_panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="button_openSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button_forward.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="button_openSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
   </data>
-  <data name="button_forward.Location" type="System.Drawing.Point, System.Drawing">
-    <value>634, 14</value>
+  <data name="button_openSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="button_forward.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
+  <data name="panel_dolniTlacitka.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
   </data>
-  <data name="explorer_path.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 16</value>
+  <data name="comboBox_device.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
   </data>
-  <data name="explorer_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 23</value>
+  <data name="button_console.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="deco_panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
   </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 168</value>
+  <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 24</value>
   </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 205</value>
+  <data name="label_version.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="comboBox_lang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>958, 4</value>
+  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
   </data>
-  <data name="comboBox_lang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 23</value>
+  <data name="verticalLabel_makedir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 100</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 509</value>
+  <data name="verticalLabel_makedir.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 25</value>
+  <data name="verticalLabel_refresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 100</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="verticalLabel_refresh.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="deco_panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 533</value>
+  <data name="deco_panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 533</value>
+  <data name="deco_panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="deco_panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -278,14 +234,5 @@ Při zavření programu se dočasné soubory smažou
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>Inherit</value>
-  </data>
-  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1200, 2000</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1180, 0</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
   </data>
 </root>
