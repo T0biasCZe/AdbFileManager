@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adbStartup" xml:space="preserve">
+    <value />
+  </data>
+  <data name="addWireless" xml:space="preserve">
+    <value />
+  </data>
   <data name="copy_freeze_warn" xml:space="preserve">
     <value>時折そう思えなくても、ファイルはまだコピーされています。
 ウィンドウがフリーズしてもプログラムを閉じないでください。</value>
@@ -133,8 +139,23 @@
   <data name="datagridview_size" xml:space="preserve">
     <value>サイズ（KiB）</value>
   </data>
+  <data name="defaultDevice" xml:space="preserve">
+    <value />
+  </data>
   <data name="fromto" xml:space="preserve">
     <value>{source} から {dest} へ</value>
+  </data>
+  <data name="loadingProgram" xml:space="preserve">
+    <value />
+  </data>
+  <data name="multipleDevicesError" xml:space="preserve">
+    <value />
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value />
+  </data>
+  <data name="restartNeeded" xml:space="preserve">
+    <value />
   </data>
   <data name="unwrap_wait" xml:space="preserve">
     <value>フォルダを展開しています。
@@ -142,5 +163,11 @@
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
     <value>フォルダの展開</value>
+  </data>
+  <data name="usbDebugEnableInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wireless" xml:space="preserve">
+    <value />
   </data>
 </root>

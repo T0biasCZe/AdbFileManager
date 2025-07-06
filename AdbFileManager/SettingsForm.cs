@@ -41,7 +41,7 @@ namespace AdbFileManager {
 			else if(radioButton2.Checked) {
 				SettingsManager.settings.UseWindows11Icons = true; // Windows 11
 			}
-
+			restartNeededChangesMade = true;
 		}
 
 		private void radioButton_buttonStyle_CheckedChanged(object sender, EventArgs e) {
@@ -55,15 +55,26 @@ namespace AdbFileManager {
 			else if(radioButton5.Checked) {
 				SettingsManager.settings.ButtonTheme = 2; // Fluent gradient
 			}
+			restartNeededChangesMade = true;
 		}
 
 		private void checkBox_darkMode_CheckedChanged(object sender, EventArgs e) {
 			if(loadingSettings) return;
 			SettingsManager.settings.DarkMode = checkBox_darkMode.Checked;
+			restartNeededChangesMade = true;
 		}
 
 		private void comboBox_lang_SelectedIndexChanged(object sender, EventArgs e) {
+			if(loadingSettings) return;
 			SettingsManager.settings.lang = (ushort)comboBox_lang.SelectedIndex;
+			restartNeededChangesMade = true;
+		}
+		bool restartNeededChangesMade = false;
+		private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e) {
+			if(restartNeededChangesMade) {
+				string message = AdbFileManager.strings.restartNeeded;
+				MessageBox.Show(message, "Restart Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
 		}
 	}
 }

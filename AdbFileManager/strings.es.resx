@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adbStartup" xml:space="preserve">
+    <value />
+  </data>
+  <data name="addWireless" xml:space="preserve">
+    <value />
+  </data>
   <data name="copy_freeze_warn" xml:space="preserve">
     <value>Incluso si en ocasiones no lo parezca, los archivos aún se están copiando.
 Por favor, no cierre el programa si la ventana se congela.</value>
@@ -133,8 +139,23 @@ Por favor, no cierre el programa si la ventana se congela.</value>
   <data name="datagridview_size" xml:space="preserve">
     <value>Tamaño (KiB)</value>
   </data>
+  <data name="defaultDevice" xml:space="preserve">
+    <value />
+  </data>
   <data name="fromto" xml:space="preserve">
     <value>De {source} a {dest}</value>
+  </data>
+  <data name="loadingProgram" xml:space="preserve">
+    <value />
+  </data>
+  <data name="multipleDevicesError" xml:space="preserve">
+    <value />
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value />
+  </data>
+  <data name="restartNeeded" xml:space="preserve">
+    <value />
   </data>
   <data name="unwrap_wait" xml:space="preserve">
     <value>Desenvolviendo carpetas.
@@ -142,5 +163,11 @@ Un momento, por favor...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
     <value>Desenvolver carpeta</value>
+  </data>
+  <data name="usbDebugEnableInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wireless" xml:space="preserve">
+    <value />
   </data>
 </root>

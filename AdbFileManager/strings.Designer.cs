@@ -61,6 +61,24 @@ namespace AdbFileManager {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Starting adb service. This will take a few seconds. \nPlease wait.
+        /// </summary>
+        public static string adbStartup {
+            get {
+                return ResourceManager.GetString("adbStartup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add wireless.
+        /// </summary>
+        public static string addWireless {
+            get {
+                return ResourceManager.GetString("addWireless", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Even if it may not seem so at times, the files are still copying.
         ///Please do not close the program if the window freezes..
         /// </summary>
@@ -107,11 +125,56 @@ namespace AdbFileManager {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default device.
+        /// </summary>
+        public static string defaultDevice {
+            get {
+                return ResourceManager.GetString("defaultDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From {source} to {dest}.
         /// </summary>
         public static string fromto {
             get {
                 return ResourceManager.GetString("fromto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading program, please wait..
+        /// </summary>
+        public static string loadingProgram {
+            get {
+                return ResourceManager.GetString("loadingProgram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple devices connected\nPlease disconnect other devices, or select a wanted device in dropdown thats down right..
+        /// </summary>
+        public static string multipleDevicesError {
+            get {
+                return ResourceManager.GetString("multipleDevicesError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (OFFLINE).
+        /// </summary>
+        public static string offline {
+            get {
+                return ResourceManager.GetString("offline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some changes you did require a restart to take effect..
+        /// </summary>
+        public static string restartNeeded {
+            get {
+                return ResourceManager.GetString("restartNeeded", resourceCulture);
             }
         }
         
@@ -131,6 +194,24 @@ namespace AdbFileManager {
         public static string unwrap_wait_title {
             get {
                 return ResourceManager.GetString("unwrap_wait_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make sure USB debugging is enabled, and your device is properly connected.\nTo enable USB debugging:\n1. Go to android settings\n2. System\n3. Information about phone\n4. Find build number and click it repeatedly, until &quot;developer mode is now enabled&quot; notification\n5. go back, and find &quot;developer settings&quot;\nfind &quot;USB Debugging&quot; and enable it\n7. Enable &quot;Disable adb authorization time limit&quot;\n8. connect your phone to PC, and click authorize PC\n9. Files should now show here properly\n\nPlease note that these [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string usbDebugEnableInstructions {
+            get {
+                return ResourceManager.GetString("usbDebugEnableInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Wireless).
+        /// </summary>
+        public static string wireless {
+            get {
+                return ResourceManager.GetString("wireless", resourceCulture);
             }
         }
     }

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adbStartup" xml:space="preserve">
+    <value>Starting adb service. This will take a few seconds. \nPlease wait</value>
+  </data>
+  <data name="addWireless" xml:space="preserve">
+    <value>Add wireless</value>
+  </data>
   <data name="copy_freeze_warn" xml:space="preserve">
     <value>Even if it may not seem so at times, the files are still copying.
 Please do not close the program if the window freezes.</value>
@@ -133,8 +139,23 @@ Please do not close the program if the window freezes.</value>
   <data name="datagridview_size" xml:space="preserve">
     <value>Size (KiB)</value>
   </data>
+  <data name="defaultDevice" xml:space="preserve">
+    <value>Default device</value>
+  </data>
   <data name="fromto" xml:space="preserve">
     <value>From {source} to {dest}</value>
+  </data>
+  <data name="loadingProgram" xml:space="preserve">
+    <value>Loading program, please wait.</value>
+  </data>
+  <data name="multipleDevicesError" xml:space="preserve">
+    <value>Multiple devices connected\nPlease disconnect other devices, or select a wanted device in dropdown thats down right.</value>
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value>(OFFLINE)</value>
+  </data>
+  <data name="restartNeeded" xml:space="preserve">
+    <value>Some changes you did require a restart to take effect.</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
     <value>Unwrapping folders.
@@ -142,5 +163,11 @@ One moment please...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
     <value>Folder unwrap</value>
+  </data>
+  <data name="usbDebugEnableInstructions" xml:space="preserve">
+    <value>Make sure USB debugging is enabled, and your device is properly connected.\nTo enable USB debugging:\n1. Go to android settings\n2. System\n3. Information about phone\n4. Find build number and click it repeatedly, until "developer mode is now enabled" notification\n5. go back, and find "developer settings"\nfind "USB Debugging" and enable it\n7. Enable "Disable adb authorization time limit"\n8. connect your phone to PC, and click authorize PC\n9. Files should now show here properly\n\nPlease note that these steps may vary by phone.</value>
+  </data>
+  <data name="wireless" xml:space="preserve">
+    <value>(Wireless)</value>
   </data>
 </root>

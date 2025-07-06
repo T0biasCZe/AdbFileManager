@@ -68,7 +68,8 @@ namespace AdbFileManager {
 				blank.Columns.Add("Size");
 				blank.Columns.Add("Date");
 				blank.Columns.Add("Attr");
-				blank.Rows.Add(new Icon(@"icons\file.ico"), "Loading program, please wait", 0, DateTime.UnixEpoch);
+				string text = rm.GetString("loadingProgram");
+				blank.Rows.Add(new Icon(@"icons\file.ico"), text, 0, DateTime.UnixEpoch);
 				dataGridView_soubory.DataSource = blank;
 
 				DataGridViewImageColumn img = (DataGridViewImageColumn)dataGridView_soubory.Columns[0];
@@ -81,8 +82,11 @@ namespace AdbFileManager {
 
 				dataGridView_soubory.Columns[2].Width = 80;
 				dataGridView_soubory.Columns[2].MinimumWidth = 80;
-				dataGridView_soubory.Columns[3].Width = 90;
-				dataGridView_soubory.Columns[3].MinimumWidth = 90;
+				dataGridView_soubory.Columns[3].Width = 115;
+				dataGridView_soubory.Columns[3].MinimumWidth = 115;
+				dataGridView_soubory.Columns[4].Width = 90;
+				dataGridView_soubory.Columns[4].MinimumWidth = 90;
+
 
 
 				//set Console app codepage to UTF-8.
@@ -92,8 +96,6 @@ namespace AdbFileManager {
 				string versionn = $"{AdbFileManager.Properties.Resources.CurrentCommit.Trim()} 06.07.2025";
 				label_version.Text = versionn;
 				Console.WriteLine(versionn);
-
-				comboBox_device.SelectedIndex = 0;
 
 			}
 			catch(Exception ex) {
@@ -117,8 +119,9 @@ namespace AdbFileManager {
 			if(adb.Length == 0) {
 				Console.WriteLine("adb.exe is not running, this may take a while");
 				var dt = Form1._Form1.dataGridView_soubory.DataSource as DataTable;
-				dt.Rows.Add(new Icon(@"icons\file.ico"), "Starting adb service. This will take a few seconds.", 0, DateTime.UnixEpoch);
-				dt.Rows.Add(new Icon(@"icons\file.ico"), "Please be patient", 0, DateTime.UnixEpoch);
+				string[] strings = rm.GetString("adbStartup").Split("\\n");
+				dt.Rows.Add(new Icon(@"icons\file.ico"), strings[0], 0, DateTime.UnixEpoch);
+				dt.Rows.Add(new Icon(@"icons\file.ico"), strings[1], 0, DateTime.UnixEpoch);
 				Application.DoEvents();
 			}
 
@@ -388,14 +391,12 @@ namespace AdbFileManager {
 				Console.WriteLine("Found devices count: " + foundDevices.Count);
 				DataTable dt2 = dataGridView_soubory.DataSource as DataTable;
 				dt2.Rows.Clear();
-				dt2.Rows.Add(new Icon(@"icons\file.ico"), "Multiple devices connected.", 0, DateTime.UnixEpoch);
+				string[] multipleText = AdbFileManager.strings.multipleDevicesError.Split("\\n");
+				dt2.Rows.Add(new Icon(@"icons\file.ico"), multipleText[0], 0, DateTime.UnixEpoch);
 				int datagridviewWidth = dataGridView_soubory.Columns[1].Width;
-				string text = "Please disconnect other devices, or select a wanted device in dropdown thats down right.";
 
 				dataGridView_soubory.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
-
-				// Add the wrapped text as a new row
-				dt2.Rows.Add(new Icon(@"icons\file.ico"), text, 0, DateTime.UnixEpoch);
+				dt2.Rows.Add(new Icon(@"icons\file.ico"), multipleText[1], 0, DateTime.UnixEpoch);
 
 				dataGridView_soubory.Rows[1].Height = 50;
 
@@ -836,8 +837,8 @@ namespace AdbFileManager {
 
 			modifyingComboBox = true;
 			comboBox_device.Items.Clear();
-			comboBox_device.Items.Add("Default device");
-			comboBox_device.Items.Add("Add wireless");
+			comboBox_device.Items.Add(AdbFileManager.strings.defaultDevice);
+			comboBox_device.Items.Add(AdbFileManager.strings.addWireless);
 			foundDevices.Clear();
 			var ipPattern = new Regex(@"^\s*(\d{1,3}\.){3}\d{1,3}:\d{1,5}");
 
@@ -871,13 +872,28 @@ namespace AdbFileManager {
 					}
 				}
 				string neautorizovano = device.state == "unauthorized" ? " (UNAUTHORIZED)" : "";
-				string offline = device.state == "offline" ? " (OFFLINE)" : "";
-				string bezdrat = device.adbId.Contains("tcp") || ipPattern.IsMatch(device.adbId) ? " (Wireless)" : "";
+				string offline = device.state == "offline" ? AdbFileManager.strings.offline : "";
+				string bezdrat = device.adbId.Contains("tcp") || ipPattern.IsMatch(device.adbId) ? AdbFileManager.strings.wireless : "";
 				comboBox_device.Items.Add($"{device.model ?? device.adbId}" + neautorizovano + bezdrat + offline);
 				foundDevices.Add(device);
 			}
 			comboBox_device.DropDownWidth = Math.Max(200, comboBox_device.Items.Cast<string>().Max(item => TextRenderer.MeasureText(item, comboBox_device.Font).Width) + 20);
+
+			if(selectedDevice != null) {
+				int index = foundDevices.FindIndex(d => d.adbId == selectedDevice.adbId);
+				if(index >= 0) {
+					comboBox_device.SelectedIndex = index + 2; // +2 because first two items are default and wireless
+				}
+				else {
+					comboBox_device.SelectedIndex = 0; //reset to default device
+				}
+			}
+			else {
+				comboBox_device.SelectedIndex = 0; //reset to default device
+			}
 			Application.DoEvents();
+
+
 			modifyingComboBox = false;
 		}
 	}
@@ -902,9 +918,16 @@ namespace AdbFileManager {
 			if(file.permissions.ToLower().Trim()[0] == 'd') return true; //the first character of the line is 'd' if it's a directory
 			else return false;
 		}
-
+		static bool lastRefreshSetTextWidth = false;
 		public static DataTable getDir(string directoryPath, bool old_android, bool old_android_fast) {
-			
+			if(lastRefreshSetTextWidth){
+				Form1._Form1.dataGridView_soubory.Columns[0].Width = 25;
+				Form1._Form1.dataGridView_soubory.Columns[1].Width = 307;
+				Form1._Form1.dataGridView_soubory.Columns[2].Width = 80;
+				Form1._Form1.dataGridView_soubory.Columns[3].Width = 115;
+				Form1._Form1.dataGridView_soubory.Columns[4].Width = 90;
+
+			}
 			if(old_android) {
 				fastcompatibility = old_android_fast;
 				legacyAndroid.fastcompatibility = old_android_fast;
@@ -984,22 +1007,18 @@ namespace AdbFileManager {
 				if(dgv.Rows.Count == 0) {
 					dgv.Rows.Add(new Icon(@"icons\file.ico"), "No files found", 0, DateTime.UnixEpoch);
 					if(directoryPath == "/sdcard/") {
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "Make sure USB debugging is enabled, and your device", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "is properly connected.", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "To enable USB debugging:", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "1. Go to android settings", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "2. System", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "3. Information about phone", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "4. Find build number and click it repeatedly, ", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "    Until \"developer mode is now enabled\" notification", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "5. go back, and find \"developer settings\"", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "6. find \"USB Debugging\" and enable it", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "7. Enable \"Disable adb authorization time limit\"", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "8. connect your phone to PC, and click authorize PC", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "9. Files should now show here properly", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "", 0, DateTime.UnixEpoch);
-						dgv.Rows.Add(new Icon(@"icons\file.ico"), "Please note that these steps may vary by phone", 0, DateTime.UnixEpoch);
+						string[] instructionLines = AdbFileManager.strings.usbDebugEnableInstructions.Split("\\n");
+						foreach(string line in instructionLines) {
+							dgv.Rows.Add(new Icon(@"icons\file.ico"), line, 0, DateTime.UnixEpoch);
+						}
+
+						//set column widths other than column 1 to 0, so they are not visible
+						lastRefreshSetTextWidth = true;
+						Form1._Form1.dataGridView_soubory.Columns[0].Width = 16; //icon column
+						Form1._Form1.dataGridView_soubory.Columns[1].Width = 999; //icon column
+						Form1._Form1.dataGridView_soubory.Columns[2].Width = 0; //size column
+						Form1._Form1.dataGridView_soubory.Columns[3].Width = 0; //date column
+						Form1._Form1.dataGridView_soubory.Columns[4].Width = 0; //permissions column
 
 					}
 				}
@@ -1038,18 +1057,6 @@ namespace AdbFileManager {
 				result[i] = result[i].Replace("\n", "");
 			}
 			return result;
-		}
-
-		public static void set_language(string jazyk) {
-			if(jazyk == "Polski") {
-				Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl");
-			}
-			else if(jazyk == "Čeština") {
-				Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
-			}
-			else {
-				Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-			}
 		}
 		public static string FixWindowsPath(string path) {
 			path.Replace('\\', '/');

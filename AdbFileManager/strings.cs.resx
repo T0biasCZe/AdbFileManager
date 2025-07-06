@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adbStartup" xml:space="preserve">
+    <value>Spouštení služby ADB. Tohle může chvíli trvat. \nPočkejte prosím</value>
+  </data>
+  <data name="addWireless" xml:space="preserve">
+    <value>Přidat bezdrátové zařízení</value>
+  </data>
   <data name="copy_freeze_warn" xml:space="preserve">
     <value>Ikdyž se to nezdá, soubory se stále kopírují.
 Prosím nezavírejte program pokud okno zamrzne</value>
@@ -133,8 +139,23 @@ Prosím nezavírejte program pokud okno zamrzne</value>
   <data name="datagridview_size" xml:space="preserve">
     <value>Velikost (KiB)</value>
   </data>
+  <data name="defaultDevice" xml:space="preserve">
+    <value>Výchozí zařízení</value>
+  </data>
   <data name="fromto" xml:space="preserve">
     <value>Z {source} do {dest}</value>
+  </data>
+  <data name="loadingProgram" xml:space="preserve">
+    <value>Program se načítá, čekejte prosím.</value>
+  </data>
+  <data name="multipleDevicesError" xml:space="preserve">
+    <value>Prosím pozor. Více zařízení připojeno\nProsím odpojte ostatní zařízení, nebo vyberte zařízení vpravo dole. Děkujume za pochopní.</value>
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value>(ODPOJENO)</value>
+  </data>
+  <data name="restartNeeded" xml:space="preserve">
+    <value>Některé změny které jste provedli budou provedeny až po restartu programu.</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
     <value>Probíhá rozbalování složek.
@@ -142,5 +163,12 @@ Prosím vydržte chvilku...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
     <value>Rozbalování složek.</value>
+  </data>
+  <data name="usbDebugEnableInstructions" xml:space="preserve">
+    <value>Ujistěte se, že je povoleno ladění přes USB a že je zařízení správně připojeno.\nPro povolení ladění přes USB:\n1. Jděte do nastavení Androidu\n2. Systém\n3. Informace o telefonu\n4. Najděte "Číslo sestavení" a opakovaně na něj klikejte dokud se nezobrazí \n  oznámení "Režim pro vývojáře byl povolen"\n5. Vraťte se zpět a najděte "Možnosti pro vývojáře"\n6. Povolte v menu "Ladění USB"\n7. Povolte "Zakázat časový limit autorizace ADB"\n8. Připojte telefon k PC a autorizujte na telefonu daný počítač.\n9. Soubory by se nyní měly zobrazit správně\n\nMějte na paměti že tyto kroky se můžou lehce lišit dle zařízení.
+</value>
+  </data>
+  <data name="wireless" xml:space="preserve">
+    <value>(Bezdrát)</value>
   </data>
 </root>

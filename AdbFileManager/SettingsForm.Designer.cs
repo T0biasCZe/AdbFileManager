@@ -304,6 +304,7 @@
 			Controls.Add(tabControl1);
 			Name = "SettingsForm";
 			Text = "SettingsForm";
+			FormClosing += SettingsForm_FormClosing;
 			tab_behaviour.ResumeLayout(false);
 			tab_behaviour.PerformLayout();
 			tabControl1.ResumeLayout(false);

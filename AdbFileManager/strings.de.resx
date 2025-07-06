@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="adbStartup" xml:space="preserve">
+    <value />
+  </data>
+  <data name="addWireless" xml:space="preserve">
+    <value />
+  </data>
   <data name="copy_freeze_warn" xml:space="preserve">
     <value>Auch wenn es manchmal nicht so erscheinen mag, werden die Dateien immer noch kopiert.
 Bitte schließen Sie das Programm nicht, wenn das Fenster einfriert.</value>
@@ -133,8 +139,23 @@ Bitte schließen Sie das Programm nicht, wenn das Fenster einfriert.</value>
   <data name="datagridview_size" xml:space="preserve">
     <value>Größe (KiB)</value>
   </data>
+  <data name="defaultDevice" xml:space="preserve">
+    <value />
+  </data>
   <data name="fromto" xml:space="preserve">
     <value>Von {source} nach {dest}</value>
+  </data>
+  <data name="loadingProgram" xml:space="preserve">
+    <value />
+  </data>
+  <data name="multipleDevicesError" xml:space="preserve">
+    <value />
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value />
+  </data>
+  <data name="restartNeeded" xml:space="preserve">
+    <value />
   </data>
   <data name="unwrap_wait" xml:space="preserve">
     <value>Ordner werden entpackt
@@ -142,5 +163,11 @@ Einen Moment bitte...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
     <value>Ordner entpacken</value>
+  </data>
+  <data name="usbDebugEnableInstructions" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wireless" xml:space="preserve">
+    <value />
   </data>
 </root>
