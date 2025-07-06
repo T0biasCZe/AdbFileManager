@@ -95,7 +95,7 @@ namespace AdbFileManager {
 				label_version.Text = versionn;
 				Console.WriteLine(versionn);
 
-				//comboBox_device.SelectedIndex = 0;
+				comboBox_device.SelectedIndex = 0;
 
 			}
 			catch(Exception ex) {
