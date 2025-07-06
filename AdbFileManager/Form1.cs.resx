@@ -121,8 +121,14 @@
     <value>Aktuální adresář na Androidu</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 19</value>
+  </data>
   <data name="checkBox_android6fix_fastmode.Text" xml:space="preserve">
     <value>Rychlý režim kompatibility</value>
+  </data>
+  <data name="checkBox_unwrapfolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 19</value>
   </data>
   <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
     <value>Plynulý progressbar</value>
@@ -131,6 +137,9 @@
     <value>Progress bar při kopírování se aktualizuje pouze když se dokopíruje celý soubor anebo složka, což způsobuje že progress bar může zamrznout při kopírování velkých složek. 
 Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny aby se soubory kopírovali pojednom, takže progress bar bude plynulejší.</value>
   </data>
+  <data name="checkBox_preview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 19</value>
+  </data>
   <data name="checkBox_preview.Text" xml:space="preserve">
     <value>Zobrazit soubor při dvojkliku</value>
   </data>
@@ -138,6 +147,9 @@ Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny 
     <value>Když je soubor dvojkliknut, překopíruje se do dočásné složky na vašem počítači a zobrazí se. 
 Při zavření programu se dočasné soubory smažou
 </value>
+  </data>
+  <data name="checkBox_android6fix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 19</value>
   </data>
   <data name="checkBox_android6fix.Text" xml:space="preserve">
     <value>Kompatibilita</value>
@@ -159,6 +171,9 @@ Při zavření programu se dočasné soubory smažou
   </data>
   <data name="button_console.ToolTip" xml:space="preserve">
     <value>Otevře debug konzoli s logem</value>
+  </data>
+  <data name="checkBox_filedate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 19</value>
   </data>
   <data name="checkBox_filedate.Text" xml:space="preserve">
     <value>Ponechat datum modifikace</value>

@@ -12,7 +12,15 @@ namespace randz.CustomControls {
 		private bool _transparentBG = false;
 		private bool useFluent = false;
 		private bool hovering = false;
-		
+
+		public void EnableDarkMode() {
+			baseColor = Color.FromArgb(50, 50, 55);
+			hoverColor = Color.FromArgb(70, 70, 75);
+			pressOverlayColor = Color.FromArgb(30, 30, 35);
+			gradientLightAmount = 0.2f;
+			gradientDarkAmount = 0.5f;
+			Invalidate();
+		}
 
 		private System.Drawing.Text.TextRenderingHint _renderMode = System.Drawing.Text.TextRenderingHint.SystemDefault;
 

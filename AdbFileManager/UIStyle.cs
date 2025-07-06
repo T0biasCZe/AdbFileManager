@@ -157,8 +157,11 @@ namespace AdbFileManager {
 			Color foreColor = ColorTranslator.FromHtml("#FFFFFF");
 			Color selectedColor = ColorTranslator.FromHtml("#0000FF");
 
+			form1.button_android2pc.EnableDarkMode();
+			form1.button_pc2android.EnableDarkMode();
+			form1.verticalLabel_refresh.EnableDarkMode();
+			form1.verticalLabel_makedir.EnableDarkMode();
 
-			DarkModeHelper.ApplyDark(true, form1.Handle);
 
 			form1.BackColor = darkerBackColor;
 

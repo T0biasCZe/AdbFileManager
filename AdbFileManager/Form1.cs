@@ -36,9 +36,7 @@ namespace AdbFileManager {
 
 		public static ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 		public Form1() {
-			try {
-				SettingsManager.LoadSettings();
-
+			try { 
 				showConsole();
 				_Form1 = this;
 				applyLang();
@@ -77,15 +75,15 @@ namespace AdbFileManager {
 				img.ImageLayout = DataGridViewImageCellLayout.Zoom;
 				dataGridView_soubory.Columns[0].Width = 25;
 				dataGridView_soubory.Columns[0].MinimumWidth = 25;
-				dataGridView_soubory.Columns[1].Width = 307;
 				dataGridView_soubory.Columns[1].MinimumWidth = 307;
+				dataGridView_soubory.Columns[1].Width = 307;
+				dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 				dataGridView_soubory.Columns[2].Width = 80;
 				dataGridView_soubory.Columns[2].MinimumWidth = 80;
-				dataGridView_soubory.Columns[3].Width = 115;
-				dataGridView_soubory.Columns[3].MinimumWidth = 115;
+				dataGridView_soubory.Columns[3].Width = 90;
+				dataGridView_soubory.Columns[3].MinimumWidth = 90;
 
-				//autosize column 1 to fill the dataGridView width
-				dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 				//set Console app codepage to UTF-8.
 				Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -163,6 +161,8 @@ namespace AdbFileManager {
 			refreshDevicesList();
 			if(multipleDevicesDetection()) return;
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+			dataGridView_soubory.Columns[1].Width = 307;
+			dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 		}
 
 		private void explorerBrowser1_Load(object sender, EventArgs e) {
@@ -422,6 +422,8 @@ namespace AdbFileManager {
 
 
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+			dataGridView_soubory.Columns[1].Width = 307;
+			dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 			cur_path_modifyInternal = true;
 			cur_path.Text = directoryPath;
@@ -729,6 +731,7 @@ namespace AdbFileManager {
 
 			button_unlock.Left = this.Width - 297;
 			deco_panel6.Left = this.Width - 297;
+			comboBox_device.Left = this.Width - 424;
 
 			button_console.Left = this.Width - 136;
 

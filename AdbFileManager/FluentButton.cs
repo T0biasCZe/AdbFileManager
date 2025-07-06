@@ -12,8 +12,19 @@ public class FluentButton : Button {
 	private Color hoverColor = Color.FromArgb(220, 220, 230);
 	private Color pressOverlayColor = Color.FromArgb(100, 100, 105);
 
-	private float gradientLightAmount = 0.5f;
-	private float gradientDarkAmount = 0;
+	public float gradientLightAmount = 0.5f;
+	public float gradientDarkAmount = 0;
+
+	public void EnableDarkMode(){
+ 		baseColor = Color.FromArgb(50, 50, 55);
+		hoverColor = Color.FromArgb(70, 70, 75);
+		pressOverlayColor = Color.FromArgb(30, 30, 35);
+		currentColor = baseColor;
+		gradientLightAmount = 0.2f;
+		gradientDarkAmount = 0.5f;
+		Invalidate();
+	}
+
 
 	private Color currentColor;
 
