@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
-    Microsoft ResX Schema
+	<!--
+    Microsoft ResX Schema 
 
     Version 2.0
 
@@ -18,7 +18,7 @@
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
     <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
@@ -48,7 +48,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
@@ -59,180 +59,104 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridView_soubory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 150</value>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<data name="android2pc.ToolTip" xml:space="preserve">
+    <value>Překopíruje vybrané soubory a složky z telefonu do počítače</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button_unlock.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+	<data name="pc2android.ToolTip" xml:space="preserve">
+    <value>Překopíruje vybrané soubory a složky z počítače do telefonu</value>
   </data>
-  <data name="button_unlock.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+	<data name="verticalLabel1.Text" xml:space="preserve">
+    <value>    Obnovit</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+	<data name="verticalLabel1.ToolTip" xml:space="preserve">
+    <value>Znovu načte seznam souborů v aktuálním adresáři</value>
   </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+	<data name="cur_path.ToolTip" xml:space="preserve">
+    <value>Aktuálni otevřený adresář na telefonu</value>
   </data>
-  <data name="button_android2pc.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+	<data name="explorer_path.ToolTip" xml:space="preserve">
+    <value>Aktuálni otevřený adresář na počítači</value>
   </data>
-  <data name="button_android2pc.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+	<data name="checkBox_unwrapfolders.Text" xml:space="preserve">
+    <value>Plynulý progressbar</value>
   </data>
-  <data name="button_pc2android.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+	<data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
+    <value>Progress bar při kopírování se aktualizuje pouze když se dokopíruje celý soubor anebo složka, což způsobuje že progress bar může zamrznout při kopírování velkých složek. 
+Když je tahle možnost zapnuta, kopírované složky budou načteny a upraveny aby se soubory kopírovali pojednom, takže progress bar bude plynulejší.</value>
   </data>
-  <data name="button_pc2android.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
+	<data name="checkBox_preview.Text" xml:space="preserve">
+    <value>Zobrazit soubor při dvojkliku</value>
   </data>
-  <data name="button_back.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="deco_panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="button_openSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button_openSettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="button_openSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="panel_dolniTlacitka.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="comboBox_device.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="button_console.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="deco_panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
-  </data>
-  <data name="label_version.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="verticalLabel_makedir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 100</value>
-  </data>
-  <data name="verticalLabel_makedir.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="verticalLabel_refresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 100</value>
-  </data>
-  <data name="verticalLabel_refresh.Text" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="deco_panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="deco_panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="deco_panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="deco_panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAJykQAAEABADkBAAAFgAAACgAAAAnAAAAUgAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAukUkAG6Y9AIaKhwB1rYcAWLdxADnEWACoq6kAR+NiAMHEwgB25I4Apdq0ANLV0wDg5eIAv/DOAP//
-        /wAAAAAA//////////////////w9z/////D/y7u7u7u7u7zLu8z/7UTf////8Mu2ZmZmZmZmZiZmaM/9
-        CUrf///wu4IiIiIiIiIiIiIozP05Cs////C7u4iIiIiIiIu7u4ju7UmU3M//8LjO7u7u7u7u7t3dM6qk
-        SZRE3P/wu87M7O7s7M7TlFVVVVlZF5FKz/C4vu7s7M7O7dAJmZmZmXVxmUTc8LvOzs7u7u7O0Bd3d3d3
-        d3VxmUrguL7O7s7O7O7QGXd3d3d3dXVVlMC4zu7s7u7O7pAHV3d3d3d3dXlK0Lu+zs7uzu7NoBl3d3d3
-        d3d1dUrAuM7u7s7uzu7QCVl3d3d3d3lUrPC4zs7s7uzuztOQEREREXd3VErP8LjO7s7uzu7u7NqqM6qk
-        GZlErP/wuM7u7uzu7O7O7u6I7u0JUKvP//DIzs7O7u7O7u7uzmbO7QlDi8//8LjO7u7s7u7uzuzuhs7t
-        BNKLv//wuM7u7s7s7s7u7u5ozuw95ovP//C4zs7O7u7u7s7s7mbO7TrGi8//8LvO7u7u7u7u7u7uZuzs
-        OuKLz//wyM7O7s7Ozs7O7O6G7u7O5ou///C4zu7O7u7u7u7u7mbOzu7ii8//8Li+7u7u7u7u7u7uZu7u
-        zuaLz//wu87s7s7s7s7u7sxo7O7u4ovP//DIzu7u7u7u7oiIaGvO7s7mi7//8LjO7u7u7u7sa7u4jO7s
-        7uKLz//wuM7O7u7u7uxu7ri+7O7u5ovP//C4zu7uzuzu647rbO7u7uzii8//8LjO7u7u7u7sjuuL7s7s
-        7uaLv//wu87u7u7u7uxruM7O7u7u4ovP//C4vu7u7u7u64iM7u7u7u7mi8//8Li7i7i4u7i4jM7O7u7u
-        y7aLz//w//////+87Ozs7u7utmZoaLzP//D//////7zu7u7u7u62jutr////8P//////vO7u7u7u7ra+
-        yL/////w//////+87u7u7u7uto62v/////D//////7zu7u7u7u62vIvP////8P//////vu7u7u7u7raI
-        j//////w//////+7zMzMzMzLiIj///////D//////8u7u7u7u7u4j///////8P///+H+AAAAwAAAwf4A
-        AAAAAABgfgAAAAAAACB+AAAAAAAAAB4AAAAAAAAADgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAYAAAAAAAAADgAAAAAAAAAeAAAAAAAAAB4A
-        AAAAAAAAHgAAAAAAAAAeAAAAAAAAAB4AAAAAAAAAHgAAAAAAAAAeAAAAAAAAAB4AAAAAAAAAHgAAAAAA
-        AAAeAAAAAAAAAB4AAAAAAAAAHgAAAAAAAAAeAAAAAAAAAB4AAAAAAAAAHgAAAAAAAAAeAAAAAAAAAB4A
-        AAAAAAAAHgAAAP/AAAAeAAAA/8AAAP4AAAD/wAAB/gAAAP/AAAH+AAAA/8AAAf4AAAD/wAAH/gAAAP/A
-        AA/+AAAA/8AAH/4AAAA=
+	<data name="checkBox_preview.ToolTip" xml:space="preserve">
+    <value>Když je soubor dvojkliknut, překopíruje se do dočásné složky na vašem počítači a zobrazí se. 
+Při zavření programu se dočasné soubory smažou
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+	<data name="checkBox_android6fix.Text" xml:space="preserve">
+    <value>Kompatibilita</value>
   </data>
+	<data name="checkBox_filedate.Text" xml:space="preserve">
+    <value>Ponechat datum modifikace</value>
+  </data>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
 </root>

@@ -41,7 +41,7 @@ namespace AdbFileManager {
 
 				showConsole();
 				_Form1 = this;
-				//applyLang();
+				applyLang();
 
 				InitializeComponent();
 
@@ -95,7 +95,7 @@ namespace AdbFileManager {
 				label_version.Text = versionn;
 				Console.WriteLine(versionn);
 
-				comboBox_device.SelectedIndex = 0;
+				//comboBox_device.SelectedIndex = 0;
 
 			}
 			catch(Exception ex) {
@@ -606,21 +606,27 @@ namespace AdbFileManager {
 			if(loaded_lang == null) loaded_lang = (ushort)Languages.English;
 			switch((Languages)loaded_lang) {
 				case Languages.English:
+					Console.WriteLine("Setting language to English");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
 					break;
 				case Languages.Cestina:
-					//Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
+				Console.WriteLine("Nastavování jazyka na Češtinu");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
 					break;
 				case Languages.Polski:
+					Console.WriteLine("Ustawianie języka na Polski");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl");
 					break;
 				case Languages.Deutsch:
+					Console.WriteLine("Sprache auf Deutsch eingestellt");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
 					break;
 				case Languages.Japanese:
+					Console.WriteLine("言語を日本語に設定しています");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja"); 
 					break;
 				case Languages.Espanol:
+				Console.WriteLine("Configurando el idioma a Español");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
 					break;
 			}
