@@ -466,6 +466,11 @@ namespace AdbFileManager {
 				Console.WriteLine("cur_path_TextChanged false");
 				return;
 			}
+			if(!directoryPath.EndsWith("/")) {
+				Console.WriteLine("cur_path_TextChanged adding / to end of path");
+				directoryPath += "/";
+			}
+
 			directoryPath = cur_path.Text;
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
