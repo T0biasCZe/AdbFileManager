@@ -53,7 +53,8 @@ This fixes files being shown on very old Android versions, which dont support th
 ![UnwrapOnvsOff](https://github.com/user-attachments/assets/84847882-8283-4219-848b-e504edacc7df)
 
 # Windows 7 compatibility
-* The program works on Windows 7, but you need to install .NET 8 using VxKEX NEXT kernel extension
+* The program works on Windows 7, but you need to install .NET 8 using VxKEX NEXT kernel extension.
+* However, dark mode doesnt work, and it breaks the embeded Windows Explorer. Do not use!
 
 ## Star History
 
