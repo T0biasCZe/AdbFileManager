@@ -10,9 +10,8 @@ After enabling it, just go to the directory from where you want to copy from/whe
 
 Note2: Its made in C# and Windows Forms. To put it on Linux/Mac I would completely have to rewrite it, so no Linux/Mac version
 
-# This app requires .NET 8 Runtime to function   
-32 or 64 bit: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.21-windows-x86-installer
-ARM: https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-arm64-installer    
+# This app requires **32 bit** .NET 8 Runtime to function   
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.21-windows-x86-installer
 
 # basic controls:    
  * To enter a folder:
