@@ -48,9 +48,6 @@ This fixes files being shown on very old Android versions, which dont support th
 ***A***: Make sure you are opening AdbFileManager.exe, and not adb.exe      
 **Q**: Files are not showing
 ***A***: If you have phone with older android, enable compatibility mode
-**Q**: What does Unwrap folder do?     
-***A***: Instead of copying whole folder as 1 item, it loads the contents of that folder and copies each file in it separately, allowing for smoother progress bar. Disadvantage is that its almost 2x slower (still lot faster than MTP though)     
-![UnwrapOnvsOff](https://github.com/user-attachments/assets/84847882-8283-4219-848b-e504edacc7df)
 
 # Windows 7 compatibility
 * The program works on Windows 7, but you need to install .NET 8 using VxKEX NEXT kernel extension.
