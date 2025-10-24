@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace AdbFileManager {
 	public class Settings {
+		//Appearance
 		public int ButtonTheme { get; set; } = 0; // 0 = Flat shaded, 1 = Flat, 2 = Fluent gradient
 		public bool UseWindows11Icons { get; set; } = true; //true = W11 icons, false = W7 icons
 		public bool DarkMode { get; set; } = false; //true = Dark mode, false = Light mode
 
+		public bool ShowTwoProgressBars = true;
+
 		public ushort? lang = null;
+		public int progressWaitTimeMs = 60;
+
+
+		//Behaviour
+		public bool useLegacyCopy { get; set; } = false;
+		public bool unwrapFilesLegacy { get; set; } = false;
+
 	}
 	public static class SettingsManager {
 		public static Settings settings = new Settings();
@@ -41,6 +51,12 @@ namespace AdbFileManager {
 				// If the settings file does not exist, use default values
 				settings = new Settings();
 			}
+
+			ApplySettings();
+		}
+
+		public static void ApplySettings() {
+			AdbProgressRunner.timeoutMs = settings.progressWaitTimeMs;
 		}
 	}
 }

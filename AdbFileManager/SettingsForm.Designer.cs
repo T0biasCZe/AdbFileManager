@@ -23,18 +23,25 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			components = new System.ComponentModel.Container();
 			TabPage tab_behaviour;
+			label_trackbarValue = new Label();
+			label5 = new Label();
+			trackBar_progressWait = new TrackBar();
+			checkBox_useLegacyCopy = new CheckBox();
 			label_language = new Label();
 			comboBox_lang = new ComboBox();
 			label3 = new Label();
 			checkBox6 = new CheckBox();
 			checkBox4 = new CheckBox();
-			checkBox3 = new CheckBox();
+			checkBox_unwrapFolderLegacy = new CheckBox();
 			checkBox2 = new CheckBox();
 			checkBox1 = new CheckBox();
 			checkBox5 = new CheckBox();
 			tabControl1 = new TabControl();
 			tab_appearance = new TabPage();
+			checkBox_showTwoProgressBars = new CheckBox();
+			label4 = new Label();
 			checkBox_darkMode = new CheckBox();
 			panel2 = new Panel();
 			radioButton5 = new RadioButton();
@@ -45,8 +52,10 @@
 			radioButton2 = new RadioButton();
 			radioButton1 = new RadioButton();
 			label1 = new Label();
+			toolTip1 = new ToolTip(components);
 			tab_behaviour = new TabPage();
 			tab_behaviour.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)trackBar_progressWait).BeginInit();
 			tabControl1.SuspendLayout();
 			tab_appearance.SuspendLayout();
 			panel2.SuspendLayout();
@@ -55,12 +64,16 @@
 			// 
 			// tab_behaviour
 			// 
+			tab_behaviour.Controls.Add(label_trackbarValue);
+			tab_behaviour.Controls.Add(label5);
+			tab_behaviour.Controls.Add(trackBar_progressWait);
+			tab_behaviour.Controls.Add(checkBox_useLegacyCopy);
 			tab_behaviour.Controls.Add(label_language);
 			tab_behaviour.Controls.Add(comboBox_lang);
 			tab_behaviour.Controls.Add(label3);
 			tab_behaviour.Controls.Add(checkBox6);
 			tab_behaviour.Controls.Add(checkBox4);
-			tab_behaviour.Controls.Add(checkBox3);
+			tab_behaviour.Controls.Add(checkBox_unwrapFolderLegacy);
 			tab_behaviour.Controls.Add(checkBox2);
 			tab_behaviour.Controls.Add(checkBox1);
 			tab_behaviour.Controls.Add(checkBox5);
@@ -72,20 +85,63 @@
 			tab_behaviour.Text = "Behaviour";
 			tab_behaviour.UseVisualStyleBackColor = true;
 			// 
+			// label_trackbarValue
+			// 
+			label_trackbarValue.AutoSize = true;
+			label_trackbarValue.Location = new Point(18, 146);
+			label_trackbarValue.Name = "label_trackbarValue";
+			label_trackbarValue.Size = new Size(35, 15);
+			label_trackbarValue.TabIndex = 12;
+			label_trackbarValue.Text = "20ms";
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.Location = new Point(21, 105);
+			label5.Name = "label5";
+			label5.Size = new Size(110, 15);
+			label5.TabIndex = 11;
+			label5.Text = "Progress sync delay";
+			toolTip1.SetToolTip(label5, "Adjusts the timing how long the copy operation waits for copy progress\r\nDO NOT CHANGE IF NOT SURE WHAT THIS DOES!\r\nDefault 50ms");
+			label5.Click += label5_Click;
+			// 
+			// trackBar_progressWait
+			// 
+			trackBar_progressWait.Location = new Point(17, 120);
+			trackBar_progressWait.Maximum = 50;
+			trackBar_progressWait.Name = "trackBar_progressWait";
+			trackBar_progressWait.Size = new Size(147, 45);
+			trackBar_progressWait.TabIndex = 10;
+			trackBar_progressWait.TickFrequency = 5;
+			toolTip1.SetToolTip(trackBar_progressWait, "Adjusts the timing how long the copy operation waits for copy progress");
+			trackBar_progressWait.Scroll += trackBar_progressWait_Scroll;
+			// 
+			// checkBox_useLegacyCopy
+			// 
+			checkBox_useLegacyCopy.AutoSize = true;
+			checkBox_useLegacyCopy.Location = new Point(9, 58);
+			checkBox_useLegacyCopy.Name = "checkBox_useLegacyCopy";
+			checkBox_useLegacyCopy.Size = new Size(155, 19);
+			checkBox_useLegacyCopy.TabIndex = 9;
+			checkBox_useLegacyCopy.Text = "Use legacy sync copying";
+			toolTip1.SetToolTip(checkBox_useLegacyCopy, "When unchecked, modern Async copying with realtime progress parsing will be used\r\nWhen checked, old code with folder unwrapping support will be used.\r\n[NOT RECOMMENDED, BUGGY]");
+			checkBox_useLegacyCopy.UseVisualStyleBackColor = true;
+			checkBox_useLegacyCopy.CheckedChanged += checkBox_useLegacyCopy_CheckedChanged;
+			// 
 			// label_language
 			// 
 			label_language.AutoSize = true;
-			label_language.Location = new Point(8, 163);
+			label_language.Location = new Point(6, 198);
 			label_language.Name = "label_language";
-			label_language.Size = new Size(161, 15);
+			label_language.Size = new Size(59, 15);
 			label_language.TabIndex = 8;
-			label_language.Text = "Language (BROKEN LAYOUT)";
+			label_language.Text = "Language";
 			// 
 			// comboBox_lang
 			// 
 			comboBox_lang.FormattingEnabled = true;
 			comboBox_lang.Items.AddRange(new object[] { "English", "Čeština", "Polski", "Deutsch", "Japanese", "Espanol" });
-			comboBox_lang.Location = new Point(8, 181);
+			comboBox_lang.Location = new Point(8, 216);
 			comboBox_lang.Name = "comboBox_lang";
 			comboBox_lang.Size = new Size(121, 23);
 			comboBox_lang.TabIndex = 7;
@@ -96,7 +152,7 @@
 			label3.AutoSize = true;
 			label3.Font = new Font("Segoe UI", 12F);
 			label3.ForeColor = Color.Red;
-			label3.Location = new Point(143, 210);
+			label3.Location = new Point(155, 235);
 			label3.Name = "label3";
 			label3.Size = new Size(270, 42);
 			label3.TabIndex = 6;
@@ -105,7 +161,7 @@
 			// checkBox6
 			// 
 			checkBox6.AutoSize = true;
-			checkBox6.Location = new Point(8, 131);
+			checkBox6.Location = new Point(267, 56);
 			checkBox6.Name = "checkBox6";
 			checkBox6.Size = new Size(135, 19);
 			checkBox6.TabIndex = 5;
@@ -115,27 +171,30 @@
 			// checkBox4
 			// 
 			checkBox4.AutoSize = true;
-			checkBox4.Location = new Point(8, 81);
+			checkBox4.Location = new Point(267, 6);
 			checkBox4.Name = "checkBox4";
 			checkBox4.Size = new Size(114, 19);
 			checkBox4.TabIndex = 3;
 			checkBox4.Text = "Compatibility fix";
 			checkBox4.UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// checkBox_unwrapFolderLegacy
 			// 
-			checkBox3.AutoSize = true;
-			checkBox3.Location = new Point(8, 56);
-			checkBox3.Name = "checkBox3";
-			checkBox3.Size = new Size(152, 19);
-			checkBox3.TabIndex = 2;
-			checkBox3.Text = "Unwrap folders on copy";
-			checkBox3.UseVisualStyleBackColor = true;
+			checkBox_unwrapFolderLegacy.AutoSize = true;
+			checkBox_unwrapFolderLegacy.Enabled = false;
+			checkBox_unwrapFolderLegacy.Location = new Point(21, 83);
+			checkBox_unwrapFolderLegacy.Name = "checkBox_unwrapFolderLegacy";
+			checkBox_unwrapFolderLegacy.Size = new Size(152, 19);
+			checkBox_unwrapFolderLegacy.TabIndex = 2;
+			checkBox_unwrapFolderLegacy.Text = "Unwrap folders on copy";
+			toolTip1.SetToolTip(checkBox_unwrapFolderLegacy, "[BUGGY AND SLOW!!!!]\r\nKept only for legacy purposes.\r\nI do not recommend enabling this");
+			checkBox_unwrapFolderLegacy.UseVisualStyleBackColor = true;
+			checkBox_unwrapFolderLegacy.CheckedChanged += checkBox_unwrapFolderLegacy_CheckedChanged;
 			// 
 			// checkBox2
 			// 
 			checkBox2.AutoSize = true;
-			checkBox2.Location = new Point(8, 31);
+			checkBox2.Location = new Point(9, 31);
 			checkBox2.Name = "checkBox2";
 			checkBox2.Size = new Size(211, 19);
 			checkBox2.TabIndex = 1;
@@ -145,7 +204,7 @@
 			// checkBox1
 			// 
 			checkBox1.AutoSize = true;
-			checkBox1.Location = new Point(8, 6);
+			checkBox1.Location = new Point(9, 6);
 			checkBox1.Name = "checkBox1";
 			checkBox1.Size = new Size(168, 19);
 			checkBox1.TabIndex = 0;
@@ -155,7 +214,7 @@
 			// checkBox5
 			// 
 			checkBox5.AutoSize = true;
-			checkBox5.Location = new Point(20, 106);
+			checkBox5.Location = new Point(279, 31);
 			checkBox5.Name = "checkBox5";
 			checkBox5.Size = new Size(154, 19);
 			checkBox5.TabIndex = 4;
@@ -175,6 +234,8 @@
 			// 
 			// tab_appearance
 			// 
+			tab_appearance.Controls.Add(checkBox_showTwoProgressBars);
+			tab_appearance.Controls.Add(label4);
 			tab_appearance.Controls.Add(checkBox_darkMode);
 			tab_appearance.Controls.Add(panel2);
 			tab_appearance.Controls.Add(label2);
@@ -187,6 +248,30 @@
 			tab_appearance.TabIndex = 1;
 			tab_appearance.Text = "Appearance";
 			tab_appearance.UseVisualStyleBackColor = true;
+			// 
+			// checkBox_showTwoProgressBars
+			// 
+			checkBox_showTwoProgressBars.AutoSize = true;
+			checkBox_showTwoProgressBars.Checked = true;
+			checkBox_showTwoProgressBars.CheckState = CheckState.Checked;
+			checkBox_showTwoProgressBars.Location = new Point(154, 76);
+			checkBox_showTwoProgressBars.Name = "checkBox_showTwoProgressBars";
+			checkBox_showTwoProgressBars.Size = new Size(180, 19);
+			checkBox_showTwoProgressBars.TabIndex = 6;
+			checkBox_showTwoProgressBars.Text = "Show two copy progress bars";
+			toolTip1.SetToolTip(checkBox_showTwoProgressBars, "When copying more than 1 file, two progress bars will be shown.\r\nOne for total progress and one for current file progress.\r\n\r\nIf unchecked, only total progress will be shown.");
+			checkBox_showTwoProgressBars.UseVisualStyleBackColor = true;
+			checkBox_showTwoProgressBars.CheckedChanged += checkBox_showTwoProgressBars_CheckedChanged;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Font = new Font("Segoe UI", 7F);
+			label4.Location = new Point(171, 45);
+			label4.Name = "label4";
+			label4.Size = new Size(186, 24);
+			label4.TabIndex = 5;
+			label4.Text = "Note: PC File Explorer will only be in dark \r\nif Windows itself has dark mode enabled";
 			// 
 			// checkBox_darkMode
 			// 
@@ -307,6 +392,7 @@
 			FormClosing += SettingsForm_FormClosing;
 			tab_behaviour.ResumeLayout(false);
 			tab_behaviour.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)trackBar_progressWait).EndInit();
 			tabControl1.ResumeLayout(false);
 			tab_appearance.ResumeLayout(false);
 			tab_appearance.PerformLayout();
@@ -326,7 +412,7 @@
 		private CheckBox checkBox6;
 		private CheckBox checkBox5;
 		private CheckBox checkBox4;
-		private CheckBox checkBox3;
+		private CheckBox checkBox_unwrapFolderLegacy;
 		private CheckBox checkBox2;
 		private Label label1;
 		private Panel panel1;
@@ -341,5 +427,12 @@
 		private Label label3;
 		private Label label_language;
 		private ComboBox comboBox_lang;
+		private CheckBox checkBox_useLegacyCopy;
+		private ToolTip toolTip1;
+		private Label label4;
+		private CheckBox checkBox_showTwoProgressBars;
+		private Label label5;
+		private TrackBar trackBar_progressWait;
+		private Label label_trackbarValue;
 	}
 }

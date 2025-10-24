@@ -235,14 +235,15 @@ namespace AdbFileManager {
 		}
 		bool copying = false;
 		private void android2pc_Click(object sender, EventArgs e) {
-			//string destinationFolder = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
 			string destinationFolder = explorerBrowser1.NavigationLog.CurrentLocation.ParsingName;
-			//MessageBox.Show(destinationFolder);
 
-			string date = checkBox_filedate.Checked ? " -a " : "";
+			if(copying) {
+				MessageBox.Show(rm.GetString("copy_in_progress"), rm.GetString("copy_in_progress_title"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+
 			List<File> files = new List<File>();
 			foreach(DataGridViewRow row in dataGridView_soubory.SelectedRows) {
-				//put each selected file into a list
 				string name = row.Cells[1].Value.ToString();
 				string size = row.Cells[2].Value.ToString();
 				string datee = row.Cells[3].Value.ToString();
@@ -251,48 +252,198 @@ namespace AdbFileManager {
 				files.Add(new File(name, size, datee, permissions, isDirectory));
 			}
 
-			if(checkBox_unwrapfolders.Checked) {
+			if(SettingsManager.settings.useLegacyCopy) {
+				Console.WriteLine("Copying using legacy broken code");
+				if(SettingsManager.settings.unwrapFilesLegacy) {
+					Console.WriteLine("with even more broken unwrap folders :|");
+					//checkBox_unwrapfolders.Checked = true;
+				}
+				else {
+					//checkBox_unwrapfolders.Checked = false;
+				}
+				copyFilesLegacy(files, destinationFolder);
+				return;
+			} else {
+				Console.WriteLine("Copying using new async code that shouldnt be broken...");
+				copyFilesAsync(files, destinationFolder);
+			}
+		}
+
+
+		public void UpdateProgressBar(Form progressBar, int processedFiles, int totalFiles, string directoryPath, string destinationFolder, string filename, float totalPercent, float filePercent) {
+			if(progressBar is Form2New pbar) {
+				pbar.Update(processedFiles, totalFiles, directoryPath, destinationFolder, filename, totalPercent, filePercent);
+			}
+			else if(progressBar is Form2 pbarOld) {
+				pbarOld.Update(processedFiles, totalFiles, directoryPath, destinationFolder, filename, totalPercent);
+			}
+		}
+		public async Task copyFilesAsync(List<File> files, string destinationFolder) {
+			string dateArg = checkBox_filedate.Checked ? " -a " : "";
+			string progressArg = " -p";
+
+			int totalFiles = files.Count;
+			int processedFiles = 0;
+
+			Form progressbar = null;
+			Console.WriteLine($"files: {files.Count} two pb: {SettingsManager.settings.ShowTwoProgressBars}");
+			if(files.Count > 1 && SettingsManager.settings.ShowTwoProgressBars){
+				progressbar = new Form2New();
+			} else {
+				progressbar = new Form2();
+			}
+			progressbar.Show();
+			progressbar.BringToFront();
+			progressbar.Activate();
+			progressbar.Focus();
+
+			copying = true;
+
+			// Start persistent pipe server once
+			AdbFileManager.AdbProgressRunner.StartPipeServer();
+
+			// Subscribe to progress events
+			AdbFileManager.AdbProgressRunner.OnProgressReceived = async filePercent =>
+			{
+				Console.WriteLine("PROGRESS: " +  filePercent);
+				float totalPercent = (processedFiles * 100f / totalFiles)
+								   + (filePercent * (1f / totalFiles));
+
+				UpdateProgressBar(
+					progressbar,
+					processedFiles,
+					totalFiles,
+					directoryPath,
+					destinationFolder,
+					files[processedFiles].name,
+					totalPercent,
+					filePercent
+				);
+
+				await Task.CompletedTask;
+			};
+
+			string adbPath = Path.Combine(AppContext.BaseDirectory, "adb.exe");
+
+			foreach(var file in files) {
+				string sourceFile = Path.Combine(directoryPath, file.name);
+				string destinationFile = Path.Combine(destinationFolder, file.name).Replace('\\', '/');
+				string finalDirectory = Path.GetDirectoryName(destinationFile)!;
+
+				if(!Directory.Exists(finalDirectory))
+					Directory.CreateDirectory(finalDirectory);
+
+
+				string deviceArg = "";
+				if(selectedDevice != null){
+					deviceArg = $"-s {selectedDevice.adbId} ";
+					Console.WriteLine("Using selected device in adb pull: " + selectedDevice.adbId);
+				}
+				// Build the adb pull command for this file
+				string command = $"{deviceArg} pull {dateArg}{progressArg} \"{sourceFile}\" \"{destinationFile}\"";
+				Console.WriteLine($"[ASYNC COPY] {command}");
+
+				UpdateProgressBar(
+					progressbar,
+					processedFiles,
+					totalFiles,
+					directoryPath,
+					destinationFolder,
+					files[processedFiles].name,
+					processedFiles * 100 / totalFiles,
+					0f
+				);
+				// Run adb with injection & progress capture
+				await AdbFileManager.AdbProgressRunner.RunAsync(adbPath, command);
+				Console.WriteLine("Finished awaiting adb command");
+
+				processedFiles++;
+
+
+				if(processedFiles == totalFiles) break;
+				UpdateProgressBar(
+					progressbar,
+					processedFiles,
+					totalFiles,
+					directoryPath,
+					destinationFolder,
+					files[processedFiles].name,
+					processedFiles * 100 / totalFiles,
+					100f
+				);
+
+				Console.WriteLine("E");
+			}
+
+			if(progressbar is Form2New pbarNew) {
+				Console.WriteLine("closing 2 bar progress bar");
+				pbarNew.delete();
+			}
+			else if(progressbar is Form2 pbarOld) {
+				Console.WriteLine("closing 1 bar progress bar");
+				pbarOld.delete();
+			}
+			else{
+				Console.WriteLine("Error bad progressbar type");
+			}
+
+				copying = false;
+		}
+
+
+
+		public void copyFilesLegacy(List<File> files, string destinationFolder) {
+			string date = checkBox_filedate.Checked ? " -a " : "";
+
+			// 🪄 Optional unwrap folders here
+			//if(checkBox_unwrapfolders.Checked) {
+			if(SettingsManager.settings.unwrapFilesLegacy) {
 				ProgressBarMarquee pgm = new ProgressBarMarquee();
 				ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 				pgm.set(rm.GetString("unwrap_wait"), rm.GetString("unwrap_wait_title"));
 				pgm.Show(); pgm.BringToFront(); pgm.Activate(); pgm.Focus();
 
-			//go through the list, and if there is folder, remove it and add it's contents to the list.
-			restart:;
+			restartUnwrap:
 				for(int i = 0; i < files.Count; i++) {
 					pgm.redraw();
 					File file = files[i];
 					if(Functions.isFolder(file, checkBox_android6fix.Checked)) {
-						Console.WriteLine("unwraping folder: " + file.name);
+						Console.WriteLine("Unwrapping folder: " + file.name);
 						DataTable newfiles_table = Functions.getDir(directoryPath + file.name, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
-						Console.WriteLine("removed folder status: " + files.Remove(file));
+
+						files.Remove(file);
 						List<File> newfiles = new List<File>();
 						foreach(DataRow row in newfiles_table.Rows) {
-							//put each selected file into a list
 							string name = row.ItemArray[1].ToString();
 							string size = row.ItemArray[2].ToString();
 							string datee = row.ItemArray[3].ToString();
 							string permissions = row.ItemArray[4].ToString();
 							bool isDirectory = Functions.isFolder(permissions, checkBox_android6fix.Checked);
 							newfiles.Add(new File(file.name + "/" + name, size, datee, permissions, isDirectory));
-							Console.WriteLine("added file: " + name);
 							pgm.redraw();
 						}
+
 						files.AddRange(newfiles);
+
 						if(pgm.cancel) {
 							pgm.delete();
 							copying = false;
+							return;
 						}
-						goto restart;
+
+						goto restartUnwrap;
 					}
 				}
+
 				pgm.delete();
 			}
-			int filecount = files.Count();
+
+			// 📥 Perform the actual copy
+			int filecount = files.Count;
 			int copied = 0;
+
 			Form2 progressbar = new Form2();
 			progressbar.Show();
-			//try to make the progressbar get shown
 			progressbar.BringToFront();
 			progressbar.Activate();
 			progressbar.Focus();
@@ -301,25 +452,23 @@ namespace AdbFileManager {
 			foreach(File file in files) {
 				string sourcefile = directoryPath + file.name;
 				string destinationFile = $"\"{destinationFolder.Replace('\\', '/')}/{file.name}\"";
-				Console.WriteLine(destinationFile);
-				string command = $"adb pull {date} \"{sourcefile}\" {Functions.FixWindowsPath(destinationFile)}";
 				string final_directory = Path.GetDirectoryName(destinationFile).Replace("\"", "");
+
 				if(!Directory.Exists(final_directory)) {
 					Console.WriteLine("Creating directory: " + final_directory);
 					Directory.CreateDirectory(final_directory);
 				}
+
+				string command = $"adb pull {date} \"{sourcefile}\" {Functions.FixWindowsPath(destinationFile)}";
 				Console.WriteLine(command);
-				progressbar.update(copied, filecount, directoryPath, destinationFolder, file.name);
+
+				progressbar.Update(copied, filecount, directoryPath, destinationFolder, file.name);
 				Console.WriteLine(adb(command));
 				copied++;
 			}
 
-
 			progressbar.delete();
 			copying = false;
-
-			//string sourceFileName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
-
 		}
 
 		private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
@@ -454,7 +603,7 @@ namespace AdbFileManager {
 				string sourcefile = item.ParsingName;
 				string command = $"adb push {date} \"{sourcefile}\" \"{Functions.FixWindowsPath(directoryPath)}\"";
 				Console.WriteLine(command);
-				progressbar.update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
+				progressbar.Update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
 				Console.WriteLine(adb(command));
 				copied++;
 			}
@@ -586,7 +735,7 @@ namespace AdbFileManager {
 		}
 		private void save_settings() {
 			Properties.Settings.Default.preview_on_doubleclick = checkBox_preview.Checked;
-			Properties.Settings.Default.smooth_progressbar = checkBox_unwrapfolders.Checked;
+			//Properties.Settings.Default.smooth_progressbar = checkBox_unwrapfolders.Checked;
 			Properties.Settings.Default.keep_modification_date = checkBox_filedate.Checked;
 			Properties.Settings.Default.compatibility = checkBox_android6fix.Checked;
 			Properties.Settings.Default.compatibility_fast = checkBox_android6fix_fastmode.Checked;
@@ -596,7 +745,7 @@ namespace AdbFileManager {
 		private void load_settings() {
 			try {
 				checkBox_preview.Checked = Properties.Settings.Default.preview_on_doubleclick;
-				checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
+				//checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
 				checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
 				checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
 				checkBox_android6fix_fastmode.Checked = Properties.Settings.Default.compatibility_fast;

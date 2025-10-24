@@ -14,16 +14,16 @@ using Microsoft.WindowsAPICodePack;
 using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace AdbFileManager {
-	public partial class Form2 : Form {
-		public Form2() {
+	public partial class Form2New : Form {
+		public Form2New() {
 			InitializeComponent();
 			TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
 
 			ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 			label_freezewarn.Text = rm.GetString("copy_freeze_warn");
 		}
-		public void Update(int current, int max, string source, string dest, string _filename, float percentage = -1) {
-			Console.WriteLine($"cur: {current} max: {max} perc: {percentage}");
+		public void Update(int current, int max, string source, string dest, string _filename, float totalPercentage, float filePercentage) {
+			Console.WriteLine($"cur: {current} max: {max} perc: {totalPercentage}");
 
 
 
@@ -32,18 +32,24 @@ namespace AdbFileManager {
 
 
 			filename.Text = _filename;
-			progress.Text = $"{percentage}% {current}/{max}";
+			//total percentage as string with 1 decimal point
+			
+			progress.Text = $"{string.Format("{0:F1}", totalPercentage)}% {current}/{max}";
 
-			if(percentage >= 0) {
+			if(totalPercentage >= 0) {
 				progressBar1.Maximum = 10000;
-				progressBar1.Value = (int)(percentage * 100);
+				progressBar1.Value = (int)(totalPercentage * 100);
 			} else{
 				progressBar1.Maximum = max;
 				progressBar1.Value = current;
 			}
 
-			if(percentage >= 0) {
-				int taskbarValue = (int)(percentage * 100);
+			progressBar2.Maximum = 10000;
+			progressBar2.Value = (int)(filePercentage * 100);
+			richTextBox1.Text = string.Format("{0:F1}%", filePercentage);
+
+			if(totalPercentage >= 0) {
+				int taskbarValue = (int)(totalPercentage * 100);
 
 				if(taskbarValue < 0) taskbarValue = 0;
 				if(taskbarValue > 10000) taskbarValue = 10000;

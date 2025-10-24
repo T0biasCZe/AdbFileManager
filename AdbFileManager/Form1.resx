@@ -181,7 +181,7 @@
     <value>NoControl</value>
   </data>
   <data name="checkBox_android6fix_fastmode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 4</value>
+    <value>455, 4</value>
   </data>
   <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 19</value>
@@ -209,40 +209,6 @@
   </data>
   <data name="&gt;&gt;checkBox_android6fix_fastmode.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="checkBox_unwrapfolders.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_unwrapfolders.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>343, 3</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 19</value>
-  </data>
-  <data name="checkBox_unwrapfolders.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="checkBox_unwrapfolders.Text" xml:space="preserve">
-    <value>Unwrap folders on copy</value>
-  </data>
-  <data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
-    <value>The progress bar during copying is updated only when a whole file or a directory gets copied, so when copying large directory the progress bar is unresponsive and may freeze. 
-This will "unwrap" the directories into individual files so the copy appears smoother</value>
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.Name" xml:space="preserve">
-    <value>checkBox_unwrapfolders</value>
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.Parent" xml:space="preserve">
-    <value>panel_dolniTlacitka</value>
-  </data>
-  <data name="&gt;&gt;checkBox_unwrapfolders.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="checkBox_preview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -275,7 +241,7 @@ This will "unwrap" the directories into individual files so the copy appears smo
     <value>panel_dolniTlacitka</value>
   </data>
   <data name="&gt;&gt;checkBox_preview.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="checkBox_android6fix.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -287,7 +253,7 @@ This will "unwrap" the directories into individual files so the copy appears smo
     <value>NoControl</value>
   </data>
   <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>501, 4</value>
+    <value>340, 4</value>
   </data>
   <data name="checkBox_android6fix.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 19</value>
@@ -311,7 +277,7 @@ This will "unwrap" the directories into individual files so the copy appears smo
     <value>panel_dolniTlacitka</value>
   </data>
   <data name="&gt;&gt;checkBox_android6fix.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="verticalLabel_makedir.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -544,39 +510,6 @@ This will "unwrap" the directories into individual files so the copy appears smo
   <data name="&gt;&gt;button_back.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;button_openSettings.Name" xml:space="preserve">
-    <value>button_openSettings</value>
-  </data>
-  <data name="&gt;&gt;button_openSettings.Type" xml:space="preserve">
-    <value>FluentButton, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;button_openSettings.Parent" xml:space="preserve">
-    <value>deco_panel4</value>
-  </data>
-  <data name="&gt;&gt;button_openSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="deco_panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>984, 2</value>
-  </data>
-  <data name="deco_panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 22</value>
-  </data>
-  <data name="deco_panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;deco_panel4.Name" xml:space="preserve">
-    <value>deco_panel4</value>
-  </data>
-  <data name="&gt;&gt;deco_panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deco_panel4.Parent" xml:space="preserve">
-    <value>panel_dolniTlacitka</value>
-  </data>
-  <data name="&gt;&gt;deco_panel4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="button_openSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -612,6 +545,27 @@ This will "unwrap" the directories into individual files so the copy appears smo
   </data>
   <data name="&gt;&gt;button_openSettings.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="deco_panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>984, 2</value>
+  </data>
+  <data name="deco_panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 22</value>
+  </data>
+  <data name="deco_panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;deco_panel4.Name" xml:space="preserve">
+    <value>deco_panel4</value>
+  </data>
+  <data name="&gt;&gt;deco_panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deco_panel4.Parent" xml:space="preserve">
+    <value>panel_dolniTlacitka</value>
+  </data>
+  <data name="&gt;&gt;deco_panel4.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="panel_dolniTlacitka.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -734,7 +688,7 @@ This will "unwrap" the directories into individual files so the copy appears smo
     <value>panel_dolniTlacitka</value>
   </data>
   <data name="&gt;&gt;label_version.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="checkBox_filedate.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -764,7 +718,7 @@ This will "unwrap" the directories into individual files so the copy appears smo
     <value>panel_dolniTlacitka</value>
   </data>
   <data name="&gt;&gt;checkBox_filedate.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 850</value>
@@ -789,93 +743,6 @@ This will "unwrap" the directories into individual files so the copy appears smo
   </data>
   <data name="panel_tlacitkaUprostred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel_refresh.Name" xml:space="preserve">
-    <value>verticalLabel_refresh</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel_refresh.Type" xml:space="preserve">
-    <value>randz.CustomControls.VerticalLabel, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel_refresh.Parent" xml:space="preserve">
-    <value>panel_tlacitkaUprostred</value>
-  </data>
-  <data name="&gt;&gt;verticalLabel_refresh.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;deco_panel1.Name" xml:space="preserve">
-    <value>deco_panel1</value>
-  </data>
-  <data name="&gt;&gt;deco_panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deco_panel1.Parent" xml:space="preserve">
-    <value>panel_tlacitkaUprostred</value>
-  </data>
-  <data name="&gt;&gt;deco_panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;deco_panel5.Name" xml:space="preserve">
-    <value>deco_panel5</value>
-  </data>
-  <data name="&gt;&gt;deco_panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deco_panel5.Parent" xml:space="preserve">
-    <value>panel_tlacitkaUprostred</value>
-  </data>
-  <data name="&gt;&gt;deco_panel5.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;deco_panel3.Name" xml:space="preserve">
-    <value>deco_panel3</value>
-  </data>
-  <data name="&gt;&gt;deco_panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deco_panel3.Parent" xml:space="preserve">
-    <value>panel_tlacitkaUprostred</value>
-  </data>
-  <data name="&gt;&gt;deco_panel3.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;deco_panel2.Name" xml:space="preserve">
-    <value>deco_panel2</value>
-  </data>
-  <data name="&gt;&gt;deco_panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;deco_panel2.Parent" xml:space="preserve">
-    <value>panel_tlacitkaUprostred</value>
-  </data>
-  <data name="&gt;&gt;deco_panel2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.Location" type="System.Drawing.Point, System.Drawing">
-    <value>549, 160</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 280</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>54, 280</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 280</value>
-  </data>
-  <data name="panel_tlacitkaUprostred.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;panel_tlacitkaUprostred.Name" xml:space="preserve">
-    <value>panel_tlacitkaUprostred</value>
-  </data>
-  <data name="&gt;&gt;panel_tlacitkaUprostred.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_tlacitkaUprostred.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel_tlacitkaUprostred.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="verticalLabel_refresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -987,6 +854,33 @@ This will "unwrap" the directories into individual files so the copy appears smo
   </data>
   <data name="&gt;&gt;deco_panel2.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.Location" type="System.Drawing.Point, System.Drawing">
+    <value>549, 160</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 280</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>54, 280</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 280</value>
+  </data>
+  <data name="panel_tlacitkaUprostred.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.Name" xml:space="preserve">
+    <value>panel_tlacitkaUprostred</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_tlacitkaUprostred.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>

@@ -32,7 +32,6 @@ namespace AdbFileManager {
 			cur_path = new TextBox();
 			toolTip1 = new ToolTip(components);
 			checkBox_android6fix_fastmode = new CheckBox();
-			checkBox_unwrapfolders = new CheckBox();
 			checkBox_preview = new CheckBox();
 			checkBox_android6fix = new CheckBox();
 			verticalLabel_makedir = new randz.CustomControls.VerticalLabel();
@@ -97,13 +96,6 @@ namespace AdbFileManager {
 			checkBox_android6fix_fastmode.Name = "checkBox_android6fix_fastmode";
 			toolTip1.SetToolTip(checkBox_android6fix_fastmode, resources.GetString("checkBox_android6fix_fastmode.ToolTip"));
 			checkBox_android6fix_fastmode.UseVisualStyleBackColor = true;
-			// 
-			// checkBox_unwrapfolders
-			// 
-			resources.ApplyResources(checkBox_unwrapfolders, "checkBox_unwrapfolders");
-			checkBox_unwrapfolders.Name = "checkBox_unwrapfolders";
-			toolTip1.SetToolTip(checkBox_unwrapfolders, resources.GetString("checkBox_unwrapfolders.ToolTip"));
-			checkBox_unwrapfolders.UseVisualStyleBackColor = true;
 			// 
 			// checkBox_preview
 			// 
@@ -239,7 +231,6 @@ namespace AdbFileManager {
 			panel_dolniTlacitka.Controls.Add(deco_panel4);
 			panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
 			panel_dolniTlacitka.Controls.Add(comboBox_lang);
-			panel_dolniTlacitka.Controls.Add(checkBox_unwrapfolders);
 			panel_dolniTlacitka.Controls.Add(checkBox_preview);
 			panel_dolniTlacitka.Controls.Add(checkBox_android6fix);
 			panel_dolniTlacitka.Controls.Add(label_version);
@@ -384,7 +375,6 @@ namespace AdbFileManager {
 		private ToolTip toolTip1;
 		private CheckBox checkBox_android6fix_fastmode;
 		public ComboBox comboBox_lang;
-		private CheckBox checkBox_unwrapfolders;
 		private CheckBox checkBox_preview;
 		private FluentButton button1;
 		public CheckBox checkBox_android6fix;
