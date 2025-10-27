@@ -35,6 +35,8 @@ namespace AdbFileManager {
 			checkBox_useLegacyCopy.Checked = SettingsManager.settings.useLegacyCopy;
 			checkBox_unwrapFolderLegacy.Checked = SettingsManager.settings.unwrapFilesLegacy;
 
+			checkBox3.Checked = SettingsManager.settings.ShowAndroidBackButton;
+
 			Application.DoEvents();
 			loadingSettings = false;
 		}
@@ -120,6 +122,11 @@ namespace AdbFileManager {
 			if(loadingSettings) return;
 
 			SettingsManager.settings.progressWaitTimeMs = value;
+		}
+
+		private void checkBox3_CheckedChanged(object sender, EventArgs e) {
+			if(loadingSettings) return;
+			SettingsManager.settings.ShowAndroidBackButton = checkBox3.Checked;
 		}
 	}
 }

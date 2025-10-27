@@ -40,6 +40,7 @@
 			checkBox5 = new CheckBox();
 			tabControl1 = new TabControl();
 			tab_appearance = new TabPage();
+			checkBox3 = new CheckBox();
 			checkBox_showTwoProgressBars = new CheckBox();
 			label4 = new Label();
 			checkBox_darkMode = new CheckBox();
@@ -234,6 +235,7 @@
 			// 
 			// tab_appearance
 			// 
+			tab_appearance.Controls.Add(checkBox3);
 			tab_appearance.Controls.Add(checkBox_showTwoProgressBars);
 			tab_appearance.Controls.Add(label4);
 			tab_appearance.Controls.Add(checkBox_darkMode);
@@ -248,6 +250,20 @@
 			tab_appearance.TabIndex = 1;
 			tab_appearance.Text = "Appearance";
 			tab_appearance.UseVisualStyleBackColor = true;
+			// 
+			// checkBox3
+			// 
+			checkBox3.AutoSize = true;
+			checkBox3.Checked = true;
+			checkBox3.CheckState = CheckState.Checked;
+			checkBox3.Location = new Point(154, 101);
+			checkBox3.Name = "checkBox3";
+			checkBox3.Size = new Size(168, 19);
+			checkBox3.TabIndex = 7;
+			checkBox3.Text = "Show Android back button";
+			toolTip1.SetToolTip(checkBox3, "Shows back button on the android side alongside path.\r\nAlternative to the default way of double clicking the header");
+			checkBox3.UseVisualStyleBackColor = true;
+			checkBox3.CheckedChanged += checkBox3_CheckedChanged;
 			// 
 			// checkBox_showTwoProgressBars
 			// 
@@ -434,5 +450,6 @@
 		private Label label5;
 		private TrackBar trackBar_progressWait;
 		private Label label_trackbarValue;
+		private CheckBox checkBox3;
 	}
 }

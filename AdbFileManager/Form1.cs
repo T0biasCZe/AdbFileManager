@@ -36,7 +36,7 @@ namespace AdbFileManager {
 
 		public static ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 		public Form1() {
-			try { 
+			try {
 				showConsole();
 				_Form1 = this;
 				applyLang();
@@ -125,7 +125,7 @@ namespace AdbFileManager {
 				Application.DoEvents();
 			}
 
-			if(selectedDevice != null){
+			if(selectedDevice != null) {
 				Console.WriteLine("Selected device is not null, using it in adb command: " + selectedDevice.adbId);
 				//makes adb use the selected device
 				command = command.Replace("adb ", $"adb -s {selectedDevice.adbId} ");
@@ -263,7 +263,8 @@ namespace AdbFileManager {
 				}
 				copyFilesLegacy(files, destinationFolder);
 				return;
-			} else {
+			}
+			else {
 				Console.WriteLine("Copying using new async code that shouldnt be broken...");
 				copyFilesAsync(files, destinationFolder);
 			}
@@ -287,9 +288,10 @@ namespace AdbFileManager {
 
 			Form progressbar = null;
 			Console.WriteLine($"files: {files.Count} two pb: {SettingsManager.settings.ShowTwoProgressBars}");
-			if(files.Count > 1 && SettingsManager.settings.ShowTwoProgressBars){
+			if(files.Count > 1 && SettingsManager.settings.ShowTwoProgressBars) {
 				progressbar = new Form2New();
-			} else {
+			}
+			else {
 				progressbar = new Form2();
 			}
 			progressbar.Show();
@@ -303,9 +305,8 @@ namespace AdbFileManager {
 			AdbFileManager.AdbProgressRunner.StartPipeServer();
 
 			// Subscribe to progress events
-			AdbFileManager.AdbProgressRunner.OnProgressReceived = async filePercent =>
-			{
-				Console.WriteLine("PROGRESS: " +  filePercent);
+			AdbFileManager.AdbProgressRunner.OnProgressReceived = async filePercent => {
+				Console.WriteLine("PROGRESS: " + filePercent);
 				float totalPercent = (processedFiles * 100f / totalFiles)
 								   + (filePercent * (1f / totalFiles));
 
@@ -335,7 +336,7 @@ namespace AdbFileManager {
 
 
 				string deviceArg = "";
-				if(selectedDevice != null){
+				if(selectedDevice != null) {
 					deviceArg = $"-s {selectedDevice.adbId} ";
 					Console.WriteLine("Using selected device in adb pull: " + selectedDevice.adbId);
 				}
@@ -383,11 +384,11 @@ namespace AdbFileManager {
 				Console.WriteLine("closing 1 bar progress bar");
 				pbarOld.delete();
 			}
-			else{
+			else {
 				Console.WriteLine("Error bad progressbar type");
 			}
 
-				copying = false;
+			copying = false;
 		}
 
 
@@ -474,6 +475,9 @@ namespace AdbFileManager {
 		private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e) {
 			goUpDirectory();
 		}
+		private void button_goUpDirectory_Click(object sender, EventArgs e) {
+			goUpDirectory();
+		}
 
 		private void dataGridView1_KeyDown(object sender, KeyEventArgs e) {
 			Console.WriteLine("Key pressed in datagrid: " + e.KeyValue);
@@ -534,7 +538,7 @@ namespace AdbFileManager {
 			cur_path_modifyInternal = false;
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
 		}
-		public bool multipleDevicesDetection(){
+		public bool multipleDevicesDetection() {
 			if(foundDevices.Count > 1 && selectedDevice == null) {
 				Console.WriteLine("Multiple devices detected, showing message in datagridview");
 				Console.WriteLine("Found devices count: " + foundDevices.Count);
@@ -584,6 +588,8 @@ namespace AdbFileManager {
 			verticalLabel_refresh.Invalidate();
 			button_unlock.Invalidate();
 			verticalLabel_makedir.Invalidate();
+
+			Form1_Resize(this, new EventArgs());
 
 		}
 
@@ -767,7 +773,7 @@ namespace AdbFileManager {
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
 					break;
 				case Languages.Cestina:
-				Console.WriteLine("Nastavování jazyka na Češtinu");
+					Console.WriteLine("Nastavování jazyka na Češtinu");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs");
 					break;
 				case Languages.Polski:
@@ -780,10 +786,10 @@ namespace AdbFileManager {
 					break;
 				case Languages.Japanese:
 					Console.WriteLine("言語を日本語に設定しています");
-					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja"); 
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
 					break;
 				case Languages.Espanol:
-				Console.WriteLine("Configurando el idioma a Español");
+					Console.WriteLine("Configurando el idioma a Español");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
 					break;
 			}
@@ -858,7 +864,16 @@ namespace AdbFileManager {
 			int listPCWidth = x - listAndroidWidth;
 
 			dataGridView_soubory.Width = listAndroidWidth;
-			cur_path.Width = listAndroidWidth;
+
+			if(SettingsManager.settings.ShowAndroidBackButton) {
+				cur_path.Width = listAndroidWidth - 45;
+				button_goUpDirectory.Visible = true;
+				button_goUpDirectory.Left = margin + listAndroidWidth - 45;
+			}
+			else{
+				button_goUpDirectory.Visible = false;
+				cur_path.Width = listAndroidWidth;
+			}
 
 			panel_tlacitkaUprostred.Left = margin + listAndroidWidth - 1;
 
@@ -872,6 +887,7 @@ namespace AdbFileManager {
 			explorer_path.Left = margin + listAndroidWidth + middleSpace + 57;
 
 			verticalLabel_refresh.BringToFront();
+
 
 			panel_dolniTlacitka.Width = this.Width;
 			panel_dolniTlacitka.Left = 0;
@@ -939,14 +955,14 @@ namespace AdbFileManager {
 
 		private void comboBox_device_SelectedIndexChanged(object sender, EventArgs e) {
 			if(modifyingComboBox) return; //prevent infinite loop when refreshing devices list
-			if(comboBox_device.SelectedIndex == 1){ //Wireless option
-				//open dialog WirelessPair
+			if(comboBox_device.SelectedIndex == 1) { //Wireless option
+													 //open dialog WirelessPair
 				WirelessPair wirelessPair = new WirelessPair();
 				DialogResult result = wirelessPair.ShowDialog(this);
 				comboBox_device.SelectedIndex = 0; //reset to default device
 				refreshDevicesList(); //refresh the list of devices
 			}
-			if(comboBox_device.SelectedIndex >= 2){
+			if(comboBox_device.SelectedIndex >= 2) {
 				int deviceIndex = comboBox_device.SelectedIndex - 2; //first two is default and wireless so we can just - 2
 				if(deviceIndex < foundDevices.Count) {
 					selectedDevice = foundDevices[deviceIndex];
@@ -960,7 +976,7 @@ namespace AdbFileManager {
 					Console.WriteLine("Selected device index out of range");
 				}
 			}
-			else{
+			else {
 				selectedDevice = null; //reset to default device
 			}
 		}
@@ -975,7 +991,7 @@ namespace AdbFileManager {
 			public string transportId { get; set; }
 		}
 		bool modifyingComboBox = false; //to prevent infinite loop when refreshing devices list
-		public void refreshDevicesList(){
+		public void refreshDevicesList() {
 			Console.WriteLine("Refreshing devices list...");
 			string command = "adb devices -l";
 			Console.WriteLine(command);

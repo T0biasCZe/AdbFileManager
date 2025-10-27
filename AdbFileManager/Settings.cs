@@ -12,6 +12,7 @@ namespace AdbFileManager {
 		public bool DarkMode { get; set; } = false; //true = Dark mode, false = Light mode
 
 		public bool ShowTwoProgressBars = true;
+		public bool ShowAndroidBackButton { get; set; } = true;
 
 		public ushort? lang = null;
 		public int progressWaitTimeMs = 60;
@@ -20,7 +21,6 @@ namespace AdbFileManager {
 		//Behaviour
 		public bool useLegacyCopy { get; set; } = false;
 		public bool unwrapFilesLegacy { get; set; } = false;
-
 	}
 	public static class SettingsManager {
 		public static Settings settings = new Settings();

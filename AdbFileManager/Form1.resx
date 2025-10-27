@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView_soubory.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cur_path.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
@@ -334,6 +334,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;explorer_path.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_goUpDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>561, 15</value>
+  </data>
+  <data name="button_goUpDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 26</value>
+  </data>
+  <data name="button_goUpDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="button_goUpDirectory.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="button_goUpDirectory.ToolTip" xml:space="preserve">
+    <value>Goes up a directory on the Android side.
+This button can be hidden in appearance settings.</value>
+  </data>
+  <data name="button_goUpDirectory.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;button_goUpDirectory.Name" xml:space="preserve">
+    <value>button_goUpDirectory</value>
+  </data>
+  <data name="&gt;&gt;button_goUpDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_goUpDirectory.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_goUpDirectory.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="button_unlock.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -484,7 +515,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_forward.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="button_back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -508,7 +539,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_back.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="button_openSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -739,7 +770,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_dolniTlacitka.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="panel_tlacitkaUprostred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -880,7 +911,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_tlacitkaUprostred.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -907,7 +938,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;explorerBrowser1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

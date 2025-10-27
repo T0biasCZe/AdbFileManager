@@ -36,6 +36,7 @@ namespace AdbFileManager {
 			checkBox_android6fix = new CheckBox();
 			verticalLabel_makedir = new randz.CustomControls.VerticalLabel();
 			explorer_path = new TextBox();
+			button_goUpDirectory = new Button();
 			button_unlock = new FluentButton();
 			button1 = new FluentButton();
 			button_android2pc = new FluentButton();
@@ -131,6 +132,14 @@ namespace AdbFileManager {
 			explorer_path.Name = "explorer_path";
 			toolTip1.SetToolTip(explorer_path, resources.GetString("explorer_path.ToolTip"));
 			explorer_path.KeyPress += explorer_path_KeyPress;
+			// 
+			// button_goUpDirectory
+			// 
+			resources.ApplyResources(button_goUpDirectory, "button_goUpDirectory");
+			button_goUpDirectory.Name = "button_goUpDirectory";
+			toolTip1.SetToolTip(button_goUpDirectory, resources.GetString("button_goUpDirectory.ToolTip"));
+			button_goUpDirectory.UseVisualStyleBackColor = true;
+			button_goUpDirectory.Click += button_goUpDirectory_Click;
 			// 
 			// button_unlock
 			// 
@@ -344,6 +353,7 @@ namespace AdbFileManager {
 			// 
 			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
+			Controls.Add(button_goUpDirectory);
 			Controls.Add(explorer_path);
 			Controls.Add(explorerBrowser1);
 			Controls.Add(cur_path);
@@ -401,5 +411,6 @@ namespace AdbFileManager {
 		public TextBox cur_path;
 		public TextBox explorer_path;
 		public ComboBox comboBox_device;
+		public Button button_goUpDirectory;
 	}
 }

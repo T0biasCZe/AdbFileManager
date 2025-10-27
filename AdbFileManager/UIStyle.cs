@@ -197,6 +197,9 @@ namespace AdbFileManager {
 			form1.explorer_path.BackColor = backColor;
 			form1.explorer_path.ForeColor = foreColor;
 
+			form1.button_goUpDirectory.BackColor = brighterBackColor;
+			form1.button_goUpDirectory.ForeColor = foreColor;
+
 			form1.button_android2pc.BackColor = brighterBackColor;
 			form1.button_android2pc.ForeColor = foreColor;
 			form1.button_pc2android.BackColor = brighterBackColor;
