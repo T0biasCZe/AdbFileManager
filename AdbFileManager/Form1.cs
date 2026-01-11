@@ -737,7 +737,9 @@ namespace AdbFileManager {
 			Polski,
 			Deutsch,
 			Japanese,
-			Espanol
+			Espanol,
+			ChineseSimplified,
+			ChineseTraditional
 		}
 		private void save_settings() {
 			Properties.Settings.Default.preview_on_doubleclick = checkBox_preview.Checked;
@@ -791,6 +793,14 @@ namespace AdbFileManager {
 				case Languages.Espanol:
 					Console.WriteLine("Configurando el idioma a Español");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
+					break;
+				case Languages.ChineseSimplified:
+					Console.WriteLine("正在将语言设置为简体中文");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-Hans");
+					break;
+				case Languages.ChineseTraditional:
+					Console.WriteLine("正在將語言設定為繁體中文");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-Hant");
 					break;
 			}
 

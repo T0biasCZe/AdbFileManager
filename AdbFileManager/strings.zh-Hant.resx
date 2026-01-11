@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,62 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="adbStartup" xml:space="preserve">
-    <value>Starting adb service. This will take a few seconds. \nPlease wait</value>
+    <value>正在啟動 adb 服務，這需要幾秒鐘。\n請稍候</value>
   </data>
   <data name="addWireless" xml:space="preserve">
-    <value>Add wireless</value>
+    <value>新增無線裝置</value>
   </data>
   <data name="copy_freeze_warn" xml:space="preserve">
-    <value>Even if it may not seem so at times, the files are still copying.
-Please do not close the program if the window freezes.</value>
+    <value>即使有時看起來沒有反應，檔案仍在複製中。
+如果視窗無回應，請不要關閉程式。</value>
   </data>
   <data name="datagridview_attr" xml:space="preserve">
-    <value>Attr</value>
+    <value>屬性</value>
   </data>
   <data name="datagridview_date" xml:space="preserve">
-    <value>Date</value>
+    <value>日期</value>
   </data>
   <data name="datagridview_name" xml:space="preserve">
-    <value>Name</value>
+    <value>名稱</value>
   </data>
   <data name="datagridview_size" xml:space="preserve">
-    <value>Size (KiB)</value>
+    <value>大小 (KiB)</value>
   </data>
   <data name="defaultDevice" xml:space="preserve">
-    <value>Default device</value>
+    <value>預設裝置</value>
   </data>
   <data name="fromto" xml:space="preserve">
-    <value>From {source} to {dest}</value>
+    <value>從 {source} 到 {dest}</value>
   </data>
   <data name="loadingProgram" xml:space="preserve">
-    <value>Loading program, please wait.</value>
+    <value>正在載入程式，請稍候。</value>
   </data>
   <data name="multipleDevicesError" xml:space="preserve">
-    <value>Multiple devices connected\nPlease disconnect other devices, or select a wanted device in dropdown thats down right.</value>
+    <value>偵測到多個裝置\n請中斷其他裝置的連線，或在右下角的下拉式選單中選擇目標裝置。</value>
   </data>
   <data name="offline" xml:space="preserve">
-    <value>(OFFLINE)</value>
+    <value>(離線)</value>
   </data>
   <data name="restartNeeded" xml:space="preserve">
-    <value>Some changes you did require a restart to take effect.</value>
+    <value>您所做的某些變更需要重新啟動才能生效。</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
-    <value>Unwrapping folders.
-One moment please...</value>
+    <value>正在展開資料夾。
+請稍候...</value>
   </data>
   <data name="unwrap_wait_title" xml:space="preserve">
-    <value>Folder unwrap</value>
+    <value>資料夾展開</value>
   </data>
   <data name="usbDebugEnableInstructions" xml:space="preserve">
-    <value>Make sure USB debugging is enabled, and your device is properly connected.\nTo enable USB debugging:\n1. Go to android settings\n2. System\n3. Information about phone\n4. Find build number and click it repeatedly, until "developer mode is now enabled" notification\n5. go back, and find "developer settings"\nfind "USB Debugging" and enable it\n7. Enable "Disable adb authorization time limit"\n8. connect your phone to PC, and click authorize PC\n9. Files should now show here properly\n\nPlease note that these steps may vary by phone.</value>
+    <value>請確保已啟用 USB 偵錯，並且裝置已正確連接。\n啟用 USB 偵錯的步驟：\n1. 進入 Android 設定\n2. 系統\n3. 關於手機\n4. 找到版本號碼並連續點擊，直到出現「開發人員模式已啟用」提示\n5. 返回，找到「開發人員選項」\n6. 找到「USB 偵錯」並啟用\n7. 啟用「停用 adb 授權逾時」\n8. 將手機連接到電腦，點擊授權電腦\n9. 檔案現在應該能正常顯示\n\n請注意，這些步驟可能因手機型號而異。</value>
   </data>
   <data name="wireless" xml:space="preserve">
-    <value>(Wireless)</value>
+    <value>(無線)</value>
   </data>
   <data name="copy_in_progress" xml:space="preserve">
-    <value>A copy operation is already in progress. Please wait for it to complete.</value>
+    <value>複製正在進行中，請等待目前操作完成。</value>
   </data>
   <data name="copy_in_progress_title" xml:space="preserve">
-    <value>Copy in Progress</value>
+    <value>複製進行中</value>
   </data>
 </root>

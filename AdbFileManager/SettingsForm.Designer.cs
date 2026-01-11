@@ -141,7 +141,7 @@
 			// comboBox_lang
 			// 
 			comboBox_lang.FormattingEnabled = true;
-			comboBox_lang.Items.AddRange(new object[] { "English", "Čeština", "Polski", "Deutsch", "Japanese", "Espanol" });
+			comboBox_lang.Items.AddRange(new object[] { "English", "Čeština", "Polski", "Deutsch", "Japanese", "Espanol", "简体中文", "繁體中文" });
 			comboBox_lang.Location = new Point(8, 216);
 			comboBox_lang.Name = "comboBox_lang";
 			comboBox_lang.Size = new Size(121, 23);
