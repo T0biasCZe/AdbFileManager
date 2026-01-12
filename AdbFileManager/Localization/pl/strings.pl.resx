@@ -230,28 +230,28 @@ Data: {2}</value>
     <value>Język</value>
   </data>
   <data name="settings_keepFileDate" xml:space="preserve">
-    <value>Zachowaj datę modyfikacji pliku</value>
+    <value>Zachowaj datę pliku</value>
   </data>
   <data name="settings_previewMedia" xml:space="preserve">
-    <value>Podgląd plików multimedialnych po dwukrotnym kliknięciu</value>
+    <value>Podgląd przy dwukliknięciu</value>
   </data>
   <data name="settings_useLegacyCopy" xml:space="preserve">
-    <value>Użyj starszego kopiowania synchronicznego</value>
+    <value>Starsze kopiowanie</value>
   </data>
   <data name="settings_unwrapFolders" xml:space="preserve">
-    <value>Rozpakowuj foldery przy kopiowaniu</value>
+    <value>Rozpakuj foldery</value>
   </data>
   <data name="settings_progressSyncDelay" xml:space="preserve">
-    <value>Opóźnienie synchronizacji postępu</value>
+    <value>Opóźnienie postępu</value>
   </data>
   <data name="settings_compatibilityFix" xml:space="preserve">
-    <value>Poprawka kompatybilności</value>
+    <value>Tryb kompatybilności</value>
   </data>
   <data name="settings_fastCompatibility" xml:space="preserve">
-    <value>Szybki tryb kompatybilności</value>
+    <value>Szybka kompatybilność</value>
   </data>
   <data name="settings_openLastLocation" xml:space="preserve">
-    <value>Otwórz w ostatniej lokalizacji</value>
+    <value>Otwórz ostatnią lok.</value>
   </data>
   <data name="settings_iconStyle" xml:space="preserve">
     <value>Styl ikon</value>
@@ -275,17 +275,17 @@ Data: {2}</value>
     <value>Gradient Fluent</value>
   </data>
   <data name="settings_darkMode" xml:space="preserve">
-    <value>Włącz tryb ciemny</value>
+    <value>Tryb ciemny</value>
   </data>
   <data name="settings_darkModeNote" xml:space="preserve">
-    <value>Uwaga: Eksplorator plików PC będzie ciemny tylko wtedy,
-gdy sam Windows ma włączony tryb ciemny</value>
+    <value>Uwaga: Explorer ciemny tylko gdy
+Windows ma tryb ciemny</value>
   </data>
   <data name="settings_twoProgressBars" xml:space="preserve">
-    <value>Pokaż dwa paski postępu kopiowania</value>
+    <value>Dwa paski postępu</value>
   </data>
   <data name="settings_showBackButton" xml:space="preserve">
-    <value>Pokaż przycisk wstecz Androida</value>
+    <value>Przycisk wstecz</value>
   </data>
   <data name="wireless_title" xml:space="preserve">
     <value>Parowanie bezprzewodowe</value>

@@ -199,10 +199,10 @@ Prosím vydržte chvilku...</value>
     <value>Zachovat datum úpravy souboru</value>
   </data>
   <data name="settings_previewMedia" xml:space="preserve">
-    <value>Náhled mediálních souborů při dvojkliku</value>
+    <value>Náhled při dvojkliku</value>
   </data>
   <data name="settings_useLegacyCopy" xml:space="preserve">
-    <value>Použít starší synchronní kopírování</value>
+    <value>Starší kopírování</value>
   </data>
   <data name="settings_unwrapFolders" xml:space="preserve">
     <value>Rozbalit složky při kopírování</value>
@@ -248,10 +248,10 @@ Prosím vydržte chvilku...</value>
 pouze pokud má Windows povolen tmavý režim</value>
   </data>
   <data name="settings_twoProgressBars" xml:space="preserve">
-    <value>Zobrazit dva ukazatele průběhu kopírování</value>
+    <value>Dva ukazatele průběhu</value>
   </data>
   <data name="settings_showBackButton" xml:space="preserve">
-    <value>Zobrazit tlačítko Zpět pro Android</value>
+    <value>Tlačítko Zpět</value>
   </data>
   <data name="wireless_title" xml:space="preserve">
     <value>Bezdrátové párování</value>

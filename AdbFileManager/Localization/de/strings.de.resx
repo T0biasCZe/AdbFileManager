@@ -230,28 +230,28 @@ Datum: {2}</value>
     <value>Sprache</value>
   </data>
   <data name="settings_keepFileDate" xml:space="preserve">
-    <value>Dateiänderungsdatum beibehalten</value>
+    <value>Änderungsdatum behalten</value>
   </data>
   <data name="settings_previewMedia" xml:space="preserve">
-    <value>Mediendateien bei Doppelklick anzeigen</value>
+    <value>Vorschau bei Doppelklick</value>
   </data>
   <data name="settings_useLegacyCopy" xml:space="preserve">
-    <value>Älteres Sync-Kopieren verwenden</value>
+    <value>Legacy-Sync verwenden</value>
   </data>
   <data name="settings_unwrapFolders" xml:space="preserve">
-    <value>Ordner beim Kopieren entpacken</value>
+    <value>Ordner entpacken</value>
   </data>
   <data name="settings_progressSyncDelay" xml:space="preserve">
-    <value>Fortschrittssynchronisierungsverzögerung</value>
+    <value>Fortschrittsverzögerung</value>
   </data>
   <data name="settings_compatibilityFix" xml:space="preserve">
-    <value>Kompatibilitätskorrektur</value>
+    <value>Kompatibilitätsmodus</value>
   </data>
   <data name="settings_fastCompatibility" xml:space="preserve">
-    <value>Schneller Kompatibilitätsmodus</value>
+    <value>Schneller Kompatmodus</value>
   </data>
   <data name="settings_openLastLocation" xml:space="preserve">
-    <value>Am letzten Speicherort öffnen</value>
+    <value>Letzten Ort öffnen</value>
   </data>
   <data name="settings_iconStyle" xml:space="preserve">
     <value>Symbolstil</value>
@@ -275,17 +275,17 @@ Datum: {2}</value>
     <value>Fluent-Farbverlauf</value>
   </data>
   <data name="settings_darkMode" xml:space="preserve">
-    <value>Dunkelmodus aktivieren</value>
+    <value>Dunkelmodus</value>
   </data>
   <data name="settings_darkModeNote" xml:space="preserve">
-    <value>Hinweis: Der PC-Datei-Explorer wird nur dunkel sein,
-wenn Windows selbst den Dunkelmodus aktiviert hat</value>
+    <value>Hinweis: Explorer nur dunkel wenn
+Windows Dunkelmodus aktiviert hat</value>
   </data>
   <data name="settings_twoProgressBars" xml:space="preserve">
-    <value>Zwei Kopierfortschrittsbalken anzeigen</value>
+    <value>Zwei Fortschrittsbalken</value>
   </data>
   <data name="settings_showBackButton" xml:space="preserve">
-    <value>Android-Zurück-Taste anzeigen</value>
+    <value>Zurück-Taste zeigen</value>
   </data>
   <data name="wireless_title" xml:space="preserve">
     <value>Drahtlose Kopplung</value>

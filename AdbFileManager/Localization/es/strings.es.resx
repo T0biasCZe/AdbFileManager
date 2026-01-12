@@ -206,25 +206,25 @@ Tenga en cuenta que estos pasos pueden variar según el teléfono.</value>
     <value>Idioma</value>
   </data>
   <data name="settings_keepFileDate" xml:space="preserve">
-    <value>Mantener fecha de modificación del archivo</value>
+    <value>Conservar fecha de archivo</value>
   </data>
   <data name="settings_previewMedia" xml:space="preserve">
-    <value>Previsualizar archivos multimedia con doble clic</value>
+    <value>Vista previa con doble clic</value>
   </data>
   <data name="settings_useLegacyCopy" xml:space="preserve">
-    <value>Usar copia sincronizada heredada</value>
+    <value>Usar copia heredada</value>
   </data>
   <data name="settings_unwrapFolders" xml:space="preserve">
-    <value>Desenvolver carpetas al copiar</value>
+    <value>Desempacar carpetas</value>
   </data>
   <data name="settings_progressSyncDelay" xml:space="preserve">
-    <value>Retraso de sincronización de progreso</value>
+    <value>Retraso de progreso</value>
   </data>
   <data name="settings_compatibilityFix" xml:space="preserve">
-    <value>Corrección de compatibilidad</value>
+    <value>Modo compatibilidad</value>
   </data>
   <data name="settings_fastCompatibility" xml:space="preserve">
-    <value>Modo de compatibilidad rápida</value>
+    <value>Compatibilidad rápida</value>
   </data>
   <data name="settings_openLastLocation" xml:space="preserve">
     <value>Abrir en la última ubicación</value>
@@ -251,17 +251,17 @@ Tenga en cuenta que estos pasos pueden variar según el teléfono.</value>
     <value>Gradiente fluido</value>
   </data>
   <data name="settings_darkMode" xml:space="preserve">
-    <value>Habilitar modo oscuro</value>
+    <value>Modo oscuro</value>
   </data>
   <data name="settings_darkModeNote" xml:space="preserve">
-    <value>Nota: El Explorador de archivos de PC solo estará en oscuro
-si Windows tiene el modo oscuro habilitado</value>
+    <value>Nota: Explorer solo oscuro si
+Windows tiene modo oscuro</value>
   </data>
   <data name="settings_twoProgressBars" xml:space="preserve">
-    <value>Mostrar dos barras de progreso de copia</value>
+    <value>Dos barras de progreso</value>
   </data>
   <data name="settings_showBackButton" xml:space="preserve">
-    <value>Mostrar botón de retroceso de Android</value>
+    <value>Mostrar botón atrás</value>
   </data>
   <data name="wireless_title" xml:space="preserve">
     <value>Emparejamiento inalámbrico</value>
