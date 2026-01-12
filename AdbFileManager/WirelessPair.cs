@@ -12,6 +12,16 @@ namespace AdbFileManager {
 	public partial class WirelessPair : Form {
 		public WirelessPair() {
 			InitializeComponent();
+			ApplyLocalization();
+		}
+
+		private void ApplyLocalization() {
+			this.Text = AdbFileManager.strings.wireless_title;
+			textBox1.PlaceholderText = AdbFileManager.strings.wireless_ipAddress;
+			textBox2.PlaceholderText = AdbFileManager.strings.wireless_port;
+			textBox3.PlaceholderText = AdbFileManager.strings.wireless_pairingCode;
+			button_pair.Text = AdbFileManager.strings.wireless_pair;
+			button_reconnect.Text = AdbFileManager.strings.wireless_reconnect;
 		}
 
 		private async void button1_Click(object sender, EventArgs e) {
@@ -19,11 +29,11 @@ namespace AdbFileManager {
 			string port = textBox2.Text.Trim();
 			string pairingCode = textBox3.Text.Trim();
 			if(string.IsNullOrEmpty(ip) || string.IsNullOrEmpty(port)) {
-				MessageBox.Show("Please enter both IP and Port.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(AdbFileManager.strings.wireless_enterIpPort, AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			if(string.IsNullOrEmpty(pairingCode)) {
-				MessageBox.Show("Please enter the pairing code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(AdbFileManager.strings.wireless_enterPairingCode, AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			try {
@@ -51,18 +61,18 @@ namespace AdbFileManager {
 
 				bool finished = process.WaitForExit(30000);
 				if(!finished) {
-					MessageBox.Show("The pairing process timed out. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(AdbFileManager.strings.wireless_timeout, AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else if(process.ExitCode != 0) {
-					MessageBox.Show("An error occurred during the pairing process:\n" + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(AdbFileManager.strings.wireless_errorOccurred + "\n" + error, AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else {
-					MessageBox.Show("Pairing finished!\n" + output, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show(AdbFileManager.strings.wireless_pairingFinished + "\n" + output, AdbFileManager.strings.success, MessageBoxButtons.OK, MessageBoxIcon.Information);
 					this.Close();
 				}
 			}
 			catch(Exception ex) {
-				MessageBox.Show($"Exception: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"{AdbFileManager.strings.exception} {ex.Message}", AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
@@ -70,7 +80,7 @@ namespace AdbFileManager {
 			string ip = textBox1.Text.Trim();
 			string port = textBox2.Text.Trim();
 			if(string.IsNullOrEmpty(ip) || string.IsNullOrEmpty(port)) {
-				MessageBox.Show("Please enter both IP and Port.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show(AdbFileManager.strings.wireless_enterIpPort, AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			try {
@@ -86,10 +96,10 @@ namespace AdbFileManager {
 				process.Start();
 				process.WaitForExit(30000);
 				string output = process.StandardOutput.ReadToEnd();
-				MessageBox.Show("Reconnect command finished:\n" + output, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show(AdbFileManager.strings.wireless_reconnectFinished + "\n" + output, AdbFileManager.strings.info, MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			catch(Exception ex) {
-				MessageBox.Show($"Exception: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"{AdbFileManager.strings.exception} {ex.Message}", AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 	}

@@ -51,17 +51,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="strings - Copy.cs.Designer.cs">
-      <DependentUpon>strings.cs.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="strings.cs.Designer.cs">
-      <DependentUpon>strings.cs.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="strings.Designer.cs">
+    <Compile Update="Localization\strings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>strings.resx</DependentUpon>
@@ -79,17 +69,52 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="strings.de.resx">
-      <LastGenOutput>strings - Copy.cs.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
+    <EmbeddedResource Update="Localization\de\strings.de.resx">
+      <LogicalName>AdbFileManager.strings.de.resources</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Update="strings.cs.resx">
-      <LastGenOutput>strings.cs.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
+    <EmbeddedResource Update="Localization\de\Form1.de.resx">
+      <LogicalName>AdbFileManager.Form1.de.resources</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Update="strings.resx">
+    <EmbeddedResource Update="Localization\cs\strings.cs.resx">
+      <LogicalName>AdbFileManager.strings.cs.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\cs\Form1.cs.resx">
+      <LogicalName>AdbFileManager.Form1.cs.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\es\strings.es.resx">
+      <LogicalName>AdbFileManager.strings.es.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\es\Form1.es.resx">
+      <LogicalName>AdbFileManager.Form1.es.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\ja\strings.ja.resx">
+      <LogicalName>AdbFileManager.strings.ja.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\ja\Form1.ja.resx">
+      <LogicalName>AdbFileManager.Form1.ja.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\pl\strings.pl.resx">
+      <LogicalName>AdbFileManager.strings.pl.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\pl\Form1.pl.resx">
+      <LogicalName>AdbFileManager.Form1.pl.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\zh-Hans\strings.zh-Hans.resx">
+      <LogicalName>AdbFileManager.strings.zh-Hans.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\zh-Hans\Form1.zh-Hans.resx">
+      <LogicalName>AdbFileManager.Form1.zh-Hans.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\zh-Hant\strings.zh-Hant.resx">
+      <LogicalName>AdbFileManager.strings.zh-Hant.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\zh-Hant\Form1.zh-Hant.resx">
+      <LogicalName>AdbFileManager.Form1.zh-Hant.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>strings.Designer.cs</LastGenOutput>
+      <LogicalName>AdbFileManager.strings.resources</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 

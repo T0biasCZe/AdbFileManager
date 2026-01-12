@@ -171,4 +171,157 @@ Prosím vydržte chvilku...</value>
   <data name="wireless" xml:space="preserve">
     <value>(Bezdrát)</value>
   </data>
+  <data name="copy_in_progress" xml:space="preserve">
+    <value>Probíhá kopírování. Počkejte prosím na dokončení.</value>
+  </data>
+  <data name="copy_in_progress_title" xml:space="preserve">
+    <value>Probíhá kopírování</value>
+  </data>
+  <data name="noFilesFound" xml:space="preserve">
+    <value>Žádné soubory nenalezeny</value>
+  </data>
+  <data name="noDeviceFound" xml:space="preserve">
+    <value>Žádné zařízení nenalezeno</value>
+  </data>
+  <data name="settings_title" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="settings_tab_behaviour" xml:space="preserve">
+    <value>Chování</value>
+  </data>
+  <data name="settings_tab_appearance" xml:space="preserve">
+    <value>Vzhled</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Jazyk</value>
+  </data>
+  <data name="settings_keepFileDate" xml:space="preserve">
+    <value>Zachovat datum úpravy souboru</value>
+  </data>
+  <data name="settings_previewMedia" xml:space="preserve">
+    <value>Náhled mediálních souborů při dvojkliku</value>
+  </data>
+  <data name="settings_useLegacyCopy" xml:space="preserve">
+    <value>Použít starší synchronní kopírování</value>
+  </data>
+  <data name="settings_unwrapFolders" xml:space="preserve">
+    <value>Rozbalit složky při kopírování</value>
+  </data>
+  <data name="settings_progressSyncDelay" xml:space="preserve">
+    <value>Prodleva synchronizace průběhu</value>
+  </data>
+  <data name="settings_compatibilityFix" xml:space="preserve">
+    <value>Oprava kompatibility</value>
+  </data>
+  <data name="settings_fastCompatibility" xml:space="preserve">
+    <value>Rychlý režim kompatibility</value>
+  </data>
+  <data name="settings_openLastLocation" xml:space="preserve">
+    <value>Otevřít v poslední pozici</value>
+  </data>
+  <data name="settings_iconStyle" xml:space="preserve">
+    <value>Styl ikon</value>
+  </data>
+  <data name="settings_windowsAero" xml:space="preserve">
+    <value>Windows Aero</value>
+  </data>
+  <data name="settings_windows11" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="settings_buttonDesign" xml:space="preserve">
+    <value>Design tlačítek</value>
+  </data>
+  <data name="settings_flatShaded" xml:space="preserve">
+    <value>Plochý stínovaný</value>
+  </data>
+  <data name="settings_flat" xml:space="preserve">
+    <value>Plochý</value>
+  </data>
+  <data name="settings_fluentGradient" xml:space="preserve">
+    <value>Fluent přechod</value>
+  </data>
+  <data name="settings_darkMode" xml:space="preserve">
+    <value>Povolit tmavý režim</value>
+  </data>
+  <data name="settings_darkModeNote" xml:space="preserve">
+    <value>Poznámka: Průzkumník souborů PC bude tmavý
+pouze pokud má Windows povolen tmavý režim</value>
+  </data>
+  <data name="settings_twoProgressBars" xml:space="preserve">
+    <value>Zobrazit dva ukazatele průběhu kopírování</value>
+  </data>
+  <data name="settings_showBackButton" xml:space="preserve">
+    <value>Zobrazit tlačítko Zpět pro Android</value>
+  </data>
+  <data name="wireless_title" xml:space="preserve">
+    <value>Bezdrátové párování</value>
+  </data>
+  <data name="wireless_ipAddress" xml:space="preserve">
+    <value>IP adresa zařízení</value>
+  </data>
+  <data name="wireless_port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="wireless_pairingCode" xml:space="preserve">
+    <value>Párovací kód</value>
+  </data>
+  <data name="wireless_pair" xml:space="preserve">
+    <value>Spárovat</value>
+  </data>
+  <data name="wireless_reconnect" xml:space="preserve">
+    <value>Znovu připojit</value>
+  </data>
+  <data name="wireless_enterIpPort" xml:space="preserve">
+    <value>Zadejte prosím IP adresu i port.</value>
+  </data>
+  <data name="wireless_enterPairingCode" xml:space="preserve">
+    <value>Zadejte prosím párovací kód.</value>
+  </data>
+  <data name="wireless_timeout" xml:space="preserve">
+    <value>Proces párování vypršel. Zkuste to prosím znovu.</value>
+  </data>
+  <data name="wireless_errorOccurred" xml:space="preserve">
+    <value>Během párování došlo k chybě:</value>
+  </data>
+  <data name="wireless_pairingFinished" xml:space="preserve">
+    <value>Párování dokončeno!</value>
+  </data>
+  <data name="wireless_reconnectFinished" xml:space="preserve">
+    <value>Příkaz pro opětovné připojení dokončen:</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Chyba</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Úspěch</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Informace</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="exception" xml:space="preserve">
+    <value>Výjimka:</value>
+  </data>
+  <data name="fileInfo" xml:space="preserve">
+    <value>Soubor: {0}
+Velikost: {1}
+Datum: {2}</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>Neplatná cesta</value>
+  </data>
+  <data name="errorReportFootnote" xml:space="preserve">
+    <value>Nahlaste prosím tuto chybu vývojáři. Podrobná zpráva může být v konzoli</value>
+  </data>
+  <data name="restartRequired" xml:space="preserve">
+    <value>Vyžadován restart</value>
+  </data>
+  <data name="enterDirectoryName" xml:space="preserve">
+    <value>Zadejte název adresáře</value>
+  </data>
+  <data name="loadingFilesInRoot" xml:space="preserve">
+    <value>Načítání souborů v kořenovém adresáři</value>
+  </data>
 </root>

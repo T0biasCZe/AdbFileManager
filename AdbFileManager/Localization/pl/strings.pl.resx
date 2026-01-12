@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="adbStartup" xml:space="preserve">
-    <value />
+    <value>Uruchamianie usługi adb. To potrwa kilka sekund. \nProszę czekać</value>
   </data>
   <data name="addWireless" xml:space="preserve">
-    <value />
+    <value>Dodaj bezprzewodowo</value>
   </data>
   <data name="copy_freeze_warn" xml:space="preserve">
     <value>Chociaż może się tak nie wydawać, pliki wciąż są kopiowane.
@@ -140,22 +140,22 @@ Proszę nie zamykać programu, jeśli okno zamrozi.</value>
     <value>Rozmiar (KiB)</value>
   </data>
   <data name="defaultDevice" xml:space="preserve">
-    <value />
+    <value>Domyślne urządzenie</value>
   </data>
   <data name="fromto" xml:space="preserve">
     <value>Z {source} do {dest}</value>
   </data>
   <data name="loadingProgram" xml:space="preserve">
-    <value />
+    <value>Ładowanie programu, proszę czekać.</value>
   </data>
   <data name="multipleDevicesError" xml:space="preserve">
-    <value />
+    <value>Podłączono wiele urządzeń\nProszę odłączyć inne urządzenia lub wybrać żądane urządzenie z listy rozwijanej w prawym dolnym rogu.</value>
   </data>
   <data name="offline" xml:space="preserve">
-    <value />
+    <value>(OFFLINE)</value>
   </data>
   <data name="restartNeeded" xml:space="preserve">
-    <value />
+    <value>Niektóre wprowadzone zmiany wymagają ponownego uruchomienia, aby zostały zastosowane.</value>
   </data>
   <data name="unwrap_wait" xml:space="preserve">
     <value>Rozpakowywanie folderów w trakcie.
@@ -165,9 +165,162 @@ Proszę czekać chwilę...</value>
     <value>Rozpakowywanie folderów.</value>
   </data>
   <data name="usbDebugEnableInstructions" xml:space="preserve">
-    <value />
+    <value>Upewnij się, że debugowanie USB jest włączone i urządzenie jest prawidłowo podłączone.\nAby włączyć debugowanie USB:\n1. Przejdź do ustawień Androida\n2. System\n3. Informacje o telefonie\n4. Znajdź numer kompilacji i klikaj go wielokrotnie, aż pojawi się powiadomienie "tryb programisty jest teraz włączony"\n5. Wróć i znajdź "Opcje programisty"\nZnajdź "Debugowanie USB" i włącz je\n7. Włącz "Wyłącz limit czasu autoryzacji adb"\n8. Podłącz telefon do komputera i kliknij autoryzuj komputer\n9. Pliki powinny teraz wyświetlać się prawidłowo\n\nPamiętaj, że te kroki mogą się różnić w zależności od telefonu.</value>
   </data>
   <data name="wireless" xml:space="preserve">
-    <value />
+    <value>(Bezprzewodowo)</value>
+  </data>
+  <data name="copy_in_progress" xml:space="preserve">
+    <value>Operacja kopiowania jest już w toku. Proszę poczekać na jej zakończenie.</value>
+  </data>
+  <data name="copy_in_progress_title" xml:space="preserve">
+    <value>Kopiowanie w toku</value>
+  </data>
+  <data name="noFilesFound" xml:space="preserve">
+    <value>Nie znaleziono plików</value>
+  </data>
+  <data name="noDeviceFound" xml:space="preserve">
+    <value>Nie znaleziono urządzenia</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Informacja</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="exception" xml:space="preserve">
+    <value>Wyjątek:</value>
+  </data>
+  <data name="fileInfo" xml:space="preserve">
+    <value>Plik: {0}
+Rozmiar: {1}
+Data: {2}</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>Nieprawidłowa ścieżka</value>
+  </data>
+  <data name="errorReportFootnote" xml:space="preserve">
+    <value>Proszę zgłosić ten błąd do programisty. Szczegółowy raport może znajdować się w konsoli</value>
+  </data>
+  <data name="restartRequired" xml:space="preserve">
+    <value>Wymagane ponowne uruchomienie</value>
+  </data>
+  <data name="enterDirectoryName" xml:space="preserve">
+    <value>Wprowadź nazwę katalogu</value>
+  </data>
+  <data name="loadingFilesInRoot" xml:space="preserve">
+    <value>Ładowanie plików w katalogu głównym</value>
+  </data>
+  <data name="settings_title" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="settings_tab_behaviour" xml:space="preserve">
+    <value>Zachowanie</value>
+  </data>
+  <data name="settings_tab_appearance" xml:space="preserve">
+    <value>Wygląd</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="settings_keepFileDate" xml:space="preserve">
+    <value>Zachowaj datę modyfikacji pliku</value>
+  </data>
+  <data name="settings_previewMedia" xml:space="preserve">
+    <value>Podgląd plików multimedialnych po dwukrotnym kliknięciu</value>
+  </data>
+  <data name="settings_useLegacyCopy" xml:space="preserve">
+    <value>Użyj starszego kopiowania synchronicznego</value>
+  </data>
+  <data name="settings_unwrapFolders" xml:space="preserve">
+    <value>Rozpakowuj foldery przy kopiowaniu</value>
+  </data>
+  <data name="settings_progressSyncDelay" xml:space="preserve">
+    <value>Opóźnienie synchronizacji postępu</value>
+  </data>
+  <data name="settings_compatibilityFix" xml:space="preserve">
+    <value>Poprawka kompatybilności</value>
+  </data>
+  <data name="settings_fastCompatibility" xml:space="preserve">
+    <value>Szybki tryb kompatybilności</value>
+  </data>
+  <data name="settings_openLastLocation" xml:space="preserve">
+    <value>Otwórz w ostatniej lokalizacji</value>
+  </data>
+  <data name="settings_iconStyle" xml:space="preserve">
+    <value>Styl ikon</value>
+  </data>
+  <data name="settings_windowsAero" xml:space="preserve">
+    <value>Windows Aero</value>
+  </data>
+  <data name="settings_windows11" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="settings_buttonDesign" xml:space="preserve">
+    <value>Wygląd przycisków</value>
+  </data>
+  <data name="settings_flatShaded" xml:space="preserve">
+    <value>Płaski cieniowany</value>
+  </data>
+  <data name="settings_flat" xml:space="preserve">
+    <value>Płaski</value>
+  </data>
+  <data name="settings_fluentGradient" xml:space="preserve">
+    <value>Gradient Fluent</value>
+  </data>
+  <data name="settings_darkMode" xml:space="preserve">
+    <value>Włącz tryb ciemny</value>
+  </data>
+  <data name="settings_darkModeNote" xml:space="preserve">
+    <value>Uwaga: Eksplorator plików PC będzie ciemny tylko wtedy,
+gdy sam Windows ma włączony tryb ciemny</value>
+  </data>
+  <data name="settings_twoProgressBars" xml:space="preserve">
+    <value>Pokaż dwa paski postępu kopiowania</value>
+  </data>
+  <data name="settings_showBackButton" xml:space="preserve">
+    <value>Pokaż przycisk wstecz Androida</value>
+  </data>
+  <data name="wireless_title" xml:space="preserve">
+    <value>Parowanie bezprzewodowe</value>
+  </data>
+  <data name="wireless_ipAddress" xml:space="preserve">
+    <value>Adres IP urządzenia</value>
+  </data>
+  <data name="wireless_port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="wireless_pairingCode" xml:space="preserve">
+    <value>Kod parowania</value>
+  </data>
+  <data name="wireless_pair" xml:space="preserve">
+    <value>Sparuj</value>
+  </data>
+  <data name="wireless_reconnect" xml:space="preserve">
+    <value>Połącz ponownie</value>
+  </data>
+  <data name="wireless_enterIpPort" xml:space="preserve">
+    <value>Proszę wprowadzić adres IP i port.</value>
+  </data>
+  <data name="wireless_enterPairingCode" xml:space="preserve">
+    <value>Proszę wprowadzić kod parowania.</value>
+  </data>
+  <data name="wireless_timeout" xml:space="preserve">
+    <value>Proces parowania przekroczył limit czasu. Proszę spróbować ponownie.</value>
+  </data>
+  <data name="wireless_errorOccurred" xml:space="preserve">
+    <value>Wystąpił błąd podczas procesu parowania:</value>
+  </data>
+  <data name="wireless_pairingFinished" xml:space="preserve">
+    <value>Parowanie zakończone!</value>
+  </data>
+  <data name="wireless_reconnectFinished" xml:space="preserve">
+    <value>Polecenie ponownego połączenia zakończone:</value>
   </data>
 </root>
