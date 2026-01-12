@@ -1,4 +1,5 @@
-﻿using Timer = System.Windows.Forms.Timer;
+﻿using DarkModeControls;
+using Timer = System.Windows.Forms.Timer;
 
 namespace AdbFileManager {
 	partial class Form1 {
@@ -59,10 +60,17 @@ namespace AdbFileManager {
 			deco_panel3 = new Panel();
 			deco_panel2 = new Panel();
 			explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
+			panel_installAssistant = new Panel();
+			label_textInstall = new Label();
+			commandLink_installYes = new DarkCommandLink();
+			commandLink_installGoAway = new DarkCommandLink();
+			pictureBox1 = new PictureBox();
 			((System.ComponentModel.ISupportInitialize)dataGridView_soubory).BeginInit();
 			deco_panel4.SuspendLayout();
 			panel_dolniTlacitka.SuspendLayout();
 			panel_tlacitkaUprostred.SuspendLayout();
+			panel_installAssistant.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// dataGridView_soubory
@@ -231,7 +239,6 @@ namespace AdbFileManager {
 			// 
 			// panel_dolniTlacitka
 			// 
-			resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
 			panel_dolniTlacitka.BackColor = Color.FromArgb(192, 255, 255);
 			panel_dolniTlacitka.Controls.Add(comboBox_device);
 			panel_dolniTlacitka.Controls.Add(button_console);
@@ -244,6 +251,7 @@ namespace AdbFileManager {
 			panel_dolniTlacitka.Controls.Add(checkBox_android6fix);
 			panel_dolniTlacitka.Controls.Add(label_version);
 			panel_dolniTlacitka.Controls.Add(checkBox_filedate);
+			resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
 			panel_dolniTlacitka.Name = "panel_dolniTlacitka";
 			panel_dolniTlacitka.Paint += panel_dolniTlacitka_Paint;
 			// 
@@ -345,14 +353,60 @@ namespace AdbFileManager {
 			resources.ApplyResources(explorerBrowser1, "explorerBrowser1");
 			explorerBrowser1.Name = "explorerBrowser1";
 			explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
+			explorerBrowser1.SelectionChanged += explorerBrowser1_SelectionChanged;
 			explorerBrowser1.NavigationComplete += explorerBrowser1_NavigationComplete;
 			explorerBrowser1.Load += explorerBrowser1_Load;
 			explorerBrowser1.PreviewKeyDown += explorerBrowser1_PreviewKeyDown;
+			// 
+			// panel_installAssistant
+			// 
+			panel_installAssistant.Controls.Add(label_textInstall);
+			panel_installAssistant.Controls.Add(commandLink_installYes);
+			panel_installAssistant.Controls.Add(commandLink_installGoAway);
+			panel_installAssistant.Controls.Add(pictureBox1);
+			resources.ApplyResources(panel_installAssistant, "panel_installAssistant");
+			panel_installAssistant.Name = "panel_installAssistant";
+			// 
+			// label_textInstall
+			// 
+			resources.ApplyResources(label_textInstall, "label_textInstall");
+			label_textInstall.BackColor = Color.Transparent;
+			label_textInstall.Name = "label_textInstall";
+			// 
+			// commandLink_installYes
+			// 
+			commandLink_installYes.BackColor = Color.Transparent;
+			resources.ApplyResources(commandLink_installYes, "commandLink_installYes");
+			commandLink_installYes.MainTextColor = Color.FromArgb(0, 192, 0);
+			commandLink_installYes.Name = "commandLink_installYes";
+			commandLink_installYes.Note = "";
+			commandLink_installYes.NoteTextColor = Color.LightGray;
+			commandLink_installYes.UseVisualStyleBackColor = false;
+			commandLink_installYes.Click += commandLink_installYes_Click;
+			// 
+			// commandLink_installGoAway
+			// 
+			commandLink_installGoAway.BackColor = Color.Transparent;
+			resources.ApplyResources(commandLink_installGoAway, "commandLink_installGoAway");
+			commandLink_installGoAway.MainTextColor = Color.FromArgb(192, 0, 0);
+			commandLink_installGoAway.Name = "commandLink_installGoAway";
+			commandLink_installGoAway.Note = "";
+			commandLink_installGoAway.NoteTextColor = Color.LightGray;
+			commandLink_installGoAway.UseVisualStyleBackColor = false;
+			// 
+			// pictureBox1
+			// 
+			pictureBox1.BackColor = Color.Transparent;
+			pictureBox1.Image = Properties.Resources.assistant;
+			resources.ApplyResources(pictureBox1, "pictureBox1");
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.TabStop = false;
 			// 
 			// Form1
 			// 
 			resources.ApplyResources(this, "$this");
 			AutoScaleMode = AutoScaleMode.Font;
+			Controls.Add(panel_installAssistant);
 			Controls.Add(button_goUpDirectory);
 			Controls.Add(explorer_path);
 			Controls.Add(explorerBrowser1);
@@ -363,6 +417,7 @@ namespace AdbFileManager {
 			Controls.Add(button_forward);
 			Controls.Add(panel_dolniTlacitka);
 			Name = "Form1";
+			TransparencyKey = Color.FromArgb(192, 0, 192);
 			FormClosing += Form1_FormClosing;
 			FormClosed += Form1_FormClosed;
 			Load += Form1_Load;
@@ -372,6 +427,9 @@ namespace AdbFileManager {
 			panel_dolniTlacitka.ResumeLayout(false);
 			panel_dolniTlacitka.PerformLayout();
 			panel_tlacitkaUprostred.ResumeLayout(false);
+			panel_installAssistant.ResumeLayout(false);
+			panel_installAssistant.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -412,5 +470,10 @@ namespace AdbFileManager {
 		public TextBox explorer_path;
 		public ComboBox comboBox_device;
 		public Button button_goUpDirectory;
+		private PictureBox pictureBox1;
+		public Panel panel_installAssistant;
+		public Label label_textInstall;
+		public DarkCommandLink commandLink_installGoAway;
+		public DarkCommandLink commandLink_installYes;
 	}
 }

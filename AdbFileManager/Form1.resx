@@ -126,7 +126,7 @@
     <value>24, 40</value>
   </data>
   <data name="dataGridView_soubory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 810</value>
+    <value>532, 732</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView_soubory.TabIndex" type="System.Int32, mscorlib">
@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView_soubory.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cur_path.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
@@ -334,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;explorer_path.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button_goUpDirectory.Location" type="System.Drawing.Point, System.Drawing">
     <value>561, 15</value>
@@ -365,7 +365,7 @@ This button can be hidden in appearance settings.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_goUpDirectory.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button_unlock.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -515,7 +515,7 @@ This button can be hidden in appearance settings.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_forward.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="button_back.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -539,7 +539,7 @@ This button can be hidden in appearance settings.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button_back.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="button_openSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -597,9 +597,6 @@ This button can be hidden in appearance settings.</value>
   </data>
   <data name="&gt;&gt;deco_panel4.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="panel_dolniTlacitka.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
   </data>
   <data name="comboBox_device.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8pt</value>
@@ -751,8 +748,11 @@ This button can be hidden in appearance settings.</value>
   <data name="&gt;&gt;checkBox_filedate.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="panel_dolniTlacitka.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="panel_dolniTlacitka.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 850</value>
+    <value>0, 787</value>
   </data>
   <data name="panel_dolniTlacitka.Size" type="System.Drawing.Size, System.Drawing">
     <value>1184, 25</value>
@@ -770,7 +770,7 @@ This button can be hidden in appearance settings.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_dolniTlacitka.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="panel_tlacitkaUprostred.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom</value>
@@ -911,7 +911,7 @@ This button can be hidden in appearance settings.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel_tlacitkaUprostred.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="explorerBrowser1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -923,7 +923,7 @@ This button can be hidden in appearance settings.</value>
     <value>608, 40</value>
   </data>
   <data name="explorerBrowser1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>560, 810</value>
+    <value>560, 724</value>
   </data>
   <data name="explorerBrowser1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -938,7 +938,141 @@ This button can be hidden in appearance settings.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;explorerBrowser1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label_textInstall.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_textInstall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 3</value>
+  </data>
+  <data name="label_textInstall.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 30</value>
+  </data>
+  <data name="label_textInstall.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_textInstall.Text" xml:space="preserve">
+    <value>It seems like you're trying to copy apk.
+Would like to install it directly instead?
+</value>
+  </data>
+  <data name="&gt;&gt;label_textInstall.Name" xml:space="preserve">
+    <value>label_textInstall</value>
+  </data>
+  <data name="&gt;&gt;label_textInstall.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_textInstall.Parent" xml:space="preserve">
+    <value>panel_installAssistant</value>
+  </data>
+  <data name="&gt;&gt;label_textInstall.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="commandLink_installYes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="commandLink_installYes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 31</value>
+  </data>
+  <data name="commandLink_installYes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 45</value>
+  </data>
+  <data name="commandLink_installYes.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="commandLink_installYes.Text" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="commandLink_installYes.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installYes.Name" xml:space="preserve">
+    <value>commandLink_installYes</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installYes.Type" xml:space="preserve">
+    <value>DarkModeControls.DarkCommandLink, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installYes.Parent" xml:space="preserve">
+    <value>panel_installAssistant</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installYes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="commandLink_installGoAway.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
+  <data name="commandLink_installGoAway.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 31</value>
+  </data>
+  <data name="commandLink_installGoAway.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 45</value>
+  </data>
+  <data name="commandLink_installGoAway.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="commandLink_installGoAway.Text" xml:space="preserve">
+    <value>Go away &gt;:(</value>
+  </data>
+  <data name="commandLink_installGoAway.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installGoAway.Name" xml:space="preserve">
+    <value>commandLink_installGoAway</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installGoAway.Type" xml:space="preserve">
+    <value>DarkModeControls.DarkCommandLink, AdbFileManager, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installGoAway.Parent" xml:space="preserve">
+    <value>panel_installAssistant</value>
+  </data>
+  <data name="&gt;&gt;commandLink_installGoAway.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 55</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>panel_installAssistant</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel_installAssistant.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10000, 700</value>
+  </data>
+  <data name="panel_installAssistant.Size" type="System.Drawing.Size, System.Drawing">
+    <value>268, 76</value>
+  </data>
+  <data name="panel_installAssistant.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;panel_installAssistant.Name" xml:space="preserve">
+    <value>panel_installAssistant</value>
+  </data>
+  <data name="&gt;&gt;panel_installAssistant.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_installAssistant.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel_installAssistant.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -950,7 +1084,7 @@ This button can be hidden in appearance settings.</value>
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 874</value>
+    <value>1184, 812</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -988,7 +1122,7 @@ This button can be hidden in appearance settings.</value>
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value> </value>
+    <value> Adb File Manager</value>
   </data>
   <data name="&gt;&gt;timer1.Name" xml:space="preserve">
     <value>timer1</value>

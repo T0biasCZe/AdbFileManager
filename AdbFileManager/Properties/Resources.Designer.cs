@@ -61,7 +61,17 @@ namespace AdbFileManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to f651e26
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap assistant {
+            get {
+                object obj = ResourceManager.GetObject("assistant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to f84348c
         ///.
         /// </summary>
         public static string CurrentCommit {

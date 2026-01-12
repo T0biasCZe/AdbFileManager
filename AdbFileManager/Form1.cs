@@ -684,11 +684,11 @@ namespace AdbFileManager {
 		}
 		const int SW_HIDE = 0;
 		const int SW_SHOW = 5;
-		private void hideConsole() {
+		public static void hideConsole() {
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_HIDE);
 		}
-		private void showConsole() {
+		public static void showConsole() {
 			var handle = GetConsoleWindow();
 			ShowWindow(handle, SW_SHOW);
 		}
@@ -870,7 +870,7 @@ namespace AdbFileManager {
 				button_goUpDirectory.Visible = true;
 				button_goUpDirectory.Left = margin + listAndroidWidth - 45;
 			}
-			else{
+			else {
 				button_goUpDirectory.Visible = false;
 				cur_path.Width = listAndroidWidth;
 			}
@@ -902,6 +902,8 @@ namespace AdbFileManager {
 			button_console.Left = this.Width - 136;
 
 			deco_panel4.Left = this.Width - 216;
+
+			panel_installAssistant.Top = this.Height - 150;
 		}
 
 		private void button_unlock_Click(object sender, EventArgs e) {
@@ -1060,6 +1062,37 @@ namespace AdbFileManager {
 
 
 			modifyingComboBox = false;
+		}
+
+		int selectChangedCount = 0;
+
+		private void explorerBrowser1_SelectionChanged(object sender, EventArgs e) {
+			selectChangedCount++;
+			if(explorerBrowser1.SelectedItems.Count > 0) {
+				if(explorerBrowser1.SelectedItems[0].Name.EndsWith(".apk")) {
+					panel_installAssistant.Left = 28;
+				}
+				else if(panel_installAssistant.Left != 10000) {
+					panel_installAssistant.Left = 10000;
+				}
+			}
+		}
+
+		bool installWizardDisplayed = false;
+		private void commandLink_installYes_Click(object sender, EventArgs e) {
+			if(!installWizardDisplayed) {
+				installWizardDisplayed = true;
+				//MessageBox.Show($"Number of files selected: {explorerBrowser1.SelectedItems.Count}\nParsingName: {explorerBrowser1.SelectedItems[0].ParsingName}\nName: {explorerBrowser1.SelectedItems[0].Name}");
+				string path = explorerBrowser1.SelectedItems[0].ParsingName.ToString();
+				ApkInstallWizard wizard = new ApkInstallWizard(path);
+				wizard.ShowDialog();
+
+				installWizardDisplayed = true;
+			}
+		}
+
+		private void label1_Click(object sender, EventArgs e) {
+
 		}
 	}
 

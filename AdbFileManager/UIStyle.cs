@@ -149,14 +149,12 @@ namespace AdbFileManager {
 			}
 
 		}
-
+		public static Color backColor = ColorTranslator.FromHtml("#202020");
+		public static Color darkerBackColor = ColorTranslator.FromHtml("#151515");
+		public static Color brighterBackColor = ColorTranslator.FromHtml("#404040");
+		public static Color foreColor = ColorTranslator.FromHtml("#FFFFFF");
+		public static Color selectedColor = ColorTranslator.FromHtml("#0000FF");
 		public static void LoadDarkMode(Form1 form1) {
-			Color backColor = ColorTranslator.FromHtml("#202020");
-			Color darkerBackColor = ColorTranslator.FromHtml("#151515");
-			Color brighterBackColor = ColorTranslator.FromHtml("#404040");
-			Color foreColor = ColorTranslator.FromHtml("#FFFFFF");
-			Color selectedColor = ColorTranslator.FromHtml("#0000FF");
-
 			form1.button_android2pc.EnableDarkMode();
 			form1.button_pc2android.EnableDarkMode();
 			form1.verticalLabel_refresh.EnableDarkMode();
@@ -226,6 +224,12 @@ namespace AdbFileManager {
 			form1.deco_panel4.BackColor = Color.Black;
 			form1.deco_panel5.BackColor = Color.Black;
 			form1.deco_panel6.BackColor = Color.Black;
+
+
+			form1.panel_installAssistant.BackColor = backColor;
+			form1.label_textInstall.ForeColor = foreColor;
+			form1.commandLink_installGoAway.MainTextColor = Color.Red;
+			form1.commandLink_installYes.MainTextColor = Color.LimeGreen;
 
 			form1.panel_dolniTlacitka.BackColor = selectedColor;
 			form1.label_version.LinkColor = Color.SkyBlue;
