@@ -12,6 +12,7 @@ namespace AdbFileManager {
 	public partial class SettingsForm : Form {
 		public SettingsForm() {
 			InitializeComponent();
+			ApplyLocalization();
 			//change the tab to the second tab
 			tabControl1.SelectedTab = tab_appearance;
 
@@ -83,7 +84,7 @@ namespace AdbFileManager {
 		private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e) {
 			if(restartNeededChangesMade) {
 				string message = AdbFileManager.strings.restartNeeded;
-				MessageBox.Show(message, "Restart Required", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MessageBox.Show(message, AdbFileManager.strings.restartRequired, MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 
@@ -127,6 +128,38 @@ namespace AdbFileManager {
 		private void checkBox3_CheckedChanged(object sender, EventArgs e) {
 			if(loadingSettings) return;
 			SettingsManager.settings.ShowAndroidBackButton = checkBox3.Checked;
+		}
+
+		private void ApplyLocalization() {
+			this.Text = AdbFileManager.strings.settings_title;
+
+			// Tabs
+			tab_behaviour.Text = AdbFileManager.strings.settings_tab_behaviour;
+			tab_appearance.Text = AdbFileManager.strings.settings_tab_appearance;
+
+			// Behaviour tab
+			label_language.Text = AdbFileManager.strings.settings_language;
+			checkBox1.Text = AdbFileManager.strings.settings_keepFileDate;
+			checkBox2.Text = AdbFileManager.strings.settings_previewMedia;
+			checkBox_useLegacyCopy.Text = AdbFileManager.strings.settings_useLegacyCopy;
+			checkBox_unwrapFolderLegacy.Text = AdbFileManager.strings.settings_unwrapFolders;
+			label5.Text = AdbFileManager.strings.settings_progressSyncDelay;
+			checkBox4.Text = AdbFileManager.strings.settings_compatibilityFix;
+			checkBox5.Text = AdbFileManager.strings.settings_fastCompatibility;
+			checkBox6.Text = AdbFileManager.strings.settings_openLastLocation;
+
+			// Appearance tab
+			label1.Text = AdbFileManager.strings.settings_iconStyle;
+			radioButton1.Text = AdbFileManager.strings.settings_windowsAero;
+			radioButton2.Text = AdbFileManager.strings.settings_windows11;
+			label2.Text = AdbFileManager.strings.settings_buttonDesign;
+			radioButton3.Text = AdbFileManager.strings.settings_flatShaded;
+			radioButton4.Text = AdbFileManager.strings.settings_flat;
+			radioButton5.Text = AdbFileManager.strings.settings_fluentGradient;
+			checkBox_darkMode.Text = AdbFileManager.strings.settings_darkMode;
+			label4.Text = AdbFileManager.strings.settings_darkModeNote;
+			checkBox_showTwoProgressBars.Text = AdbFileManager.strings.settings_twoProgressBars;
+			checkBox3.Text = AdbFileManager.strings.settings_showBackButton;
 		}
 	}
 }

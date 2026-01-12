@@ -102,7 +102,7 @@ namespace AdbFileManager {
 				}
 
 				if(dgv.Rows.Count == 0) {
-					dgv.Rows.Add(new Icon(@"icons\file.ico"), "No files found", 0, DateTime.UnixEpoch);
+					dgv.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.noFilesFound, 0, DateTime.UnixEpoch);
 				}
 				else if(dgv.Rows.Count > 18) {
 					Form1._Form1.dataGridView_soubory.Columns[1].Width = 290;
@@ -116,10 +116,10 @@ namespace AdbFileManager {
 			catch(Exception ex) {
 				var dgv = new DataTable();
 				dgv.Columns.Add("ico", typeof(Icon));
-				dgv.Columns.Add("Name (double click here to go up)");
-				dgv.Columns.Add("Size");
-				dgv.Columns.Add("Date");
-				dgv.Rows.Add(new Icon(@"icons\file.ico"), "No device found", 0, DateTime.UnixEpoch);
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_name"));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_size"), typeof(decimal));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_date"), typeof(DateTime));
+				dgv.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.noDeviceFound, 0, DateTime.UnixEpoch);
 				dgv.Rows.Add(new Icon(@"icons\file.ico"), ex, 0, DateTime.UnixEpoch);
 
 				return dgv;

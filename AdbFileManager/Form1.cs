@@ -100,11 +100,11 @@ namespace AdbFileManager {
 			}
 			catch(Exception ex) {
 				TaskDialog.ShowDialog(new TaskDialogPage() {
-					Caption = "Error",
+					Caption = AdbFileManager.strings.error,
 					Text = ex.ToString(),
 					Icon = TaskDialogIcon.Error,
 					Buttons = { TaskDialogButton.Close },
-					Footnote = "Please report this error to the developer. Detailed report may be in console",
+					Footnote = AdbFileManager.strings.errorReportFootnote,
 					SizeToContent = true
 				});
 				Console.ForegroundColor = ConsoleColor.Red;
@@ -220,7 +220,7 @@ namespace AdbFileManager {
 						}
 
 					}
-					else MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
+					else MessageBox.Show(string.Format(AdbFileManager.strings.fileInfo, name, size, date));
 
 				}
 				else {
@@ -505,7 +505,7 @@ namespace AdbFileManager {
 				string size = dataGridView_soubory.Rows[rowIndex].Cells[2].Value.ToString();
 				string date = dataGridView_soubory.Rows[rowIndex].Cells[3].Value.ToString();
 				if(name.Contains(".")) {
-					MessageBox.Show("File: " + name + "\nSize: " + size + "\nDate: " + date);
+					MessageBox.Show(string.Format(AdbFileManager.strings.fileInfo, name, size, date));
 				}
 				else {
 					directoryPath = directoryPath + name + "/";
@@ -572,7 +572,7 @@ namespace AdbFileManager {
 
 
 			DataTable dt = dataGridView_soubory.DataSource as DataTable;
-			dt.Rows.Add(new Icon(@"icons\file.ico"), "Loading files in root directory", 0, DateTime.UnixEpoch);
+			dt.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.loadingFilesInRoot, 0, DateTime.UnixEpoch);
 
 
 			dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
@@ -656,7 +656,7 @@ namespace AdbFileManager {
 					explorerBrowser1.Navigate(Shell);
 				}
 				catch {
-					MessageBox.Show("Invalid path", "Error okurek 🥒", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(AdbFileManager.strings.invalidPath, AdbFileManager.strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 					explorer_path.Text = oldPath;
 				}
 			}
@@ -737,7 +737,9 @@ namespace AdbFileManager {
 			Polski,
 			Deutsch,
 			Japanese,
-			Espanol
+			Espanol,
+			ChineseSimplified,
+			ChineseTraditional
 		}
 		private void save_settings() {
 			Properties.Settings.Default.preview_on_doubleclick = checkBox_preview.Checked;
@@ -791,6 +793,14 @@ namespace AdbFileManager {
 				case Languages.Espanol:
 					Console.WriteLine("Configurando el idioma a Español");
 					Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
+					break;
+				case Languages.ChineseSimplified:
+					Console.WriteLine("正在将语言设置为简体中文");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-Hans");
+					break;
+				case Languages.ChineseTraditional:
+					Console.WriteLine("正在將語言設定為繁體中文");
+					Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-Hant");
 					break;
 			}
 
@@ -912,14 +922,14 @@ namespace AdbFileManager {
 		private void button_makedir_Click(object sender, EventArgs e) {
 			//show form dialog with textbox input for directory name
 			Form directoryNameForm = new Form();
-			directoryNameForm.Text = "Enter directory name";
+			directoryNameForm.Text = AdbFileManager.strings.enterDirectoryName;
 			directoryNameForm.Size = new Size(300, 100);
 			directoryNameForm.StartPosition = FormStartPosition.CenterParent;
 			TextBox dirName = new TextBox();
 			dirName.Size = new Size(260, 20);
 			dirName.Location = new Point(10, 10);
 			Button okButton = new Button();
-			okButton.Text = "OK";
+			okButton.Text = AdbFileManager.strings.ok;
 			okButton.Size = new Size(75, 23);
 			directoryNameForm.Controls.Add(dirName);
 			directoryNameForm.Controls.Add(okButton);
@@ -1170,7 +1180,7 @@ namespace AdbFileManager {
 					}
 				}
 				if(dgv.Rows.Count == 0) {
-					dgv.Rows.Add(new Icon(@"icons\file.ico"), "No files found", 0, DateTime.UnixEpoch);
+					dgv.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.noFilesFound, 0, DateTime.UnixEpoch);
 					if(directoryPath == "/sdcard/") {
 						string[] instructionLines = AdbFileManager.strings.usbDebugEnableInstructions.Split("\\n");
 						foreach(string line in instructionLines) {
@@ -1198,10 +1208,10 @@ namespace AdbFileManager {
 			catch(Exception ex) {
 				var dgv = new DataTable();
 				dgv.Columns.Add("ico", typeof(Icon));
-				dgv.Columns.Add("Name (double click here to go up)");
-				dgv.Columns.Add("Size");
-				dgv.Columns.Add("Date");
-				dgv.Rows.Add(new Icon(@"icons\file.ico"), "No device found", 0, DateTime.UnixEpoch);
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_name"));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_size"), typeof(decimal));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_date"), typeof(DateTime));
+				dgv.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.noDeviceFound, 0, DateTime.UnixEpoch);
 				dgv.Rows.Add(new Icon(@"icons\file.ico"), ex, 0, DateTime.UnixEpoch);
 
 
