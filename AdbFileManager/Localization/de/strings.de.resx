@@ -323,4 +323,14 @@ wenn Windows selbst den Dunkelmodus aktiviert hat</value>
   <data name="wireless_reconnectFinished" xml:space="preserve">
     <value>Wiederverbindungsbefehl abgeschlossen:</value>
   </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>Telefon entsperren</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>Passwort hier eingeben</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>Nach einem Neustart ist das Telefon gesperrt und ADB kann nicht auf Dateien zugreifen. Allerdings ist es möglicherweise nicht möglich, das Telefon zu entsperren, wenn der Bildschirm beschädigt ist.
+Dieses Tool kann versuchen, das Telefon zu entsperren, damit Sie Ihre Fotos sichern können.</value>
+  </data>
 </root>

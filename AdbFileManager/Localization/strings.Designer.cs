@@ -461,5 +461,23 @@ namespace AdbFileManager {
                 return ResourceManager.GetString("wireless_title", resourceCulture);
             }
         }
+
+        public static string unlock_title {
+            get {
+                return ResourceManager.GetString("unlock_title", resourceCulture);
+            }
+        }
+
+        public static string unlock_passwordPlaceholder {
+            get {
+                return ResourceManager.GetString("unlock_passwordPlaceholder", resourceCulture);
+            }
+        }
+
+        public static string unlock_description {
+            get {
+                return ResourceManager.GetString("unlock_description", resourceCulture);
+            }
+        }
     }
 }

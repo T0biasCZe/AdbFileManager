@@ -323,4 +323,14 @@ Date: {2}</value>
   <data name="noDeviceFound" xml:space="preserve">
     <value>No device found</value>
   </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>Unlock Phone</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>Password here</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>After restart, the phone is locked and adb can't access files. However it may not be possible to unlock when the screen is broken.
+This tool can try to unlock the phone, so you can backup your photos.</value>
+  </data>
 </root>

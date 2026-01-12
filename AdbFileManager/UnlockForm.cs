@@ -14,6 +14,13 @@ namespace AdbFileManager {
 	public partial class UnlockForm : Form {
 		public UnlockForm() {
 			InitializeComponent();
+			ApplyLocalization();
+		}
+
+		private void ApplyLocalization() {
+			this.Text = AdbFileManager.strings.unlock_title;
+			textBox1.PlaceholderText = AdbFileManager.strings.unlock_passwordPlaceholder;
+			richTextBox1.Text = AdbFileManager.strings.unlock_description;
 		}
 
 		private void UnlockForm_Load(object sender, EventArgs e) {

@@ -337,4 +337,14 @@ Fecha: {2}</value>
   <data name="noDeviceFound" xml:space="preserve">
     <value>No se encontró ningún dispositivo</value>
   </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>Desbloquear teléfono</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>Contraseña aquí</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>Después de reiniciar, el teléfono está bloqueado y ADB no puede acceder a los archivos. Sin embargo, puede que no sea posible desbloquearlo cuando la pantalla está rota.
+Esta herramienta puede intentar desbloquear el teléfono para que pueda hacer una copia de seguridad de sus fotos.</value>
+  </data>
 </root>

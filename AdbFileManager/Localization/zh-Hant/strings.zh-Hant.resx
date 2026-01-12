@@ -323,4 +323,14 @@
   <data name="noDeviceFound" xml:space="preserve">
     <value>未找到裝置</value>
   </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>解鎖手機</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>在此輸入密碼</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>重新啟動後，手機處於鎖定狀態，ADB 無法存取檔案。但是，如果螢幕損壞，可能無法解鎖。
+此工具可以嘗試解鎖手機，以便您備份照片。</value>
+  </data>
 </root>

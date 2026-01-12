@@ -323,4 +323,14 @@
   <data name="noDeviceFound" xml:space="preserve">
     <value>未找到设备</value>
   </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>解锁手机</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>在此输入密码</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>重启后，手机处于锁定状态，ADB 无法访问文件。但是，如果屏幕损坏，可能无法解锁。
+此工具可以尝试解锁手机，以便您备份照片。</value>
+  </data>
 </root>

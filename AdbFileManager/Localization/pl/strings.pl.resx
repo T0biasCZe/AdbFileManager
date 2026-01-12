@@ -323,4 +323,14 @@ gdy sam Windows ma włączony tryb ciemny</value>
   <data name="wireless_reconnectFinished" xml:space="preserve">
     <value>Polecenie ponownego połączenia zakończone:</value>
   </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>Odblokuj telefon</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>Wprowadź hasło</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>Po ponownym uruchomieniu telefon jest zablokowany i ADB nie ma dostępu do plików. Jednakże odblokowanie może nie być możliwe, gdy ekran jest uszkodzony.
+To narzędzie może spróbować odblokować telefon, abyś mógł wykonać kopię zapasową swoich zdjęć.</value>
+  </data>
 </root>

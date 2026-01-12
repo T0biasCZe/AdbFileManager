@@ -24,7 +24,6 @@
 		/// </summary>
 		private void InitializeComponent() {
 			components = new System.ComponentModel.Container();
-			TabPage tab_behaviour;
 			label_trackbarValue = new Label();
 			label5 = new Label();
 			trackBar_progressWait = new TrackBar();
