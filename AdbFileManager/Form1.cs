@@ -1208,9 +1208,9 @@ namespace AdbFileManager {
 			catch(Exception ex) {
 				var dgv = new DataTable();
 				dgv.Columns.Add("ico", typeof(Icon));
-				dgv.Columns.Add(rm.GetString("datagridview_name"));
-				dgv.Columns.Add(rm.GetString("datagridview_size"), typeof(decimal));
-				dgv.Columns.Add(rm.GetString("datagridview_date"), typeof(DateTime));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_name"));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_size"), typeof(decimal));
+				dgv.Columns.Add(Form1.rm.GetString("datagridview_date"), typeof(DateTime));
 				dgv.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.noDeviceFound, 0, DateTime.UnixEpoch);
 				dgv.Rows.Add(new Icon(@"icons\file.ico"), ex, 0, DateTime.UnixEpoch);
 
