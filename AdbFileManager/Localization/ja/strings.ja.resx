@@ -168,6 +168,169 @@
     <value />
   </data>
   <data name="wireless" xml:space="preserve">
-    <value />
+    <value>（ワイヤレス）</value>
+  </data>
+  <data name="copy_in_progress" xml:space="preserve">
+    <value>コピー処理が既に進行中です。完了するまでお待ちください。</value>
+  </data>
+  <data name="copy_in_progress_title" xml:space="preserve">
+    <value>コピー中</value>
+  </data>
+  <data name="noFilesFound" xml:space="preserve">
+    <value>ファイルが見つかりません</value>
+  </data>
+  <data name="noDeviceFound" xml:space="preserve">
+    <value>デバイスが見つかりません</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="exception" xml:space="preserve">
+    <value>例外:</value>
+  </data>
+  <data name="fileInfo" xml:space="preserve">
+    <value>ファイル: {0}
+サイズ: {1}
+日付: {2}</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>無効なパス</value>
+  </data>
+  <data name="errorReportFootnote" xml:space="preserve">
+    <value>このエラーを開発者に報告してください。詳細なレポートはコンソールに表示されている場合があります</value>
+  </data>
+  <data name="restartRequired" xml:space="preserve">
+    <value>再起動が必要です</value>
+  </data>
+  <data name="enterDirectoryName" xml:space="preserve">
+    <value>ディレクトリ名を入力</value>
+  </data>
+  <data name="loadingFilesInRoot" xml:space="preserve">
+    <value>ルートディレクトリのファイルを読み込んでいます</value>
+  </data>
+  <data name="settings_title" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="settings_tab_behaviour" xml:space="preserve">
+    <value>動作</value>
+  </data>
+  <data name="settings_tab_appearance" xml:space="preserve">
+    <value>外観</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="settings_keepFileDate" xml:space="preserve">
+    <value>ファイルの更新日時を保持する</value>
+  </data>
+  <data name="settings_previewMedia" xml:space="preserve">
+    <value>ダブルクリックでメディアファイルをプレビュー</value>
+  </data>
+  <data name="settings_useLegacyCopy" xml:space="preserve">
+    <value>レガシー同期コピーを使用</value>
+  </data>
+  <data name="settings_unwrapFolders" xml:space="preserve">
+    <value>コピー時にフォルダを展開</value>
+  </data>
+  <data name="settings_progressSyncDelay" xml:space="preserve">
+    <value>進捗同期の遅延</value>
+  </data>
+  <data name="settings_compatibilityFix" xml:space="preserve">
+    <value>互換性修正</value>
+  </data>
+  <data name="settings_fastCompatibility" xml:space="preserve">
+    <value>高速互換モード</value>
+  </data>
+  <data name="settings_openLastLocation" xml:space="preserve">
+    <value>最後の場所を開く</value>
+  </data>
+  <data name="settings_iconStyle" xml:space="preserve">
+    <value>アイコンスタイル</value>
+  </data>
+  <data name="settings_windowsAero" xml:space="preserve">
+    <value>Windows Aero</value>
+  </data>
+  <data name="settings_windows11" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="settings_buttonDesign" xml:space="preserve">
+    <value>ボタンデザイン</value>
+  </data>
+  <data name="settings_flatShaded" xml:space="preserve">
+    <value>フラットシェード</value>
+  </data>
+  <data name="settings_flat" xml:space="preserve">
+    <value>フラット</value>
+  </data>
+  <data name="settings_fluentGradient" xml:space="preserve">
+    <value>Fluentグラデーション</value>
+  </data>
+  <data name="settings_darkMode" xml:space="preserve">
+    <value>ダークモードを有効にする</value>
+  </data>
+  <data name="settings_darkModeNote" xml:space="preserve">
+    <value>注意: PCファイルエクスプローラーは、Windows自体で
+ダークモードが有効な場合のみダークモードになります</value>
+  </data>
+  <data name="settings_twoProgressBars" xml:space="preserve">
+    <value>2つのコピー進捗バーを表示</value>
+  </data>
+  <data name="settings_showBackButton" xml:space="preserve">
+    <value>Androidの戻るボタンを表示</value>
+  </data>
+  <data name="wireless_title" xml:space="preserve">
+    <value>ワイヤレスペアリング</value>
+  </data>
+  <data name="wireless_ipAddress" xml:space="preserve">
+    <value>デバイスのIPアドレス</value>
+  </data>
+  <data name="wireless_port" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+  <data name="wireless_pairingCode" xml:space="preserve">
+    <value>ペアリングコード</value>
+  </data>
+  <data name="wireless_pair" xml:space="preserve">
+    <value>ペアリング</value>
+  </data>
+  <data name="wireless_reconnect" xml:space="preserve">
+    <value>再接続</value>
+  </data>
+  <data name="wireless_enterIpPort" xml:space="preserve">
+    <value>IPアドレスとポートの両方を入力してください。</value>
+  </data>
+  <data name="wireless_enterPairingCode" xml:space="preserve">
+    <value>ペアリングコードを入力してください。</value>
+  </data>
+  <data name="wireless_timeout" xml:space="preserve">
+    <value>ペアリング処理がタイムアウトしました。もう一度お試しください。</value>
+  </data>
+  <data name="wireless_errorOccurred" xml:space="preserve">
+    <value>ペアリング処理中にエラーが発生しました:</value>
+  </data>
+  <data name="wireless_pairingFinished" xml:space="preserve">
+    <value>ペアリングが完了しました！</value>
+  </data>
+  <data name="wireless_reconnectFinished" xml:space="preserve">
+    <value>再接続コマンドが完了しました:</value>
+  </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>電話のロック解除</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>パスワードを入力</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>再起動後、電話はロックされており、ADBはファイルにアクセスできません。ただし、画面が壊れている場合はロック解除できない可能性があります。
+このツールは電話のロック解除を試みることができ、写真をバックアップできるようになります。</value>
   </data>
 </root>

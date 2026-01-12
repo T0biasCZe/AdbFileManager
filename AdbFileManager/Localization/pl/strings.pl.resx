@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="adbStartup" xml:space="preserve">
+    <value>Uruchamianie usługi adb. To potrwa kilka sekund. \nProszę czekać</value>
+  </data>
+  <data name="addWireless" xml:space="preserve">
+    <value>Dodaj bezprzewodowo</value>
+  </data>
+  <data name="copy_freeze_warn" xml:space="preserve">
+    <value>Chociaż może się tak nie wydawać, pliki wciąż są kopiowane.
+Proszę nie zamykać programu, jeśli okno zamrozi.</value>
+  </data>
+  <data name="datagridview_attr" xml:space="preserve">
+    <value>Atrybuty</value>
+  </data>
+  <data name="datagridview_date" xml:space="preserve">
+    <value>Data modyfikacji</value>
+  </data>
+  <data name="datagridview_name" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
+  <data name="datagridview_size" xml:space="preserve">
+    <value>Rozmiar (KiB)</value>
+  </data>
+  <data name="defaultDevice" xml:space="preserve">
+    <value>Domyślne urządzenie</value>
+  </data>
+  <data name="fromto" xml:space="preserve">
+    <value>Z {source} do {dest}</value>
+  </data>
+  <data name="loadingProgram" xml:space="preserve">
+    <value>Ładowanie programu, proszę czekać.</value>
+  </data>
+  <data name="multipleDevicesError" xml:space="preserve">
+    <value>Podłączono wiele urządzeń\nProszę odłączyć inne urządzenia lub wybrać żądane urządzenie z listy rozwijanej w prawym dolnym rogu.</value>
+  </data>
+  <data name="offline" xml:space="preserve">
+    <value>(OFFLINE)</value>
+  </data>
+  <data name="restartNeeded" xml:space="preserve">
+    <value>Niektóre wprowadzone zmiany wymagają ponownego uruchomienia, aby zostały zastosowane.</value>
+  </data>
+  <data name="unwrap_wait" xml:space="preserve">
+    <value>Rozpakowywanie folderów w trakcie.
+Proszę czekać chwilę...</value>
+  </data>
+  <data name="unwrap_wait_title" xml:space="preserve">
+    <value>Rozpakowywanie folderów.</value>
+  </data>
+  <data name="usbDebugEnableInstructions" xml:space="preserve">
+    <value>Upewnij się, że debugowanie USB jest włączone i urządzenie jest prawidłowo podłączone.\nAby włączyć debugowanie USB:\n1. Przejdź do ustawień Androida\n2. System\n3. Informacje o telefonie\n4. Znajdź numer kompilacji i klikaj go wielokrotnie, aż pojawi się powiadomienie "tryb programisty jest teraz włączony"\n5. Wróć i znajdź "Opcje programisty"\nZnajdź "Debugowanie USB" i włącz je\n7. Włącz "Wyłącz limit czasu autoryzacji adb"\n8. Podłącz telefon do komputera i kliknij autoryzuj komputer\n9. Pliki powinny teraz wyświetlać się prawidłowo\n\nPamiętaj, że te kroki mogą się różnić w zależności od telefonu.</value>
+  </data>
+  <data name="wireless" xml:space="preserve">
+    <value>(Bezprzewodowo)</value>
+  </data>
+  <data name="copy_in_progress" xml:space="preserve">
+    <value>Operacja kopiowania jest już w toku. Proszę poczekać na jej zakończenie.</value>
+  </data>
+  <data name="copy_in_progress_title" xml:space="preserve">
+    <value>Kopiowanie w toku</value>
+  </data>
+  <data name="noFilesFound" xml:space="preserve">
+    <value>Nie znaleziono plików</value>
+  </data>
+  <data name="noDeviceFound" xml:space="preserve">
+    <value>Nie znaleziono urządzenia</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Informacja</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="exception" xml:space="preserve">
+    <value>Wyjątek:</value>
+  </data>
+  <data name="fileInfo" xml:space="preserve">
+    <value>Plik: {0}
+Rozmiar: {1}
+Data: {2}</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>Nieprawidłowa ścieżka</value>
+  </data>
+  <data name="errorReportFootnote" xml:space="preserve">
+    <value>Proszę zgłosić ten błąd do programisty. Szczegółowy raport może znajdować się w konsoli</value>
+  </data>
+  <data name="restartRequired" xml:space="preserve">
+    <value>Wymagane ponowne uruchomienie</value>
+  </data>
+  <data name="enterDirectoryName" xml:space="preserve">
+    <value>Wprowadź nazwę katalogu</value>
+  </data>
+  <data name="loadingFilesInRoot" xml:space="preserve">
+    <value>Ładowanie plików w katalogu głównym</value>
+  </data>
+  <data name="settings_title" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="settings_tab_behaviour" xml:space="preserve">
+    <value>Zachowanie</value>
+  </data>
+  <data name="settings_tab_appearance" xml:space="preserve">
+    <value>Wygląd</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="settings_keepFileDate" xml:space="preserve">
+    <value>Zachowaj datę pliku</value>
+  </data>
+  <data name="settings_previewMedia" xml:space="preserve">
+    <value>Podgląd przy dwukliknięciu</value>
+  </data>
+  <data name="settings_useLegacyCopy" xml:space="preserve">
+    <value>Starsze kopiowanie</value>
+  </data>
+  <data name="settings_unwrapFolders" xml:space="preserve">
+    <value>Rozpakuj foldery</value>
+  </data>
+  <data name="settings_progressSyncDelay" xml:space="preserve">
+    <value>Opóźnienie postępu</value>
+  </data>
+  <data name="settings_compatibilityFix" xml:space="preserve">
+    <value>Tryb kompatybilności</value>
+  </data>
+  <data name="settings_fastCompatibility" xml:space="preserve">
+    <value>Szybka kompatybilność</value>
+  </data>
+  <data name="settings_openLastLocation" xml:space="preserve">
+    <value>Otwórz ostatnią lok.</value>
+  </data>
+  <data name="settings_iconStyle" xml:space="preserve">
+    <value>Styl ikon</value>
+  </data>
+  <data name="settings_windowsAero" xml:space="preserve">
+    <value>Windows Aero</value>
+  </data>
+  <data name="settings_windows11" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="settings_buttonDesign" xml:space="preserve">
+    <value>Wygląd przycisków</value>
+  </data>
+  <data name="settings_flatShaded" xml:space="preserve">
+    <value>Płaski cieniowany</value>
+  </data>
+  <data name="settings_flat" xml:space="preserve">
+    <value>Płaski</value>
+  </data>
+  <data name="settings_fluentGradient" xml:space="preserve">
+    <value>Gradient Fluent</value>
+  </data>
+  <data name="settings_darkMode" xml:space="preserve">
+    <value>Tryb ciemny</value>
+  </data>
+  <data name="settings_darkModeNote" xml:space="preserve">
+    <value>Uwaga: Explorer ciemny tylko gdy
+Windows ma tryb ciemny</value>
+  </data>
+  <data name="settings_twoProgressBars" xml:space="preserve">
+    <value>Dwa paski postępu</value>
+  </data>
+  <data name="settings_showBackButton" xml:space="preserve">
+    <value>Przycisk wstecz</value>
+  </data>
+  <data name="wireless_title" xml:space="preserve">
+    <value>Parowanie bezprzewodowe</value>
+  </data>
+  <data name="wireless_ipAddress" xml:space="preserve">
+    <value>Adres IP urządzenia</value>
+  </data>
+  <data name="wireless_port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="wireless_pairingCode" xml:space="preserve">
+    <value>Kod parowania</value>
+  </data>
+  <data name="wireless_pair" xml:space="preserve">
+    <value>Sparuj</value>
+  </data>
+  <data name="wireless_reconnect" xml:space="preserve">
+    <value>Połącz ponownie</value>
+  </data>
+  <data name="wireless_enterIpPort" xml:space="preserve">
+    <value>Proszę wprowadzić adres IP i port.</value>
+  </data>
+  <data name="wireless_enterPairingCode" xml:space="preserve">
+    <value>Proszę wprowadzić kod parowania.</value>
+  </data>
+  <data name="wireless_timeout" xml:space="preserve">
+    <value>Proces parowania przekroczył limit czasu. Proszę spróbować ponownie.</value>
+  </data>
+  <data name="wireless_errorOccurred" xml:space="preserve">
+    <value>Wystąpił błąd podczas procesu parowania:</value>
+  </data>
+  <data name="wireless_pairingFinished" xml:space="preserve">
+    <value>Parowanie zakończone!</value>
+  </data>
+  <data name="wireless_reconnectFinished" xml:space="preserve">
+    <value>Polecenie ponownego połączenia zakończone:</value>
+  </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>Odblokuj telefon</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>Wprowadź hasło</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>Po ponownym uruchomieniu telefon jest zablokowany i ADB nie ma dostępu do plików. Jednakże odblokowanie może nie być możliwe, gdy ekran jest uszkodzony.
+To narzędzie może spróbować odblokować telefon, abyś mógł wykonać kopię zapasową swoich zdjęć.</value>
+  </data>
+</root>

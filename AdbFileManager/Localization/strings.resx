@@ -170,4 +170,167 @@ One moment please...</value>
   <data name="wireless" xml:space="preserve">
     <value>(Wireless)</value>
   </data>
+  <data name="copy_in_progress" xml:space="preserve">
+    <value>A copy operation is already in progress. Please wait for it to complete.</value>
+  </data>
+  <data name="copy_in_progress_title" xml:space="preserve">
+    <value>Copy in Progress</value>
+  </data>
+  <data name="noFilesFound" xml:space="preserve">
+    <value>No files found</value>
+  </data>
+  <data name="settings_title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings_tab_behaviour" xml:space="preserve">
+    <value>Behaviour</value>
+  </data>
+  <data name="settings_tab_appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="settings_language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="settings_keepFileDate" xml:space="preserve">
+    <value>Keep file modification date</value>
+  </data>
+  <data name="settings_previewMedia" xml:space="preserve">
+    <value>Preview media files on double click</value>
+  </data>
+  <data name="settings_useLegacyCopy" xml:space="preserve">
+    <value>Use legacy sync copying</value>
+  </data>
+  <data name="settings_unwrapFolders" xml:space="preserve">
+    <value>Unwrap folders on copy</value>
+  </data>
+  <data name="settings_progressSyncDelay" xml:space="preserve">
+    <value>Progress sync delay</value>
+  </data>
+  <data name="settings_compatibilityFix" xml:space="preserve">
+    <value>Compatibility fix</value>
+  </data>
+  <data name="settings_fastCompatibility" xml:space="preserve">
+    <value>Fast compatibility mode</value>
+  </data>
+  <data name="settings_openLastLocation" xml:space="preserve">
+    <value>Open in last location</value>
+  </data>
+  <data name="settings_iconStyle" xml:space="preserve">
+    <value>Icon style</value>
+  </data>
+  <data name="settings_windowsAero" xml:space="preserve">
+    <value>Windows Aero</value>
+  </data>
+  <data name="settings_windows11" xml:space="preserve">
+    <value>Windows 11</value>
+  </data>
+  <data name="settings_buttonDesign" xml:space="preserve">
+    <value>Button design</value>
+  </data>
+  <data name="settings_flatShaded" xml:space="preserve">
+    <value>Flat shaded</value>
+  </data>
+  <data name="settings_flat" xml:space="preserve">
+    <value>Flat</value>
+  </data>
+  <data name="settings_fluentGradient" xml:space="preserve">
+    <value>Fluent gradient</value>
+  </data>
+  <data name="settings_darkMode" xml:space="preserve">
+    <value>Enable dark mode</value>
+  </data>
+  <data name="settings_darkModeNote" xml:space="preserve">
+    <value>Note: PC File Explorer will only be in dark
+if Windows itself has dark mode enabled</value>
+  </data>
+  <data name="settings_twoProgressBars" xml:space="preserve">
+    <value>Show two copy progress bars</value>
+  </data>
+  <data name="settings_showBackButton" xml:space="preserve">
+    <value>Show Android back button</value>
+  </data>
+  <data name="wireless_title" xml:space="preserve">
+    <value>Wireless Pairing</value>
+  </data>
+  <data name="wireless_ipAddress" xml:space="preserve">
+    <value>Device's IP Address</value>
+  </data>
+  <data name="wireless_port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="wireless_pairingCode" xml:space="preserve">
+    <value>Pairing code</value>
+  </data>
+  <data name="wireless_pair" xml:space="preserve">
+    <value>Pair</value>
+  </data>
+  <data name="wireless_reconnect" xml:space="preserve">
+    <value>Reconnect</value>
+  </data>
+  <data name="fileInfo" xml:space="preserve">
+    <value>File: {0}
+Size: {1}
+Date: {2}</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="invalidPath" xml:space="preserve">
+    <value>Invalid path</value>
+  </data>
+  <data name="errorReportFootnote" xml:space="preserve">
+    <value>Please report this error to the developer. Detailed report may be in console</value>
+  </data>
+  <data name="restartRequired" xml:space="preserve">
+    <value>Restart Required</value>
+  </data>
+  <data name="wireless_enterIpPort" xml:space="preserve">
+    <value>Please enter both IP and Port.</value>
+  </data>
+  <data name="wireless_enterPairingCode" xml:space="preserve">
+    <value>Please enter the pairing code.</value>
+  </data>
+  <data name="wireless_timeout" xml:space="preserve">
+    <value>The pairing process timed out. Please try again.</value>
+  </data>
+  <data name="wireless_errorOccurred" xml:space="preserve">
+    <value>An error occurred during the pairing process:</value>
+  </data>
+  <data name="wireless_pairingFinished" xml:space="preserve">
+    <value>Pairing finished!</value>
+  </data>
+  <data name="wireless_reconnectFinished" xml:space="preserve">
+    <value>Reconnect command finished:</value>
+  </data>
+  <data name="exception" xml:space="preserve">
+    <value>Exception:</value>
+  </data>
+  <data name="enterDirectoryName" xml:space="preserve">
+    <value>Enter directory name</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="loadingFilesInRoot" xml:space="preserve">
+    <value>Loading files in root directory</value>
+  </data>
+  <data name="noDeviceFound" xml:space="preserve">
+    <value>No device found</value>
+  </data>
+  <data name="unlock_title" xml:space="preserve">
+    <value>Unlock Phone</value>
+  </data>
+  <data name="unlock_passwordPlaceholder" xml:space="preserve">
+    <value>Password here</value>
+  </data>
+  <data name="unlock_description" xml:space="preserve">
+    <value>After restart, the phone is locked and adb can't access files. However it may not be possible to unlock when the screen is broken.
+This tool can try to unlock the phone, so you can backup your photos.</value>
+  </data>
 </root>

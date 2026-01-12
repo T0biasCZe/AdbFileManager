@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<data name="android2pc.ToolTip" xml:space="preserve">
+    <value>将选中的文件和文件夹从手机复制到电脑</value>
+  </data>
+	<data name="pc2android.ToolTip" xml:space="preserve">
+    <value>将选中的文件和文件夹从电脑复制到手机</value>
+  </data>
+	<data name="verticalLabel1.Text" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+	<data name="verticalLabel1.ToolTip" xml:space="preserve">
+    <value>重新加载当前目录中的文件列表</value>
+  </data>
+	<data name="cur_path.ToolTip" xml:space="preserve">
+    <value>手机上当前打开的目录</value>
+  </data>
+	<data name="explorer_path.ToolTip" xml:space="preserve">
+    <value>电脑上当前打开的目录</value>
+  </data>
+	<data name="checkBox_unwrapfolders.Text" xml:space="preserve">
+    <value>平滑进度条</value>
+  </data>
+	<data name="checkBox_unwrapfolders.ToolTip" xml:space="preserve">
+    <value>进度条只有在整个文件或文件夹复制完成后才会更新。这可能导致复制大文件夹时进度条看起来卡住。
+启用此选项后，将预先加载要复制的文件夹并单独复制每个文件，从而实现更平滑的进度显示。</value>
+  </data>
+	<data name="checkBox_preview.Text" xml:space="preserve">
+    <value>双击预览文件</value>
+  </data>
+	<data name="checkBox_preview.ToolTip" xml:space="preserve">
+    <value>双击文件时，会将其复制到电脑上的临时文件夹并显示。关闭程序时临时文件将被删除。</value>
+  </data>
+	<data name="checkBox_android6fix.Text" xml:space="preserve">
+    <value>兼容性修复</value>
+  </data>
+	<data name="checkBox_filedate.Text" xml:space="preserve">
+    <value>保留修改日期</value>
+  </data>
+	<data name="checkBox_android6fix.ToolTip" xml:space="preserve">
+    <value>启用此选项可修复 Android 6 及更早版本设备的一些兼容性问题</value>
+  </data>
+	<data name="checkBox_android6fix_fastmode.Text" xml:space="preserve">
+    <value>快速兼容模式</value>
+  </data>
+	<data name="checkBox_android6fix_fastmode.ToolTip" xml:space="preserve">
+    <value>在兼容模式下加快目录加载速度，但可能降低文件夹图标的准确性</value>
+  </data>
+	<data name="verticalLabel_refresh.Text" xml:space="preserve">
+    <value>     刷新</value>
+  </data>
+	<data name="verticalLabel_makedir.Text" xml:space="preserve">
+    <value>    新建文件夹</value>
+  </data>
+	<data name="verticalLabel_makedir.ToolTip" xml:space="preserve">
+    <value>在安卓设备上创建新文件夹</value>
+  </data>
+	<data name="button_unlock.Text" xml:space="preserve">
+    <value>解锁</value>
+  </data>
+	<data name="button_openSettings.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+	<data name="button_goUpDirectory.Text" xml:space="preserve">
+    <value>返回</value>
+  </data>
+	<data name="button_goUpDirectory.ToolTip" xml:space="preserve">
+    <value>在安卓端返回上级目录。
+此按钮可在外观设置中隐藏。</value>
+  </data>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+	<assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+</root>
