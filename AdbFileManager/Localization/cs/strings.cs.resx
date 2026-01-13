@@ -334,4 +334,13 @@ Datum: {2}</value>
     <value>Po restartu je telefon uzamčen a ADB nemá přístup k souborům. Pokud je však obrazovka poškozená, nemusí být možné telefon odemknout.
 Tento nástroj se může pokusit telefon odemknout, abyste mohli zálohovat své fotografie.</value>
   </data>
+    <data name="selectLibraryFolderText" xml:space="preserve">
+    <value>Tahle knihovna obsahuje několik následujících složek:</value>
+  </data>
+    <data name="selectLibraryFolderInstruction" xml:space="preserve">
+    <value>Vyberte adresář</value>
+  </data>
+        <data name="selectLibraryFolderCaption" xml:space="preserve">
+    <value>Výběr složky</value>
+  </data>
 </root>

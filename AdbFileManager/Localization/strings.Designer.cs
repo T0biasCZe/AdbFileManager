@@ -119,8 +119,23 @@ namespace AdbFileManager {
                 return ResourceManager.GetString("defaultDevice", resourceCulture);
             }
         }
-
-        public static string enterDirectoryName {
+        public static string selectLibraryFolderCaption {
+            get {
+                return ResourceManager.GetString("selectLibraryFolderCaption", resourceCulture);
+            }
+        }
+        public static string selectLibraryFolderText {
+            get {
+                return ResourceManager.GetString("selectLibraryFolderText", resourceCulture);
+            }
+        }
+		public static string selectLibraryFolderInstruction {
+            get {
+                return ResourceManager.GetString("selectLibraryFolderInstruction", resourceCulture);
+            }
+        }
+		
+		public static string enterDirectoryName {
             get {
                 return ResourceManager.GetString("enterDirectoryName", resourceCulture);
             }

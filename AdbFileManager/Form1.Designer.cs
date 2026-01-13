@@ -19,426 +19,427 @@ namespace AdbFileManager {
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		///  Required method for Designer support_do not modify
-		///  the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent() {
-			components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-			dataGridView_soubory = new DataGridView();
-			timer1 = new Timer(components);
-			cur_path = new TextBox();
-			toolTip1 = new ToolTip(components);
-			checkBox_android6fix_fastmode = new CheckBox();
-			checkBox_preview = new CheckBox();
-			checkBox_android6fix = new CheckBox();
-			verticalLabel_makedir = new randz.CustomControls.VerticalLabel();
-			explorer_path = new TextBox();
-			button_goUpDirectory = new Button();
-			button_unlock = new FluentButton();
-			button1 = new FluentButton();
-			button_android2pc = new FluentButton();
-			button_pc2android = new FluentButton();
-			button_forward = new Button();
-			button_back = new Button();
-			deco_panel4 = new Panel();
-			button_openSettings = new FluentButton();
-			panel_dolniTlacitka = new Panel();
-			comboBox_device = new ComboBox();
-			button_console = new Button();
-			deco_panel6 = new Panel();
-			comboBox_lang = new ComboBox();
-			label_version = new LinkLabel();
-			checkBox_filedate = new CheckBox();
-			panel_tlacitkaUprostred = new Panel();
-			verticalLabel_refresh = new randz.CustomControls.VerticalLabel();
-			deco_panel1 = new Panel();
-			deco_panel5 = new Panel();
-			deco_panel3 = new Panel();
-			deco_panel2 = new Panel();
-			explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
-			panel_installAssistant = new Panel();
-			label_textInstall = new Label();
-			commandLink_installYes = new DarkCommandLink();
-			commandLink_installGoAway = new DarkCommandLink();
-			pictureBox1 = new PictureBox();
-			((System.ComponentModel.ISupportInitialize)dataGridView_soubory).BeginInit();
-			deco_panel4.SuspendLayout();
-			panel_dolniTlacitka.SuspendLayout();
-			panel_tlacitkaUprostred.SuspendLayout();
-			panel_installAssistant.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			SuspendLayout();
-			// 
-			// dataGridView_soubory
-			// 
-			dataGridView_soubory.AllowUserToAddRows = false;
-			dataGridView_soubory.AllowUserToDeleteRows = false;
-			dataGridView_soubory.AllowUserToResizeRows = false;
-			resources.ApplyResources(dataGridView_soubory, "dataGridView_soubory");
-			dataGridView_soubory.BackgroundColor = SystemColors.ButtonHighlight;
-			dataGridView_soubory.GridColor = Color.White;
-			dataGridView_soubory.Name = "dataGridView_soubory";
-			dataGridView_soubory.RowHeadersVisible = false;
-			dataGridView_soubory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView_soubory.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
-			dataGridView_soubory.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
-			dataGridView_soubory.KeyDown += dataGridView1_KeyDown;
-			// 
-			// timer1
-			// 
-			timer1.Interval = 500;
-			timer1.Tick += timer1_Tick;
-			// 
-			// cur_path
-			// 
-			resources.ApplyResources(cur_path, "cur_path");
-			cur_path.Name = "cur_path";
-			cur_path.TextChanged += cur_path_TextChanged;
-			// 
-			// checkBox_android6fix_fastmode
-			// 
-			resources.ApplyResources(checkBox_android6fix_fastmode, "checkBox_android6fix_fastmode");
-			checkBox_android6fix_fastmode.Name = "checkBox_android6fix_fastmode";
-			toolTip1.SetToolTip(checkBox_android6fix_fastmode, resources.GetString("checkBox_android6fix_fastmode.ToolTip"));
-			checkBox_android6fix_fastmode.UseVisualStyleBackColor = true;
-			// 
-			// checkBox_preview
-			// 
-			resources.ApplyResources(checkBox_preview, "checkBox_preview");
-			checkBox_preview.Name = "checkBox_preview";
-			toolTip1.SetToolTip(checkBox_preview, resources.GetString("checkBox_preview.ToolTip"));
-			checkBox_preview.UseVisualStyleBackColor = true;
-			// 
-			// checkBox_android6fix
-			// 
-			resources.ApplyResources(checkBox_android6fix, "checkBox_android6fix");
-			checkBox_android6fix.Name = "checkBox_android6fix";
-			toolTip1.SetToolTip(checkBox_android6fix, resources.GetString("checkBox_android6fix.ToolTip"));
-			checkBox_android6fix.UseVisualStyleBackColor = true;
-			checkBox_android6fix.CheckedChanged += checkBox_android6fix_CheckedChanged;
-			// 
-			// verticalLabel_makedir
-			// 
-			resources.ApplyResources(verticalLabel_makedir, "verticalLabel_makedir");
-			verticalLabel_makedir.BackColor = SystemColors.ControlLight;
-			verticalLabel_makedir.ForeColor = SystemColors.ControlText;
-			verticalLabel_makedir.Name = "verticalLabel_makedir";
-			verticalLabel_makedir.RenderingMode = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-			verticalLabel_makedir.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
-			toolTip1.SetToolTip(verticalLabel_makedir, resources.GetString("verticalLabel_makedir.ToolTip"));
-			verticalLabel_makedir.TransparentBackground = false;
-			verticalLabel_makedir.UseFluent = false;
-			verticalLabel_makedir.Click += button_makedir_Click;
-			// 
-			// explorer_path
-			// 
-			resources.ApplyResources(explorer_path, "explorer_path");
-			explorer_path.Name = "explorer_path";
-			toolTip1.SetToolTip(explorer_path, resources.GetString("explorer_path.ToolTip"));
-			explorer_path.KeyPress += explorer_path_KeyPress;
-			// 
-			// button_goUpDirectory
-			// 
-			resources.ApplyResources(button_goUpDirectory, "button_goUpDirectory");
-			button_goUpDirectory.Name = "button_goUpDirectory";
-			toolTip1.SetToolTip(button_goUpDirectory, resources.GetString("button_goUpDirectory.ToolTip"));
-			button_goUpDirectory.UseVisualStyleBackColor = true;
-			button_goUpDirectory.Click += button_goUpDirectory_Click;
-			// 
-			// button_unlock
-			// 
-			button_unlock.BackColor = SystemColors.ControlLight;
-			button_unlock.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_unlock, "button_unlock");
-			button_unlock.ForeColor = Color.Black;
-			button_unlock.Image = Properties.Resources.unlock16;
-			button_unlock.Name = "button_unlock";
-			button_unlock.UseFluent = false;
-			button_unlock.UseVisualStyleBackColor = false;
-			button_unlock.Click += button_unlock_Click;
-			// 
-			// button1
-			// 
-			button1.BackColor = Color.FromArgb(242, 242, 242);
-			resources.ApplyResources(button1, "button1");
-			button1.ForeColor = Color.Black;
-			button1.Name = "button1";
-			button1.UseFluent = false;
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
-			// 
-			// button_android2pc
-			// 
-			button_android2pc.BackColor = SystemColors.ControlLight;
-			button_android2pc.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_android2pc, "button_android2pc");
-			button_android2pc.ForeColor = Color.Black;
-			button_android2pc.Name = "button_android2pc";
-			button_android2pc.UseFluent = false;
-			button_android2pc.UseVisualStyleBackColor = false;
-			button_android2pc.Click += android2pc_Click;
-			// 
-			// button_pc2android
-			// 
-			button_pc2android.BackColor = SystemColors.ControlLight;
-			button_pc2android.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_pc2android, "button_pc2android");
-			button_pc2android.ForeColor = Color.Black;
-			button_pc2android.Name = "button_pc2android";
-			button_pc2android.UseFluent = false;
-			button_pc2android.UseVisualStyleBackColor = false;
-			button_pc2android.Click += pc2android_Click;
-			// 
-			// button_forward
-			// 
-			button_forward.BackColor = Color.Transparent;
-			button_forward.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_forward, "button_forward");
-			button_forward.Name = "button_forward";
-			button_forward.UseVisualStyleBackColor = false;
-			button_forward.Click += button_forward_Click;
-			button_forward.MouseDown += buttonforward_MouseDown;
-			button_forward.MouseEnter += buttonforward_MouseEnter;
-			button_forward.MouseLeave += buttonforward_MouseLeave;
-			button_forward.MouseUp += buttonforward_MouseUp;
-			// 
-			// button_back
-			// 
-			button_back.BackColor = Color.Transparent;
-			button_back.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_back, "button_back");
-			button_back.Name = "button_back";
-			button_back.UseVisualStyleBackColor = false;
-			button_back.Click += button_back_Click;
-			button_back.MouseDown += buttonback_MouseDown;
-			button_back.MouseEnter += buttonback_MouseEnter;
-			button_back.MouseLeave += buttonback_MouseLeave;
-			button_back.MouseUp += buttonback_MouseUp;
-			// 
-			// deco_panel4
-			// 
-			deco_panel4.BackColor = Color.Gray;
-			deco_panel4.Controls.Add(button_openSettings);
-			resources.ApplyResources(deco_panel4, "deco_panel4");
-			deco_panel4.Name = "deco_panel4";
-			// 
-			// button_openSettings
-			// 
-			button_openSettings.BackColor = SystemColors.ControlLight;
-			button_openSettings.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_openSettings, "button_openSettings");
-			button_openSettings.ForeColor = Color.Black;
-			button_openSettings.Name = "button_openSettings";
-			button_openSettings.UseFluent = false;
-			button_openSettings.UseVisualStyleBackColor = false;
-			button_openSettings.Click += button_openSettings_Click;
-			// 
-			// panel_dolniTlacitka
-			// 
-			panel_dolniTlacitka.BackColor = Color.FromArgb(192, 255, 255);
-			panel_dolniTlacitka.Controls.Add(comboBox_device);
-			panel_dolniTlacitka.Controls.Add(button_console);
-			panel_dolniTlacitka.Controls.Add(button_unlock);
-			panel_dolniTlacitka.Controls.Add(deco_panel6);
-			panel_dolniTlacitka.Controls.Add(deco_panel4);
-			panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
-			panel_dolniTlacitka.Controls.Add(comboBox_lang);
-			panel_dolniTlacitka.Controls.Add(checkBox_preview);
-			panel_dolniTlacitka.Controls.Add(checkBox_android6fix);
-			panel_dolniTlacitka.Controls.Add(label_version);
-			panel_dolniTlacitka.Controls.Add(checkBox_filedate);
-			resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
-			panel_dolniTlacitka.Name = "panel_dolniTlacitka";
-			panel_dolniTlacitka.Paint += panel_dolniTlacitka_Paint;
-			// 
-			// comboBox_device
-			// 
-			comboBox_device.AutoCompleteMode = AutoCompleteMode.Suggest;
-			resources.ApplyResources(comboBox_device, "comboBox_device");
-			comboBox_device.FormattingEnabled = true;
-			comboBox_device.Name = "comboBox_device";
-			comboBox_device.SelectedIndexChanged += comboBox_device_SelectedIndexChanged;
-			// 
-			// button_console
-			// 
-			button_console.BackColor = Color.Transparent;
-			button_console.FlatAppearance.BorderSize = 0;
-			resources.ApplyResources(button_console, "button_console");
-			button_console.Name = "button_console";
-			button_console.UseVisualStyleBackColor = false;
-			button_console.Click += button1_Click;
-			// 
-			// deco_panel6
-			// 
-			deco_panel6.BackColor = Color.Gray;
-			resources.ApplyResources(deco_panel6, "deco_panel6");
-			deco_panel6.Name = "deco_panel6";
-			// 
-			// comboBox_lang
-			// 
-			comboBox_lang.FormattingEnabled = true;
-			resources.ApplyResources(comboBox_lang, "comboBox_lang");
-			comboBox_lang.Name = "comboBox_lang";
-			// 
-			// label_version
-			// 
-			resources.ApplyResources(label_version, "label_version");
-			label_version.Name = "label_version";
-			label_version.TabStop = true;
-			label_version.LinkClicked += version_LinkClicked;
-			// 
-			// checkBox_filedate
-			// 
-			resources.ApplyResources(checkBox_filedate, "checkBox_filedate");
-			checkBox_filedate.Name = "checkBox_filedate";
-			checkBox_filedate.UseVisualStyleBackColor = true;
-			// 
-			// panel_tlacitkaUprostred
-			// 
-			resources.ApplyResources(panel_tlacitkaUprostred, "panel_tlacitkaUprostred");
-			panel_tlacitkaUprostred.Controls.Add(verticalLabel_makedir);
-			panel_tlacitkaUprostred.Controls.Add(verticalLabel_refresh);
-			panel_tlacitkaUprostred.Controls.Add(button_android2pc);
-			panel_tlacitkaUprostred.Controls.Add(button_pc2android);
-			panel_tlacitkaUprostred.Controls.Add(deco_panel1);
-			panel_tlacitkaUprostred.Controls.Add(deco_panel5);
-			panel_tlacitkaUprostred.Controls.Add(deco_panel3);
-			panel_tlacitkaUprostred.Controls.Add(deco_panel2);
-			panel_tlacitkaUprostred.Name = "panel_tlacitkaUprostred";
-			panel_tlacitkaUprostred.Paint += panel_tlacitkaUprostred_Paint;
-			// 
-			// verticalLabel_refresh
-			// 
-			resources.ApplyResources(verticalLabel_refresh, "verticalLabel_refresh");
-			verticalLabel_refresh.BackColor = SystemColors.ControlLight;
-			verticalLabel_refresh.ForeColor = SystemColors.ControlText;
-			verticalLabel_refresh.Name = "verticalLabel_refresh";
-			verticalLabel_refresh.RenderingMode = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-			verticalLabel_refresh.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
-			verticalLabel_refresh.TransparentBackground = false;
-			verticalLabel_refresh.UseFluent = false;
-			verticalLabel_refresh.Click += verticalLabel1_Click;
-			// 
-			// deco_panel1
-			// 
-			deco_panel1.BackColor = Color.Gray;
-			deco_panel1.ForeColor = SystemColors.ControlText;
-			resources.ApplyResources(deco_panel1, "deco_panel1");
-			deco_panel1.Name = "deco_panel1";
-			// 
-			// deco_panel5
-			// 
-			deco_panel5.BackColor = Color.Gray;
-			resources.ApplyResources(deco_panel5, "deco_panel5");
-			deco_panel5.Name = "deco_panel5";
-			// 
-			// deco_panel3
-			// 
-			deco_panel3.BackColor = Color.Gray;
-			resources.ApplyResources(deco_panel3, "deco_panel3");
-			deco_panel3.Name = "deco_panel3";
-			// 
-			// deco_panel2
-			// 
-			deco_panel2.BackColor = Color.Gray;
-			resources.ApplyResources(deco_panel2, "deco_panel2");
-			deco_panel2.Name = "deco_panel2";
-			// 
-			// explorerBrowser1
-			// 
-			resources.ApplyResources(explorerBrowser1, "explorerBrowser1");
-			explorerBrowser1.Name = "explorerBrowser1";
-			explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
-			explorerBrowser1.SelectionChanged += explorerBrowser1_SelectionChanged;
-			explorerBrowser1.NavigationComplete += explorerBrowser1_NavigationComplete;
-			explorerBrowser1.Load += explorerBrowser1_Load;
-			explorerBrowser1.PreviewKeyDown += explorerBrowser1_PreviewKeyDown;
-			// 
-			// panel_installAssistant
-			// 
-			panel_installAssistant.Controls.Add(label_textInstall);
-			panel_installAssistant.Controls.Add(commandLink_installYes);
-			panel_installAssistant.Controls.Add(commandLink_installGoAway);
-			panel_installAssistant.Controls.Add(pictureBox1);
-			resources.ApplyResources(panel_installAssistant, "panel_installAssistant");
-			panel_installAssistant.Name = "panel_installAssistant";
-			// 
-			// label_textInstall
-			// 
-			resources.ApplyResources(label_textInstall, "label_textInstall");
-			label_textInstall.BackColor = Color.Transparent;
-			label_textInstall.Name = "label_textInstall";
-			// 
-			// commandLink_installYes
-			// 
-			commandLink_installYes.BackColor = Color.Transparent;
-			resources.ApplyResources(commandLink_installYes, "commandLink_installYes");
-			commandLink_installYes.MainTextColor = Color.FromArgb(0, 192, 0);
-			commandLink_installYes.Name = "commandLink_installYes";
-			commandLink_installYes.Note = "";
-			commandLink_installYes.NoteTextColor = Color.LightGray;
-			commandLink_installYes.UseVisualStyleBackColor = false;
-			commandLink_installYes.Click += commandLink_installYes_Click;
-			// 
-			// commandLink_installGoAway
-			// 
-			commandLink_installGoAway.BackColor = Color.Transparent;
-			resources.ApplyResources(commandLink_installGoAway, "commandLink_installGoAway");
-			commandLink_installGoAway.MainTextColor = Color.FromArgb(192, 0, 0);
-			commandLink_installGoAway.Name = "commandLink_installGoAway";
-			commandLink_installGoAway.Note = "";
-			commandLink_installGoAway.NoteTextColor = Color.LightGray;
-			commandLink_installGoAway.UseVisualStyleBackColor = false;
-			// 
-			// pictureBox1
-			// 
-			pictureBox1.BackColor = Color.Transparent;
-			pictureBox1.Image = Properties.Resources.assistant;
-			resources.ApplyResources(pictureBox1, "pictureBox1");
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.TabStop = false;
-			// 
-			// Form1
-			// 
-			resources.ApplyResources(this, "$this");
-			AutoScaleMode = AutoScaleMode.Font;
-			Controls.Add(panel_installAssistant);
-			Controls.Add(button_goUpDirectory);
-			Controls.Add(explorer_path);
-			Controls.Add(explorerBrowser1);
-			Controls.Add(cur_path);
-			Controls.Add(dataGridView_soubory);
-			Controls.Add(panel_tlacitkaUprostred);
-			Controls.Add(button_back);
-			Controls.Add(button_forward);
-			Controls.Add(panel_dolniTlacitka);
-			Name = "Form1";
-			TransparencyKey = Color.FromArgb(192, 0, 192);
-			FormClosing += Form1_FormClosing;
-			FormClosed += Form1_FormClosed;
-			Load += Form1_Load;
-			Resize += Form1_Resize;
-			((System.ComponentModel.ISupportInitialize)dataGridView_soubory).EndInit();
-			deco_panel4.ResumeLayout(false);
-			panel_dolniTlacitka.ResumeLayout(false);
-			panel_dolniTlacitka.PerformLayout();
-			panel_tlacitkaUprostred.ResumeLayout(false);
-			panel_installAssistant.ResumeLayout(false);
-			panel_installAssistant.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			ResumeLayout(false);
-			PerformLayout();
-		}
+        /// <summary>
+        ///  Required method for Designer support_do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            dataGridView_soubory = new DataGridView();
+            timer1 = new Timer(components);
+            cur_path = new TextBox();
+            toolTip1 = new ToolTip(components);
+            checkBox_android6fix_fastmode = new CheckBox();
+            checkBox_preview = new CheckBox();
+            checkBox_android6fix = new CheckBox();
+            verticalLabel_makedir = new randz.CustomControls.VerticalLabel();
+            explorer_path = new TextBox();
+            button_goUpDirectory = new Button();
+            button_unlock = new FluentButton();
+            button1 = new FluentButton();
+            button_android2pc = new FluentButton();
+            button_pc2android = new FluentButton();
+            button_forward = new Button();
+            button_back = new Button();
+            deco_panel4 = new Panel();
+            button_openSettings = new FluentButton();
+            panel_dolniTlacitka = new Panel();
+            comboBox_device = new ComboBox();
+            button_console = new Button();
+            deco_panel6 = new Panel();
+            comboBox_lang = new ComboBox();
+            label_version = new LinkLabel();
+            checkBox_filedate = new CheckBox();
+            panel_tlacitkaUprostred = new Panel();
+            verticalLabel_refresh = new randz.CustomControls.VerticalLabel();
+            deco_panel1 = new Panel();
+            deco_panel5 = new Panel();
+            deco_panel3 = new Panel();
+            deco_panel2 = new Panel();
+            explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
+            panel_installAssistant = new Panel();
+            label_textInstall = new Label();
+            commandLink_installYes = new DarkCommandLink();
+            commandLink_installGoAway = new DarkCommandLink();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_soubory).BeginInit();
+            deco_panel4.SuspendLayout();
+            panel_dolniTlacitka.SuspendLayout();
+            panel_tlacitkaUprostred.SuspendLayout();
+            panel_installAssistant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // dataGridView_soubory
+            // 
+            dataGridView_soubory.AllowUserToAddRows = false;
+            dataGridView_soubory.AllowUserToDeleteRows = false;
+            dataGridView_soubory.AllowUserToResizeRows = false;
+            resources.ApplyResources(dataGridView_soubory, "dataGridView_soubory");
+            dataGridView_soubory.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridView_soubory.GridColor = Color.White;
+            dataGridView_soubory.Name = "dataGridView_soubory";
+            dataGridView_soubory.RowHeadersVisible = false;
+            dataGridView_soubory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView_soubory.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
+            dataGridView_soubory.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
+            dataGridView_soubory.KeyDown += dataGridView1_KeyDown;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 500;
+            timer1.Tick += timer1_Tick;
+            // 
+            // cur_path
+            // 
+            resources.ApplyResources(cur_path, "cur_path");
+            cur_path.Name = "cur_path";
+            cur_path.TextChanged += cur_path_TextChanged;
+            // 
+            // checkBox_android6fix_fastmode
+            // 
+            resources.ApplyResources(checkBox_android6fix_fastmode, "checkBox_android6fix_fastmode");
+            checkBox_android6fix_fastmode.Name = "checkBox_android6fix_fastmode";
+            toolTip1.SetToolTip(checkBox_android6fix_fastmode, resources.GetString("checkBox_android6fix_fastmode.ToolTip"));
+            checkBox_android6fix_fastmode.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_preview
+            // 
+            resources.ApplyResources(checkBox_preview, "checkBox_preview");
+            checkBox_preview.Name = "checkBox_preview";
+            toolTip1.SetToolTip(checkBox_preview, resources.GetString("checkBox_preview.ToolTip"));
+            checkBox_preview.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_android6fix
+            // 
+            resources.ApplyResources(checkBox_android6fix, "checkBox_android6fix");
+            checkBox_android6fix.Name = "checkBox_android6fix";
+            toolTip1.SetToolTip(checkBox_android6fix, resources.GetString("checkBox_android6fix.ToolTip"));
+            checkBox_android6fix.UseVisualStyleBackColor = true;
+            checkBox_android6fix.CheckedChanged += checkBox_android6fix_CheckedChanged;
+            // 
+            // verticalLabel_makedir
+            // 
+            resources.ApplyResources(verticalLabel_makedir, "verticalLabel_makedir");
+            verticalLabel_makedir.BackColor = SystemColors.ControlLight;
+            verticalLabel_makedir.ForeColor = SystemColors.ControlText;
+            verticalLabel_makedir.Name = "verticalLabel_makedir";
+            verticalLabel_makedir.RenderingMode = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            verticalLabel_makedir.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
+            toolTip1.SetToolTip(verticalLabel_makedir, resources.GetString("verticalLabel_makedir.ToolTip"));
+            verticalLabel_makedir.TransparentBackground = false;
+            verticalLabel_makedir.UseFluent = false;
+            verticalLabel_makedir.Click += button_makedir_Click;
+            // 
+            // explorer_path
+            // 
+            resources.ApplyResources(explorer_path, "explorer_path");
+            explorer_path.Name = "explorer_path";
+            toolTip1.SetToolTip(explorer_path, resources.GetString("explorer_path.ToolTip"));
+            explorer_path.KeyPress += explorer_path_KeyPress;
+            // 
+            // button_goUpDirectory
+            // 
+            resources.ApplyResources(button_goUpDirectory, "button_goUpDirectory");
+            button_goUpDirectory.Name = "button_goUpDirectory";
+            toolTip1.SetToolTip(button_goUpDirectory, resources.GetString("button_goUpDirectory.ToolTip"));
+            button_goUpDirectory.UseVisualStyleBackColor = true;
+            button_goUpDirectory.Click += button_goUpDirectory_Click;
+            // 
+            // button_unlock
+            // 
+            button_unlock.BackColor = SystemColors.ControlLight;
+            button_unlock.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_unlock, "button_unlock");
+            button_unlock.ForeColor = Color.Black;
+            button_unlock.Image = Properties.Resources.unlock16;
+            button_unlock.Name = "button_unlock";
+            button_unlock.UseFluent = false;
+            button_unlock.UseVisualStyleBackColor = false;
+            button_unlock.Click += button_unlock_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(242, 242, 242);
+            resources.ApplyResources(button1, "button1");
+            button1.ForeColor = Color.Black;
+            button1.Name = "button1";
+            button1.UseFluent = false;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button_android2pc
+            // 
+            button_android2pc.BackColor = SystemColors.ControlLight;
+            button_android2pc.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_android2pc, "button_android2pc");
+            button_android2pc.ForeColor = Color.Black;
+            button_android2pc.Name = "button_android2pc";
+            button_android2pc.UseFluent = false;
+            button_android2pc.UseVisualStyleBackColor = false;
+            button_android2pc.Click += android2pc_Click;
+            // 
+            // button_pc2android
+            // 
+            button_pc2android.BackColor = SystemColors.ControlLight;
+            button_pc2android.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_pc2android, "button_pc2android");
+            button_pc2android.ForeColor = Color.Black;
+            button_pc2android.Name = "button_pc2android";
+            button_pc2android.UseFluent = false;
+            button_pc2android.UseVisualStyleBackColor = false;
+            button_pc2android.Click += pc2android_Click;
+            // 
+            // button_forward
+            // 
+            button_forward.BackColor = Color.Transparent;
+            button_forward.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_forward, "button_forward");
+            button_forward.Name = "button_forward";
+            button_forward.UseVisualStyleBackColor = false;
+            button_forward.Click += button_forward_Click;
+            button_forward.MouseDown += buttonforward_MouseDown;
+            button_forward.MouseEnter += buttonforward_MouseEnter;
+            button_forward.MouseLeave += buttonforward_MouseLeave;
+            button_forward.MouseUp += buttonforward_MouseUp;
+            // 
+            // button_back
+            // 
+            button_back.BackColor = Color.Transparent;
+            button_back.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_back, "button_back");
+            button_back.Name = "button_back";
+            button_back.UseVisualStyleBackColor = false;
+            button_back.Click += button_back_Click;
+            button_back.MouseDown += buttonback_MouseDown;
+            button_back.MouseEnter += buttonback_MouseEnter;
+            button_back.MouseLeave += buttonback_MouseLeave;
+            button_back.MouseUp += buttonback_MouseUp;
+            // 
+            // deco_panel4
+            // 
+            deco_panel4.BackColor = Color.Gray;
+            deco_panel4.Controls.Add(button_openSettings);
+            resources.ApplyResources(deco_panel4, "deco_panel4");
+            deco_panel4.Name = "deco_panel4";
+            // 
+            // button_openSettings
+            // 
+            button_openSettings.BackColor = SystemColors.ControlLight;
+            button_openSettings.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_openSettings, "button_openSettings");
+            button_openSettings.ForeColor = Color.Black;
+            button_openSettings.Name = "button_openSettings";
+            button_openSettings.UseFluent = false;
+            button_openSettings.UseVisualStyleBackColor = false;
+            button_openSettings.Click += button_openSettings_Click;
+            // 
+            // panel_dolniTlacitka
+            // 
+            panel_dolniTlacitka.BackColor = Color.FromArgb(192, 255, 255);
+            panel_dolniTlacitka.Controls.Add(comboBox_device);
+            panel_dolniTlacitka.Controls.Add(button_console);
+            panel_dolniTlacitka.Controls.Add(button_unlock);
+            panel_dolniTlacitka.Controls.Add(deco_panel6);
+            panel_dolniTlacitka.Controls.Add(deco_panel4);
+            panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
+            panel_dolniTlacitka.Controls.Add(comboBox_lang);
+            panel_dolniTlacitka.Controls.Add(checkBox_preview);
+            panel_dolniTlacitka.Controls.Add(checkBox_android6fix);
+            panel_dolniTlacitka.Controls.Add(label_version);
+            panel_dolniTlacitka.Controls.Add(checkBox_filedate);
+            resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
+            panel_dolniTlacitka.Name = "panel_dolniTlacitka";
+            panel_dolniTlacitka.Paint += panel_dolniTlacitka_Paint;
+            // 
+            // comboBox_device
+            // 
+            comboBox_device.AutoCompleteMode = AutoCompleteMode.Suggest;
+            resources.ApplyResources(comboBox_device, "comboBox_device");
+            comboBox_device.FormattingEnabled = true;
+            comboBox_device.Name = "comboBox_device";
+            comboBox_device.SelectedIndexChanged += comboBox_device_SelectedIndexChanged;
+            // 
+            // button_console
+            // 
+            button_console.BackColor = Color.Transparent;
+            button_console.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button_console, "button_console");
+            button_console.Name = "button_console";
+            button_console.UseVisualStyleBackColor = false;
+            button_console.Click += button1_Click;
+            // 
+            // deco_panel6
+            // 
+            deco_panel6.BackColor = Color.Gray;
+            resources.ApplyResources(deco_panel6, "deco_panel6");
+            deco_panel6.Name = "deco_panel6";
+            // 
+            // comboBox_lang
+            // 
+            comboBox_lang.FormattingEnabled = true;
+            resources.ApplyResources(comboBox_lang, "comboBox_lang");
+            comboBox_lang.Name = "comboBox_lang";
+            // 
+            // label_version
+            // 
+            resources.ApplyResources(label_version, "label_version");
+            label_version.Name = "label_version";
+            label_version.TabStop = true;
+            label_version.LinkClicked += version_LinkClicked;
+            // 
+            // checkBox_filedate
+            // 
+            resources.ApplyResources(checkBox_filedate, "checkBox_filedate");
+            checkBox_filedate.Name = "checkBox_filedate";
+            checkBox_filedate.UseVisualStyleBackColor = true;
+            // 
+            // panel_tlacitkaUprostred
+            // 
+            resources.ApplyResources(panel_tlacitkaUprostred, "panel_tlacitkaUprostred");
+            panel_tlacitkaUprostred.Controls.Add(verticalLabel_makedir);
+            panel_tlacitkaUprostred.Controls.Add(verticalLabel_refresh);
+            panel_tlacitkaUprostred.Controls.Add(button_android2pc);
+            panel_tlacitkaUprostred.Controls.Add(button_pc2android);
+            panel_tlacitkaUprostred.Controls.Add(deco_panel1);
+            panel_tlacitkaUprostred.Controls.Add(deco_panel5);
+            panel_tlacitkaUprostred.Controls.Add(deco_panel3);
+            panel_tlacitkaUprostred.Controls.Add(deco_panel2);
+            panel_tlacitkaUprostred.Name = "panel_tlacitkaUprostred";
+            panel_tlacitkaUprostred.Paint += panel_tlacitkaUprostred_Paint;
+            // 
+            // verticalLabel_refresh
+            // 
+            resources.ApplyResources(verticalLabel_refresh, "verticalLabel_refresh");
+            verticalLabel_refresh.BackColor = SystemColors.ControlLight;
+            verticalLabel_refresh.ForeColor = SystemColors.ControlText;
+            verticalLabel_refresh.Name = "verticalLabel_refresh";
+            verticalLabel_refresh.RenderingMode = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            verticalLabel_refresh.TextDrawMode = randz.CustomControls.DrawMode.TopBottom;
+            verticalLabel_refresh.TransparentBackground = false;
+            verticalLabel_refresh.UseFluent = false;
+            verticalLabel_refresh.Click += verticalLabel1_Click;
+            // 
+            // deco_panel1
+            // 
+            deco_panel1.BackColor = Color.Gray;
+            deco_panel1.ForeColor = SystemColors.ControlText;
+            resources.ApplyResources(deco_panel1, "deco_panel1");
+            deco_panel1.Name = "deco_panel1";
+            // 
+            // deco_panel5
+            // 
+            deco_panel5.BackColor = Color.Gray;
+            resources.ApplyResources(deco_panel5, "deco_panel5");
+            deco_panel5.Name = "deco_panel5";
+            // 
+            // deco_panel3
+            // 
+            deco_panel3.BackColor = Color.Gray;
+            resources.ApplyResources(deco_panel3, "deco_panel3");
+            deco_panel3.Name = "deco_panel3";
+            // 
+            // deco_panel2
+            // 
+            deco_panel2.BackColor = Color.Gray;
+            resources.ApplyResources(deco_panel2, "deco_panel2");
+            deco_panel2.Name = "deco_panel2";
+            // 
+            // explorerBrowser1
+            // 
+            resources.ApplyResources(explorerBrowser1, "explorerBrowser1");
+            explorerBrowser1.Name = "explorerBrowser1";
+            explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
+            explorerBrowser1.SelectionChanged += explorerBrowser1_SelectionChanged;
+            explorerBrowser1.NavigationComplete += explorerBrowser1_NavigationComplete;
+            explorerBrowser1.Load += explorerBrowser1_Load;
+            explorerBrowser1.PreviewKeyDown += explorerBrowser1_PreviewKeyDown;
+            // 
+            // panel_installAssistant
+            // 
+            panel_installAssistant.Controls.Add(label_textInstall);
+            panel_installAssistant.Controls.Add(commandLink_installYes);
+            panel_installAssistant.Controls.Add(commandLink_installGoAway);
+            panel_installAssistant.Controls.Add(pictureBox1);
+            resources.ApplyResources(panel_installAssistant, "panel_installAssistant");
+            panel_installAssistant.Name = "panel_installAssistant";
+            // 
+            // label_textInstall
+            // 
+            resources.ApplyResources(label_textInstall, "label_textInstall");
+            label_textInstall.BackColor = Color.Transparent;
+            label_textInstall.Name = "label_textInstall";
+            // 
+            // commandLink_installYes
+            // 
+            commandLink_installYes.BackColor = Color.Transparent;
+            resources.ApplyResources(commandLink_installYes, "commandLink_installYes");
+            commandLink_installYes.MainTextColor = Color.FromArgb(0, 192, 0);
+            commandLink_installYes.Name = "commandLink_installYes";
+            commandLink_installYes.Note = "";
+            commandLink_installYes.NoteTextColor = Color.LightGray;
+            commandLink_installYes.UseVisualStyleBackColor = false;
+            commandLink_installYes.Click += commandLink_installYes_Click;
+            // 
+            // commandLink_installGoAway
+            // 
+            commandLink_installGoAway.BackColor = Color.Transparent;
+            resources.ApplyResources(commandLink_installGoAway, "commandLink_installGoAway");
+            commandLink_installGoAway.MainTextColor = Color.FromArgb(192, 0, 0);
+            commandLink_installGoAway.Name = "commandLink_installGoAway";
+            commandLink_installGoAway.Note = "";
+            commandLink_installGoAway.NoteTextColor = Color.LightGray;
+            commandLink_installGoAway.UseVisualStyleBackColor = false;
+            commandLink_installGoAway.Click += commandLink_installGoAway_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.assistant;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
+            // Form1
+            // 
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel_installAssistant);
+            Controls.Add(button_goUpDirectory);
+            Controls.Add(explorer_path);
+            Controls.Add(explorerBrowser1);
+            Controls.Add(cur_path);
+            Controls.Add(dataGridView_soubory);
+            Controls.Add(panel_tlacitkaUprostred);
+            Controls.Add(button_back);
+            Controls.Add(button_forward);
+            Controls.Add(panel_dolniTlacitka);
+            Name = "Form1";
+            TransparencyKey = Color.FromArgb(192, 0, 192);
+            FormClosing += Form1_FormClosing;
+            FormClosed += Form1_FormClosed;
+            Load += Form1_Load;
+            Resize += Form1_Resize;
+            ((System.ComponentModel.ISupportInitialize)dataGridView_soubory).EndInit();
+            deco_panel4.ResumeLayout(false);
+            panel_dolniTlacitka.ResumeLayout(false);
+            panel_dolniTlacitka.PerformLayout();
+            panel_tlacitkaUprostred.ResumeLayout(false);
+            panel_installAssistant.ResumeLayout(false);
+            panel_installAssistant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
 
 
 
-		#endregion
-		public DataGridView dataGridView_soubory;
+        #endregion
+        public DataGridView dataGridView_soubory;
 		private System.Windows.Forms.Timer timer1;
 		private ToolTip toolTip1;
 		private CheckBox checkBox_android6fix_fastmode;
