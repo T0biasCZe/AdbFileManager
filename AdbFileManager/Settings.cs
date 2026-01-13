@@ -56,7 +56,7 @@ namespace AdbFileManager {
 		}
 
 		public static void ApplySettings() {
-			AdbProgressRunner.timeoutMs = settings.progressWaitTimeMs;
+			// Settings applied on load
 		}
 	}
 }

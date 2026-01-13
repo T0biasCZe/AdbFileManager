@@ -10,7 +10,7 @@
     <Platforms>AnyCPU;x64</Platforms>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <StartupObject></StartupObject>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
