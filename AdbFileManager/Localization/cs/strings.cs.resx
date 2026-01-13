@@ -199,10 +199,10 @@ Prosím vydržte chvilku...</value>
     <value>Zachovat datum úpravy souboru</value>
   </data>
   <data name="settings_previewMedia" xml:space="preserve">
-    <value>Náhled při dvojkliku</value>
+    <value>Náhled médií při dvojkliku</value>
   </data>
   <data name="settings_useLegacyCopy" xml:space="preserve">
-    <value>Starší kopírování</value>
+    <value>Legacy kopírování</value>
   </data>
   <data name="settings_unwrapFolders" xml:space="preserve">
     <value>Rozbalit složky při kopírování</value>
@@ -211,13 +211,13 @@ Prosím vydržte chvilku...</value>
     <value>Prodleva synchronizace průběhu</value>
   </data>
   <data name="settings_compatibilityFix" xml:space="preserve">
-    <value>Oprava kompatibility</value>
+    <value>Kompatibilní režim</value>
   </data>
   <data name="settings_fastCompatibility" xml:space="preserve">
     <value>Rychlý režim kompatibility</value>
   </data>
   <data name="settings_openLastLocation" xml:space="preserve">
-    <value>Otevřít v poslední pozici</value>
+    <value>Pamatovat si poslední adresář</value>
   </data>
   <data name="settings_iconStyle" xml:space="preserve">
     <value>Styl ikon</value>
@@ -232,10 +232,10 @@ Prosím vydržte chvilku...</value>
     <value>Design tlačítek</value>
   </data>
   <data name="settings_flatShaded" xml:space="preserve">
-    <value>Plochý stínovaný</value>
+    <value>Stínovaný</value>
   </data>
   <data name="settings_flat" xml:space="preserve">
-    <value>Plochý</value>
+    <value>Jednolitý</value>
   </data>
   <data name="settings_fluentGradient" xml:space="preserve">
     <value>Fluent přechod</value>
@@ -269,7 +269,7 @@ pouze pokud má Windows povolen tmavý režim</value>
     <value>Spárovat</value>
   </data>
   <data name="wireless_reconnect" xml:space="preserve">
-    <value>Znovu připojit</value>
+    <value>Opětovné připojení</value>
   </data>
   <data name="wireless_enterIpPort" xml:space="preserve">
     <value>Zadejte prosím IP adresu i port.</value>
@@ -278,13 +278,13 @@ pouze pokud má Windows povolen tmavý režim</value>
     <value>Zadejte prosím párovací kód.</value>
   </data>
   <data name="wireless_timeout" xml:space="preserve">
-    <value>Proces párování vypršel. Zkuste to prosím znovu.</value>
+    <value>Proces párování selhal z důvodu neodpovědění zařízení. Zkuste to prosím znovu.</value>
   </data>
   <data name="wireless_errorOccurred" xml:space="preserve">
     <value>Během párování došlo k chybě:</value>
   </data>
   <data name="wireless_pairingFinished" xml:space="preserve">
-    <value>Párování dokončeno!</value>
+    <value>Párování dokončeno</value>
   </data>
   <data name="wireless_reconnectFinished" xml:space="preserve">
     <value>Příkaz pro opětovné připojení dokončen:</value>
@@ -325,7 +325,7 @@ Datum: {2}</value>
     <value>Načítání souborů v kořenovém adresáři</value>
   </data>
   <data name="unlock_title" xml:space="preserve">
-    <value>Odemknout telefon</value>
+    <value>Odemknutí telefonu</value>
   </data>
   <data name="unlock_passwordPlaceholder" xml:space="preserve">
     <value>Zadejte heslo</value>
