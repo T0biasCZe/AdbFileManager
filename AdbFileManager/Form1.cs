@@ -169,10 +169,19 @@ namespace AdbFileManager {
 
         private void explorerBrowser1_Load(object sender, EventArgs e) {
             try {
-                string path = Environment.ExpandEnvironmentVariables("%UserProfile%\\pictures\\");
-                ShellObject Shell = ShellObject.FromParsingName(path);
-                explorerBrowser1.Navigate(Shell);
-                explorer_path.Text = path;
+                if(SettingsManager.settings.rememberDirectory && !string.IsNullOrEmpty(SettingsManager.settings.lastDirectory) && Path.Exists(SettingsManager.settings.lastDirectory)) {
+                    string path = SettingsManager.settings.lastDirectory;
+                    ShellObject Shell = ShellObject.FromParsingName(path);
+                    explorerBrowser1.Navigate(Shell);
+                    explorer_path.Text = path;
+                    return;
+                }
+                else {
+                    string path = Environment.ExpandEnvironmentVariables("%UserProfile%\\pictures\\");
+                    ShellObject Shell = ShellObject.FromParsingName(path);
+                    explorerBrowser1.Navigate(Shell);
+                    explorer_path.Text = path;
+                }
             }
             catch {
                 string path = Environment.ExpandEnvironmentVariables("C:\\");
@@ -713,6 +722,8 @@ namespace AdbFileManager {
             string currentPath = ShellObject.FromParsingName(explorerBrowser1.NavigationLog.CurrentLocation.ParsingName).Properties.System.ItemPathDisplay.Value;
             explorer_path.Text = currentPath;
 
+            SettingsManager.settings.lastDirectory = currentPath;
+
             string newPath = "";
             if (currentPath.Contains("Music.library-ms")) {
                 newPath = ShowLibraryPopup("Music");
@@ -734,6 +745,7 @@ namespace AdbFileManager {
             }
 
             if (!string.IsNullOrEmpty(newPath)) {
+                SettingsManager.settings.lastDirectory = newPath;
                 explorerBrowser1.Navigate(ShellObject.FromParsingName(newPath));
             }
         }

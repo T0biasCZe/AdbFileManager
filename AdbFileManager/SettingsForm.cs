@@ -41,6 +41,7 @@ namespace AdbFileManager {
             checkBox_fastCompatibility.Checked = SettingsManager.settings.useFastCompatibility;
             checkBox_previewMediaFiles.Checked = SettingsManager.settings.previewMediaFiles;
             checkBox_keepFileModificationDate.Checked = SettingsManager.settings.keepFileModificationDate;
+            checkBox_rememberLocation.Checked = SettingsManager.settings.rememberDirectory;
 
             Application.DoEvents();
 
@@ -140,7 +141,7 @@ namespace AdbFileManager {
             this.Text = AdbFileManager.strings.settings_title;
 
             // Tabs
-            //tab_behaviour.Text = AdbFileManager.strings.settings_tab_behaviour;
+            //tab_behaviour.Text = AdbFileManager.strings.settings_tab_behaviour; //crashes for some reason
             tab_appearance.Text = AdbFileManager.strings.settings_tab_appearance;
 
             // Behaviour tab
@@ -185,6 +186,11 @@ namespace AdbFileManager {
         private void checkBox_keepFileModificationDate_CheckedChanged(object sender, EventArgs e) {
             if (loadingSettings) return;
             SettingsManager.settings.keepFileModificationDate = checkBox_keepFileModificationDate.Checked;
+        }
+
+        private void checkBox_rememberLocation_CheckedChanged(object sender, EventArgs e) {
+            if (loadingSettings) return;
+            SettingsManager.settings.rememberDirectory = checkBox_rememberLocation.Checked;
         }
     }
 }

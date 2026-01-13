@@ -25,6 +25,9 @@ namespace AdbFileManager {
 		public bool useCompatibilityMode { get; set; } = false;
 		public bool previewMediaFiles { get; set; } = false;
 		public bool keepFileModificationDate { get; set; } = true;
+
+		public bool rememberDirectory { get; set; } = false;
+		public string lastDirectory { get; set; } = "";
     }
 	public static class SettingsManager {
 		public static Settings settings = new Settings();

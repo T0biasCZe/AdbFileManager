@@ -168,6 +168,7 @@
             checkBox_rememberLocation.TabIndex = 5;
             checkBox_rememberLocation.Text = "Open in last location";
             checkBox_rememberLocation.UseVisualStyleBackColor = true;
+            checkBox_rememberLocation.CheckedChanged += checkBox_rememberLocation_CheckedChanged;
             // 
             // checkBox_compatibilityMode
             // 
@@ -224,6 +225,7 @@
             checkBox_fastCompatibility.TabIndex = 4;
             checkBox_fastCompatibility.Text = "Fast compatibility mode";
             checkBox_fastCompatibility.UseVisualStyleBackColor = true;
+            checkBox_fastCompatibility.CheckedChanged += checkBox_fastCompatibility_CheckedChanged;
             // 
             // tabControl1
             // 
