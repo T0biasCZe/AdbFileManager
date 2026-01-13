@@ -266,7 +266,9 @@ namespace AdbFileManager {
 			}
 			else {
 				Console.WriteLine("Copying using new async code that shouldnt be broken...");
-				copyFilesAsync(files, destinationFolder);
+				//copyFilesAsync(files, destinationFolder);
+				List<string> filesConverted = files.Select(f => f.name).ToList();
+				_ = copyFilesAsync(filesConverted, directoryPath, destinationFolder, true);
 			}
 		}
 
@@ -279,16 +281,16 @@ namespace AdbFileManager {
 				pbarOld.Update(processedFiles, totalFiles, directoryPath, destinationFolder, filename, totalPercent);
 			}
 		}
-		public async Task copyFilesAsync(List<File> files, string destinationFolder) {
+		public async Task copyFilesAsync(List<string> fileNames, string sourceDir, string destDir, bool fromAndroid) {
 			string dateArg = checkBox_filedate.Checked ? " -a " : "";
 			string progressArg = " -p";
 
-			int totalFiles = files.Count;
+			int totalFiles = fileNames.Count;
 			int processedFiles = 0;
 
 			Form progressbar = null;
-			Console.WriteLine($"files: {files.Count} two pb: {SettingsManager.settings.ShowTwoProgressBars}");
-			if(files.Count > 1 && SettingsManager.settings.ShowTwoProgressBars) {
+			Console.WriteLine($"files: {fileNames.Count} two pb: {SettingsManager.settings.ShowTwoProgressBars}");
+			if(fileNames.Count > 1 && SettingsManager.settings.ShowTwoProgressBars) {
 				progressbar = new Form2New();
 			}
 			else {
@@ -314,9 +316,9 @@ namespace AdbFileManager {
 					progressbar,
 					processedFiles,
 					totalFiles,
-					directoryPath,
-					destinationFolder,
-					files[processedFiles].name,
+					sourceDir,
+					destDir,
+					fileNames[processedFiles],
 					totalPercent,
 					filePercent
 				);
@@ -326,54 +328,67 @@ namespace AdbFileManager {
 
 			string adbPath = Path.Combine(AppContext.BaseDirectory, "adb.exe");
 
-			foreach(var file in files) {
-				string sourceFile = Path.Combine(directoryPath, file.name);
-				string destinationFile = Path.Combine(destinationFolder, file.name).Replace('\\', '/');
-				string finalDirectory = Path.GetDirectoryName(destinationFile)!;
+			foreach(var fileName in fileNames) {
+				string sourceFile;
+				string destinationFile;
+				string adbCommand;
 
-				if(!Directory.Exists(finalDirectory))
-					Directory.CreateDirectory(finalDirectory);
+				if(fromAndroid) {
+					sourceFile = Path.Combine(sourceDir, fileName);
+					destinationFile = Path.Combine(destDir, fileName).Replace('\\', '/');
+					adbCommand = "pull";
+				}
+				else {
+					sourceFile = Path.Combine(sourceDir, fileName);
+					destinationFile = Path.Combine(destDir, fileName);
+					adbCommand = "push";
+				}
 
+				// Ensure destination directory exists (only for PC side when pulling from Android)
+				if(fromAndroid) {
+					string finalDirectory = Path.GetDirectoryName(destinationFile)!;
+					if(!Directory.Exists(finalDirectory))
+						Directory.CreateDirectory(finalDirectory);
+				}
 
 				string deviceArg = "";
-				if(selectedDevice != null) {
+				if(selectedDevice != null && fromAndroid) {
 					deviceArg = $"-s {selectedDevice.adbId} ";
-					Console.WriteLine("Using selected device in adb pull: " + selectedDevice.adbId);
+					Console.WriteLine($"Using selected device in adb {adbCommand}: " + selectedDevice.adbId);
 				}
-				// Build the adb pull command for this file
-				string command = $"{deviceArg} pull {dateArg}{progressArg} \"{sourceFile}\" \"{destinationFile}\"";
+
+				// Build the adb command for this file
+				string command = $"{deviceArg}{adbCommand} {dateArg}{progressArg} \"{sourceFile}\" \"{destinationFile}\"";
 				Console.WriteLine($"[ASYNC COPY] {command}");
 
 				UpdateProgressBar(
 					progressbar,
 					processedFiles,
 					totalFiles,
-					directoryPath,
-					destinationFolder,
-					files[processedFiles].name,
+					sourceDir,
+					destDir,
+					fileName,
 					processedFiles * 100 / totalFiles,
 					0f
 				);
+
 				// Run adb with injection & progress capture
 				await AdbFileManager.AdbProgressRunner.RunAsync(adbPath, command);
 				Console.WriteLine("Finished awaiting adb command");
 
 				processedFiles++;
 
-
 				if(processedFiles == totalFiles) break;
 				UpdateProgressBar(
 					progressbar,
 					processedFiles,
 					totalFiles,
-					directoryPath,
-					destinationFolder,
-					files[processedFiles].name,
+					sourceDir,
+					destDir,
+					fileNames[processedFiles],
 					processedFiles * 100 / totalFiles,
 					100f
 				);
-
-				Console.WriteLine("E");
 			}
 
 			if(progressbar is Form2New pbarNew) {
@@ -596,25 +611,41 @@ namespace AdbFileManager {
 		private void pc2android_Click(object sender, EventArgs e) {
 			var items = explorerBrowser1.SelectedItems.ToArray();
 			string date = checkBox_filedate.Checked ? " -a " : "";
-			int filecount = items.Count();
-			int copied = 0;
-			Form2 progressbar = new Form2();
-			progressbar.Show();
-			//try to make the progressbar get shown
-			progressbar.BringToFront();
-			progressbar.Activate();
-			progressbar.Focus();
-			copying = true;
-			foreach(ShellObject item in items) {
-				string sourcefile = item.ParsingName;
-				string command = $"adb push {date} \"{sourcefile}\" \"{Functions.FixWindowsPath(directoryPath)}\"";
-				Console.WriteLine(command);
-				progressbar.Update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
-				Console.WriteLine(adb(command));
-				copied++;
+
+			if (SettingsManager.settings.useLegacyCopy) {
+				int filecount = items.Count();
+				int copied = 0;
+				Form2 progressbar = new Form2();
+				progressbar.Show();
+				//try to make the progressbar get shown
+				progressbar.BringToFront();
+				progressbar.Activate();
+				progressbar.Focus(); 
+				copying = true;
+				foreach (ShellObject item in items) {
+					string sourcefile = item.ParsingName;
+					string command = $"adb push {date} \"{sourcefile}\" \"{Functions.FixWindowsPath(directoryPath)}\"";
+					Console.WriteLine(command);
+					progressbar.Update(copied, filecount, explorer_path.Text, directoryPath, sourcefile);
+					Console.WriteLine(adb(command));
+					copied++;
+				}
+				progressbar.Close();
+				copying = false;
 			}
-			progressbar.Close();
-			copying = false;
+			else {
+				List<string> files = new List<string>();
+				string sourceDir = explorerBrowser1.NavigationLog.CurrentLocation.ParsingName;
+				
+				foreach (ShellObject item in items) {
+					string fileName = Path.GetFileName(item.ParsingName);
+					files.Add(fileName);
+				}
+				Console.WriteLine("PC to Android copy using async copying");
+				Console.WriteLine("explorer current location: " + sourceDir);
+				Console.WriteLine("android directory path: " + directoryPath);
+				_ = copyFilesAsync(files, sourceDir, directoryPath, false);
+			}
 		}
 
 		bool cur_path_modifyInternal = false;
@@ -1270,7 +1301,7 @@ namespace AdbFileManager {
 			path.Replace('\\', '/');
 			path.Replace("C:/Usuarios", "C:/Users");
 			path.Replace("C:/Usuários", "C:/Users");
-		    
+			
 			return path;
 		}
 	}
