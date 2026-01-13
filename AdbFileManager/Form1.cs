@@ -246,7 +246,6 @@ namespace AdbFileManager {
             string destinationFolder = explorerBrowser1.NavigationLog.CurrentLocation.ParsingName;
 
             if (string.IsNullOrEmpty(destinationFolder)) return;
-            MessageBox.Show(dataGridView_soubory.SelectedRows.Count.ToString());
 
             if (copying) {
                 MessageBox.Show(rm.GetString("copy_in_progress"), rm.GetString("copy_in_progress_title"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
