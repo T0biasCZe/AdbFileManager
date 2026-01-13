@@ -340,7 +340,20 @@ Tento nástroj se může pokusit telefon odemknout, abyste mohli zálohovat své
     <data name="selectLibraryFolderInstruction" xml:space="preserve">
     <value>Vyberte adresář</value>
   </data>
-        <data name="selectLibraryFolderCaption" xml:space="preserve">
+  <data name="selectLibraryFolderCaption" xml:space="preserve">
     <value>Výběr složky</value>
+  </data>
+  <data name="no_files_selected" xml:space="preserve">
+	<value>Prosím vyberte nějaké soubory pro kopírování.</value>
+  </data>
+  <data name="no_files_selected_title" xml:space="preserve">
+	<value>Error okurek</value>
+  </data>
+  <data name="lsLLNotSupportedMessage" xml:space="preserve">
+	<value>Zdá se že se snažíte použít starší Android zařízení.
+Prosím zapněte kompatibilní režim v nastavení programu, a poté klikněte na Obnovit</value>
+  </data>
+    <data name="lsLLNotSupportedMessageTitle" xml:space="preserve">
+	<value>-L není podporováno</value>
   </data>
 </root>

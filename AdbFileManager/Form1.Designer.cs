@@ -32,9 +32,6 @@ namespace AdbFileManager {
             timer1 = new Timer(components);
             cur_path = new TextBox();
             toolTip1 = new ToolTip(components);
-            checkBox_android6fix_fastmode = new CheckBox();
-            checkBox_preview = new CheckBox();
-            checkBox_android6fix = new CheckBox();
             verticalLabel_makedir = new randz.CustomControls.VerticalLabel();
             explorer_path = new TextBox();
             button_goUpDirectory = new Button();
@@ -52,7 +49,6 @@ namespace AdbFileManager {
             deco_panel6 = new Panel();
             comboBox_lang = new ComboBox();
             label_version = new LinkLabel();
-            checkBox_filedate = new CheckBox();
             panel_tlacitkaUprostred = new Panel();
             verticalLabel_refresh = new randz.CustomControls.VerticalLabel();
             deco_panel1 = new Panel();
@@ -98,28 +94,6 @@ namespace AdbFileManager {
             resources.ApplyResources(cur_path, "cur_path");
             cur_path.Name = "cur_path";
             cur_path.TextChanged += cur_path_TextChanged;
-            // 
-            // checkBox_android6fix_fastmode
-            // 
-            resources.ApplyResources(checkBox_android6fix_fastmode, "checkBox_android6fix_fastmode");
-            checkBox_android6fix_fastmode.Name = "checkBox_android6fix_fastmode";
-            toolTip1.SetToolTip(checkBox_android6fix_fastmode, resources.GetString("checkBox_android6fix_fastmode.ToolTip"));
-            checkBox_android6fix_fastmode.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_preview
-            // 
-            resources.ApplyResources(checkBox_preview, "checkBox_preview");
-            checkBox_preview.Name = "checkBox_preview";
-            toolTip1.SetToolTip(checkBox_preview, resources.GetString("checkBox_preview.ToolTip"));
-            checkBox_preview.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_android6fix
-            // 
-            resources.ApplyResources(checkBox_android6fix, "checkBox_android6fix");
-            checkBox_android6fix.Name = "checkBox_android6fix";
-            toolTip1.SetToolTip(checkBox_android6fix, resources.GetString("checkBox_android6fix.ToolTip"));
-            checkBox_android6fix.UseVisualStyleBackColor = true;
-            checkBox_android6fix.CheckedChanged += checkBox_android6fix_CheckedChanged;
             // 
             // verticalLabel_makedir
             // 
@@ -245,12 +219,8 @@ namespace AdbFileManager {
             panel_dolniTlacitka.Controls.Add(button_unlock);
             panel_dolniTlacitka.Controls.Add(deco_panel6);
             panel_dolniTlacitka.Controls.Add(deco_panel4);
-            panel_dolniTlacitka.Controls.Add(checkBox_android6fix_fastmode);
             panel_dolniTlacitka.Controls.Add(comboBox_lang);
-            panel_dolniTlacitka.Controls.Add(checkBox_preview);
-            panel_dolniTlacitka.Controls.Add(checkBox_android6fix);
             panel_dolniTlacitka.Controls.Add(label_version);
-            panel_dolniTlacitka.Controls.Add(checkBox_filedate);
             resources.ApplyResources(panel_dolniTlacitka, "panel_dolniTlacitka");
             panel_dolniTlacitka.Name = "panel_dolniTlacitka";
             panel_dolniTlacitka.Paint += panel_dolniTlacitka_Paint;
@@ -290,12 +260,6 @@ namespace AdbFileManager {
             label_version.Name = "label_version";
             label_version.TabStop = true;
             label_version.LinkClicked += version_LinkClicked;
-            // 
-            // checkBox_filedate
-            // 
-            resources.ApplyResources(checkBox_filedate, "checkBox_filedate");
-            checkBox_filedate.Name = "checkBox_filedate";
-            checkBox_filedate.UseVisualStyleBackColor = true;
             // 
             // panel_tlacitkaUprostred
             // 
@@ -442,12 +406,8 @@ namespace AdbFileManager {
         public DataGridView dataGridView_soubory;
 		private System.Windows.Forms.Timer timer1;
 		private ToolTip toolTip1;
-		private CheckBox checkBox_android6fix_fastmode;
 		public ComboBox comboBox_lang;
-		private CheckBox checkBox_preview;
 		private FluentButton button1;
-		public CheckBox checkBox_android6fix;
-		private CheckBox checkBox_filedate;
 		private Panel panel_tlacitkaUprostred;
 		public Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
 		public Panel deco_panel1;

@@ -174,111 +174,6 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
   </metadata>
-  <data name="checkBox_android6fix_fastmode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>455, 4</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 19</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.Text" xml:space="preserve">
-    <value>Fast compatiblity mode</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.ToolTip" xml:space="preserve">
-    <value>Will speed up dir load times in compatibility mode, at the cost of smaller accuracy of folder icons</value>
-  </data>
-  <data name="checkBox_android6fix_fastmode.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.Name" xml:space="preserve">
-    <value>checkBox_android6fix_fastmode</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.Parent" xml:space="preserve">
-    <value>panel_dolniTlacitka</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix_fastmode.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="checkBox_preview.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_preview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox_preview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 3</value>
-  </data>
-  <data name="checkBox_preview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 19</value>
-  </data>
-  <data name="checkBox_preview.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="checkBox_preview.Text" xml:space="preserve">
-    <value>Preview files on double click</value>
-  </data>
-  <data name="checkBox_preview.ToolTip" xml:space="preserve">
-    <value>When file is double clicked, it will copy it to temp folder and display it. On program close the files will be deleted</value>
-  </data>
-  <data name="&gt;&gt;checkBox_preview.Name" xml:space="preserve">
-    <value>checkBox_preview</value>
-  </data>
-  <data name="&gt;&gt;checkBox_preview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_preview.Parent" xml:space="preserve">
-    <value>panel_dolniTlacitka</value>
-  </data>
-  <data name="&gt;&gt;checkBox_preview.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="checkBox_android6fix.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_android6fix.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="checkBox_android6fix.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox_android6fix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 4</value>
-  </data>
-  <data name="checkBox_android6fix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
-  </data>
-  <data name="checkBox_android6fix.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="checkBox_android6fix.Text" xml:space="preserve">
-    <value>Compatibility fix</value>
-  </data>
-  <data name="checkBox_android6fix.ToolTip" xml:space="preserve">
-    <value>Enabling this fixes some compatibility issues with Android 6 and older devices</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.Name" xml:space="preserve">
-    <value>checkBox_android6fix</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.Parent" xml:space="preserve">
-    <value>panel_dolniTlacitka</value>
-  </data>
-  <data name="&gt;&gt;checkBox_android6fix.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="verticalLabel_makedir.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -602,7 +497,7 @@ This button can be hidden in appearance settings.</value>
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="comboBox_device.Location" type="System.Drawing.Point, System.Drawing">
-    <value>776, 3</value>
+    <value>6, 3</value>
   </data>
   <data name="comboBox_device.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -686,7 +581,7 @@ This button can be hidden in appearance settings.</value>
     <value>panel_dolniTlacitka</value>
   </data>
   <data name="&gt;&gt;comboBox_lang.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label_version.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -716,37 +611,7 @@ This button can be hidden in appearance settings.</value>
     <value>panel_dolniTlacitka</value>
   </data>
   <data name="&gt;&gt;label_version.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="checkBox_filedate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_filedate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBox_filedate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
-  </data>
-  <data name="checkBox_filedate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 19</value>
-  </data>
-  <data name="checkBox_filedate.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="checkBox_filedate.Text" xml:space="preserve">
-    <value>Keep file modified date</value>
-  </data>
-  <data name="&gt;&gt;checkBox_filedate.Name" xml:space="preserve">
-    <value>checkBox_filedate</value>
-  </data>
-  <data name="&gt;&gt;checkBox_filedate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_filedate.Parent" xml:space="preserve">
-    <value>panel_dolniTlacitka</value>
-  </data>
-  <data name="&gt;&gt;checkBox_filedate.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="panel_dolniTlacitka.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>

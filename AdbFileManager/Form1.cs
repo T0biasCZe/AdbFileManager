@@ -26,6 +26,7 @@ using Microsoft.WindowsAPICodePack.Controls;
 using Microsoft.Win32;
 using TextBox = System.Windows.Forms.TextBox;
 using Button = System.Windows.Forms.Button;
+using Microsoft.WindowsAPICodePack.Shell.Interop;
 
 namespace AdbFileManager {
     public partial class Form1 : Form {
@@ -43,15 +44,12 @@ namespace AdbFileManager {
 
                 InitializeComponent();
 
-                load_settings();
-
                 UIStyle.ApplyModernTheme(this);
                 if (SettingsManager.settings.DarkMode) {
                     UIStyle.LoadDarkMode(this);
                 }
 
 
-                checkBox_android6fix.Enabled = true;
 
                 //this.Controls.Add(panel_dolniTlacitka);
                 //panel_main.Controls.Remove(panel_dolniTlacitka);
@@ -163,7 +161,8 @@ namespace AdbFileManager {
             Console.WriteLine("verticalLabel1_Click()");
             refreshDevicesList();
             if (multipleDevicesDetection()) return;
-            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+            //dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
             dataGridView_soubory.Columns[1].Width = 307;
             dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
@@ -190,8 +189,8 @@ namespace AdbFileManager {
                 string size = dataGridView_soubory.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string date = dataGridView_soubory.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string permissions = dataGridView_soubory.Rows[e.RowIndex].Cells[4].Value.ToString();
-                if (!Functions.isFolder(permissions, checkBox_android6fix.Checked)) {
-                    if (checkBox_preview.Checked) {
+                if (!Functions.isFolder(permissions, SettingsManager.settings.useCompatibilityMode)) {
+                    if (SettingsManager.settings.previewMediaFiles) {
                         if (Functions.videoExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase)) || Functions.imageExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase)) || Functions.audioExtensions.Any(x => name.EndsWith(x, StringComparison.OrdinalIgnoreCase))) {
                             //copy file to temp folder
                             string sourcePath = directoryPath + name;
@@ -229,13 +228,16 @@ namespace AdbFileManager {
                     cur_path.Text = directoryPath;
                     cur_path_modifyInternal = false;
                     //MessageBox.Show(directoryPath);
-                    dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+                    dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
                 }
             }
         }
         bool copying = false;
         private void android2pc_Click(object sender, EventArgs e) {
             string destinationFolder = explorerBrowser1.NavigationLog.CurrentLocation.ParsingName;
+
+            if (string.IsNullOrEmpty(destinationFolder)) return;
+            MessageBox.Show(dataGridView_soubory.SelectedRows.Count.ToString());
 
             if (copying) {
                 MessageBox.Show(rm.GetString("copy_in_progress"), rm.GetString("copy_in_progress_title"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -248,7 +250,7 @@ namespace AdbFileManager {
                 string size = row.Cells[2].Value.ToString();
                 string datee = row.Cells[3].Value.ToString();
                 string permissions = row.Cells[4].Value.ToString();
-                bool isDirectory = Functions.isFolder(permissions, checkBox_android6fix.Checked);
+                bool isDirectory = Functions.isFolder(permissions, SettingsManager.settings.useCompatibilityMode);
                 files.Add(new File(name, size, datee, permissions, isDirectory));
             }
 
@@ -282,7 +284,7 @@ namespace AdbFileManager {
             }
         }
         public async Task copyFilesAsync(List<string> fileNames, string sourceDir, string destDir, bool fromAndroid) {
-            string dateArg = checkBox_filedate.Checked ? " -a " : "";
+            string dateArg = SettingsManager.settings.keepFileModificationDate ? " -a " : "";
             string progressArg = " -p";
 
             int totalFiles = fileNames.Count;
@@ -409,7 +411,7 @@ namespace AdbFileManager {
 
 
         public void copyFilesLegacy(List<File> files, string destinationFolder) {
-            string date = checkBox_filedate.Checked ? " -a " : "";
+            string date = SettingsManager.settings.keepFileModificationDate? " -a " : "";
 
             // 🪄 Optional unwrap folders here
             //if(checkBox_unwrapfolders.Checked) {
@@ -423,9 +425,9 @@ namespace AdbFileManager {
                 for (int i = 0; i < files.Count; i++) {
                     pgm.redraw();
                     File file = files[i];
-                    if (Functions.isFolder(file, checkBox_android6fix.Checked)) {
+                    if (Functions.isFolder(file, SettingsManager.settings.useCompatibilityMode)) {
                         Console.WriteLine("Unwrapping folder: " + file.name);
-                        DataTable newfiles_table = Functions.getDir(directoryPath + file.name, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+                        DataTable newfiles_table = Functions.getDir(directoryPath + file.name, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
 
                         files.Remove(file);
                         List<File> newfiles = new List<File>();
@@ -434,7 +436,7 @@ namespace AdbFileManager {
                             string size = row.ItemArray[2].ToString();
                             string datee = row.ItemArray[3].ToString();
                             string permissions = row.ItemArray[4].ToString();
-                            bool isDirectory = Functions.isFolder(permissions, checkBox_android6fix.Checked);
+                            bool isDirectory = Functions.isFolder(permissions, SettingsManager.settings.useCompatibilityMode);
                             newfiles.Add(new File(file.name + "/" + name, size, datee, permissions, isDirectory));
                             pgm.redraw();
                         }
@@ -526,7 +528,7 @@ namespace AdbFileManager {
                     directoryPath = directoryPath + name + "/";
                     cur_path.Text = directoryPath;
                     //MessageBox.Show(directoryPath);
-                    dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+                    dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
                 }
             }
         }
@@ -551,7 +553,7 @@ namespace AdbFileManager {
             cur_path_modifyInternal = true;
             cur_path.Text = directoryPath;
             cur_path_modifyInternal = false;
-            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
         }
         public bool multipleDevicesDetection() {
             if (foundDevices.Count > 1 && selectedDevice == null) {
@@ -590,7 +592,7 @@ namespace AdbFileManager {
             dt.Rows.Add(new Icon(@"icons\file.ico"), AdbFileManager.strings.loadingFilesInRoot, 0, DateTime.UnixEpoch);
 
 
-            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
             dataGridView_soubory.Columns[1].Width = 307;
             dataGridView_soubory.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
@@ -610,7 +612,7 @@ namespace AdbFileManager {
 
         private void pc2android_Click(object sender, EventArgs e) {
             var items = explorerBrowser1.SelectedItems.ToArray();
-            string date = checkBox_filedate.Checked ? " -a " : "";
+            string date = SettingsManager.settings.keepFileModificationDate ? " -a " : "";
 
             if (SettingsManager.settings.useLegacyCopy) {
                 int filecount = items.Count();
@@ -661,7 +663,7 @@ namespace AdbFileManager {
             }
 
             directoryPath = cur_path.Text;
-            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+            dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -809,8 +811,6 @@ namespace AdbFileManager {
                 Console.WriteLine("deleting temp directory...");
                 Directory.Delete(tempPath, true);
             }
-            Console.WriteLine("Saving old settings...");
-            save_settings();
             Console.WriteLine("Saving new settings...");
             SettingsManager.SaveSettings();
 
@@ -832,29 +832,6 @@ namespace AdbFileManager {
             Espanol,
             ChineseSimplified,
             ChineseTraditional
-        }
-        private void save_settings() {
-            Properties.Settings.Default.preview_on_doubleclick = checkBox_preview.Checked;
-            //Properties.Settings.Default.smooth_progressbar = checkBox_unwrapfolders.Checked;
-            Properties.Settings.Default.keep_modification_date = checkBox_filedate.Checked;
-            Properties.Settings.Default.compatibility = checkBox_android6fix.Checked;
-            Properties.Settings.Default.compatibility_fast = checkBox_android6fix_fastmode.Checked;
-
-            Properties.Settings.Default.Save();
-        }
-        private void load_settings() {
-            try {
-                checkBox_preview.Checked = Properties.Settings.Default.preview_on_doubleclick;
-                //checkBox_unwrapfolders.Checked = Properties.Settings.Default.smooth_progressbar;
-                checkBox_filedate.Checked = Properties.Settings.Default.keep_modification_date;
-                checkBox_android6fix.Checked = Properties.Settings.Default.compatibility;
-                checkBox_android6fix_fastmode.Checked = Properties.Settings.Default.compatibility_fast;
-            }
-            catch {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error loading settings");
-                Console.ResetColor();
-            }
         }
 
         private void applyLang() {
@@ -943,10 +920,6 @@ namespace AdbFileManager {
             explorerBrowser1.NavigateLogLocation(NavigationLogDirection.Forward);
         }
 
-        private void checkBox_android6fix_CheckedChanged(object sender, EventArgs e) {
-            if (checkBox_android6fix.Checked) checkBox_android6fix_fastmode.Visible = true;
-            else checkBox_android6fix_fastmode.Visible = false;
-        }
 
         //responsivity go brrr
         private void Form1_Resize(object sender, EventArgs e) {
@@ -1040,7 +1013,7 @@ namespace AdbFileManager {
                 Console.WriteLine(command);
                 string output = adb(command);
                 Console.WriteLine(output);
-                dataGridView_soubory.DataSource = Functions.getDir(directoryPath, checkBox_android6fix.Checked, checkBox_android6fix_fastmode.Checked);
+                dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
             }
         }
 
@@ -1249,6 +1222,10 @@ namespace AdbFileManager {
 
 			string filteredOutput = string.Join(Environment.NewLine, lines);
 			Console.WriteLine(filteredOutput);
+
+            if (filteredOutput.Contains("ls: Unknown option '-L'.")) {
+                var result = MessageBox.Show(AdbFileManager.strings.lsLLNotSupportedMessage, AdbFileManager.strings.lsLLNotSupportedMessageTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 			List<string[]> fileList = new List<string[]>();
 			try {

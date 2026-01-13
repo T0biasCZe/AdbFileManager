@@ -494,5 +494,15 @@ namespace AdbFileManager {
                 return ResourceManager.GetString("unlock_description", resourceCulture);
             }
         }
+		public static string lsLLNotSupportedMessage {
+            get {
+                return ResourceManager.GetString("lsLLNotSupportedMessage", resourceCulture);
+            }
+        }
+		public static string lsLLNotSupportedMessageTitle {
+            get {
+                return ResourceManager.GetString("lsLLNotSupportedMessageTitle", resourceCulture);
+            }
+        }
     }
 }

@@ -21,11 +21,15 @@ namespace AdbFileManager {
 		//Behaviour
 		public bool useLegacyCopy { get; set; } = false;
 		public bool unwrapFilesLegacy { get; set; } = false;
-	}
+		public bool useFastCompatibility { get; set; } = false;
+		public bool useCompatibilityMode { get; set; } = false;
+		public bool previewMediaFiles { get; set; } = false;
+		public bool keepFileModificationDate { get; set; } = true;
+    }
 	public static class SettingsManager {
 		public static Settings settings = new Settings();
 
-		public static void SaveSettings() {
+        public static void SaveSettings() {
 			string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 			string settingsPath = System.IO.Path.Combine(appDataPath, "tobiksoft", "AdbFileManager", "settings.xml");
 			System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(settingsPath)); // Ensure the directory exists
