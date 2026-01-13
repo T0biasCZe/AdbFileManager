@@ -15,19 +15,16 @@ using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace AdbFileManager {
 	public partial class Form2New : Form {
+		private static readonly ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
+
 		public Form2New() {
 			InitializeComponent();
 			TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
-
-			ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 			label_freezewarn.Text = rm.GetString("copy_freeze_warn");
 		}
 		public void Update(int current, int max, string source, string dest, string _filename, float totalPercentage, float filePercentage) {
 			Console.WriteLine($"cur: {current} max: {max} perc: {totalPercentage}");
 
-
-
-			ResourceManager rm = new ResourceManager("AdbFileManager.strings", Assembly.GetExecutingAssembly());
 			fromto.Text = rm.GetString("fromto").Replace("{source}", source).Replace("{dest}", dest);
 
 
@@ -71,6 +68,8 @@ namespace AdbFileManager {
 
 		private void Form2_FormClosed(object sender, FormClosedEventArgs e) {
 			TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.NoProgress);
+			// Cancel the running ADB process when progress dialog is closed
+			AdbProgressRunner.Cancel();
 		}
 		public static void set_language() {
 			Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs-CZ");

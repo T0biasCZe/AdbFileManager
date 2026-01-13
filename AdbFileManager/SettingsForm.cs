@@ -118,8 +118,6 @@ namespace AdbFileManager {
 
 			label_trackbarValue.Text = value.ToString() + " ms";
 
-			AdbProgressRunner.timeoutMs = value;
-
 			if(loadingSettings) return;
 
 			SettingsManager.settings.progressWaitTimeMs = value;
