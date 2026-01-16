@@ -44,6 +44,9 @@ namespace AdbFileManager {
 
                 InitializeComponent();
 
+                // Localize context menu
+                menuItem_delete.Text = AdbFileManager.strings.contextMenu_delete;
+
                 UIStyle.ApplyModernTheme(this);
                 if (SettingsManager.settings.DarkMode) {
                     UIStyle.LoadDarkMode(this);
@@ -512,6 +515,10 @@ namespace AdbFileManager {
             else if (e.KeyCode == Keys.Back) {
                 goUpDirectory();
             }
+            else if (e.KeyCode == Keys.Delete) {
+                deleteSelectedFiles();
+                e.Handled = true;
+            }
         }
         private void explorerBrowser1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e) {
             Console.WriteLine("Key pressed in explorer: " + e.KeyValue);
@@ -563,6 +570,144 @@ namespace AdbFileManager {
             cur_path_modifyInternal = false;
             dataGridView_soubory.DataSource = Functions.getDir(directoryPath, SettingsManager.settings.useCompatibilityMode, SettingsManager.settings.useFastCompatibility);
         }
+
+        /// <summary>
+        /// Deletes selected files/folders from the Android device
+        /// </summary>
+        void deleteSelectedFiles() {
+            // Guard: Check if any rows are selected
+            if (dataGridView_soubory.SelectedRows.Count == 0) {
+                return;
+            }
+
+            // Collect selected items
+            List<File> filesToDelete = new List<File>();
+            foreach (DataGridViewRow row in dataGridView_soubory.SelectedRows) {
+                string name = row.Cells[1].Value?.ToString();
+                if (string.IsNullOrEmpty(name)) continue;
+
+                // Skip special rows (like "No files found" messages)
+                string permissions = row.Cells[4].Value?.ToString();
+                if (string.IsNullOrEmpty(permissions)) continue;
+
+                string size = row.Cells[2].Value?.ToString() ?? "0";
+                string date = row.Cells[3].Value?.ToString() ?? "";
+                bool isDirectory = Functions.isFolder(permissions, SettingsManager.settings.useCompatibilityMode);
+
+                filesToDelete.Add(new File(name, size, date, permissions, isDirectory));
+            }
+
+            // Guard: No valid files to delete
+            if (filesToDelete.Count == 0) {
+                return;
+            }
+
+            // Show confirmation dialog
+            string message;
+            if (filesToDelete.Count == 1) {
+                message = string.Format(AdbFileManager.strings.delete_confirm_single, filesToDelete[0].name);
+            }
+            else {
+                message = string.Format(AdbFileManager.strings.delete_confirm_multiple, filesToDelete.Count);
+            }
+
+            DialogResult result = MessageBox.Show(
+                message,
+                AdbFileManager.strings.delete_title,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2  // Default to "No" for safety
+            );
+
+            if (result != DialogResult.Yes) {
+                return;
+            }
+
+            // Perform deletion
+            int successCount = 0;
+            int failCount = 0;
+            List<string> errors = new List<string>();
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            foreach (File file in filesToDelete) {
+                try {
+                    string fullPath = directoryPath + file.name;
+                    string command;
+
+                    // Use rm -rf for directories, rm for files
+                    if (file.isDirectory) {
+                        command = $"adb shell rm -rf \"{fullPath}\"";
+                    }
+                    else {
+                        command = $"adb shell rm \"{fullPath}\"";
+                    }
+
+                    Console.WriteLine($"Delete command: {command}");
+                    string output = adb(command);
+                    Console.WriteLine($"Delete output: {output}");
+
+                    // Check for errors in output
+                    if (output.Contains("No such file") ||
+                        output.Contains("Permission denied") ||
+                        output.Contains("Read-only file system") ||
+                        output.Contains("rm:")) {
+                        failCount++;
+                        errors.Add($"{file.name}: {output.Trim()}");
+                    }
+                    else {
+                        successCount++;
+                    }
+                }
+                catch (Exception ex) {
+                    failCount++;
+                    errors.Add($"{file.name}: {ex.Message}");
+                    Console.WriteLine($"Delete exception for {file.name}: {ex}");
+                }
+            }
+
+            Cursor.Current = Cursors.Default;
+
+            // Refresh the file list
+            dataGridView_soubory.DataSource = Functions.getDir(
+                directoryPath,
+                SettingsManager.settings.useCompatibilityMode,
+                SettingsManager.settings.useFastCompatibility
+            );
+
+            // Show result message if there were errors
+            if (failCount > 0) {
+                string errorMessage;
+                if (successCount == 0) {
+                    // All deletions failed
+                    errorMessage = string.Format(
+                        AdbFileManager.strings.delete_error,
+                        filesToDelete[0].name,
+                        string.Join("\n", errors)
+                    );
+                }
+                else {
+                    // Partial success
+                    errorMessage = string.Format(
+                        AdbFileManager.strings.delete_partial_error,
+                        successCount,
+                        filesToDelete.Count
+                    ) + "\n\n" + string.Join("\n", errors);
+                }
+
+                MessageBox.Show(
+                    errorMessage,
+                    AdbFileManager.strings.delete_error_title,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+        }
+
+        private void menuItem_delete_Click(object sender, EventArgs e) {
+            deleteSelectedFiles();
+        }
+
         public bool multipleDevicesDetection() {
             if (foundDevices.Count > 1 && selectedDevice == null) {
                 Console.WriteLine("Multiple devices detected, showing message in datagridview");

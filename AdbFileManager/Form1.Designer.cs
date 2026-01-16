@@ -61,6 +61,8 @@ namespace AdbFileManager {
             commandLink_installYes = new DarkCommandLink();
             commandLink_installGoAway = new DarkCommandLink();
             pictureBox1 = new PictureBox();
+            contextMenu_android = new ContextMenuStrip(components);
+            menuItem_delete = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGridView_soubory).BeginInit();
             deco_panel4.SuspendLayout();
             panel_dolniTlacitka.SuspendLayout();
@@ -83,7 +85,22 @@ namespace AdbFileManager {
             dataGridView_soubory.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
             dataGridView_soubory.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
             dataGridView_soubory.KeyDown += dataGridView1_KeyDown;
-            // 
+            dataGridView_soubory.ContextMenuStrip = contextMenu_android;
+            //
+            // contextMenu_android
+            //
+            contextMenu_android.Items.AddRange(new ToolStripItem[] { menuItem_delete });
+            contextMenu_android.Name = "contextMenu_android";
+            contextMenu_android.Size = new Size(120, 26);
+            //
+            // menuItem_delete
+            //
+            menuItem_delete.Name = "menuItem_delete";
+            menuItem_delete.ShortcutKeys = Keys.Delete;
+            menuItem_delete.Size = new Size(119, 22);
+            menuItem_delete.Text = "Delete";
+            menuItem_delete.Click += menuItem_delete_Click;
+            //
             // timer1
             // 
             timer1.Interval = 500;
@@ -436,5 +453,7 @@ namespace AdbFileManager {
 		public Label label_textInstall;
 		public DarkCommandLink commandLink_installGoAway;
 		public DarkCommandLink commandLink_installYes;
+		private ContextMenuStrip contextMenu_android;
+		private ToolStripMenuItem menuItem_delete;
 	}
 }

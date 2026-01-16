@@ -504,5 +504,47 @@ namespace AdbFileManager {
                 return ResourceManager.GetString("lsLLNotSupportedMessageTitle", resourceCulture);
             }
         }
+
+        public static string delete_confirm_single {
+            get {
+                return ResourceManager.GetString("delete_confirm_single", resourceCulture);
+            }
+        }
+
+        public static string delete_confirm_multiple {
+            get {
+                return ResourceManager.GetString("delete_confirm_multiple", resourceCulture);
+            }
+        }
+
+        public static string delete_title {
+            get {
+                return ResourceManager.GetString("delete_title", resourceCulture);
+            }
+        }
+
+        public static string delete_error {
+            get {
+                return ResourceManager.GetString("delete_error", resourceCulture);
+            }
+        }
+
+        public static string delete_error_title {
+            get {
+                return ResourceManager.GetString("delete_error_title", resourceCulture);
+            }
+        }
+
+        public static string delete_partial_error {
+            get {
+                return ResourceManager.GetString("delete_partial_error", resourceCulture);
+            }
+        }
+
+        public static string contextMenu_delete {
+            get {
+                return ResourceManager.GetString("contextMenu_delete", resourceCulture);
+            }
+        }
     }
 }

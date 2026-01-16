@@ -355,4 +355,29 @@ Please enable Compatibility mode in settings, and then click Refresh.</value>
     <data name="lsLLNotSupportedMessageTitle" xml:space="preserve">
 	<value>-L not supported</value>
   </data>
+  <data name="delete_confirm_single" xml:space="preserve">
+    <value>Are you sure you want to permanently delete '{0}'?
+
+This action cannot be undone. Android does not have a recycle bin.</value>
+  </data>
+  <data name="delete_confirm_multiple" xml:space="preserve">
+    <value>Are you sure you want to permanently delete these {0} items?
+
+This action cannot be undone. Android does not have a recycle bin.</value>
+  </data>
+  <data name="delete_title" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="delete_error" xml:space="preserve">
+    <value>Failed to delete '{0}': {1}</value>
+  </data>
+  <data name="delete_error_title" xml:space="preserve">
+    <value>Delete Error</value>
+  </data>
+  <data name="delete_partial_error" xml:space="preserve">
+    <value>Deleted {0} of {1} items. Some items could not be deleted.</value>
+  </data>
+  <data name="contextMenu_delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
 </root>
